@@ -10,6 +10,7 @@ import Benefits from "./components/Benefits";
 
 import seviceInfo from '../../serviceInfo.json'
 import benefitsInfo from '../../benefitsInfo.json'
+import ServiceModal from "./components/ServiceModal";
 
 export default function App() {
 
@@ -20,7 +21,7 @@ export default function App() {
     }
 
   return (
-    <>
+    <div>
     <div className={`${isOpen ? "blur-sm" : ""}`}>
       <NavBar handleClick={handleClick} />
       <HeaderVideo />
@@ -29,8 +30,9 @@ export default function App() {
         <AboutUs />
         <Benefits info={benefitsInfo} />
     </div>
-    <Burger isOpen={isOpen} handleClick={handleClick}/>
-    </>
+      <Burger isOpen={isOpen} handleClick={handleClick} />
+      <ServiceModal isOpen={isOpen} handleClick={handleClick}/>
+    </div>
     
   );
 }

@@ -1,12 +1,12 @@
-import Link from 'next/link';
 import { useEffect } from 'react';
 import { IoMdClose } from 'react-icons/io';
-interface BurgerProps {
+
+interface ServiceModalProps {
   handleClick: () => void;
   isOpen: boolean;
 }
 
-const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
+const ServiceModal: React.FC<ServiceModalProps> = ({ handleClick, isOpen }) => {
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isOpen]);
@@ -18,12 +18,12 @@ const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
       }`}
     >
       <div className="w-full h-full absolute inset-0 opacity-20"></div>
-      <nav className="flex flex-col items-center justify-center h-full relative z-20 text-white uppercase text-2xl gap-6">
-        <Link href={'/services'}>Services</Link>
-        <Link href={'/about-us'}>About us</Link>
-        <Link href={'/benefits'}>Benefits</Link>
-        <Link href={'/cases'}>Cases</Link>
-      </nav>
+          <div>
+              <h3>E-commerce</h3>
+              <p></p>
+              <p></p>
+              <span></span>
+      </div>
       <IoMdClose
         size={35}
         className="absolute top-7 right-6 z-20 fill-white"
@@ -33,4 +33,4 @@ const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
   );
 };
 
-export default Burger;
+export default ServiceModal;

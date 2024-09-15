@@ -3,23 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --background: #1b3431;
+  --background: #152220;
   --foreground: #171717;
+  --swiper-navigation-size: 30px !important;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Pirulen", sans-serif;
+  font-family: 'Pirulen', sans-serif;
 }
 
 @font-face {
-  font-family: "Pirulen";
-  src: url("../app/fonts/pirulen\ rg.otf") format("opentype");
+  font-family: 'Pirulen';
+  src: url('../app/fonts/pirulen\ rg.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 .custom-font {
-  font-family: "Pirulen", sans-serif;
+  font-family: 'Pirulen', sans-serif;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffff !important;
+  font-size: 15px !important;
 }
