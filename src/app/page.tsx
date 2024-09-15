@@ -4,7 +4,12 @@ import NavBar from "./components/NavBar";
 import HeaderVideo from "./components/HeaderVideo";
 import Services from "./components/Services";
 import Burger from "./components/Burger";
+import RunningLine from "./components/RunningLine";
+import AboutUs from "./components/AboutUs";
+import Benefits from "./components/Benefits";
+
 import seviceInfo from '../../serviceInfo.json'
+import benefitsInfo from '../../benefitsInfo.json'
 
 export default function App() {
 
@@ -19,7 +24,10 @@ export default function App() {
     <div className={`${isOpen ? "blur-sm" : ""}`}>
       <NavBar handleClick={handleClick} />
       <HeaderVideo />
-      <Services info={seviceInfo} />
+        <Services info={seviceInfo} />
+        <RunningLine />
+        <AboutUs />
+        <Benefits info={benefitsInfo} />
     </div>
     <Burger isOpen={isOpen} handleClick={handleClick}/>
     </>

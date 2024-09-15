@@ -1,0 +1,44 @@
+[
+  {
+    "id": 30,
+    "src": "/hands.gif",
+    "numberCard": "001",
+    "title": "Transparent Collaboration Terms",
+    "description": "Clear contract with guarantees and commitments. Track the process in real time."
+  },
+  {
+    "id": 31,
+    "src": "/comments.gif",
+    "numberCard": "002",
+    "title": "Ongoing Feedback",
+    "description": "Communication is conducted at your convenience and through preferred communication channels."
+  },
+  {
+    "id": 32,
+    "src": "/nut.gif",
+    "numberCard": "003",
+    "title": "Technical Support",
+    "description": "Consultations and recommendations during and after the launch."
+  },
+  {
+    "id": 33,
+    "src": "/penny.gif",
+    "numberCard": "004",
+    "title": "Flexible Payment System",
+    "description": "You choose how to allocate payment for each service."
+  },
+  {
+    "id": 34,
+    "src": "/loop.gif",
+    "numberCard": "005",
+    "title": "Maximum Engagement in Your Business",
+    "description": "We deeply analyze your business processes and create designs that enhance conversion."
+  },
+  {
+    "id": 35,
+    "src": "/brush.gif",
+    "numberCard": "006",
+    "title": "Custom Design and Development",
+    "description": "Clean, optimized code and adaptive design tailored to your target audience's needs."
+  }
+]
