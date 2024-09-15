@@ -1,38 +1,38 @@
 [
-  {
-    "id": 1,
-    "title": "E-commerce project",
-    "src": "/e-commerce.png",
-    "price": "8000$"
-  },
-  {
-    "id": 2,
-    "title": "Landing page",
-    "src": "/landing.png",
-    "price": "8000$"
-  },
-  {
-    "id": 3,
-    "title": "Ui/ux design",
-    "src": "/web-design.png",
-    "price": "8000$"
-  },
-  {
-    "id": 4,
-    "title": "3d design",
-    "src": "/3d-design.png",
-    "price": "8000$"
-  },
-  {
-    "id": 5,
-    "title": "Business website",
-    "src": "/business.png",
-    "price": "8000$"
-  },
-  {
-    "id": 6,
-    "title": "Crm system",
-    "src": "/crm.png",
-    "price": "8000$"
-  }
+	{
+		"id": 1,
+		"title": "E-commerce",
+		"src": "/e-commerce.png",
+		"price": "8000$"
+	},
+	{
+		"id": 2,
+		"title": "Landing page",
+		"src": "/landing.png",
+		"price": "1200$"
+	},
+	{
+		"id": 3,
+		"title": "Ui/ux design",
+		"src": "/web-design.png",
+		"price": "1000$"
+	},
+	{
+		"id": 4,
+		"title": "3d design",
+		"src": "/3d-design.png",
+		"price": "400$"
+	},
+	{
+		"id": 5,
+		"title": "Business website",
+		"src": "/business.png",
+		"price": "10000$"
+	},
+	{
+		"id": 6,
+		"title": "Crm system",
+		"src": "/crm.png",
+		"price": "5000$"
+	}
 ]
