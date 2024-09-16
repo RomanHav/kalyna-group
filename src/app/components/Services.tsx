@@ -1,10 +1,15 @@
 import ServicePart from './ServicePart';
 import Title from './Title';
+
 interface ServiceInfo {
-  id?: number;
+  id?: number; // Ensure id is present for unique key assignment
   title: string;
   src: string;
   price: string;
+  firstDescription: string;
+  secondDescription: string;
+  thirdDescription: string;
+  span: string;
 }
 
 interface ServiceProps {
@@ -14,7 +19,7 @@ interface ServiceProps {
 const Services: React.FC<ServiceProps> = ({ info }) => {
   return (
     <div className="flex flex-col my-8 px-[45px] relative z-10 gap-10">
-      <Title title="services" />
+      <Title title="Services" />
       <ul className="flex flex-col items-center gap-9">
         {info.map(infopart => {
           return (
@@ -26,6 +31,10 @@ const Services: React.FC<ServiceProps> = ({ info }) => {
                 title={infopart.title}
                 src={infopart.src}
                 price={infopart.price}
+                firstDescription={infopart.firstDescription}
+                secondDescription={infopart.secondDescription}
+                thirdDescription={infopart.thirdDescription}
+                span={infopart.span}
               />
             </li>
           );
@@ -34,4 +43,5 @@ const Services: React.FC<ServiceProps> = ({ info }) => {
     </div>
   );
 };
+
 export default Services;

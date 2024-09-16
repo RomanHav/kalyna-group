@@ -9,6 +9,7 @@ export default function HeaderVideo() {
         <Image
           src={'/headergif.gif'}
           alt="Honeycombs Gif"
+          unoptimized={true}
           width={220}
           height={220}
         />

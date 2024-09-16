@@ -2,11 +2,14 @@ import { useEffect } from 'react';
 import { IoMdClose } from 'react-icons/io';
 
 interface ServiceModalProps {
-  handleClick: () => void;
+  handleServiceModal: (id: number) => void;
   isOpen: boolean;
 }
 
-const ServiceModal: React.FC<ServiceModalProps> = ({ handleClick, isOpen }) => {
+const ServiceModal: React.FC<ServiceModalProps> = ({
+  handleServiceModal,
+  isOpen,
+}) => {
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isOpen]);
@@ -18,16 +21,16 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ handleClick, isOpen }) => {
       }`}
     >
       <div className="w-full h-full absolute inset-0 opacity-20"></div>
-          <div>
-              <h3>E-commerce</h3>
-              <p></p>
-              <p></p>
-              <span></span>
+      <div>
+        <h3>E-commerce</h3>
+        <p></p>
+        <p></p>
+        <span></span>
       </div>
       <IoMdClose
         size={35}
         className="absolute top-7 right-6 z-20 fill-white"
-        onClick={handleClick}
+        onClick={handleServiceModal}
       />
     </div>
   );
