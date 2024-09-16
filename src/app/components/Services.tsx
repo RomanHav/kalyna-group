@@ -2,7 +2,7 @@ import ServicePart from './ServicePart';
 import Title from './Title';
 
 interface ServiceInfo {
-  id?: number; // Ensure id is present for unique key assignment
+  id?: number;
   title: string;
   src: string;
   price: string;
@@ -28,6 +28,7 @@ const Services: React.FC<ServiceProps> = ({ info }) => {
               className="bg-[#A3FFEB]/20 flex items-center rounded-3xl py-2 px-6"
             >
               <ServicePart
+                id={infopart.id}
                 title={infopart.title}
                 src={infopart.src}
                 price={infopart.price}

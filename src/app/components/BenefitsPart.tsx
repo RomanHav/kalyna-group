@@ -31,7 +31,7 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
         className={`flex flex-col items-start justify-center px-3 text-white gap-2 ${childClass}`}
       >
         <div>
-          <span className="text-xl font-thin">{numberCard}</span>
+          <span className="text-xl font-thin hidden">{numberCard}</span>
           <h3 className="text-base font-medium">{title}</h3>
         </div>
         <p className="text-base font-light">{description}</p>

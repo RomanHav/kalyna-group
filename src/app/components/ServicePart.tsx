@@ -1,20 +1,39 @@
 'use client';
 
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import ServiceModal from './ServiceModal';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 interface ServicePartProps {
+  id?: number;
   title: string;
   src: string;
   price: string;
+  firstDescription: string;
+  secondDescription: string;
+  thirdDescription: string;
+  span: string;
 }
 
-const ServicePart: React.FC<ServicePartProps> = ({ title, src, price }) => {
+const ServicePart: React.FC<ServicePartProps> = ({
+  id,
+  title,
+  src,
+  price,
+  firstDescription,
+  secondDescription,
+  thirdDescription,
+  span,
+}) => {
   const [serviceModal, setServiceModal] = useState(false);
 
   const handleServiceModal = () => {
     setServiceModal(!serviceModal);
   };
+
+  useEffect(() => {
+    document.body.style.overflow = serviceModal ? 'hidden' : 'auto';
+  }, [serviceModal]);
   return (
     <>
       <div className="flex flex-col gap-5 items-center text-white">
@@ -44,8 +63,14 @@ const ServicePart: React.FC<ServicePartProps> = ({ title, src, price }) => {
       </div>
       {serviceModal && (
         <ServiceModal
+          id={id}
           isOpen={serviceModal}
+          title={title}
           handleServiceModal={handleServiceModal}
+          firstDescription={firstDescription}
+          secondDescription={secondDescription}
+          thirdDescription={thirdDescription}
+          span={span}
         />
       )}
     </>

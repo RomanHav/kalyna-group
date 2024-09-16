@@ -6,6 +6,7 @@
     "price": "8000$",
     "firstDescription": "Creating an online store includes building a website and organizing key processes such as: analytics, SEO optimization, integrating payment systems, upsell tools, and other necessary resources for your project.",
     "secondDescription": "We work with various niches, products, and geolocations. Whether you want to increase sales of an existing product or quickly create a store for dropshipping sales – this is your choice!",
+    "thirdDescription": "",
     "span": "The project is developed based on Shopify platforms"
   },
   {
@@ -14,6 +15,8 @@
     "src": "/landing.png",
     "price": "1200$",
     "firstDescription": "Creating a single-page, responsive landing page helps attract user attention to a specific offer, product, or service. It features a concise design, clear logic, and minimal distractions. It's best suited for those launching a course or developing a startup/project.",
+    "secondDescription": "",
+    "thirdDescription": "",
     "span": "The project is developed using React/Next.js frameworks."
   },
   {
@@ -22,6 +25,8 @@
     "src": "/web-design.png",
     "price": "1000$",
     "firstDescription": "UI/UX design services enhance the appeal of your product and improve user interaction. We offer the latest styling methods and modern design trends, including micro-interactions, responsive design and attention to every detail!",
+    "secondDescription": "",
+    "thirdDescription": "",
     "span": "The tools we use: Figma, Adobe Photoshop, Adobe Illustrator."
   },
   {
@@ -30,6 +35,8 @@
     "src": "/3d-design.png",
     "price": "400$",
     "firstDescription": "A tool that can fully depict your product in detail. This service can be used as a standalone development or as a supplementary tool for other services.",
+    "secondDescription": "",
+    "thirdDescription": "",
     "span": "The tools we use: Unreal Engine, Blender, Marvelous Designer, Substance Painter."
   },
   {
@@ -49,6 +56,7 @@
     "price": "5000$",
     "firstDescription": "CRM systems help manage customer interactions efficiently and optimize business processes. We create solutions that fully meet the needs of your business, taking into account the specifics of the industry and internal workflows.",
     "secondDescription": "CRM systems simplify customer management, automate routine tasks, and provide convenient tools for analytics and forecasting.",
+    "thirdDescription": "",
     "span": "The project is developed using the following tools: JavaScript (Node.js, React), MongoDB, AWS, Google Cloud, Postman, Notion."
   }
 ]
