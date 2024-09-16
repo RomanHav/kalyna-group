@@ -10,7 +10,6 @@ import Benefits from './components/Benefits';
 
 import seviceInfo from '../../serviceInfo.json';
 import benefitsInfo from '../../benefitsInfo.json';
-import ServiceModal from './components/ServiceModal';
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +18,22 @@ export default function App() {
     setIsOpen(!isOpen);
   };
 
+  const [serviceModal, setServiceModal] = useState(false);
+
+  const handleServiceModal = () => {
+    setServiceModal(!serviceModal);
+  };
+
   return (
     <div>
       <div className={`${isOpen ? 'blur-sm' : ''}`}>
-        <NavBar handleClick={handleClick} />
+        <NavBar handleClick={handleClick} serviceModal={serviceModal} />
         <HeaderVideo />
-        <Services info={seviceInfo} />
+        <Services
+          info={seviceInfo}
+          serviceModal={serviceModal}
+          handleServiceModal={handleServiceModal}
+        />
         <RunningLine />
         <AboutUs />
         <Benefits info={benefitsInfo} />

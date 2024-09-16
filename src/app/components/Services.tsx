@@ -14,9 +14,11 @@ interface ServiceInfo {
 
 interface ServiceProps {
   info: ServiceInfo[];
+  serviceModal: boolean;
+  handleServiceModal: () => void;
 }
 
-const Services: React.FC<ServiceProps> = ({ info }) => {
+const Services: React.FC<ServiceProps> = ({ info, serviceModal,  handleServiceModal}) => {
   return (
     <div className="flex flex-col my-8 px-[45px] relative z-10 gap-10">
       <Title title="Services" />
@@ -28,6 +30,8 @@ const Services: React.FC<ServiceProps> = ({ info }) => {
               className="bg-[#A3FFEB]/20 flex items-center rounded-3xl py-2 px-6"
             >
               <ServicePart
+                serviceModal={serviceModal}
+                handleServiceModal={handleServiceModal}
                 id={infopart.id}
                 title={infopart.title}
                 src={infopart.src}

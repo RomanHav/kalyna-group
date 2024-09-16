@@ -5,6 +5,8 @@ import ServiceModal from './ServiceModal';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 interface ServicePartProps {
+  serviceModal: boolean;
+  handleServiceModal: () => void;
   id?: number;
   title: string;
   src: string;
@@ -16,6 +18,8 @@ interface ServicePartProps {
 }
 
 const ServicePart: React.FC<ServicePartProps> = ({
+  serviceModal,
+  handleServiceModal,
   id,
   title,
   src,
@@ -25,11 +29,6 @@ const ServicePart: React.FC<ServicePartProps> = ({
   thirdDescription,
   span,
 }) => {
-  const [serviceModal, setServiceModal] = useState(false);
-
-  const handleServiceModal = () => {
-    setServiceModal(!serviceModal);
-  };
 
   useEffect(() => {
     document.body.style.overflow = serviceModal ? 'hidden' : 'auto';

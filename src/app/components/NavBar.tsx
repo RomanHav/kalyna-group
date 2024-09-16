@@ -3,11 +3,14 @@ import Link from 'next/link';
 
 interface NavBarProps {
   handleClick: () => void;
+  serviceModal: boolean;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ handleClick }) => {
+const NavBar: React.FC<NavBarProps> = ({ handleClick, serviceModal }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed top-0 left-0 w-full z-[15] backdrop-blur-md">
+    <nav
+      className={`navbar navbar-expand-lg navbar-light bg-light ${!serviceModal ? 'fixed z-[30]' : 'absolute z-[30]'} top-0 left-0 w-full backdrop-blur-md`}
+    >
       <div className="flex justify-between items-center bg-[#0D1816]/60 py-6 px-4 border-b border-white rounded-b-lg">
         <Link href={'/'}>
           <Image
