@@ -20,7 +20,7 @@ interface BenefitsProps {
 
 const Benefits: React.FC<BenefitsProps> = ({ info }) => {
   return (
-    <div className="flex flex-col my-8 relative z-10 gap-10">
+    <div className="flex flex-col my-8 relative gap-10">
       <div className="px-[45px]">
         <Title title="Benefits" />
       </div>

@@ -21,7 +21,7 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
   return (
     <div className="flex flex-col mx-[45px] items-center rounded-3xl bg-white/10 py-6 min-h-[368px]">
       <Image
-        className="w-[140px]"
+        className="w-[140px] pb-2"
         src={src}
         alt="Benefit Image"
         width={1000}
@@ -31,7 +31,7 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
         className={`flex flex-col items-start justify-center px-3 text-white gap-2 ${childClass}`}
       >
         <div>
-          <span className="text-xl font-thin hidden">{numberCard}</span>
+          <span className="text-xl font-thin">{numberCard}</span>
           <h3 className="text-base font-medium">{title}</h3>
         </div>
         <p className="text-base font-light">{description}</p>

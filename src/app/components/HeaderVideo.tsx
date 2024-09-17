@@ -2,7 +2,7 @@ import Image from 'next/image';
 export default function HeaderVideo() {
   return (
     <div>
-      <div className="bg-black/50 flex flex-col gap-3 justify-center mt-24 items-center py-14 relative z-10">
+      <div className="bg-black/50 flex flex-col gap-3 justify-center pt-36 items-center py-14 relative z-10">
         <p className="px-14 bg-gradient-to-r from-white to-custom-green bg-clip-text text-transparent text-center uppercase text-2xl font-semibold">
           Create an Effective Website for Your Business With Us
         </p>

@@ -3,7 +3,7 @@ import Title from './Title';
 
 const AboutUs = () => {
   return (
-    <div className="flex flex-col my-8 px-[45px] relative z-10 gap-10">
+    <div className="flex flex-col my-8 px-[45px] relative gap-10">
       <Title title="About Us" />
       <div className="flex flex-col justify-center items-center bg-[#A3FFEB]/10 p-5 rounded-3xl">
         <div>

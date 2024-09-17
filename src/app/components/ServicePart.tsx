@@ -3,11 +3,11 @@
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import ServiceModal from './ServiceModal';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+
 interface ServicePartProps {
-  serviceModal: boolean;
-  handleServiceModal: () => void;
-  id?: number;
+  serviceModal: number | null;
+  handleServiceModal: (id?: number) => void;
+  id: number;
   title: string;
   src: string;
   price: string;
@@ -29,10 +29,6 @@ const ServicePart: React.FC<ServicePartProps> = ({
   thirdDescription,
   span,
 }) => {
-
-  useEffect(() => {
-    document.body.style.overflow = serviceModal ? 'hidden' : 'auto';
-  }, [serviceModal]);
   return (
     <>
       <div className="flex flex-col gap-5 items-center text-white">
@@ -50,7 +46,7 @@ const ServicePart: React.FC<ServicePartProps> = ({
             contact
           </button>
           <button
-            onClick={handleServiceModal}
+            onClick={() => handleServiceModal(id)}
             className="flex justify-center items-center gap-2"
           >
             <p>read more</p>
@@ -60,12 +56,12 @@ const ServicePart: React.FC<ServicePartProps> = ({
           </button>
         </div>
       </div>
-      {serviceModal && (
+      {serviceModal === id && (
         <ServiceModal
           id={id}
-          isOpen={serviceModal}
+          isOpen={serviceModal === id}
           title={title}
-          handleServiceModal={handleServiceModal}
+          handleServiceModal={() => handleServiceModal(id)}
           firstDescription={firstDescription}
           secondDescription={secondDescription}
           thirdDescription={thirdDescription}

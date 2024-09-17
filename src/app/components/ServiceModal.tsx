@@ -9,41 +9,49 @@ interface ServiceModalProps {
   secondDescription: string;
   thirdDescription: string;
   span: string;
-  handleServiceModal: (id: number) => void;
+  handleServiceModal: (id?: number) => void;
 }
 
 const ServiceModal: React.FC<ServiceModalProps> = ({
   id,
-  handleServiceModal,
   isOpen,
+  handleServiceModal,
   title,
   firstDescription,
   secondDescription,
   thirdDescription,
   span,
 }) => {
+
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, [isOpen]);
 
   return (
     <div
-      className={`bg-black bg-cover fixed top-0 right-0 w-full h-screen flex flex-col justify-center bg-opacity-70 z-[60] transition-transform duration-300 ease-out ${
+      className={`bg-black bg-cover fixed top-0 right-0 w-full h-full flex flex-col justify-center bg-opacity-70 z-[60] transition-transform duration-300 ease-out backdrop-blur-md ${
         isOpen ? '' : 'hidden'
       }`}
     >
       <div className="w-full h-full absolute inset-0 opacity-20"></div>
-      <div className="relative z-10 text-white">
-        <h3>{title}</h3>
-        <p>{firstDescription}</p>
-        <p>{secondDescription}</p>
-        <p>{thirdDescription}</p>
-        <span>{span}</span>
+      <div className="relative z-[70] text-white p-6">
+        <h3 className="text-2xl font-semibold mb-4 uppercase">{title}</h3>
+        <p className="mb-2">{firstDescription}</p>
+        <p className="mb-2">{secondDescription}</p>
+        <p className="mb-2">{thirdDescription}</p>
+        <span className="text-sm">{span}</span>
       </div>
       <IoMdClose
         size={35}
         className="absolute top-7 right-6 z-20 fill-white cursor-pointer"
-        onClick={() => id && handleServiceModal(id)}
+        onClick={() => handleServiceModal(id)}
       />
     </div>
   );

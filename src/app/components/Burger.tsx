@@ -13,7 +13,7 @@ const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
 
   return (
     <div
-      className={`bg-black bg-cover fixed top-0 right-0 w-full h-screen bg-opacity-70 z-30 transform scale-y- transition-transform duration-300 ease-out ${
+      className={`bg-black bg-cover fixed top-0 right-0 w-full h-screen bg-opacity-70 z-30 transform transition-transform duration-300 ease-out ${
         isOpen ? '' : 'hidden'
       }`}
     >
