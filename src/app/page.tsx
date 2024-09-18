@@ -12,6 +12,7 @@ import Cases from './components/Cases';
 import seviceInfo from '../../serviceInfo.json';
 import benefitsInfo from '../../benefitsInfo.json';
 import casesInfo from '../app/casesInfo.json'
+import MyForm from './components/Form';
 
 
 export default function App() {
@@ -46,6 +47,7 @@ export default function App() {
         <AboutUs />
         <Benefits info={benefitsInfo} />
         <Cases info={casesInfo} />
+        <MyForm/>
       </div>
       <Burger isOpen={isOpen} handleClick={handleClick} />
     </div>

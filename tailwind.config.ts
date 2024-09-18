@@ -21,6 +21,7 @@ const config: Config = {
         'custom-blue-second': '#5B86E5',
         'custom-blue-third': '#36D1DC',
         'custom-grey': '#434343',
+        'custom-button': '#15645E',
       },
       backgroundImage: {
         texture: "url('/background.png')",
