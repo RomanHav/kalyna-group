@@ -25,6 +25,7 @@ const config: Config = {
       },
       backgroundImage: {
         texture: "url('/background.png')",
+        form: "url('/footer-form-bkg.png')",
       },
     },
   },

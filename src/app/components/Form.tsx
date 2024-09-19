@@ -114,6 +114,7 @@ const MyForm: React.FC = () => {
                   width: '100%',
                   paddingLeft: '50px',
                   borderRadius: '8px',
+                //   border: '1px solid black',
                 }}
               />
             </div>
