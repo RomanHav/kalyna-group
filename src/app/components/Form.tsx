@@ -108,7 +108,6 @@ const MyForm: React.FC = () => {
                 inputProps={{
                   name: 'phone',
                   required: true,
-                  autoFocus: true,
                 }}
                 inputStyle={{
                   width: '100%',

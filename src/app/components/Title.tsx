@@ -1,11 +1,14 @@
 interface TitleProps {
   title: string;
+  id?: string;
 }
 
-const Title: React.FC<TitleProps> = ({ title }) => {
+const Title: React.FC<TitleProps> = ({ title, id }) => {
   return (
     <div className="flex justify-between items-center text-white after:content-[''] after:w-10 after:bg-white after:float-right after:h-[2px]">
-      <h2 className="uppercase max-w-52 text-[32px]">{title}</h2>
+      <h2 id={id ? id : undefined} className="uppercase max-w-52 text-[32px]">
+        {title}
+      </h2>
     </div>
   );
 };

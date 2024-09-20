@@ -20,15 +20,16 @@ const Footer = () => {
   };
 
   return (
-    <div className='flex flex-col py-[45px] bg-white/10 gap-9 rounded-t-lg'>
+    <div className="flex flex-col py-[45px] bg-white/10 gap-9 rounded-t-lg relative">
       <FooterRunningLine />
-      <div className="flex flex-col px-[45px] relative">
-        <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col px-[45px]">
+        <div className="flex flex-col items-center justify-center relative">
           <form
-            className="flex flex-col bg-custom-blue/80 rounded-2xl text-white items-center justify-center py-8 px-7 gap-6 mb-16"
+            className="flex flex-col w-full relative bg-form bg-contain rounded-2xl text-white items-center justify-center py-8 gap-6"
             onSubmit={handleSubmit}
           >
-            <div className="flex flex-col gap-6">
+            <div className="bg-black/80 absolute z-0 w-full h-full rounded-2xl"></div>
+            <div className="flex flex-col gap-6 relative z-[5] px-7">
               <label
                 className="text-center text-xl font-medium min-w-[245px]"
                 htmlFor={`${id}-email`}
@@ -46,14 +47,14 @@ const Footer = () => {
               />
             </div>
             <button
-              className="bg-gradient-to-r from-custom-blue to-custom-green text-white py-2 px-6 rounded-2xl uppercase text-[16px] font-semibold flex"
+              className="relative z-[5] bg-gradient-to-r from-custom-blue to-custom-green text-white py-2 px-6 rounded-2xl uppercase text-[16px] font-semibold flex"
               type="submit"
             >
               Subscribe
             </button>
           </form>
         </div>
-        <div className="flex flex-col justify-center items-center gap-14 mb-16">
+        <div className="flex flex-col justify-center items-center gap-14 mb-16 mt-16">
           <Image
             className="w-[215px]"
             src={'/logo.png'}

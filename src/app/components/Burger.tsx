@@ -1,12 +1,16 @@
-import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
 import { useEffect } from 'react';
 import { IoMdClose } from 'react-icons/io';
+import { useRouter } from 'next/navigation';
+
 interface BurgerProps {
   handleClick: () => void;
   isOpen: boolean;
 }
 
 const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
+  const router = useRouter();
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isOpen]);
@@ -19,10 +23,57 @@ const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
     >
       <div className="w-full h-full absolute inset-0 opacity-20"></div>
       <nav className="flex flex-col items-center justify-center h-full relative z-20 text-white uppercase text-2xl gap-6">
-        <Link href={'/services'}>Services</Link>
-        <Link href={'/about-us'}>About us</Link>
-        <Link href={'/benefits'}>Benefits</Link>
-        <Link href={'/cases'}>Cases</Link>
+        <ScrollLink
+          onClick={() => {
+            router.push('#services');
+            handleClick();
+          }}
+          to="services"
+          smooth={true}
+          duration={800}
+          offset={-100}
+        >
+          Services
+        </ScrollLink>
+
+        <ScrollLink
+          onClick={() => {
+            router.push('#about-us');
+            handleClick();
+          }}
+          to="about-us"
+          smooth={true}
+          duration={800}
+          offset={-100}
+        >
+          About us
+        </ScrollLink>
+
+        <ScrollLink
+          onClick={() => {
+            router.push('#benefits');
+            handleClick();
+          }}
+          to="benefits"
+          smooth={true}
+          duration={800}
+          offset={-100}
+        >
+          Benefits
+        </ScrollLink>
+
+        <ScrollLink
+          onClick={() => {
+            router.push('#cases');
+            handleClick();
+          }}
+          to="cases"
+          smooth={true}
+          duration={800}
+          offset={-100}
+        >
+          Cases
+        </ScrollLink>
       </nav>
       <IoMdClose
         size={35}

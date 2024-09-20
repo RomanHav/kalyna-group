@@ -21,7 +21,7 @@ interface ServiceProps {
 const Services: React.FC<ServiceProps> = ({ info, openModalId, handleServiceModal }) => {
   return (
     <div className="flex flex-col my-8 px-[45px] relative z-10 gap-10">
-      <Title title="Services" />
+      <Title id='services' title="Services" />
       <ul className="flex flex-col items-center gap-9">
         {info.map((infopart) => (
           <li
