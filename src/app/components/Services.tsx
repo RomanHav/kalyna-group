@@ -18,12 +18,16 @@ interface ServiceProps {
   handleServiceModal: (id: number | undefined) => void;
 }
 
-const Services: React.FC<ServiceProps> = ({ info, openModalId, handleServiceModal }) => {
+const Services: React.FC<ServiceProps> = ({
+  info,
+  openModalId,
+  handleServiceModal,
+}) => {
   return (
-    <div className="flex flex-col my-8 px-[45px] relative z-10 gap-10">
-      <Title id='services' title="Services" />
+    <div className="flex flex-col my-8 px-[45px] md:px-16 relative z-10 gap-10">
+      <Title id="services" title="Services" />
       <ul className="flex flex-col items-center gap-9">
-        {info.map((infopart) => (
+        {info.map(infopart => (
           <li
             key={infopart.id}
             className="bg-[#A3FFEB]/20 flex items-center rounded-3xl py-2 px-6"

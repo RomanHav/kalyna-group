@@ -17,8 +17,8 @@ interface CasesProps {
 
 const Cases: React.FC<CasesProps> = ({ info }) => {
   return (
-    <div className="flex flex-col my-8 px-[45px] relative gap-10">
-      <Title id='cases' title="Cases" />
+    <div className="flex flex-col my-8 px-[45px]  relative gap-10">
+      <Title id="cases" title="Cases" />
       <ul className="flex flex-col items-center gap-9">
         {info.map(infopart => (
           <li
