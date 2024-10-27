@@ -25,19 +25,19 @@ const Footer = () => {
       <div className="flex flex-col px-[45px]">
         <div className="flex flex-col items-center justify-center relative">
           <form
-            className="flex flex-col w-full relative bg-form bg-contain rounded-2xl text-white items-center justify-center py-8 gap-6"
+            className="flex flex-col w-full relative bg-form bg-contain rounded-2xl text-white items-center justify-center px-7 py-8 gap-6"
             onSubmit={handleSubmit}
           >
             <div className="bg-black/80 absolute z-0 w-full h-full rounded-2xl"></div>
-            <div className="flex flex-col gap-6 relative z-[5] px-7">
+            <div className="flex flex-col items-center gap-6 relative z-[5]">
               <label
-                className="text-center text-xl font-medium min-w-[245px]"
+                className="text-center max-w-[70%] text-xl font-medium"
                 htmlFor={`${id}-email`}
               >
                 Subscribe now for news and new services
               </label>
               <input
-                className="px-5 py-2 rounded-xl bg-inherit border border-white"
+                className="pl-2 py-2 max-w-[70%] rounded-xl bg-inherit border border-white"
                 id={`${id}-email`}
                 type="email"
                 value={email}
@@ -74,10 +74,13 @@ const Footer = () => {
         <div className="flex flex-col justify-center items-center gap-10">
           <div className="flex flex-col justify-center items-center gap-6 text-white">
             <span className="text-3xl uppercase font-medium">Get in touch</span>
-            <a className="text-xl font-light" href="">
+            <a className="text-xl font-light" href="tel:+380955083323">
               +380 (95) 508 33 23
             </a>
-            <a className="text-xl font-light" href="">
+            <a
+              className="text-xl font-light"
+              href="mailto:info@kalynagroup.com"
+            >
               info@kalynagroup.com
             </a>
           </div>
