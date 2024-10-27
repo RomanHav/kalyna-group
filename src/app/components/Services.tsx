@@ -24,9 +24,9 @@ const Services: React.FC<ServiceProps> = ({
   handleServiceModal,
 }) => {
   return (
-    <div className="flex flex-col my-8 px-[45px] md:px-16 relative z-10 gap-10">
+    <div className="flex flex-col my-8 md:my-10 px-[45px] md:px-16 relative z-10 gap-10">
       <Title id="services" title="Services" />
-      <ul className="flex flex-col items-center gap-9">
+      <ul className="flex flex-wrap justify-center items-center gap-9 md:justify-between ">
         {info.map(infopart => (
           <li
             key={infopart.id}
