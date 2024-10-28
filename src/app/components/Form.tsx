@@ -78,7 +78,7 @@ const MyForm: React.FC = () => {
                 Name: <span className="text-red-600">*</span>
               </label>
               <Field
-                className="w-full rounded-xl border-black border py-1 px-3"
+                className="w-full rounded-xl border-black border py-1 md:py-3 px-3"
                 type="text"
                 name="namePerson"
                 placeholder="John"
@@ -90,7 +90,7 @@ const MyForm: React.FC = () => {
                 Email: <span className="text-red-600">*</span>
               </label>
               <Field
-                className="w-full rounded-xl border-black border py-1 px-3"
+                className="w-full rounded-xl border-black border py-1 md:py-3 px-3"
                 type="email"
                 name="emailPerson"
                 placeholder="example@info.com"
@@ -113,7 +113,7 @@ const MyForm: React.FC = () => {
                   width: '100%',
                   paddingLeft: '50px',
                   borderRadius: '8px',
-                //   border: '1px solid black',
+                  //   border: '1px solid black',
                 }}
               />
             </div>
@@ -128,7 +128,7 @@ const MyForm: React.FC = () => {
                 className="relative inline-block text-left"
               >
                 <div>
-                  <MenuButton className="inline-flex w-full justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                  <MenuButton className="inline-flex w-full justify-between gap-x-1.5 rounded-md bg-white px-3 md:py-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                     {interested || 'Select an option'}
                     <ChevronDownIcon
                       aria-hidden="true"

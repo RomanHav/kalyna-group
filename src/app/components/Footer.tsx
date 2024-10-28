@@ -31,13 +31,13 @@ const Footer = () => {
             <div className="bg-black/80 absolute z-0 w-full h-full rounded-2xl"></div>
             <div className="flex flex-col items-center gap-6 relative z-[5]">
               <label
-                className="text-center max-w-[70%] text-xl font-medium"
+                className="text-center max-w-[70%] md:max-w-fit text-xl md:text-2xl font-medium"
                 htmlFor={`${id}-email`}
               >
                 Subscribe now for news and new services
               </label>
               <input
-                className="pl-2 py-2 max-w-[70%] rounded-xl bg-inherit border border-white"
+                className="pl-2 py-2 max-w-[70%] md:max-w-fit rounded-xl bg-inherit border border-white"
                 id={`${id}-email`}
                 type="email"
                 value={email}
