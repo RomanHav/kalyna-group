@@ -27,14 +27,15 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
       <div>
         <Swiper
           modules={[Navigation, Keyboard]}
-          spaceBetween={32}
           slidesPerView={'auto'}
           breakpoints={{
             375: {
               slidesPerView: 1,
+              spaceBetween:32
             },
             768: {
               slidesPerView: 2,
+              spaceBetween: 16
             },
             1440: {
               slidesPerView: 4,

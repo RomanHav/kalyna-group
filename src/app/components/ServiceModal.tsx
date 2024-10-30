@@ -41,16 +41,16 @@ const ServiceModal: React.FC<ServiceModalProps> = ({
       }`}
     >
       <div className="w-full h-full absolute inset-0 opacity-20"></div>
-      <div className="relative z-[70] text-white p-6">
-        <h3 className="text-2xl font-semibold mb-4 uppercase">{title}</h3>
-        <p className="mb-2">{firstDescription}</p>
-        <p className="mb-2">{secondDescription}</p>
-        <p className="mb-2">{thirdDescription}</p>
-        <span className="text-sm">{span}</span>
+      <div className="relative z-[70] text-white p-6 md:px-16">
+        <h3 className="text-2xl font-semibold mb-4 uppercase md:text-3xl md:mb-10">{title}</h3>
+        <p className="mb-2 md:text-xl">{firstDescription}</p>
+        <p className="mb-2 md:text-xl">{secondDescription}</p>
+        <p className="mb-2 md:text-xl md:mb-10">{thirdDescription}</p>
+        <span className="text-sm md:text-lg">{span}</span>
       </div>
       <IoMdClose
         size={35}
-        className="absolute top-7 right-6 z-20 fill-white cursor-pointer"
+        className="absolute top-7 right-6 z-20 md:right-12 md:top-10 fill-white cursor-pointer"
         onClick={() => handleServiceModal(id)}
       />
     </div>

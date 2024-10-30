@@ -37,7 +37,7 @@ const Footer = () => {
                 Subscribe now for news and new services
               </label>
               <input
-                className="pl-2 py-2 max-w-[70%] md:max-w-fit rounded-xl bg-inherit border border-white"
+                className="pl-2 py-2 max-w-[70%] md:w-full rounded-xl bg-inherit border border-white"
                 id={`${id}-email`}
                 type="email"
                 value={email}
@@ -47,7 +47,7 @@ const Footer = () => {
               />
             </div>
             <button
-              className="relative z-[5] bg-gradient-to-r from-custom-blue to-custom-green text-white py-2 px-6 rounded-2xl uppercase text-[16px] font-semibold flex"
+              className="relative z-[5] bg-gradient-to-r from-custom-blue to-custom-green text-white py-2 px-6 md:px-8 rounded-2xl uppercase text-[18px] font-semibold flex"
               type="submit"
             >
               Subscribe

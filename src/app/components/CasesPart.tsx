@@ -23,27 +23,34 @@ const CasesPart: React.FC<CasesPartProps> = ({
           <span className="text-sm">{span}</span>
         </div>
       </div>
-      <div className="flex flex-col items-center w-full">
-        <h3
-          className={`${isLast ? 'text-left text-2xl' : 'text-center text-3xl'} uppercase mb-2`}
-        >
-          {title}
-        </h3>
-        {!isLast ? (
-          <a href={href} target='_blank' className="flex uppercase gap-6 border-b mb-5 p-1">
-            <span>Click here</span>
-            <Image
-              src={'/cases-arrow.svg'}
-              alt="Cases Arrow"
-              width={26}
-              height={9}
-            />
-          </a>
-        ) : (
-          <button className="flex px-4 py-1 bg-white text-black uppercase text-base font-medium rounded-xl shadow-md my-5">
-            Contact us
-          </button>
-        )}
+      <div className="flex flex-col md:items-center md:flex-row md:justify-between items-center w-full">
+        <div  className="flex flex-col items-center md:items-start md:justify-center md:pt-4">
+
+          <h3
+            className={`${isLast ? 'text-left text-2xl' : 'text-center text-3xl'} uppercase mb-2`}
+          >
+            {title}
+          </h3>
+          {!isLast ? (
+            <a
+              href={href}
+              target="_blank"
+              className="flex uppercase gap-6 border-b mb-5 p-1"
+            >
+              <span>Click here</span>
+              <Image
+                src={'/cases-arrow.svg'}
+                alt="Cases Arrow"
+                width={26}
+                height={9}
+              />
+            </a>
+          ) : (
+            <button className="flex px-4 py-1 bg-white text-black uppercase text-base font-medium rounded-xl shadow-md my-5">
+              Contact us
+            </button>
+          )}
+        </div>
         <Image
           className="w-[150px]"
           src={src}
