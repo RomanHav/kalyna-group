@@ -1,5 +1,13 @@
 import Image from 'next/image';
+import ContactUsModal from '../components/ContactUsModal';
+import { useState } from 'react';
+
 export default function HeaderVideo() {
+  const [click, setClick] = useState(false);
+  const handleClick = () => {
+    setClick(!click);
+  };
+
   return (
     <div className="bg-black/50 flex pt-36 pb-20 px-16 justify-center items-center">
       <div className=" flex md:py-0 flex-wrap gap-3 justify-center pt-36 items-center py-14  md:gap-16 md:justify-start md:pr-5  relative z-10">
@@ -14,7 +22,10 @@ export default function HeaderVideo() {
           width={240}
           height={240}
         />
-        <button className="bg-gradient-to-r from-custom-blue to-custom-green text-white py-2 px-4 rounded uppercase text-xl font-semibold">
+        <button
+          onClick={handleClick}
+          className="bg-gradient-to-r from-custom-blue to-custom-green text-white py-2 px-4 rounded uppercase text-xl font-semibold"
+        >
           Send request
         </button>
       </div>
@@ -25,6 +36,8 @@ export default function HeaderVideo() {
         width={240}
         height={240}
       />
+
+      {click && <ContactUsModal click={click} handleClick={handleClick} />}
     </div>
   );
 }

@@ -22,7 +22,7 @@ const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
       }`}
     >
       <div className="w-full h-full absolute inset-0 opacity-20"></div>
-      <nav className="flex flex-col items-center justify-center h-full relative z-20 text-white uppercase text-2xl gap-6">
+      <nav className="flex flex-col items-center justify-center h-full relative z-20 text-white uppercase text-2xl md:text-3xl md:gap-10 gap-6">
         <ScrollLink
           onClick={() => {
             router.push('#services');
@@ -77,7 +77,7 @@ const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
       </nav>
       <IoMdClose
         size={35}
-        className="absolute top-7 right-6 z-20 fill-white"
+        className="absolute top-7 right-6 z-20 fill-white md:w-14 md:right-16 md:top-9"
         onClick={handleClick}
       />
     </div>

@@ -26,6 +26,7 @@ const config: Config = {
       backgroundImage: {
         texture: "url('/background.png')",
         form: "url('/footer-form-bkg.jpg')",
+        contactUsModal: "url('/contact-us-modal.jpg')",
       },
     },
   },
