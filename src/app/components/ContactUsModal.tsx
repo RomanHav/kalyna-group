@@ -1,7 +1,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { Field, Form, Formik, FormikHelpers } from 'formik';
-import { useEffect, useId, useState } from 'react';
+import { useId, useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import * as Yup from 'yup';
 

@@ -3,8 +3,6 @@
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import ServiceModal from './ServiceModal';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import ContactUsModal from './ContactUsModal';
 
 interface ServicePartProps {
   serviceModal: number | null;
