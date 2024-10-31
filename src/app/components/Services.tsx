@@ -1,6 +1,8 @@
+'use client';
+import ContactUsModal from './ContactUsModal';
 import ServicePart from './ServicePart';
 import Title from './Title';
-
+import { useState, useEffect } from 'react';
 interface ServiceInfo {
   id: number;
   title: string;
@@ -23,31 +25,42 @@ const Services: React.FC<ServiceProps> = ({
   openModalId,
   handleServiceModal,
 }) => {
+  const [click, setClick] = useState(false);
+  const handleClick = () => {
+    setClick(!click);
+  };
+  useEffect(() => {
+    document.body.style.overflow = click ? 'hidden' : 'auto';
+  }, [click]);
   return (
-    <div className="flex flex-col my-8 md:my-10 px-[45px] md:px-16 relative z-10 gap-10">
-      <Title id="services" title="Services" />
-      <ul className="flex flex-wrap justify-center items-center gap-9 md:justify-between ">
-        {info.map(infopart => (
-          <li
-            key={infopart.id}
-            className="bg-[#A3FFEB]/20 flex items-center rounded-3xl py-2 px-6"
-          >
-            <ServicePart
-              serviceModal={openModalId}
-              handleServiceModal={handleServiceModal}
-              id={infopart.id}
-              title={infopart.title}
-              src={infopart.src}
-              price={infopart.price}
-              firstDescription={infopart.firstDescription}
-              secondDescription={infopart.secondDescription}
-              thirdDescription={infopart.thirdDescription}
-              span={infopart.span}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className="relative z-10 flex flex-col my-8 md:my-10 px-[45px] md:px-16 gap-10">
+        <Title id="services" title="Services" />
+        <ul className="flex flex-wrap justify-center items-center gap-9 md:justify-between ">
+          {info.map(infopart => (
+            <li
+              key={infopart.id}
+              className="bg-[#A3FFEB]/20 flex items-center rounded-3xl py-2 px-6"
+            >
+              <ServicePart
+                serviceModal={openModalId}
+                handleServiceModal={handleServiceModal}
+                id={infopart.id}
+                title={infopart.title}
+                src={infopart.src}
+                price={infopart.price}
+                firstDescription={infopart.firstDescription}
+                secondDescription={infopart.secondDescription}
+                thirdDescription={infopart.thirdDescription}
+                span={infopart.span}
+                handleClick={handleClick}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+      {click && <ContactUsModal click={click} handleClick={handleClick} />}
+    </>
   );
 };
 

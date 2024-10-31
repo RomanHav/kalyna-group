@@ -15,6 +15,7 @@ interface ServicePartProps {
   secondDescription: string;
   thirdDescription: string;
   span: string;
+  handleClick: () => void;
 }
 
 const ServicePart: React.FC<ServicePartProps> = ({
@@ -28,6 +29,7 @@ const ServicePart: React.FC<ServicePartProps> = ({
   secondDescription,
   thirdDescription,
   span,
+  handleClick,
 }) => {
   return (
     <>
@@ -42,7 +44,10 @@ const ServicePart: React.FC<ServicePartProps> = ({
         <div className="flex flex-col items-center gap-3 justify-center">
           <h3 className="uppercase text-xl font-semibold">{title}</h3>
           <p className="text-sm">from {price}</p>
-          <button className="bg-gradient-to-r from-custom-green to-custom-blue text-white py-2 px-6 rounded uppercase text-[16px] font-semibold flex">
+          <button
+            onClick={handleClick}
+            className="bg-gradient-to-r from-custom-green to-custom-blue text-white py-2 px-6 rounded uppercase text-[16px] font-semibold flex"
+          >
             contact
           </button>
           <button
