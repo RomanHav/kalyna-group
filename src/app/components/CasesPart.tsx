@@ -6,6 +6,7 @@ interface CasesPartProps {
   src: string;
   span: string;
   href: string;
+  handleClick: () => void;
 }
 
 const CasesPart: React.FC<CasesPartProps> = ({
@@ -14,6 +15,7 @@ const CasesPart: React.FC<CasesPartProps> = ({
   src,
   href,
   isLast,
+  handleClick,
 }) => {
   return (
     <div className="text-white w-full flex justify-center items-start flex-col">
@@ -24,8 +26,7 @@ const CasesPart: React.FC<CasesPartProps> = ({
         </div>
       </div>
       <div className="flex flex-col md:items-center md:flex-row md:justify-between items-center w-full">
-        <div  className="flex flex-col items-center md:items-start md:justify-center md:pt-4">
-
+        <div className="flex flex-col items-center md:items-start md:justify-center md:pt-4">
           <h3
             className={`${isLast ? 'text-left text-2xl' : 'text-center text-3xl'} uppercase mb-2`}
           >
@@ -46,7 +47,10 @@ const CasesPart: React.FC<CasesPartProps> = ({
               />
             </a>
           ) : (
-            <button className="flex px-4 py-1 bg-white text-black uppercase text-base font-medium rounded-xl shadow-md my-5">
+            <button
+              onClick={handleClick}
+              className="flex px-4 py-1 bg-white text-black uppercase text-base font-medium rounded-xl shadow-md my-5"
+            >
               Contact us
             </button>
           )}
