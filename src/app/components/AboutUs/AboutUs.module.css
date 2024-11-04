@@ -1,0 +1,72 @@
+/* md:text-xl */
+
+.button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  transition: background 0.3s ease-in-out;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.button::before {
+  content: 'Write us';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  background: linear-gradient(to right, #348f50, #56b4d3);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button .buttonText {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .button {
+    margin-bottom: 40px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+  }
+}

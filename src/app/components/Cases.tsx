@@ -26,13 +26,13 @@ const Cases: React.FC<CasesProps> = ({ info }) => {
   }, [click]);
   return (
     <>
-      <div className="flex flex-col my-8 px-[45px]  relative gap-10">
+      <div className="flex flex-col my-8 px-[45px] relative gap-10 lg:px-24 lg:my-16">
         <Title id="cases" title="Cases" />
-        <ul className="flex flex-col items-center gap-9 md:px-16">
+        <ul className="flex flex-col flex-wrap items-center gap-9 md:px-16 lg:px-0 lg:flex-row lg:justify-center lg:gap-11">
           {info.map(infopart => (
             <li
               key={nanoid()}
-              className={`${infopart.color} flex w-full items-center rounded-3xl py-3 md:py-4 px-5`}
+              className={`${infopart.color} flex w-full items-center rounded-3xl py-3 md:py-4 px-5 lg:w-[600px] lg:h-[220px] lg:py-4 lg:px-8`}
             >
               <CasesPart
                 span={infopart.span}

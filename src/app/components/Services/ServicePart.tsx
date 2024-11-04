@@ -1,8 +1,9 @@
 'use client';
 
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import ServiceModal from './ServiceModal';
+import ServiceModal from '../ServiceModal';
 import Image from 'next/image';
+import css from './ServicePart.module.css';
 
 interface ServicePartProps {
   serviceModal: number | null;
@@ -33,22 +34,21 @@ const ServicePart: React.FC<ServicePartProps> = ({
 }) => {
   return (
     <>
-      <div className="flex flex-col gap-5 items-center text-white">
+      <div className="flex flex-col gap-5 items-center text-white lg:flex-row lg:gap-10">
         <Image
-          className="w-60"
+          className="w-60 lg:w-44"
           src={src}
           alt="Service Image"
           width={513}
           height={515}
         />
         <div className="flex flex-col items-center gap-3 justify-center">
-          <h3 className="uppercase text-xl font-semibold">{title}</h3>
+          <h3 className="uppercase text-xl font-semibold lg:text-center">
+            {title}
+          </h3>
           <p className="text-sm">from {price}</p>
-          <button
-            onClick={handleClick}
-            className="bg-gradient-to-r from-custom-green to-custom-blue text-white py-2 px-6 rounded uppercase text-[16px] font-semibold flex"
-          >
-            contact
+          <button onClick={handleClick} className={css.button}>
+            <span className={css.buttonText}>contact</span>
           </button>
           <button
             onClick={() => handleServiceModal(id)}
