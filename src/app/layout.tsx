@@ -22,7 +22,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${poppins.className} antialiased relative`}>
-				<div className="bg-texture absolute inset-0 top-0 left-0 w-full h-full bg-repeat-y opacity-20"></div>
+				<div className="bg-texture absolute inset-0 top-0 left-0 w-full h-full bg-repeat-y lg:bg-cover opacity-20"></div>
 				{children}
 			</body>
 		</html>

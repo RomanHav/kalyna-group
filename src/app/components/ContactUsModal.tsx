@@ -58,11 +58,11 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({
     <div className="fixed inset-0 z-[9999] w-full h-full backdrop-blur-md">
       <div className="absolute  rounded-3xl bg-contactUsModal bg-center bg-cover text-white  w-[90%] h-[660px] top-[10px] left-[5%]">
         <div className="absolute inset-0 w-full h-full rounded-3xl bg-black/80"></div>
-        <div className="relative z-50 gap-5 px-6 py-8 flex flex-col">
+        <div className="relative z-50 gap-5 md:gap-3 px-6 py-8 md:py-6 flex flex-col">
           <IoMdClose
             size={35}
             onClick={handleClick}
-            className="absolute w-7 top-5 right-5 z-20 fill-white md:w-14 md:right-16 md:top-9 cursor-pointer"
+            className="absolute w-7 top-5 right-5 z-20 fill-white md:w-12 md:right-6 md:top-5 cursor-pointer"
           />
           <h2 className="text-center uppercase text-2xl">Contact Us</h2>
           <Formik
@@ -71,7 +71,7 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({
             validationSchema={FeedbackSchema}
           >
             {({ setFieldValue }) => (
-              <Form className="flex flex-col gap-5 bg-inherit">
+              <Form className="flex flex-col gap-5 md:gap-3 bg-inherit">
                 <div className="flex flex-col gap-2">
                   <label className="text-base" htmlFor={`${id}-name`}>
                     Name: <span className="text-red-600">*</span>
