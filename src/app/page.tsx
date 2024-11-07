@@ -15,6 +15,8 @@ import Footer from './components/Footer/Footer';
 import seviceInfo from '../../serviceInfo.json';
 import benefitsInfo from '../../benefitsInfo.json';
 import casesInfo from '../app/casesInfo.json';
+import { Provider } from 'react-redux';
+import { store } from '@/app/redux/store';
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +36,7 @@ export default function App() {
   };
 
   return (
-    <div>
+    <Provider store={store}>
       <div className={`${isOpen ? 'blur-sm' : ''}`}>
         <NavBar handleClick={handleClick} openModalId={openModalId} />
         <HeaderVideo />
@@ -51,6 +53,6 @@ export default function App() {
         <Footer />
       </div>
       <Burger isOpen={isOpen} handleClick={handleClick} />
-    </div>
+    </Provider>
   );
 }
