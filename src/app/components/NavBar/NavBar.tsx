@@ -4,6 +4,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import React, { useState, useEffect } from 'react';
 import css from './NavBar.module.css';
 import ContactUsModal from '../ContactUsModal';
+import { IoIosLink } from 'react-icons/io';
 
 interface NavBarProps {
   handleClick: () => void;
@@ -59,7 +60,7 @@ const NavBar: React.FC<NavBarProps> = ({ handleClick, openModalId }) => {
             </button>
           ) : (
             <div className="flex items-center">
-              <div className="flex gap-8 text-white mr-[390px] text-xl uppercase">
+              <div className="flex items-center gap-8 text-white mr-[340px] text-xl uppercase">
                 <div className="relative">
                   <ScrollLink
                     to="services"
@@ -71,7 +72,9 @@ const NavBar: React.FC<NavBarProps> = ({ handleClick, openModalId }) => {
                     Services
                   </ScrollLink>
                 </div>
-                <span>/</span>
+                <span>
+                  <IoIosLink size={25} />
+                </span>
                 <div className="relative">
                   <ScrollLink
                     to="about-us"
@@ -83,7 +86,9 @@ const NavBar: React.FC<NavBarProps> = ({ handleClick, openModalId }) => {
                     About us
                   </ScrollLink>
                 </div>
-                <span>/</span>
+                <span>
+                  <IoIosLink size={25} />
+                </span>
                 <div className="relative">
                   <ScrollLink
                     to="benefits"
@@ -95,7 +100,9 @@ const NavBar: React.FC<NavBarProps> = ({ handleClick, openModalId }) => {
                     Benefits
                   </ScrollLink>
                 </div>
-                <span>/</span>
+                <span>
+                  <IoIosLink size={25} />
+                </span>
                 <div className="relative">
                   <ScrollLink
                     to="cases"
