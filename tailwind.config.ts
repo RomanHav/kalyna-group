@@ -32,6 +32,7 @@ const config: Config = {
         form: "url('/footer-form-bkg.jpg')",
         contactUsModal: "url('/doodad.jpg')",
         bkgForm: "url('/bkg-form.jpg')",
+        test: "url('/contact-us-form.jpg')",
       },
     },
   },

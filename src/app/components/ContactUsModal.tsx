@@ -56,8 +56,8 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-[9999] w-full h-full backdrop-blur-md">
-      <div className="absolute  rounded-3xl bg-contactUsModal bg-center bg-cover text-white  w-[90%] h-[660px] top-[10px] left-[5%]">
-        <div className="absolute inset-0 w-full h-full rounded-3xl bg-black/80"></div>
+      <div className="absolute  rounded-3xl bg-test bg-center bg-cover text-white  w-[90%] h-[660px] top-[10px] left-[5%] lg:top-1/2 lg:left-1/2 lg:translate-x-[-50%] lg:translate-y-[-50%] lg:w-[60%]">
+        <div className="absolute inset-0 w-full h-full rounded-3xl bg-black/30"></div>
         <div className="relative z-50 gap-5 md:gap-3 px-6 py-8 md:py-6 flex flex-col">
           <IoMdClose
             size={35}
@@ -151,7 +151,7 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({
                     </MenuItems>
                   </Menu>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 lg:mb-3">
                   <label className="text-base" htmlFor={`${id}-textarea`}>
                     Put some details here:
                   </label>
@@ -166,7 +166,7 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({
                   />
                 </div>
                 <button
-                  className="bg-custom-button text-white py-2 px-6 rounded-2xl uppercase text-xl font-semibold"
+                  className="bg-custom-button text-white py-2 px-6 rounded-2xl border border-custom-button uppercase text-xl font-semibold hover:bg-white hover:text-black hover:border hover:border-black hover:duration-700 lg:w-[200px] lg:rounded-xl"
                   type="submit"
                 >
                   Send Message
