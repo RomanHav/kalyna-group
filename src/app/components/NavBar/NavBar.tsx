@@ -12,7 +12,6 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ handleClick, openModalId }) => {
   const [isMobile, setIsMobile] = useState(false);
-
   const [click, setClick] = useState(false);
   const handleOpen = () => {
     setClick(!click);
