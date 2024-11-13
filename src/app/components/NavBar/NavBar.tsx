@@ -20,7 +20,7 @@ const NavBar: React.FC<NavBarProps> = ({ handleClick, openModalId }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+      setIsMobile(window.matchMedia('(max-width: 1024px)').matches);
     };
     handleResize(); // Set initial state based on current window width
     window.addEventListener('resize', handleResize);
@@ -51,7 +51,7 @@ const NavBar: React.FC<NavBarProps> = ({ handleClick, openModalId }) => {
               aria-label="Toggle menu"
             >
               <Image
-                className="md:w-14"
+                className="md:w-14 lg:w-20"
                 src={'/Menu.svg'}
                 alt="Burger Button"
                 width={50}
@@ -60,7 +60,7 @@ const NavBar: React.FC<NavBarProps> = ({ handleClick, openModalId }) => {
             </button>
           ) : (
             <div className="flex items-center">
-              <div className="flex items-center gap-8 text-white mr-[340px] text-xl uppercase">
+              <div className="flex items-center gap-8 text-white xl:mr-[90px] min-[1440px]:mr-[340px] text-xl uppercase">
                 <div className="relative">
                   <ScrollLink
                     to="services"

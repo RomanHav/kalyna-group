@@ -34,7 +34,7 @@ const ServicePart: React.FC<ServicePartProps> = ({
 }) => {
   return (
     <>
-      <div className="flex flex-col gap-5 items-center text-white lg:flex-row lg:gap-10">
+      <div className="flex flex-col gap-5 items-center text-white lg:flex-row lg:gap-10 xl:gap-16 min-[1440px]:gap-10">
         <Image
           className="w-60 lg:w-44"
           src={src}

@@ -36,11 +36,11 @@ const Services: React.FC<ServiceProps> = ({
     <>
       <div className="relative z-10 flex flex-col my-8 md:my-10 px-[45px] md:px-16 gap-10 lg:px-24 lg:pb-16">
         <Title id="services" title="Services"/>
-        <ul className="flex flex-col flex-wrap justify-center items-center gap-9 md:justify-between md:flex-row lg:justify-center lg:gap-10">
+        <ul className="flex flex-col flex-wrap justify-center items-center gap-9 md:justify-between md:flex-row lg:justify-center lg:gap-6 xl:gap-12 min-[1440px]:gap-10">
           {info.map(infopart => (
             <li
               key={infopart.id}
-              className="bg-[#A3FFEB]/20 flex items-center rounded-3xl py-2 px-6 lg:w-[410px] lg:h-56"
+              className="bg-[#A3FFEB]/20 flex items-center rounded-3xl py-2 px-6 lg:w-[402px] lg:h-52 xl:w-[470px] xl:h-56 xl:px-12 min-[1440px]:px-6 min-[1440px]:w-[410px] min-[1440px]:h-56"
             >
               <ServicePart
                 serviceModal={openModalId}
