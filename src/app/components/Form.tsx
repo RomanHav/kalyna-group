@@ -54,7 +54,7 @@ const MyForm: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+      setIsMobile(window.matchMedia('(max-width: 1024px)').matches);
     };
 
     // Set initial value based on screen width
@@ -97,7 +97,7 @@ const MyForm: React.FC = () => {
           enableReinitialize // Reinitialize when location changes
         >
           {({ setFieldValue, values, errors, touched }) => (
-            <Form className="flex flex-col gap-5 bg-white rounded-3xl p-6 md:p-10 lg:bg-custom-form lg:w-[560px]">
+            <Form className="flex flex-col gap-5 bg-white rounded-3xl p-6 md:p-10 lg:bg-custom-form lg:w-full xl:w-[560px]">
               <div className="flex flex-col gap-2">
                 <label className="text-base" htmlFor={`${id}-name`}>
                   Name: <span className="text-red-600">*</span>

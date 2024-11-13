@@ -13,8 +13,8 @@ export default function HeaderVideo() {
   }, [click]);
   return (
     <div className="bg-black/50 flex pt-20 md:pt-36 pb-20 px-16 justify-center items-center lg:px-24 lg:pt-52 lg:pb-12">
-      <div className=" flex md:py-0 flex-wrap gap-3 justify-center items-center py-14  md:gap-16 md:justify-start md:pr-5  relative z-10 lg:w-[746px] lg:mr-6 lg:gap-20">
-        <p className="px-14 md:px-0 md:text-3xl  bg-gradient-to-r from-white to-custom-green bg-clip-text text-transparent text-center md:text-left uppercase text-2xl font-semibold lg:text-5xl lg:leading-[60px]">
+      <div className=" flex md:py-0 flex-wrap gap-3 justify-center items-center py-14  md:gap-16 md:justify-start md:pr-5  relative z-10 lg:w-[746px] lg:mr-6 xl:gap-20">
+        <p className="px-14 md:px-0 md:text-3xl  bg-gradient-to-r from-white to-custom-green bg-clip-text text-transparent text-center md:text-left uppercase text-2xl font-semibold xl:text-5xl xl:leading-[60px]">
           Create an Effective Website for Your Business With Us
         </p>
         <Image

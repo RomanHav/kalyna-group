@@ -16,7 +16,7 @@ const AboutUs = () => {
     <>
       <div className="flex flex-col my-8 px-[45px] relative gap-10 lg:mt-16 lg:my-8 lg:px-24">
         <Title id="about-us" title="About Us" />
-        <div className="flex flex-col justify-center items-center bg-[#A3FFEB]/10 p-5 rounded-3xl lg:flex-row lg:px-20 lg:py-9 lg:justify-between">
+        <div className="flex flex-col justify-center items-center bg-[#A3FFEB]/10 p-5 rounded-3xl lg:flex-row xl:px-16 lg:gap-8 xl:gap-14 min-[1440px]:px-20 lg:py-9 lg:justify-between">
           <div>
             <Image
               className="w-[170px] md:w-[330px] mb-7 lg:w-[380px] lg:mb-0"

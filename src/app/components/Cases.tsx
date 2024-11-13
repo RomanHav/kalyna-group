@@ -32,7 +32,7 @@ const Cases: React.FC<CasesProps> = ({ info }) => {
           {info.map(infopart => (
             <li
               key={nanoid()}
-              className={`${infopart.color} flex w-full items-center rounded-3xl py-3 md:py-4 px-5 lg:w-[600px] lg:h-[220px] lg:py-4 lg:px-8`}
+              className={`${infopart.color} flex w-full items-center rounded-3xl py-3 md:py-4 px-5 lg:w-[600px] xl:w-[500px] xl:h-[200px] min-[1440px]:w-[600px] min-[1440px]:h-[220px] lg:py-4 lg:px-8`}
             >
               <CasesPart
                 span={infopart.span}
