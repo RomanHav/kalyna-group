@@ -38,7 +38,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <div className={`${isOpen ? 'blur-sm' : ''}`}>
-        <NavBar handleClick={handleClick} openModalId={openModalId} />
+        <NavBar handleClick={handleClick} />
         <HeaderVideo />
         <Services
           info={seviceInfo}
