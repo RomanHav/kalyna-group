@@ -1,5 +1,5 @@
 import { serverKalyna } from './serverKalyna.js';
-import { initMongoDB } from './db/initMongoDB.js';
+import  {initMongoDB } from './db/initMongoDB.js';
 
 const bootstrap = async () => {
   await initMongoDB();
