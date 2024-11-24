@@ -23,7 +23,7 @@
 }
 
 .button::before {
-  content: 'Subscribe';
+  content: '';
   position: absolute;
   inset: 0;
   display: flex;

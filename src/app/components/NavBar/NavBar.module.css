@@ -21,7 +21,7 @@
 }
 
 .button::before {
-  content: 'Contact Us';
+  content: '';
   position: absolute;
   inset: 0;
   display: flex;
