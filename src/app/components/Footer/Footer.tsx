@@ -5,7 +5,8 @@ import FooterRunningLine from '../FooterRunningLine';
 import { IoLogoInstagram } from 'react-icons/io5';
 import { FaLinkedin, FaBehance } from 'react-icons/fa';
 import { useId } from 'react';
-import css from './Footer.module.css'
+import css from './Footer.module.css';
+import dynamic from 'next/dynamic';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -20,6 +21,10 @@ const Footer = () => {
     evt.preventDefault();
     console.log({ email });
   };
+
+  const CalendlyEmbed = dynamic(() => import('../CalendlyEmbed'), {
+    ssr: false,
+  });
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 769);
@@ -58,10 +63,7 @@ const Footer = () => {
                       required
                     />
                     {isDesktop && (
-                      <button
-                        className={css.button}
-                        type="submit"
-                      >
+                      <button className={css.button} type="submit">
                         <span className={css.buttonText}>Subscribe</span>
                       </button>
                     )}
@@ -141,15 +143,7 @@ const Footer = () => {
                 <span className="text-3xl uppercase font-medium">
                   Get in touch
                 </span>
-                <div className="relative">
-                  {' '}
-                  <a
-                    className="text-xl font-light cursor-pointer after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
-                    href="tel:+380955083323"
-                  >
-                    +380 (95) 508 33 23
-                  </a>
-                </div>
+                <CalendlyEmbed url={'https://calendly.com/kalynaitgroup/30min'}/>
                 <div className="relative">
                   <a
                     className="text-xl font-light cursor-pointer after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
@@ -174,7 +168,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <span className='absolute z-20 w-full flex justify-center text-center text-white py-3 border-t border-t-white'>Kalyna Group © All rights reserved | Privacy Policies</span>
+      <span className="absolute z-20 w-full flex justify-center text-center text-white py-3 border-t border-t-white">
+        Kalyna Group © All rights reserved | Privacy Policies
+      </span>
     </div>
   );
 };

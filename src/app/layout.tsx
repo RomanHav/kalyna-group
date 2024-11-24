@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import React from 'react';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -18,9 +19,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
+      <head>
+        <title>Kalyna Group</title>
+      </head>
       <body className={`${poppins.className} antialiased relative`}>
         <div className="bg-texture absolute inset-0 top-0 left-0 w-full h-full bg-repeat-y lg:bg-cover opacity-20"></div>
         {children}
@@ -29,7 +32,13 @@ export default function RootLayout({
           type="text/javascript"
           src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RMPKqS"
         ></script>
+        <script
+          async
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+        ></script>
       </body>
+      <GoogleAnalytics gaId="G-WNLWD75BW9" />
     </html>
   );
 }
