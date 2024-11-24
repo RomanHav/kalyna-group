@@ -21,7 +21,7 @@
 }
 
 .button::before {
-  content: 'Send request';
+  content: '';
   position: absolute;
   inset: 0;
   display: flex;
