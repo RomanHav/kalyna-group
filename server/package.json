@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "eslint src/**/*.js",
     "start": "node ./src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "sync": "node ./src/syncClients.js"
   },
   "keywords": [],
   "author": "Roman Havrylov <roman14082004@gmail.com>",
