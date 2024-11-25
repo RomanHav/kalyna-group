@@ -1,13 +1,11 @@
-import dotenv from 'dotenv';
+// src/utils/env.js
+import dotenv from 'dotenv'
 
-dotenv.config();
-
-export function env(name, defaultName) {
-  const value = process.env[name];
-
-  if (value) return value;
-
-  if (defaultName) return defaultName;
-
-  throw new Error(`Missing: process.env['${name}'].`);
-}
+dotenv.config()
+export const env = (key) => {
+    const value = process.env[key];
+    if (!value) {
+        throw new Error(`Environment variable ${key} is not defined`);
+    }
+    return value;
+};
