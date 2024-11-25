@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import axios from 'axios';
 import { env } from '../utils/env.js';
-import { ClientsCollection } from '../db/models/clients.js';
+import { ClientsCollection } from './models/clients.js';
 
 export const initMongoDB = async () => {
   try {
