@@ -1,6 +1,7 @@
 // src/app.js
 
 import express from 'express';
+import cors from 'cors'; // Import the cors package
 import { initMongoDB } from './db/initMongoDB.js';
 import clientsRoutes from './routes/clients.js';
 import { errorHandler } from './middleware/errorHandler.js';
@@ -10,6 +11,8 @@ const app = express();
 const startServer = async () => {
     try {
         await initMongoDB();
+
+        app.use(cors());
 
         app.use(express.json());
 
