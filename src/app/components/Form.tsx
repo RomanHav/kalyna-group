@@ -81,6 +81,7 @@ const MyForm: React.FC = () => {
 
   const handleSubmit = (values: FormValues, actions: FormikHelpers<FormValues>) => {
     dispatch(submitForm(values));
+    console.log(values);
     actions.resetForm();
   };
 
@@ -135,7 +136,9 @@ const MyForm: React.FC = () => {
                 <PhoneInput
                   country={countryCode.toLowerCase()}
                   value={values.phoneNumber}
-                  onChange={(phoneNumber) => setFieldValue('phoneNumber', phoneNumber)}
+                  onChange={phoneNumber =>
+                    setFieldValue('phoneNumber', `+${phoneNumber}`)
+                  }
                   inputProps={{
                     name: 'phoneNumber',
                     required: true,
@@ -146,10 +149,6 @@ const MyForm: React.FC = () => {
                     borderRadius: '8px',
                     height: '42px',
                   }}
-                  countryCodeEditable={false}
-                  enableAreaCodes={true}
-                  enableLongNumbers={true}
-                  autoFormat={true}
                 />
                 {errors.phoneNumber && touched.phoneNumber && (
                   <div className="text-red-500">{errors.phoneNumber}</div>
@@ -157,7 +156,8 @@ const MyForm: React.FC = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-base" htmlFor={`${id}-choose`}>
-                  What are you interested in: <span className="text-red-600">*</span>
+                  What are you interested in:{' '}
+                  <span className="text-red-600">*</span>
                 </label>
                 <Menu
                   id={`${id}-choose`}
@@ -174,9 +174,7 @@ const MyForm: React.FC = () => {
                     </MenuButton>
                   </div>
 
-                  <MenuItems
-                    className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                  >
+                  <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
                       {[
                         'Landing Page',
@@ -185,13 +183,17 @@ const MyForm: React.FC = () => {
                         'Business Website',
                         'CRM System',
                         '3D Design',
-                      ].map((option) => (
+                      ].map(option => (
                         <MenuItem key={option}>
                           {({ active }) => (
                             <p
-                              onClick={() => setFieldValue('selectOption', option)}
+                              onClick={() =>
+                                setFieldValue('selectOption', option)
+                              }
                               className={`block px-4 py-2 text-sm ${
-                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                                active
+                                  ? 'bg-gray-100 text-gray-900'
+                                  : 'text-gray-700'
                               }`}
                             >
                               {option}
