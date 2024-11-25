@@ -1,44 +1,14 @@
-import { model, Schema } from 'mongoose';
+// src/db/models/clients.js
 
-const clientSchema = new Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      required: true,
-    },
-    phoneNumber: {
-      type: String,
-      required: false,
-    },
-    selectOption: {
-      type: String,
-      required: true,
-      enum: [
-        'Landing Page',
-        'E-Commerce',
-        'UI/UX Design',
-        'Business Website',
-        'CRM System',
-        '3D Design',
-      ],
-    },
-    message: {
-      type: String,
-      required: false,
-    },
-    location: {
-      type: String,
-      required: true,
-    },
-  },
-  {
-    timestamps: true,
-    versionKey: false,
-  },
-);
+import mongoose from 'mongoose';
 
-export const ClientsCollection = model('clients', clientSchema);
+const clientsSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    phoneNumber: String,
+    selectOption: String,
+    message: String,
+    location: String,
+});
+
+export const ClientsCollection = mongoose.model('Client', clientsSchema);
