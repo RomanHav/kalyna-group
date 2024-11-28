@@ -6,6 +6,23 @@
   --background: #152220;
   --foreground: #171717;
   --swiper-navigation-size: 30px !important;
+  --secondary-glow: conic-gradient(
+    from 10deg at 50% 50%,
+    #017180 0deg,
+    #36D1DC 55deg,
+    #97b5da 120deg,
+    #38EF7D 160deg,
+    transparent 360deg
+  );
+
+  --third-glow: conic-gradient(
+    from 90deg at 50% 50%,
+    #FFD35A 0deg,
+    #38EF7D 160deg,
+    #7ed2da 120deg,
+    #8bdce0 55deg,
+    transparent 360deg
+  );
 }
 
 body {
@@ -16,7 +33,7 @@ body {
 
 @font-face {
   font-family: 'Pirulen';
-  src: url('../app/fonts/pirulen\ rg.otf') format('opentype');
+  src: url('../app/fonts/pirulen rg.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }

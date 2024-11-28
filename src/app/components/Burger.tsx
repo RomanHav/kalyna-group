@@ -32,6 +32,7 @@ const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
           smooth={true}
           duration={800}
           offset={-100}
+          className="cursor-pointer"
         >
           Services
         </ScrollLink>
@@ -44,6 +45,7 @@ const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
           to="about-us"
           smooth={true}
           duration={800}
+          className="cursor-pointer"
           offset={-100}
         >
           About us
@@ -55,6 +57,7 @@ const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
             handleClick();
           }}
           to="benefits"
+          className="cursor-pointer"
           smooth={true}
           duration={800}
           offset={-100}
@@ -67,6 +70,7 @@ const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
             router.push('#cases');
             handleClick();
           }}
+          className="cursor-pointer"
           to="cases"
           smooth={true}
           duration={800}
