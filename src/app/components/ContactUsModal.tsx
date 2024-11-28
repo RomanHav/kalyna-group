@@ -57,10 +57,10 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({ click, handleClick }) =
   if (!click) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] w-full h-full backdrop-blur-md">
+    <div className="fixed inset-0 z-[60] w-full h-full backdrop-blur-md">
       <div className="absolute rounded-3xl bg-test bg-center bg-cover text-white w-[90%] h-[660px] top-[10px] left-[5%] lg:top-1/2 lg:left-1/2 lg:translate-x-[-50%] lg:translate-y-[-50%] lg:w-[60%]">
         <div className="absolute inset-0 w-full h-full rounded-3xl bg-black/30"></div>
-        <div className="relative z-50 gap-5 md:gap-3 px-6 py-8 md:py-6 flex flex-col">
+        <div className="relative z-[9999] gap-5 md:gap-3 px-6 py-8 md:py-6 flex flex-col">
           <IoMdClose
             size={35}
             onClick={handleClick}

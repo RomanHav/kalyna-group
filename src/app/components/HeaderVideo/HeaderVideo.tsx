@@ -1,4 +1,3 @@
-
 import ContactUsModal from '../ContactUsModal';
 import { useEffect, useRef, useState } from 'react';
 import css from './HeaderVideo.module.css';
@@ -49,10 +48,13 @@ export default function HeaderVideo() {
   }, []);
 
   return (
-    <div
-      className={`${css.headerContainer} min-h-screen flex pt-28 md:pt-36 pb-20 px-16 justify-center items-center lg:px-24 lg:pt-64 lg:pb-12 contain-paint`}
-    >
-      <div className={'absolute w-full h-full inset-0 bg-black/50 z-[1]'}></div>
+    <>
+      <div
+        className={`${css.headerContainer} min-h-screen flex pt-28 md:pt-36 pb-20 px-16 justify-center items-center lg:px-24 lg:pt-64 lg:pb-12 contain-paint`}
+      >
+        <div
+          className={'absolute w-full h-full inset-0 bg-black/50 z-[1]'}
+        ></div>
 
         <div className="flex flex-col justify-between items-center py-14 md:py-0 md:gap-16 relative z-10 lg:w-[746px] lg:mr-6 xl:gap-20 h-full">
           {/* Контейнер с position: relative */}
@@ -82,8 +84,8 @@ export default function HeaderVideo() {
             <span className={css.buttonText}>Send request</span>
           </button>
         </div>
-
-        {click && <ContactUsModal click={click} handleClick={handleClick} />}
       </div>
+      {click && <ContactUsModal click={click} handleClick={handleClick} />}
+    </>
   );
 }
