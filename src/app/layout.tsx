@@ -21,6 +21,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="description"
+          content="Create an Effective Website for Your Business With Us"
+        />
+        <link rel="icon" href="./favicon.ico" />
+        <link rel="apple-touch-icon" href="./apple-icon.png" />
+        <link rel="icon" type="image/png" href="./icon.svg" />
+      </head>
       <body className={`${poppins.className} antialiased relative`}>
         <div className="bg-texture absolute inset-0 top-0 left-0 w-full h-full bg-repeat-y lg:bg-cover opacity-20"></div>
         {children}
