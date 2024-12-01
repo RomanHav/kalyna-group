@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { Field, Form, Formik } from 'formik';
@@ -8,16 +8,28 @@ import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLocation } from '@/app/redux/location/operations';
 import { submitForm } from '@/app/redux/formValues/operations'; // Ensure the path is correct
-import { selectCountryName, selectLocationLoading } from '@/app/redux/location/selectors';
-import { selectSubmitError, selectSubmitLoading, selectSubmitSuccess } from '@/app/redux/formValues/selectors'; // Ensure the path is correct
+import {
+  selectCountryName,
+  selectLocationLoading,
+} from '@/app/redux/location/selectors';
+import {
+  selectSubmitError,
+  selectSubmitLoading,
+  selectSubmitSuccess,
+} from '@/app/redux/formValues/selectors'; // Ensure the path is correct
 import { AppDispatch } from '@/app/redux/store';
+
 
 interface ContactUsModalProps {
   click: boolean;
   handleOpen: () => void;
 }
 
-const ContactUsModal: React.FC<ContactUsModalProps> = ({ click, handleOpen }) => {
+const ContactUsModal: React.FC<ContactUsModalProps> = ({
+  click,
+  handleOpen,
+
+}) => {
   const dispatch = useDispatch<AppDispatch>();
   const countryName = useSelector(selectCountryName);
   const locationLoading = useSelector(selectLocationLoading);
@@ -33,7 +45,10 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({ click, handleOpen }) =>
   const [interested, setInterested] = useState('');
 
   const FeedbackSchema = Yup.object().shape({
-    name: Yup.string().min(2, 'Too Short!').max(30, 'Too Long!').required('Required'),
+    name: Yup.string()
+      .min(2, 'Too Short!')
+      .max(30, 'Too Long!')
+      .required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     phoneNumber: Yup.string().min(10, 'Too Short!'),
     selectOption: Yup.string().required('Please select an option'),
@@ -124,7 +139,8 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({ click, handleOpen }) =>
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-base">
-                    What are you interested in: <span className="text-red-600">*</span>
+                    What are you interested in:{' '}
+                    <span className="text-red-600">*</span>
                   </label>
                   <Menu as="div" className="relative inline-block text-left">
                     <div>
@@ -145,7 +161,7 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({ click, handleOpen }) =>
                           'Business Website',
                           'CRM System',
                           '3D Design',
-                        ].map((option) => (
+                        ].map(option => (
                           <MenuItem key={option}>
                             {({ active }) => (
                               <p
@@ -154,7 +170,9 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({ click, handleOpen }) =>
                                   setFieldValue('selectOption', option);
                                 }}
                                 className={`block px-4 py-2 text-sm ${
-                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                                  active
+                                    ? 'bg-gray-100 text-gray-900'
+                                    : 'text-gray-700'
                                 }`}
                               >
                                 {option}

@@ -46,7 +46,7 @@ const Cases: React.FC<CasesProps> = ({ info }) => {
           ))}
         </ul>
       </div>
-      {click && <ContactUsModal click={click} handleClick={handleClick} />}
+      {click && <ContactUsModal click={click} handleOpen={handleClick} />}
     </>
   );
 };

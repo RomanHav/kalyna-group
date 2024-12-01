@@ -153,7 +153,7 @@ const NavBar: React.FC = ( ) => {
         </div>
       </nav>
       {isOpen && <Burger isOpen={isOpen} handleClick={handleClick} />}
-      {click && <ContactUsModal click={click} handleClick={handleOpen} />}
+      {click && <ContactUsModal click={click} handleOpen={handleOpen} />}
     </div>
   );
 };
