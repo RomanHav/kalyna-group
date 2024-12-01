@@ -59,7 +59,7 @@ const Services: React.FC<ServiceProps> = ({
           ))}
         </ul>
       </div>
-      {click && <ContactUsModal click={click} handleClick={handleClick} />}
+      {click && <ContactUsModal click={click} handleOpen={handleClick} />}
     </>
   );
 };

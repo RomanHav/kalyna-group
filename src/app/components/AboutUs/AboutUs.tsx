@@ -6,7 +6,7 @@ import css from './AboutUs.module.css';
 
 const AboutUs = () => {
   const [click, setClick] = useState(false);
-  const handleClick = () => {
+  const handleOpen = () => {
     setClick(!click);
   };
   useEffect(() => {
@@ -40,7 +40,7 @@ const AboutUs = () => {
               experience and drive business growth. With a focus on detail,
               performance, and long-term partnerships.
             </p>
-            <button onClick={handleClick} className={css.button}>
+            <button onClick={handleOpen} className={css.button}>
               <span className={css.buttonText}>Write us</span>
             </button>
             <p className="font-medium text-xl md:text-2xl text-white lg:text-xl">
@@ -50,7 +50,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      {click && <ContactUsModal click={click} handleClick={handleClick} />}
+      {click && <ContactUsModal click={click} handleOpen={handleOpen} />}
     </>
   );
 };
