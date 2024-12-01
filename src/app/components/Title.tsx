@@ -4,7 +4,7 @@ interface TitleProps {
 }
 
 const Title: React.FC<TitleProps> = ({ title, id }) => {
-  return (
+    return (
     <div className="flex justify-between items-center text-white after:content-[''] after:w-10 after:md:w-40 after:bg-white after:float-right after:h-[2px]">
       <h2
         id={id ? id : undefined}

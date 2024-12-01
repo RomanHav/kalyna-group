@@ -58,7 +58,7 @@ export const createProfileInKlaviyo = async (client) => {
             return error.response.data.errors[0]?.meta?.id;
         } else {
             console.error(
-                `Error creaing profile for ${client.email}:`,
+                `Error creating profile for ${client.email}:`,
                 error.response?.data || error.message,
             );
             throw error;
