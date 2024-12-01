@@ -12,21 +12,12 @@ import { selectCountryName, selectLocationLoading } from '@/app/redux/location/s
 import { selectSubmitError, selectSubmitLoading, selectSubmitSuccess } from '@/app/redux/formValues/selectors'; // Ensure the path is correct
 import { AppDispatch } from '@/app/redux/store';
 
-// interface FormValues {
-//   name: string;
-//   email: string;
-//   phoneNumber: string;
-//   selectOption: string;
-//   message: string;
-//   location: string;
-// }
-
 interface ContactUsModalProps {
   click: boolean;
-  handleClick: () => void;
+  handleOpen: () => void;
 }
 
-const ContactUsModal: React.FC<ContactUsModalProps> = ({ click, handleClick }) => {
+const ContactUsModal: React.FC<ContactUsModalProps> = ({ click, handleOpen }) => {
   const dispatch = useDispatch<AppDispatch>();
   const countryName = useSelector(selectCountryName);
   const locationLoading = useSelector(selectLocationLoading);
@@ -63,7 +54,7 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({ click, handleClick }) =
         <div className="relative z-[9999] gap-5 md:gap-3 px-6 py-8 md:py-6 flex flex-col">
           <IoMdClose
             size={35}
-            onClick={handleClick}
+            onClick={handleOpen}
             className="absolute w-7 top-5 right-5 z-20 fill-white md:w-12 md:right-6 md:top-5 cursor-pointer"
           />
           <h2 className="text-center uppercase text-2xl">Contact Us</h2>
@@ -81,7 +72,7 @@ const ContactUsModal: React.FC<ContactUsModalProps> = ({ click, handleClick }) =
             onSubmit={(values, actions) => {
               dispatch(submitForm(values));
               actions.resetForm();
-              handleClick();
+              handleOpen();
             }}
           >
             {({ setFieldValue, errors, touched, isSubmitting }) => (

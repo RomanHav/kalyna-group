@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
@@ -5,12 +6,12 @@ import React, { useState, useEffect } from 'react';
 import ContactUsModal from '../ContactUsModal';
 import { IoIosLink } from 'react-icons/io';
 import css from './NavBar.module.css';
+import Burger from "@/app/components/Burger";
 
-interface NavBarProps {
-  handleClick: () => void;
-}
 
-const NavBar: React.FC<NavBarProps> = ({ handleClick }) => {
+
+const NavBar: React.FC = ( ) => {
+  
   const [isMobile, setIsMobile] = useState(false);
   const [click, setClick] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
@@ -46,6 +47,12 @@ const NavBar: React.FC<NavBarProps> = ({ handleClick }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [lastScrollY]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
 
   return (
     <div>
@@ -145,7 +152,7 @@ const NavBar: React.FC<NavBarProps> = ({ handleClick }) => {
           )}
         </div>
       </nav>
-
+      {isOpen && <Burger isOpen={isOpen} handleClick={handleClick} />}
       {click && <ContactUsModal click={click} handleClick={handleOpen} />}
     </div>
   );
