@@ -7,6 +7,7 @@ import { FaLinkedin, FaBehance } from 'react-icons/fa';
 import { useId } from 'react';
 import css from './Footer.module.css';
 import CalendlyEmbed from '@/app/components/CalendlyEmbed';
+import Link from 'next/link';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -48,20 +49,20 @@ const Footer = () => {
                   >
                     Subscribe now for news and new services
                   </label>
-                    <input
-                      className="pl-2 py-2 max-w-[80%] md:max-w-full rounded-xl bg-inherit border border-white"
-                      id={`${id}-email`}
-                      type="email"
-                      value={email}
-                      onChange={handleEmail}
-                      placeholder="Your email"
-                      required
-                    />
-                    {isDesktop && (
-                      <button className={css.button} type="submit">
-                        <span className={css.buttonText}>Subscribe</span>
-                      </button>
-                    )}
+                  <input
+                    className="pl-2 py-2 max-w-[80%] md:max-w-full rounded-xl bg-inherit border border-white"
+                    id={`${id}-email`}
+                    type="email"
+                    value={email}
+                    onChange={handleEmail}
+                    placeholder="Your email"
+                    required
+                  />
+                  {isDesktop && (
+                    <button className={css.button} type="submit">
+                      <span className={css.buttonText}>Subscribe</span>
+                    </button>
+                  )}
 
                   {!isDesktop && (
                     <button
@@ -166,7 +167,8 @@ const Footer = () => {
         </div>
       </div>
       <span className="absolute z-20 w-full flex justify-center text-center text-white py-3 border-t border-t-white">
-        Kalyna Group © All rights reserved | Privacy Policies
+        Kalyna Group © All rights reserved |&nbsp;
+        <Link href={'/privacy-policies'} className='underline decoration-solid'>Privacy Policies</Link>
       </span>
     </div>
   );
