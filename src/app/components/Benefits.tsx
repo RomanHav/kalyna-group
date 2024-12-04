@@ -1,5 +1,4 @@
 import BenefitsPart from './BenefitsPart';
-import Title from './Title';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Keyboard } from 'swiper/modules';
 import 'swiper/css';
@@ -21,9 +20,6 @@ interface BenefitsProps {
 const Benefits: React.FC<BenefitsProps> = ({ info }) => {
   return (
     <div className="flex flex-col my-8 relative gap-10 lg:my-16">
-      <div className="px-[45px] lg:px-24">
-        <Title id='benefits' title="Benefits" />
-      </div>
       <div>
         <Swiper
           modules={[Navigation, Keyboard]}
@@ -31,14 +27,14 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
           breakpoints={{
             375: {
               slidesPerView: 1,
-              spaceBetween:32
+              spaceBetween: 32,
             },
             768: {
               slidesPerView: 2,
-              spaceBetween: 16
+              spaceBetween: 8,
             },
             1440: {
-              slidesPerView: 4,
+              slidesPerView: 1,
             },
           }}
           loop={false}
@@ -54,6 +50,7 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
             return (
               <SwiperSlide key={infopart.id}>
                 <BenefitsPart
+                  id={infopart.id}
                   src={infopart.src}
                   numberCard={infopart.numberCard}
                   title={infopart.title}
