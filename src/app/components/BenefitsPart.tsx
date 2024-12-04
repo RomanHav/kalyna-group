@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import Image from 'next/image';
 
 interface BenefitsPartProps {
@@ -6,6 +5,7 @@ interface BenefitsPartProps {
   title: string;
   numberCard: string;
   description: string;
+  id?: number;
 }
 
 const BenefitsPart: React.FC<BenefitsPartProps> = ({
@@ -13,29 +13,18 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
   numberCard,
   title,
   description,
+  id,
 }) => {
-  const childClass = clsx(
-    numberCard === '003' || numberCard === '004' ? 'pt-10' : ''
-  );
-
   return (
-    <div className="flex flex-col mx-[45px] items-center rounded-3xl bg-white/10 py-6 min-h-[368px]">
-      <Image
-        className="w-[140px] pb-2"
-        src={src}
-        alt="Benefit Image"
-        width={1000}
-        height={1000}
-      />
-      <div
-        className={`flex flex-col items-start justify-center px-3 text-white gap-2 ${childClass}`}
-      >
+    <div data-id={id} className={`w-full`}>
+      <div>
         <div>
-          <span className="text-xl font-thin">{numberCard}</span>
-          <h3 className="text-base font-medium">{title}</h3>
+          <span>{numberCard}</span>
+          <h3>{title}</h3>
         </div>
-        <p className="text-base font-light">{description}</p>
+        <p>{description}</p>
       </div>
+      <Image src={src} alt="Benefits Image" width={400} height={400} />
     </div>
   );
 };

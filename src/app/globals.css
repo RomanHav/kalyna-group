@@ -9,16 +9,16 @@
   --secondary-glow: conic-gradient(
     from 10deg at 50% 50%,
     #017180 0deg,
-    #36D1DC 55deg,
+    #36d1dc 55deg,
     #97b5da 120deg,
-    #38EF7D 160deg,
+    #38ef7d 160deg,
     transparent 360deg
   );
 
   --third-glow: conic-gradient(
     from 90deg at 50% 50%,
-    #FFD35A 0deg,
-    #38EF7D 160deg,
+    #ffd35a 0deg,
+    #38ef7d 160deg,
     #7ed2da 120deg,
     #8bdce0 55deg,
     transparent 360deg
@@ -46,4 +46,11 @@ body {
 .swiper-button-prev {
   color: #ffff !important;
   font-size: 15px !important;
+}
+
+@media screen and (min-width: 1280px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    scale: 1.5;
+  }
 }
