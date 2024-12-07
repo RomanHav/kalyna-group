@@ -14,16 +14,16 @@ const AboutUs = () => {
   }, [click]);
   return (
     <>
-      <div className="flex flex-col my-8 px-[45px] relative gap-10 lg:mt-16 lg:my-8 lg:px-24">
+      <div className="flex flex-col my-8 px-[45px] relative gap-10 lg:mt-16 lg:my-8 lg:px-24 h-screen">
         <Title id="about-us" title="About Us" />
-        <div className="flex flex-col justify-center items-center bg-[#A3FFEB]/10 p-5 rounded-3xl lg:flex-row xl:px-16 lg:gap-8 xl:gap-14 min-[1440px]:px-20 lg:py-9 lg:justify-between">
-          <div>
+        <div className="flex flex-col justify-center items-center bg-[#A3FFEB]/10 p-5 rounded-3xl lg:flex-row xl:px-16 lg:gap-8 xl:gap-14 min-[1440px]:px-0 lg:py-0 lg:justify-start">
+          <div className="">
             <Image
-              className="w-[170px] md:w-[330px] mb-7 lg:w-[380px] lg:mb-0"
-              src={'/about-us.png'}
+              className="w-[170px] md:w-[330px] mb-7 lg:w-[380px] lg:mb-0 rounded-tl-3xl rounded-bl-3xl"
+              src={'/about.png'}
               alt="About Us Image"
-              width={489}
-              height={513}
+              width={1250}
+              height={1250}
             />
           </div>
           <div className="flex flex-col md:pt-10 justify-center items-center lg:w-[679px] lg:pt-0 lg:items-start">

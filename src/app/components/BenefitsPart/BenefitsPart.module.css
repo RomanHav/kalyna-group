@@ -1,0 +1,97 @@
+.mainContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 97px;
+  color: #ffff;
+}
+
+.mainContainer::before,
+.mainContainer::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  opacity: 0.8;
+}
+
+/* Перший елемент (зелений) */
+.mainContainer::before {
+  background: #b4f5d6;
+  border-radius: 50%;
+  margin-left: -200px;
+  filter: blur(90px);
+  width: 60vw;
+  height: 60vw;
+  top: calc(40vh - 40vw / 2);
+  left: calc(40vw);
+  animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+/* Другий елемент (синій) */
+.mainContainer::after {
+  background: #50a287;
+  width: 600px;
+  height: 700px;
+  border-radius: 50%;
+  filter: blur(90px);
+  top: calc(40vh - 40vw / 2);
+  left: calc(40vw - 40vw / 2);
+  animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+/* Третій елемент (помаранчевий) */
+.third {
+  position: absolute;
+  z-index: -2;
+  opacity: 0.8;
+  background: #0f5b54; /* Третій колір */
+  border-radius: 50%;
+  filter: blur(90px);
+  width: 600px;
+  height: 700px;
+  top: calc(50vh - 25vw);
+  left: calc(60vw);
+  animation: animateNth 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+/* Анімація для першого елемента */
+@keyframes animateBefore {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px) scale(0.8);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Анімація для другого елемента */
+@keyframes animateAfter {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-250px) scale(1.2);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Анімація для третього елемента */
+@keyframes animateNth {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-150px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}

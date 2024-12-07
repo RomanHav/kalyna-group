@@ -7,7 +7,7 @@ import Services from './components/Services/Services';
 
 import RunningLine from './components/RunningLine';
 import AboutUs from './components/AboutUs/AboutUs';
-import Benefits from './components/Benefits';
+import Benefits from './components/Benefits/Benefits';
 import Cases from './components/Cases';
 import MyForm from './components/Form';
 
