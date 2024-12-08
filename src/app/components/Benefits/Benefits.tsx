@@ -32,7 +32,7 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
   }, [prevRef, nextRef]);
 
   return (
-      <div className={`relative`}>
+      <div className={``}>
       <Title title={'Benefits'} className={'lg:px-24 px-[45px]'}/>
     <div className={css.mainContainer}>
       <div className={css.third}></div>
