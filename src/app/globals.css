@@ -42,7 +42,9 @@ body {
   font-family: 'Pirulen', sans-serif;
 }
 
-
+.swiper-button-prev, .swiper-button-next{
+  display: none!important;
+}
 .swiper-button-disabled{
   opacity: 0.5;
 }
