@@ -4,8 +4,8 @@ import Script from 'next/script';
 import './globals.css';
 import React from 'react';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import NavBar from "@/app/components/NavBar/NavBar";
-import Footer from "@/app/components/Footer/Footer";
+import NavBar from '@/app/components/NavBar/NavBar';
+import Footer from '@/app/components/Footer/Footer';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -22,12 +22,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-
-
   return (
     <html lang="en">
-
       <body className={`${poppins.className} antialiased relative`}>
         <Script
           id="google-tag-manager"
@@ -47,7 +43,7 @@ export default function RootLayout({
         <div className="bg-texture absolute inset-0 top-0 left-0 w-full h-full bg-repeat-y lg:bg-cover opacity-20"></div>
         <NavBar />
         {children}
-        <Footer/>
+        <Footer />
         <Script
           strategy="afterInteractive"
           src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RMPKqS"
@@ -57,7 +53,6 @@ export default function RootLayout({
           src="https://assets.calendly.com/assets/external/widget.js"
         />
         <GoogleAnalytics gaId="G-WNLWD75BW9" />
-
       </body>
     </html>
   );
