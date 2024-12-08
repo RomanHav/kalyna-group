@@ -6,7 +6,7 @@ import HeaderVideo from './components/HeaderVideo/HeaderVideo';
 import Services from './components/Services/Services';
 
 import RunningLine from './components/RunningLine';
-import AboutUs from './components/AboutUs/AboutUs';
+// import AboutUs from './components/AboutUs/AboutUs';
 import Benefits from './components/Benefits/Benefits';
 import Cases from './components/Cases';
 import MyForm from './components/Form';
@@ -37,7 +37,7 @@ export default function App() {
           handleServiceModal={handleServiceModal}
         />
         <RunningLine />
-        <AboutUs />
+        {/*<AboutUs />*/}
         <Benefits info={benefitsInfo} />
         <Cases info={casesInfo} />
         <MyForm />

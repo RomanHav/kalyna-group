@@ -28,7 +28,7 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
 
   return (
     <div className={``}>
-      <Title title={'Benefits'} className={'lg:px-24 px-[45px]'} />
+      <Title title={'Benefits'} className={'lg:px-24 px-[45px] relative inset-y-20'} />
       <div className={css.mainContainer}>
         <div className={css.third}></div>
         {/* Навігаційні кнопки */}
