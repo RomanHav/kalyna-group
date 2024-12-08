@@ -35,6 +35,8 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
         width={400}
         height={400}
         className=""
+        priority={true}
+        unoptimized={true}
       />
     </div>
   );
