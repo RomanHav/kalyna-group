@@ -1,6 +1,83 @@
 .customNext {
-    padding-left: 110px;
+  margin-left: 110px;
+  position: relative;
 }
 .customPrev {
-    padding-right: 110px;
+  margin-right: 110px;
+  position: relative;
 }
+.buttonDisable {
+  opacity: 0.5;
+}
+.mainContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  contain: paint;
+  padding: 150px 90px 0 90px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    #000000 85%,
+    transparent 100%
+  );
+}
+
+.mainContainer::before,
+.mainContainer::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  top: 100px;
+  opacity: 0.8;
+}
+
+/* Перший елемент (зелений) */
+.mainContainer::before {
+  background: #b4f5d6;
+  border-radius: 50%;
+  filter: blur(90px);
+  width: 60vw;
+  height: 50vw;
+  right: 0;
+  animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+/* Другий елемент (синій) */
+.mainContainer::after {
+  background: #50a287;
+  width: 600px;
+  height: 500px;
+  border-radius: 50%;
+  left: 0;
+  filter: blur(90px);
+  animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+/* Третій елемент (помаранчевий) */
+.third {
+  position: absolute;
+  z-index: -2;
+  opacity: 0.8;
+  background: #0f5b54; /* Третій колір */
+  border-radius: 50%;
+  filter: blur(90px);
+  width: 600px;
+  margin-left: -200px;
+  height: 700px;
+  animation: animateNth 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+.imageButton::before {
+  content: '';
+  color: #fff;
+  width: 5%;
+  height: 5%;
+  top: 0;
+  position: absolute;
+}
+/* Анімація для першого елемента */

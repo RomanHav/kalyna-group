@@ -42,15 +42,7 @@ body {
   font-family: 'Pirulen', sans-serif;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: #ffff !important;
-  font-size: 15px !important;
-}
 
-@media screen and (min-width: 1280px) {
-  .swiper-button-next,
-  .swiper-button-prev {
-    scale: 1.5;
-  }
+.swiper-button-disabled{
+  opacity: 0.5;
 }
