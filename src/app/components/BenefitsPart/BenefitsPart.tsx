@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import css from './BenefitsPart.module.css';
+import React from "react";
 
 interface BenefitsPartProps {
   src: string;
@@ -19,9 +19,9 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
   return (
     <div
       data-id={id}
-      className={`${css.mainContainer}`}
+      className={`flex items-center justify-around`}
     >
-      <div className={css.third}></div>
+
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-2">
           <span className="font-thin text-4xl">{numberCard}</span>
@@ -34,7 +34,7 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
         alt="Benefits Image"
         width={400}
         height={400}
-        className="mx-auto"
+        className=""
       />
     </div>
   );

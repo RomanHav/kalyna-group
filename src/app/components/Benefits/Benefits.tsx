@@ -8,6 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/keyboard';
 import Image from 'next/image';
 import css from './Benefits.module.css'
+import Title from "@/app/components/Title";
 
 interface BenefitsInfo {
   id?: number;
@@ -28,15 +29,18 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
   useEffect(() => {
     if (prevRef.current && nextRef.current) {
     }
-  }, []);
+  }, [prevRef, nextRef]);
 
   return (
-    <div className="relative">
+      <div className={`relative`}>
+      <Title title={'Benefits'} className={'lg:px-24 px-[45px]'}/>
+    <div className={css.mainContainer}>
+      <div className={css.third}></div>
       {/* Навігаційні кнопки */}
-      <div className="swiper-navigation flex flex-col absolute z-20 bottom-20 left-0 right-0 justify-center items-center px-4">
+      <div className="absolute bottom-40  swiper-navigation flex flex-col  z-40 justify-center items-center px-4">
         <button
           ref={prevRef}
-          className={css.customPrev}
+          className={`${css.customPrev}`}
           aria-label="Previous slide"
         >
           <Image
@@ -45,6 +49,11 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
             width={190}
             height={78}
           />
+          <span
+            className={`absolute top-0 right-0 font-light uppercase tracking-wider`}
+          >
+            prev
+          </span>
         </button>
         <button
           ref={nextRef}
@@ -57,27 +66,34 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
             width={190}
             height={78}
           />
+          <span
+            className={`absolute top-0 left-0 font-light uppercase tracking-wider`}
+          >
+            next
+          </span>
         </button>
       </div>
 
       <Swiper
         modules={[Navigation, Keyboard]}
-        slidesPerView={1} // Один слайд на екран
-        loop={true}
+        slidesPerView={1}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
+
         }}
         keyboard={{
           enabled: true,
           onlyInViewport: false,
         }}
-        grabCursor={true}
         speed={800}
         spaceBetween={0}
       >
-        {info.map((infopart) => (
-          <SwiperSlide key={infopart.id} className="!h-[700px] flex items-center justify-center">
+        {info.map(infopart => (
+          <SwiperSlide
+            key={infopart.id}
+            className="!h-[700px] flex items-center justify-center"
+          >
             <BenefitsPart
               id={infopart.id}
               src={infopart.src}
@@ -89,6 +105,7 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
         ))}
       </Swiper>
     </div>
+      </div>
   );
 };
 
