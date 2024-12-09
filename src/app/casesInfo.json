@@ -1,42 +1,34 @@
 [
   {
+    "logo": "/wood-icon.png",
     "span": "E-commerce",
     "title": "Wood minded",
     "src": "/wood-minded.png",
-    "color": "bg-gradient-to-b from-custom-blue to-custom-green",
-    "href": "https://woodminded.shop/",
-    "isLast": false
+    "background": "bg-woodMinded bg-center",
+    "href": "https://woodminded.shop/"
   },
   {
-    "span": "Business website",
-    "title": "Alcotrade ua",
-    "src": "/alcotrade-ua.png",
-    "color": "bg-gradient-to-b from-custom-black to-custom-yellow",
-    "href": "https://www.alcotrade.com.ua",
-    "isLast": false
-  },
-  {
+    "logo": "/inside-logo.svg",
     "span": "Online menu",
     "title": "Inside bar",
     "src": "/inside-bar.png",
-    "color": "bg-gradient-to-b from-custom-blue-second to-custom-blue-third",
-    "href": "https://www.inside.in.ua/",
-    "isLast": false
+    "background": "bg-inside bg-center",
+    "href": "https://www.inside.in.ua/"
   },
   {
-    "span": "E-commerce",
-    "title": "autoim",
-    "src": "/autoim.png",
-    "color": "bg-gradient-to-b from-black to-custom-grey",
-    "href": "https://autoim.com.ua/",
-    "isLast": false
+    "logo": "/alcotrade-icon.png",
+    "span": "Business website",
+    "title": "Alcotrade ua",
+    "src": "/alcotrade-ua.png",
+    "background": "bg-alcotrade bg-right",
+    "href": "https://www.alcotrade.com.ua"
   },
   {
+    "logo": "/our-logo.png",
     "span": "Solution website",
     "title": "We’re waiting for your proJect",
     "src": "/404-page.png",
-    "color": "bg-gradient-to-r from-custom-blue to-custom-green",
-    "href": "#",
-    "isLast": true
+    "background": "bg-yourProject bg-center",
+    "href": "#"
   }
 ]
