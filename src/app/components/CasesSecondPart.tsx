@@ -39,9 +39,9 @@ const CasesSecondPart: React.FC<CasesPartProps> = ({
           </button>
         </div>
         <div className="hidden bg-gray-500">
-          {/* <p>{span}</p>
+          <p>{span}</p>
           <Image src={src} alt="Case Image" width={100} height={100} />
-          <a href={href}>Link</a> */}
+          <a href={href}>Link</a>
         </div>
       </div>
     </div>
