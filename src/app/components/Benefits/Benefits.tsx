@@ -28,7 +28,10 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
 
   return (
     <div className={``}>
-      <Title title={'Benefits'} className={'lg:px-24 px-[45px] relative inset-y-20'} />
+      <Title
+        title={'Benefits'}
+        className={'lg:px-24 px-[45px] relative inset-y-20'}
+      />
       <div className={css.mainContainer}>
         <div className={css.third}></div>
         {/* Навігаційні кнопки */}
@@ -40,8 +43,8 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
             enabled: true,
             onlyInViewport: false,
           }}
-          onBeforeInit={(swiper) => {
-            if (typeof swiper.params.navigation === "object") {
+          onBeforeInit={swiper => {
+            if (typeof swiper.params.navigation === 'object') {
               swiper.params.navigation.prevEl = prevRef.current;
               swiper.params.navigation.nextEl = nextRef.current;
             }
@@ -77,42 +80,42 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
             </SwiperSlide>
           ))}
           <div className={`relative w-full flex justify-center`}>
-          <div className="absolute bottom-40 swiper-navigation flex flex-col z-40 justify-center items-center px-4">
-            <button
-              ref={prevRef}
-              className={`${css.customPrev}`}
-              aria-label="Previous slide"
-            >
-              <Image
-                src={'/benefits-arrow-prev.svg'}
-                alt={'prev'}
-                width={190}
-                height={78}
-              />
-              <span
-                className={`absolute top-0 right-0 font-light uppercase tracking-wider`}
+            <div className="absolute bottom-40 swiper-navigation flex flex-col z-40 justify-center items-center px-4">
+              <button
+                ref={prevRef}
+                className={`${css.customPrev}`}
+                aria-label="Previous slide"
               >
-                prev
-              </span>
-            </button>
-            <button
-              ref={nextRef}
-              className={css.customNext}
-              aria-label="Next slide"
-            >
-              <Image
-                src={'/benefits-arrow-next.svg'}
-                alt={'next'}
-                width={190}
-                height={78}
-              />
-              <span
-                className={`absolute top-0 left-0 font-light uppercase tracking-wider`}
+                <Image
+                  src={'/benefits-arrow-prev.svg'}
+                  alt={'prev'}
+                  width={190}
+                  height={78}
+                />
+                <span
+                  className={`absolute top-0 right-0 font-light uppercase tracking-wider`}
+                >
+                  prev
+                </span>
+              </button>
+              <button
+                ref={nextRef}
+                className={css.customNext}
+                aria-label="Next slide"
               >
-                next
-              </span>
-            </button>
-          </div>
+                <Image
+                  src={'/benefits-arrow-next.svg'}
+                  alt={'next'}
+                  width={190}
+                  height={78}
+                />
+                <span
+                  className={`absolute top-0 left-0 font-light uppercase tracking-wider`}
+                >
+                  next
+                </span>
+              </button>
+            </div>
           </div>
         </Swiper>
       </div>
