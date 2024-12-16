@@ -1,34 +1,70 @@
 [
   {
+    "id": 10,
     "logo": "/wood-icon.png",
+    "logoDescr": "/wood-logo-descr.png",
     "span": "E-commerce",
     "title": "Wood minded",
     "src": "/wood-minded.png",
     "background": "bg-woodMinded bg-center",
-    "href": "https://woodminded.shop/"
+    "href": "https://woodminded.shop/",
+    "firstPerson": "Oleksandr Kalenichenko",
+    "secondPerson": "Roman Havrylov",
+    "thirdPerson": "Maksym Kalenichenko",
+    "developerPosition": "Full-Stack Developer",
+    "managerPosition": "Project manager",
+    "siteImage": "bg-woodImage",
+    "description": "The website offers a convenient platform for purchasing wooden products, tailored to the needs of enthusiasts of wooden craftsmanship and art. It boasts seamless navigation, custom product filters, and an integrated secure payment system, designed to enhance the user experience and sales conversion."
   },
   {
+    "id": 20,
     "logo": "/inside-logo.svg",
+    "logoDescr": "/inside-logo.svg",
     "span": "Online menu",
     "title": "Inside bar",
     "src": "/inside-bar.png",
     "background": "bg-inside bg-center",
-    "href": "https://www.inside.in.ua/"
+    "href": "https://www.inside.in.ua/",
+    "firstPerson": "Oleksandr Kalenichenko",
+    "secondPerson": "Roman Havrylov",
+    "thirdPerson": "Maksym Kalenichenko",
+    "developerPosition": "Full-Stack Developer",
+    "managerPosition": "Project manager",
+    "siteImage": "bg-insideImage",
+    "description": "The website is an online menu platform for the lounge bar “Inside,” designed to provide guests with a seamless and interactive browsing experience. Built with React, it features a sleek and modern design, ensuring smooth navigation and quick access to menu items. The platform highlights the bar’s diverse offerings, including food, beverages, and signature cocktails, making it easy for customers to explore options."
   },
   {
+    "id": 30,
     "logo": "/alcotrade-icon.png",
+    "logoDescr": "/alcotrade-logo-descr.png",
     "span": "Business website",
     "title": "Alcotrade ua",
     "src": "/alcotrade-ua.png",
     "background": "bg-alcotrade bg-right",
-    "href": "https://www.alcotrade.com.ua"
+    "href": "https://www.alcotrade.com.ua",
+    "firstPerson": "Oleksandr Kalenichenko",
+    "secondPerson": "Roman Havrylov",
+    "thirdPerson": "Maksym Kalenichenko",
+    "developerPosition": "Full-Stack Developer",
+    "managerPosition": "Project manager",
+    "siteImage": "bg-alcotradeImage",
+    "description": "The website serves as a professional business platform for an LLC specializing in the production of alcoholic beverages. It showcases the company’s unique brands and product lines, providing detailed information to engage potential clients and partners. Built with React and Node.js, the website features a well-structured database, a user-friendly registration and authorization system, and an interactive contact form."
   },
   {
+    "id": 40,
     "logo": "/our-logo.png",
+    "logoDescr": "/wood-logo-descr.png",
     "span": "Solution website",
     "title": "We’re waiting for your proJect",
     "src": "/404-page.png",
     "background": "bg-yourProject bg-center",
-    "href": "#"
+    "href": "#",
+    "firstPerson": "Oleksandr Kalenichenko",
+    "secondPerson": "Roman Havrylov",
+    "thirdPerson": "Maksym Kalenichenko",
+    "developerPosition": "Full-Stack Developer",
+    "managerPosition": "Project manager",
+    "siteImage": "bg-siteImage",
+    "description": "The website offers a convenient platform for purchasing wooden products, tailored to the needs of enthusiasts of wooden craftsmanship and art. It boasts seamless navigation, custom product filters, and an integrated secure payment system, designed to enhance the user experience and sales conversion."
   }
 ]

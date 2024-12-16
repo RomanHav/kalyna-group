@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        '3xl': '-1px 1px 10px rgba(98, 98, 98, 0.15)',
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
@@ -26,6 +29,7 @@ const config: Config = {
         'custom-hover-first': '#00F260',
         'custom-hover-second': '#0575E6',
         'custom-case-btn': '#2C5364',
+        'custom-case-modal': '#161616',
       },
       backgroundImage: {
         texture: "url('/background.png')",
@@ -37,6 +41,9 @@ const config: Config = {
         alcotrade: "url('/alcotrade.jpg')",
         inside: "url('/inside.jpg')",
         yourProject: "url('/your-project.jpg')",
+        woodImage: "url('/wood-site.jpg')",
+        alcotradeImage: "url('/alcotrade-site.jpg')",
+        insideImage: "url('/inside-site.jpg')",
       },
     },
   },
