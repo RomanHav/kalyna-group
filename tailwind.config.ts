@@ -44,6 +44,7 @@ const config: Config = {
         woodImage: "url('/wood-site.jpg')",
         alcotradeImage: "url('/alcotrade-site.jpg')",
         insideImage: "url('/inside-site.jpg')",
+
       },
     },
   },

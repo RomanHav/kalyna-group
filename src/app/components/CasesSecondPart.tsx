@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import CasesModal from './CasesModal';
 
 interface CasesPartProps {

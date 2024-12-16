@@ -45,6 +45,7 @@ export default function App() {
           openModalId={openModalId}
           handleServiceModal={handleServiceModal}
         />
+
         {/* <Cases info={casesInfo} /> */}
         <MyForm />
       </div>
