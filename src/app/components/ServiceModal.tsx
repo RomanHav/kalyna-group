@@ -36,7 +36,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({
 
   return (
     <div
-      className={`bg-black bg-cover fixed top-0 right-0 w-full h-full flex flex-col justify-center bg-opacity-70 z-[60] transition-transform duration-300 ease-out backdrop-blur-md ${
+      className={`bg-black bg-cover fixed top-0 right-0 w-full h-full flex flex-col justify-center bg-opacity-70 z-[9999] transition-transform duration-300 ease-out backdrop-blur-md ${
         isOpen ? '' : 'hidden'
       }`}
     >

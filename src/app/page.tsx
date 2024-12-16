@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 
-
 import HeaderVideo from './components/HeaderVideo/HeaderVideo';
 import Services from './components/Services/Services';
 
@@ -28,6 +27,7 @@ export default function App() {
       setOpenModalId(id || null);
     }
   };
+
   return (
     <Provider store={store}>
       <div>
@@ -40,11 +40,15 @@ export default function App() {
         <RunningLine />
         {/*<AboutUs />*/}
         <Benefits info={benefitsInfo} />
-        <CasesSecond info={casesInfo} />
+        <CasesSecond
+          info={casesInfo}
+          openModalId={openModalId}
+          handleServiceModal={handleServiceModal}
+        />
+
         {/* <Cases info={casesInfo} /> */}
         <MyForm />
       </div>
-
     </Provider>
   );
 }
