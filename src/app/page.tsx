@@ -17,6 +17,7 @@ import { Provider } from 'react-redux';
 import { store } from '@/app/redux/store';
 import CasesSecond from './components/CasesSecond';
 
+
 export default function App() {
   const [openModalId, setOpenModalId] = useState<number | null>(null);
 
@@ -40,11 +41,7 @@ export default function App() {
         <RunningLine />
         {/*<AboutUs />*/}
         <Benefits info={benefitsInfo} />
-        <CasesSecond
-          info={casesInfo}
-          openModalId={openModalId}
-          handleServiceModal={handleServiceModal}
-        />
+        <CasesSecond info={casesInfo} />
 
         {/* <Cases info={casesInfo} /> */}
         <MyForm />
