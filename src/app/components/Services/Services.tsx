@@ -2,7 +2,7 @@
 import ContactUsModal from '../ContactUsModal';
 import ServicePart from './ServicePart';
 import Title from '../Title';
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 interface ServiceInfo {
   id: number;
   title: string;
@@ -29,13 +29,10 @@ const Services: React.FC<ServiceProps> = ({
   const handleClick = () => {
     setClick(!click);
   };
-  useEffect(() => {
-    document.body.style.overflow = click ? 'hidden' : 'auto';
-  }, [click]);
   return (
     <>
       <div className="relative z-10 flex flex-col my-8 md:my-10 px-[45px] md:px-16 gap-10 lg:px-24 lg:pb-16">
-        <Title id="services" title="Services"/>
+        <Title id="services" title="Services" />
         <ul className="flex flex-col flex-wrap justify-center items-center gap-9 md:justify-between md:flex-row lg:justify-center lg:gap-6 xl:gap-12 min-[1440px]:gap-10">
           {info.map(infopart => (
             <li
