@@ -1,65 +1,46 @@
-import { useState } from 'react';
-import { useTransition, animated } from '@react-spring/web';
+'use client';
 
-interface Item {
-    id: number;
-    content: string;
-}
+import { ReactLenis, useLenis } from 'lenis/react';
 
-const PushToFirst: React.FC = () => {
-    const [items, setItems] = useState<Item[]>([
-        { id: 1, content: 'Block 1' },
-        { id: 2, content: 'Block 2' },
-        { id: 3, content: 'Block 3' },
-        { id: 4, content: 'Block 4' },
-    ]);
+const ControlledScroll = () => {
+    const sections = ['Section 1', 'Section 2', 'Section 3'];
+    const lenis = useLenis();
 
-    const handleClick = (id: number) => {
-        const clickedItem = items.find((item) => item.id === id);
-        const otherItems = items.filter((item) => item.id !== id);
-        if (clickedItem) {
-            setItems([clickedItem, ...otherItems]);
-        }
+    const scrollToSection = (index: number) => {
+        const target = document.getElementById(`section-${index}`);
+
+        if (target) lenis?.scrollTo(target);
     };
 
-    const transitions = useTransition(items, {
-        from: { transform: 'translate3d(0,0,0)', opacity: 0 },
-        enter: (item, index) => ({
-            transform: `translate3d(${index * 120}px, 0, 0)`,
-            opacity: 1,
-        }),
-        update: (item, index) => ({
-            transform: `translate3d(${index * 120}px, 0, 0)`,
-            opacity: 1,
-        }),
-        leave: { transform: 'translate3d(0,0,0)', opacity: 0 },
-        keys: (item) => item.id,
-    });
-
     return (
-        <div style={{ position: 'relative', width: '500px', height: '100px' }}>
-            {transitions((style, item) => (
-                <animated.div
-                    key={item.id}
-                    style={{
-                        ...style,
-                        position: 'absolute',
-                        width: '100px',
-                        height: '100px',
-                        backgroundColor: '#f0f0f0',
-                        border: '1px solid #ccc',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        cursor: 'pointer',
-                    }}
-                    onClick={() => handleClick(item.id)}
-                >
-                    {item.content}
-                </animated.div>
-            ))}
-        </div>
+        <ReactLenis root>
+            <div>
+                <nav className="fixed top-0 left-0 z-10 p-4 bg-gray-800 text-white">
+                    {sections.map((_, index) => (
+                        <button
+                            key={index}
+                            className="mx-2"
+                            onClick={() => scrollToSection(index)}
+                        >
+                            Go to {index + 1}
+                        </button>
+                    ))}
+                </nav>
+                {sections.map((section, index) => (
+                    <section
+                        id={`section-${index}`}
+                        key={index}
+                        className="h-screen flex justify-center items-center text-white text-3xl"
+                        style={{
+                            background: `hsl(${(index * 60) % 360}, 70%, 50%)`,
+                        }}
+                    >
+                        {section}
+                    </section>
+                ))}
+            </div>
+        </ReactLenis>
     );
 };
 
-export default PushToFirst;
+export default ControlledScroll;

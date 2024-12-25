@@ -2,7 +2,8 @@ import CasesPart from './CasesPart';
 import ContactUsModal from './ContactUsModal';
 import Title from './Title';
 import { nanoid } from 'nanoid';
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
 interface CasesInfo {
   isLast: boolean;
   title: string;
@@ -21,11 +22,8 @@ const Cases: React.FC<CasesProps> = ({ info }) => {
   const handleClick = () => {
     setClick(!click);
   };
-  useEffect(() => {
-    document.body.style.overflow = click ? 'hidden' : 'auto';
-  }, [click]);
   return (
-    <>
+    <div>
       <div className="flex flex-col my-8 px-[45px] relative gap-10 lg:px-24 lg:my-16">
         <Title id="cases" title="Cases" />
         <ul className="flex flex-col flex-wrap items-center gap-9 md:px-16 lg:px-0 lg:flex-row lg:justify-center lg:gap-11">
@@ -47,7 +45,7 @@ const Cases: React.FC<CasesProps> = ({ info }) => {
         </ul>
       </div>
       {click && <ContactUsModal click={click} handleOpen={handleClick} />}
-    </>
+    </div>
   );
 };
 

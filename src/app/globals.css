@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 :root {
   --background: #152220;
   --foreground: #171717;
@@ -42,9 +59,10 @@ body {
   font-family: 'Pirulen', sans-serif;
 }
 
-.swiper-button-prev, .swiper-button-next{
-  display: none!important;
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
 }
-.swiper-button-disabled{
+.swiper-button-disabled {
   opacity: 0.5;
 }

@@ -12,8 +12,16 @@ import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLocation } from '@/app/redux/location/operations';
 import { submitForm } from '@/app/redux/formValues/operations';
-import { selectCountryCode, selectCountryName, selectLocationLoading } from '@/app/redux/location/selectors';
-import { selectSubmitError, selectSubmitLoading, selectSubmitSuccess } from '@/app/redux/formValues/selectors';
+import {
+  selectCountryCode,
+  selectCountryName,
+  selectLocationLoading,
+} from '@/app/redux/location/selectors';
+import {
+  selectSubmitError,
+  selectSubmitLoading,
+  selectSubmitSuccess,
+} from '@/app/redux/formValues/selectors';
 import { AppDispatch } from '@/app/redux/store';
 
 interface FormValues {
@@ -28,7 +36,7 @@ interface FormValues {
 const MyForm: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const countryName = useSelector(selectCountryName);
-  const countryCode = useSelector(selectCountryCode)
+  const countryCode = useSelector(selectCountryCode);
 
   const locationLoading = useSelector(selectLocationLoading);
   const submitLoading = useSelector(selectSubmitLoading);
@@ -79,7 +87,10 @@ const MyForm: React.FC = () => {
     location: countryName, // Using the location from Redux
   };
 
-  const handleSubmit = (values: FormValues, actions: FormikHelpers<FormValues>) => {
+  const handleSubmit = (
+    values: FormValues,
+    actions: FormikHelpers<FormValues>
+  ) => {
     dispatch(submitForm(values));
     console.log(values);
     actions.resetForm();

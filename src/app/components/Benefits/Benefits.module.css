@@ -39,23 +39,24 @@
 
 /* Перший елемент (зелений) */
 .mainContainer::before {
-  background: #521550;
+  background: #027e6e;
   border-radius: 50%;
-  filter: blur(90px);
-  width: 40vw;
-  height: 50vw;
-  right: 0;
+  filter: blur(500px);
+  width: 25vw;
+  height: 25vw;
+  right: 200px;
+  top: 150px;
   animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
 
-/* Другий елемент (синій) */
 .mainContainer::after {
-  background: #0F5B55;
-  width: 600px;
-  height: 500px;
+/* Другий елемент (синій) */
+  background: #0f5b55;
+  width: 25vw;
+  height: 25vw;
   border-radius: 50%;
   left: 0;
-  filter: blur(90px);
+  filter: blur(300px);
   animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
 
@@ -64,20 +65,11 @@
   position: absolute;
   z-index: -2;
   opacity: 0.8;
-  background: #B07B00; /* Третій колір */
+  background: #1f7a58; /* Третій колір */
   border-radius: 50%;
-  filter: blur(90px);
-  width: 400px;
+  filter: blur(300px);
   margin-left: -200px;
-  height: 600px;
+  width: 25vw;
+  height: 25vw;
   animation: animateNth 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
-.imageButton::before {
-  content: '';
-  color: #BE2AB4;
-  width: 5%;
-  height: 5%;
-  top: 0;
-  position: absolute;
-}
-/* Анімація для першого елемента */

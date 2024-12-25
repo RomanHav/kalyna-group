@@ -1,9 +1,10 @@
 'use client';
 import CasesSecondPart from './CasesSecondPart';
-import Title from './Title';
+import Title from '../Title';
 import React, { useState } from 'react';
 import { useTransition, animated } from '@react-spring/web';
-import CasesModal from '@/app/components/CasesModal';
+import CasesModal from '@/app/components/Cases/CasesModal';
+import css from './Cases.module.css';
 
 interface CasesInfo {
   id: number;
@@ -66,14 +67,15 @@ const CasesSecond: React.FC<CasesProps> = ({ info }) => {
   });
 
   return (
-    <>
-      <div className="relative contain-paint">
+    <div className={`relative`}>
+      <div className={`${css.cases}`}></div>
+      <div className="relative z-10 contain-paint">
         <Title
           id="cases"
           title="Cases"
-          className={'lg:px-24 px-[45px] relative inset-y-20'}
+          className={'lg:px-24 px-[45px] relative z-10 inset-y-20'}
         />
-        <div className="w-full flex mt-32 relative">
+        <div className="w-full flex mt-32 before:absolute before:w-full before:h-20 before:-top-32 before:left-0 before:drop-shadow-[25px_25px_35px_rgba(0,0,0,0.95)] before:z-90 relative">
           {transitions((style, item) => (
             <animated.div
               key={item.id}
@@ -97,7 +99,6 @@ const CasesSecond: React.FC<CasesProps> = ({ info }) => {
                 src={item.src}
                 href={item.href}
                 title={item.title}
-
                 siteImage={item.siteImage}
                 description={item.description}
                 logoDescr={item.logoDescr}
@@ -109,7 +110,7 @@ const CasesSecond: React.FC<CasesProps> = ({ info }) => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
