@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
@@ -6,12 +6,9 @@ import React, { useState, useEffect } from 'react';
 import ContactUsModal from '../ContactUsModal';
 import { IoIosLink } from 'react-icons/io';
 import css from './NavBar.module.css';
-import Burger from "@/app/components/Burger";
+import Burger from '@/app/components/Burger';
 
-
-
-const NavBar: React.FC = ( ) => {
-  
+const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [click, setClick] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
@@ -52,7 +49,6 @@ const NavBar: React.FC = ( ) => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-
 
   return (
     <div>
@@ -105,15 +101,12 @@ const NavBar: React.FC = ( ) => {
                     <IoIosLink size={25} />
                   </span>
                   <div className="relative">
-                    <ScrollLink
-                      to="about-us"
-                      smooth={true}
-                      duration={800}
-                      offset={-150}
+                    <Link
+                      href={'/about-us'}
                       className="cursor-pointer tracking-wide after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
                     >
                       About us
-                    </ScrollLink>
+                    </Link>
                   </div>
                   <span>
                     <IoIosLink size={25} />
