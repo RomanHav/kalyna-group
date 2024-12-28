@@ -16,6 +16,7 @@ const config: Config = {
         foreground: 'var(--foreground)',
         'custom-blue': '#11998E',
         'custom-green': '#38EF7D',
+        'custom-second-green': '#C2FAD7',
         'custom-background': '#1b3431',
         'custom-running-first': '#A1FFCE',
         'custom-running-second': '#FAFFD1',
@@ -30,6 +31,7 @@ const config: Config = {
         'custom-hover-second': '#0575E6',
         'custom-case-btn': '#2C5364',
         'custom-case-modal': '#161616',
+        'custom-team': '#3E3E3E',
       },
       backgroundImage: {
         texture: "url('/background.png')",
@@ -44,7 +46,8 @@ const config: Config = {
         woodImage: "url('/wood-site.jpg')",
         alcotradeImage: "url('/alcotrade-site.jpg')",
         insideImage: "url('/inside-site.jpg')",
-        siteImage: "url('/bg-solution-website.jpg')"
+        siteImage: "url('/bg-solution-website.jpg')",
+        whoAreWe: "url('/who.jpg')",
       },
     },
   },

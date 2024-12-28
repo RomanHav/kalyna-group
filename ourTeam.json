@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Oleksandr Kalenichenko",
+    "position": "Full Stack developer",
+    "photo": "/alex.png"
+  },
+  {
+    "id": 2,
+    "name": "Roman Havrylov",
+    "position": "Full Stack developer",
+    "photo": "/roma.png"
+  },
+  {
+    "id": 3,
+    "name": "Max Kalenichenko",
+    "position": "Project manager",
+    "photo": "/max.png"
+  },
+  {
+    "id": 4,
+    "name": "Bogdan Remenuk",
+    "position": "UI/UX designer",
+    "photo": "/alex.png"
+  },
+  {
+    "id": 5,
+    "name": "Ann Hubarets",
+    "position": "UI/UX designer",
+    "photo": "/alex.png"
+  },
+  {
+    "id": 6,
+    "name": "Anton Levkovsky",
+    "position": "3D Character Designer & Product Designer",
+    "photo": "/alex.png"
+  }
+]
