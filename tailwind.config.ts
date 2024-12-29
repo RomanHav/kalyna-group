@@ -52,6 +52,7 @@ const config: Config = {
         insideImage: "url('/inside-site.jpg')",
         siteImage: "url('/bg-solution-website.jpg')",
         whoAreWe: "url('/who.jpg')",
+        stack: "url('/bg-stack.jpg')",
       },
     },
   },
