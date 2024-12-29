@@ -66,3 +66,7 @@ body {
 .swiper-button-disabled {
   opacity: 0.5;
 }
+
+.MuiAccordionSummary-expandIconWrapper.Mui-expanded {
+  transform: rotate(90deg);
+}

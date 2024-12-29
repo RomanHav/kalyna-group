@@ -32,6 +32,10 @@ const config: Config = {
         'custom-case-btn': '#2C5364',
         'custom-case-modal': '#161616',
         'custom-team': '#3E3E3E',
+        'custom-player-one': '#41D77C',
+        'custom-player-two': '#227141',
+        'custom-opacity-one': 'rgb(0,0,0/ .3)',
+        'custom-opacity-two': 'rgb(0,0,0)',
       },
       backgroundImage: {
         texture: "url('/background.png')",

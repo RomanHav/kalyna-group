@@ -1,35 +1,41 @@
 [
   {
+    "id": 1,
     "number": "/first.svg",
     "title": "Introductory call",
     "description": "We will have a 20-30 minute call with you to get to know each other and learn details about your project. This is necessary for further presentation of our solution.",
     "isLast": false
   },
   {
+    "id": 2,
     "number": "/second.svg",
     "title": "Presentation",
     "description": "Part of the presentation is necessary for you to see that we have correctly understood your assignment and approved the work steps.",
     "isLast": false
   },
   {
+    "id": 3,
     "number": "/third.svg",
     "title": "Confirmation of Road Map",
     "description": "This stage is partly related to the second point, but you will have time to consider whether you are satisfied with everything in the plan  (tasks/deadlines) we have prepared for your project.",
     "isLast": false
   },
   {
+    "id": 4,
     "number": "/fourth.svg",
     "title": "Stages and Reporting",
     "description": "This stage is already part of the project work and will be relevant until you get the agreed result. You will receive reports on each point of cooperation from Project Manager in a convenient way, which you choose.",
     "isLast": false
   },
   {
+    "id": 5,
     "number": "/fifth.svg",
     "title": "Full analysis",
     "description": "When all the steps we mark as done, we will have a call with you to see if there are any changes and approve the final result.",
     "isLast": false
   },
   {
+    "id": 6,
     "number": "/six.svg",
     "title": "Your project is ready to generate income",
     "description": "",
