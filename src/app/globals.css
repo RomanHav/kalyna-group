@@ -68,5 +68,5 @@ body {
 }
 
 .MuiAccordionSummary-expandIconWrapper.Mui-expanded {
-  transform: rotate(90deg);
+  transform: rotate(90deg)!important;
 }

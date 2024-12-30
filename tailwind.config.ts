@@ -53,6 +53,7 @@ const config: Config = {
         siteImage: "url('/bg-solution-website.jpg')",
         whoAreWe: "url('/who.jpg')",
         stack: "url('/bg-stack.jpg')",
+        dash: "url(\"data:image/svg+xml, %3csvg width='256' height='256' viewBox='0 0 256 256' fill='none' xmlns='http://www.w3.org/2000/svg'%3e %3ccircle cx='128' cy='128' r='128' stroke='white' stroke-dasharray='13 13'/%3e %3c/svg%3e\");\n",
       },
     },
   },
