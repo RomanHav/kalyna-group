@@ -33,7 +33,7 @@ const Footer = () => {
 
   return (
     <div>
-      <div className="flex flex-col py-[45px] bg-white/10 gap-9 rounded-t-lg relative">
+      <div className="flex flex-col py-[45px] bg-white/0 backdrop-blur-lg shadow-lg ring-1 ring-black/5 gap-9 rounded-t-lg z-10 relative">
         <FooterRunningLine />
         <div className="flex flex-col px-[45px] lg:px-24">
           <div className="flex flex-col items-center justify-center relative">
