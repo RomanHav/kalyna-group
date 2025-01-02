@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 
 const OurStack: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  // eslint-disable-next-line
   const swiperRef = useRef<any>(null);
   const handleNextSlide = () => {
     swiperRef.current?.slideNext();
