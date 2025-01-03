@@ -11,7 +11,8 @@ import { Provider } from 'react-redux';
 import { store } from '@/app/redux/store';
 import CasesSecond from './components/Cases/CasesSecond';
 import Lenis from 'lenis';
-import MyForm from '@/app/components/Form';
+// import MyForm from '@/app/components/Form';
+import FormSecond from '@/app/components/FormSecond';
 
 export default function App() {
   const [openModalId, setOpenModalId] = useState<number | null>(null);
@@ -38,7 +39,8 @@ export default function App() {
       <RunningLine />
       <Benefits info={benefitsInfo} />
       <CasesSecond info={casesInfo} />
-      <MyForm />
+      {/*<MyForm />*/}
+      <FormSecond />
     </Provider>
   );
 }

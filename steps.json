@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Your name",
+    "image": "/person.svg",
+    "title": "Let’s start with your name",
+    "description": "Please fill the details below so that we can get in contact with you."
+  },
+  {
+    "id": 2,
+    "name": "Choose service",
+    "image": "/service.svg",
+    "title": "What services are you looking for?",
+    "description": "Please fill the details below so that we can get in contact with you."
+  },
+  {
+    "id": 3,
+    "name": "Describe",
+    "image": "/comment.svg",
+    "title": "Give us more details",
+    "description": "Please fill the details below so that we can get in contact with you."
+  },
+  {
+    "id": 4,
+    "name": "Budget",
+    "image": "/budget.svg",
+    "title": "Please select your budget",
+    "description": "Please let us know the budget of creating project."
+  },
+  {
+    "id": 5,
+    "name": "Complete",
+    "image": "/email.svg",
+    "title": "Complete Submission",
+    "description": "Thanks for taking the time to complete this form. Please enter your email below and we will be in contact within 24 hours."
+  }
+]

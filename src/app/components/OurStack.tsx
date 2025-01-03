@@ -14,7 +14,6 @@ const OurStack: React.FC = () => {
   const swiperRef = useRef<any>(null);
   const handleNextSlide = () => {
     swiperRef.current?.slideNext();
-    console.log(items[activeIndex]);
   };
   return (
     <div
