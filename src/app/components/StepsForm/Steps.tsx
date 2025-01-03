@@ -9,6 +9,7 @@ interface Steps {
 }
 
 const Steps: React.FC<Steps> = ({ name, image, activeId, id }) => {
+
   return (
     <div className={`flex items-center justify-end gap-6`}>
       <span className={`font-medium text-lg`}>{name}</span>

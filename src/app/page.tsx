@@ -12,7 +12,7 @@ import { store } from '@/app/redux/store';
 import CasesSecond from './components/Cases/CasesSecond';
 import Lenis from 'lenis';
 // import MyForm from '@/app/components/Form';
-import FormSecond from '@/app/components/FormSecond';
+import FormSecond from '@/app/components/StepsForm/FormSecond';
 
 export default function App() {
   const [openModalId, setOpenModalId] = useState<number | null>(null);
