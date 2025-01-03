@@ -57,10 +57,10 @@ const NavBar: React.FC = () => {
           isFixed ? 'translate-y-0' : '-translate-y-full'
         } bg-[#0D1816]/60 backdrop-blur-md`}
       >
-        <div className="flex justify-between items-center py-6 px-4 md:px-16 border-b border-white rounded-b-lg lg:px-24 lg:py-9">
+        <div className="flex justify-between items-center py-6 px-4 md:px-16 border-b border-white lg:px-24 lg:py-6">
           <Link href={'/'}>
             <Image
-              className="w-16 md:scale-125 h-12 lg:w-[110px] lg:h-[80px]"
+              className="w-16 md:scale-125 lg:w-20"
               src={'/logo.png'}
               alt="Logo"
               width={512}
@@ -87,15 +87,12 @@ const NavBar: React.FC = () => {
               <div className="flex items-center">
                 <div className="flex items-center gap-8 text-white xl:mr-[90px] min-[1440px]:mr-[340px] text-xl uppercase">
                   <div className="relative">
-                    <ScrollLink
-                      to="services"
-                      smooth={true}
-                      duration={800}
-                      offset={-150}
+                    <Link
                       className="cursor-pointer tracking-wide after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
+                      href={'/services'}
                     >
                       Services
-                    </ScrollLink>
+                    </Link>
                   </div>
                   <span>
                     <IoIosLink size={25} />
