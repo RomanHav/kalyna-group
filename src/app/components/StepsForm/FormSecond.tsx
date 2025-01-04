@@ -125,7 +125,7 @@ const FormSecond = () => {
             <div className={`mt-2 mb-16`}>
               {_renderStepContent(activeId, step)}
             </div>
-            <div className={`flex gap-5`}>
+            <div className={`flex w-full justify-end gap-5`}>
               <button
                 disabled={activeId === 1}
                 onClick={handleDownId}
