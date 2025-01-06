@@ -4,10 +4,10 @@ import mongoose from 'mongoose';
 
 const clientsSchema = new mongoose.Schema({
     name: String,
+    services: [],
+    description: String,
+    budget: [],
     email: String,
-    phoneNumber: String,
-    selectOption: String,
-    message: String,
     location: String,
 });
 

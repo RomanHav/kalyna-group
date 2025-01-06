@@ -16,8 +16,8 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
 
   const initialVal =
     typeof window !== 'undefined'
-      ? JSON.parse(window.localStorage.getItem('budget'))
-      : `[1500, 5000]`;
+      ? JSON.parse(window.localStorage.getItem('budget')) || [1500, 5000]
+      : [1500, 5000];
 
   const [val, setVal] = useState<number[]>(initialVal);
   const [inputValues, setInputValues] = useState<string[]>([

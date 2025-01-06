@@ -1,7 +1,7 @@
 'use client';
 import steps from '../../../../steps.json';
 import Steps from './Steps';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import StepFirst from './StepFirst';
 import StepSecond from './StepSecond';
 import StepThird from './StepThird';
@@ -10,7 +10,12 @@ import StepFifth from './StepFifth';
 import NotFound from 'next/dist/client/components/not-found-error';
 import ProgressLine from '@/app/components/StepsForm/ProgressLine';
 import { Formik, Form } from 'formik';
-import initialValues from '../Form/FormInitialValues';
+import InitialValues from '../Form/FormInitialValues';
+import { useDispatch, useSelector } from 'react-redux';
+import { submitForm } from '@/app/redux/formValues/operations';
+import { AppDispatch } from '@/app/redux/store';
+import { selectCountryName } from '@/app/redux/location/selectors';
+import { fetchLocation } from '@/app/redux/location/operations';
 
 function _renderStepContent(
   id: number,
@@ -64,6 +69,8 @@ function _renderStepContent(
 }
 
 const FormSecond = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const countryName = useSelector(selectCountryName);
   const [activeId, setActiveId] = useState<number>(1);
   const savedValues =
     typeof window !== 'undefined'
@@ -71,11 +78,14 @@ const FormSecond = () => {
       : {};
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [initialFormValues, setInitialFormValues] = useState({
-    ...initialValues,
+    ...InitialValues,
     ...savedValues,
   });
-
+  useEffect(() => {
+    dispatch(fetchLocation());
+  }, [dispatch]);
   const handleSubmit = (values, actions) => {
+    values.location = countryName;
     if (typeof window !== 'undefined') {
       window.localStorage.setItem('values', JSON.stringify(values));
     }
@@ -84,6 +94,7 @@ const FormSecond = () => {
       actions.setSubmitting(false);
       actions.setTouched({});
     } else {
+      dispatch(submitForm(values));
       console.log(values);
     }
   };

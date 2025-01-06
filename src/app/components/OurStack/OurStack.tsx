@@ -1,8 +1,8 @@
 'use client';
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
-import items from '../../../stack.json';
-import OurStackPart from '@/app/components/OurStackPart';
+import items from '../../../../stack.json';
+import OurStackPart from '@/app/components/OurStack/OurStackPart';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
