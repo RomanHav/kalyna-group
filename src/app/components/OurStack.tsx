@@ -20,7 +20,7 @@ const OurStack: React.FC = () => {
       className={`w-full relative -bottom-2 bg-stack h-screen bg-cover bg-center text-white py-10`}
     >
       <div className={`absolute w-full h-full inset-0 bg-black/50`}></div>
-      <div className={'ml-20 flex relative flex-col gap-32'}>
+      <div className={'px-4 lg:ml-6 xl:ml-20 flex relative flex-col gap-32'}>
         <h2
           className={`text-4xl relative w-[270px] uppercase after:absolute after:-bottom-4 after:left-0 after:w-full after:h-[2px] after:bg-white `}
         >
@@ -28,7 +28,11 @@ const OurStack: React.FC = () => {
           <br />
           <span className={`text-[#C2FAD7]`}>technologies</span>
         </h2>
-        <div className={'w-full px-10 flex justify-between items-center'}>
+        <div
+          className={
+            'w-full max-[400px]:px-5 px-0 flex justify-between items-center'
+          }
+        >
           <Swiper
             modules={[Navigation]}
             onSwiper={swiperInstance => {
@@ -41,6 +45,13 @@ const OurStack: React.FC = () => {
             loop
             effect={'fade'}
             slidesPerView={4}
+            breakpoints={{
+              320: { slidesPerView: 1, spaceBetween: 0 },
+              420: { slidesPerView: 2, spaceBetween: 5 },
+              640: { slidesPerView: 3, spaceBetween: 5 },
+              1023: { slidesPerView: 3, spaceBetween: 10 },
+              1270: { slidesPerView: 4, spaceBetween: 10 },
+            }}
           >
             {items.map(item => {
               return (
@@ -58,11 +69,11 @@ const OurStack: React.FC = () => {
           <button
             onClick={handleNextSlide}
             className={
-              'w-16 h-16 flex justify-center items-center rotate-90 rounded-full border border-white'
+              'w-12 h-12 lg:h-16 lg:w-16 flex justify-center items-center rotate-90 rounded-full border border-white'
             }
           >
             <Image
-              className={`mx-8`}
+              className={`w-8 lg:w-auto mx-8 lg:mx-8`}
               src={'/arrow-cases.svg'}
               alt={'arrow'}
               width={20}
