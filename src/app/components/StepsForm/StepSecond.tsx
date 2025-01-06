@@ -13,7 +13,7 @@ const StepSecond: React.FC<StepSecondProps> = ({ title, description }) => {
   const { values, setFieldValue } = useFormikContext<{ services: string[] }>();
 
   const [active, setActive] = useState<string[]>(() => {
-    return JSON.parse(localStorage.getItem('services') || '[]');
+    return JSON.parse(window.localStorage.getItem('services') || '[]');
   });
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const StepSecond: React.FC<StepSecondProps> = ({ title, description }) => {
       : [...active, serviceTitle];
 
     setActive(updatedActive);
-    localStorage.setItem('services', JSON.stringify(updatedActive));
+    window.localStorage.setItem('services', JSON.stringify(updatedActive));
   };
 
   return (

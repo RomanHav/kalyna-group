@@ -66,7 +66,7 @@ function _renderStepContent(
 const FormSecond = () => {
   const [activeId, setActiveId] = useState<number>(1);
 
-  const savedValues = JSON.parse(localStorage.getItem('values') || '{}');
+  const savedValues = JSON.parse(window.localStorage.getItem('values') || '{}');
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [initialFormValues, setInitialFormValues] = useState({
     ...initialValues,
@@ -74,7 +74,7 @@ const FormSecond = () => {
   });
 
   const handleSubmit = (values, actions) => {
-    localStorage.setItem('values', JSON.stringify(values));
+    window.localStorage.setItem('values', JSON.stringify(values));
 
     if (activeId !== steps.length) {
       setActiveId(activeId + 1);
@@ -93,8 +93,12 @@ const FormSecond = () => {
   const step = partStep(activeId);
 
   return (
-    <div className={`relative text-white z-20 px-24 pt-28 bg-test bg-center bg-cover`}>
-      <div className={`absolute top-0 left-0 w-full h-full bg-black opacity-30`}></div>
+    <div
+      className={`relative text-white z-20 px-24 pt-28 bg-test bg-center bg-cover`}
+    >
+      <div
+        className={`absolute top-0 left-0 w-full h-full bg-black opacity-30`}
+      ></div>
       <div className={`relative`}>
         <div className={`flex flex-col w-full mb-14`}>
           <h2 className={`uppercase text-[48px] mb-3`}>
@@ -116,7 +120,12 @@ const FormSecond = () => {
               {steps.map(step => {
                 return (
                   <li key={step.id}>
-                    <Steps name={step.name} activeId={activeId} id={step.id} image={step.image} />
+                    <Steps
+                      name={step.name}
+                      activeId={activeId}
+                      id={step.id}
+                      image={step.image}
+                    />
                   </li>
                 );
               })}
@@ -136,7 +145,7 @@ const FormSecond = () => {
                   </div>
                   <div className={`flex w-full justify-end gap-5`}>
                     <button
-                      type='button'
+                      type="button"
                       disabled={activeId === 1}
                       onClick={handleDownId}
                       className={`disabled:border-white/50 disabled:text-white/50 px-7 py-2.5 bg-none border-2 border-white rounded-2xl text-lg`}
@@ -147,7 +156,9 @@ const FormSecond = () => {
                       type="submit"
                       className={`px-7 py-2.5 bg-[#38A963] rounded-2xl text-lg`}
                     >
-                      {activeId === steps.length ? 'Complete Submission' : 'Next Step'}
+                      {activeId === steps.length
+                        ? 'Complete Submission'
+                        : 'Next Step'}
                     </button>
                   </div>
                 </Form>
