@@ -1,6 +1,6 @@
-'use client';
-import React, { useId } from 'react';
+import React from 'react';
 import { Box, TextField } from '@mui/material';
+import { useFormikContext } from 'formik';
 
 interface StepFirstProps {
   title: string;
@@ -8,7 +8,8 @@ interface StepFirstProps {
 }
 
 const StepFirst: React.FC<StepFirstProps> = ({ title, description }) => {
-  const id = useId();
+  const { values, handleChange } = useFormikContext();
+
   return (
     <div className={`flex flex-col gap-10 text-white`}>
       <div className={`flex flex-col`}>
@@ -16,17 +17,20 @@ const StepFirst: React.FC<StepFirstProps> = ({ title, description }) => {
         <span className={`mb-6 min-h-[48px]`}>{description}</span>
         <div className={`w-full h-[1px] bg-[#C0FFD8]`}></div>
       </div>
-      <div className='min-h-[270px]'>
-        {' '}
+      <div className="min-h-[270px]">
         <Box sx={{ width: '70%' }} className={`flex flex-col gap-5`}>
-          <label htmlFor={id}>Enter your name</label>
+          <label htmlFor="name">Enter your name</label>
           <TextField
-            id={id}
-            name={'name'}
+            id="name"
+            name="name"
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error 
+            value={values.name || ''}
+            onChange={handleChange}
             fullWidth
-            variant={'outlined'}
-            size={'medium'}
-            label={'Name'}
+            variant="outlined"
+            size="medium"
+            label="Name"
             sx={{
               '& .MuiInputLabel-root': {
                 color: '#FFFFFF60',

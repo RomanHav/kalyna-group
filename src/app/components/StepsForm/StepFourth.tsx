@@ -1,24 +1,33 @@
 'use client';
 
-import React, { useId, useState } from 'react';
+import React, { useEffect, useId, useState } from 'react';
 import { Box, Slider, TextField, Typography } from '@mui/material';
+import { useFormikContext } from 'formik';
 
-interface StepFourth {
+interface StepFourthProps {
   title: string;
   description: string;
 }
 
-const StepFourth: React.FC<StepFourth> = ({ title, description }) => {
+const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
   const min = 300;
   const max = 15000;
   const id = useId();
 
-  const [val, setVal] = useState<number[]>([1500, 5000]);
+  const initialVal = JSON.parse(localStorage.getItem('budget') || `[1500, 5000]`);
 
+  const [val, setVal] = useState<number[]>(initialVal);
   const [inputValues, setInputValues] = useState<string[]>([
     val[0].toString(),
     val[1].toString(),
   ]);
+
+  const { setFieldValue } = useFormikContext();
+
+  useEffect(() => {
+    setFieldValue('budget', val);
+    localStorage.setItem('budget', JSON.stringify(val));
+  }, [val, setFieldValue]);
 
   const handleSliderChange = (_: Event, newValue: number | number[]) => {
     const newValues = newValue as number[];
@@ -53,7 +62,7 @@ const StepFourth: React.FC<StepFourth> = ({ title, description }) => {
         <span className="mb-6 min-h-[48px]">{description}</span>
         <div className="w-full h-[1px] bg-[#C0FFD8]"></div>
       </div>
-      <div className='min-h-[270px] flex flex-col justify-center'>
+      <div className="min-h-[270px] flex flex-col justify-center">
         <div className="flex justify-center pt-10">
           <Box sx={{ width: '70%' }}>
             <Slider

@@ -1,6 +1,7 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import services from '../../../../serviceInfo.json';
+import { useFormikContext } from 'formik';
 
 export interface StepSecondProps {
   title: string;
@@ -8,13 +9,24 @@ export interface StepSecondProps {
 }
 
 const StepSecond: React.FC<StepSecondProps> = ({ title, description }) => {
-  const [active, setActive] = useState<number[]>([]);
-  const handleClick = (id: number) => {
-    setActive(prevActive =>
-      prevActive.includes(id)
-        ? prevActive.filter(activeId => activeId !== id)
-        : [...prevActive, id]
-    );
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { values, setFieldValue } = useFormikContext<{ services: string[] }>();
+
+  const [active, setActive] = useState<string[]>(() => {
+    return JSON.parse(localStorage.getItem('services') || '[]');
+  });
+
+  useEffect(() => {
+    setFieldValue('services', active);
+  }, [active, setFieldValue]);
+
+  const handleClick = (serviceTitle: string) => {
+    const updatedActive = active.includes(serviceTitle)
+      ? active.filter(activeTitle => activeTitle !== serviceTitle)
+      : [...active, serviceTitle];
+
+    setActive(updatedActive);
+    localStorage.setItem('services', JSON.stringify(updatedActive));
   };
 
   return (
@@ -30,11 +42,11 @@ const StepSecond: React.FC<StepSecondProps> = ({ title, description }) => {
             <li
               key={service.id}
               className={`cursor-pointer flex justify-between border ${
-                active.includes(service.id)
+                active.includes(service.title)
                   ? 'border-[#38EF7D] text-white font-medium'
                   : 'border-white/60 text-white/60'
               } px-4 py-3 rounded-lg min-w-52`}
-              onClick={() => handleClick(service.id)}
+              onClick={() => handleClick(service.title)}
             >
               <span>{service.id}</span>
               <p>{service.title}</p>

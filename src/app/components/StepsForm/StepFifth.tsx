@@ -1,5 +1,6 @@
 import React, { useId } from 'react';
 import { Box, TextField } from '@mui/material';
+import { useFormikContext } from 'formik';
 
 interface StepFifth {
   title: string;
@@ -8,6 +9,7 @@ interface StepFifth {
 
 const StepFifth: React.FC<StepFifth> = ({ title, description }) => {
   const id = useId();
+  const { values, handleChange } = useFormikContext();
   return (
     <div className={`flex flex-col gap-10`}>
       <div className={`flex flex-col`}>
@@ -20,6 +22,10 @@ const StepFifth: React.FC<StepFifth> = ({ title, description }) => {
           <label htmlFor={id}>Enter your email:</label>
           <TextField
             id={id}
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error 
+            value={values.email || ''}
+            onChange={handleChange}
             name={'email'}
             variant={'outlined'}
             size={'medium'}
