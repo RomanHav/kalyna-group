@@ -1,7 +1,7 @@
-import HowWeWork from '../components/HowWeWork';
-import OurTeam from '../components/OurTeam';
+import HowWeWork from '../components/HowWeWork/HowWeWork';
+import OurTeam from '../components/OurTeam/OurTeam';
 import WhoWeAre from '../components/WhoWeAre';
-import OurStack from '@/app/components/OurStack';
+import OurStack from '@/app/components/OurStack/OurStack';
 
 const AboutUs = () => {
   return (

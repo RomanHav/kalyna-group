@@ -3,9 +3,10 @@ import axios from 'axios';
 
 interface FormParams {
   name: string;
+  services: string[];
+  description: string;
+  budget: number[];
   email: string;
-  phoneNumber: string;
-  message: string;
   location: string;
 }
 

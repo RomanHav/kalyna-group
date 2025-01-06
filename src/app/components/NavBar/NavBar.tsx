@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import React, { useState, useEffect } from 'react';
-import ContactUsModal from '../ContactUsModal';
+// import ContactUsModal from '../ContactUsModal';
 import { IoIosLink } from 'react-icons/io';
 import css from './NavBar.module.css';
 import Burger from '@/app/components/Burger';
@@ -143,7 +143,7 @@ const NavBar: React.FC = () => {
         </div>
       </nav>
       {isOpen && <Burger isOpen={isOpen} handleClick={handleClick} />}
-      {click && <ContactUsModal click={click} handleOpen={handleOpen} />}
+      {/*{click && <ContactUsModal click={click} handleOpen={handleOpen} />}*/}
     </div>
   );
 };

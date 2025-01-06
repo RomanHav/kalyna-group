@@ -1,4 +1,4 @@
-import ContactUsModal from '../ContactUsModal';
+// import ContactUsModal from '../ContactUsModal';
 import { useEffect, useRef, useState } from 'react';
 import css from './HeaderVideo.module.css';
 import { gsap } from 'gsap';
@@ -86,7 +86,6 @@ export default function HeaderVideo() {
           </button>
         </div>
       </div>
-      {click && <ContactUsModal click={click} handleOpen={handleOpen} />}
     </>
   );
 }

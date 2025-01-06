@@ -1,5 +1,5 @@
 'use client';
-import ContactUsModal from '../ContactUsModal';
+// import ContactUsModal from '../ContactUsModal';
 import ServicePart from './ServicePart';
 import Title from '../Title';
 import React, { useState } from 'react';
@@ -56,7 +56,6 @@ const Services: React.FC<ServiceProps> = ({
           ))}
         </ul>
       </div>
-      {click && <ContactUsModal click={click} handleOpen={handleClick} />}
     </>
   );
 };

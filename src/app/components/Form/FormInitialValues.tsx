@@ -1,10 +1,14 @@
-const initialValues = {
-  name: '',
-  services: [],
-  description: '',
-  budget: [],
-  email: '',
-  location: '',
+
+
+const InitialValues =  {
+
+    name: '',
+    services: [],
+    description: '',
+    budget: [],
+    email: '',
+    location: '',
+
 };
 
-export default initialValues;
+export default InitialValues;
