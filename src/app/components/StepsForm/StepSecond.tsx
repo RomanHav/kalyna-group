@@ -13,7 +13,9 @@ const StepSecond: React.FC<StepSecondProps> = ({ title, description }) => {
   const { values, setFieldValue } = useFormikContext<{ services: string[] }>();
 
   const [active, setActive] = useState<string[]>(() => {
-    return JSON.parse(window.localStorage.getItem('services') || '[]');
+    if (typeof window === 'undefined') return [];
+    const storedServices = window.localStorage.getItem('services');
+    return storedServices ? JSON.parse(storedServices) : [];
   });
 
   useEffect(() => {
@@ -26,7 +28,10 @@ const StepSecond: React.FC<StepSecondProps> = ({ title, description }) => {
       : [...active, serviceTitle];
 
     setActive(updatedActive);
-    window.localStorage.setItem('services', JSON.stringify(updatedActive));
+
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('services', JSON.stringify(updatedActive));
+    }
   };
 
   return (
@@ -36,16 +41,17 @@ const StepSecond: React.FC<StepSecondProps> = ({ title, description }) => {
         <span className="mb-6 min-h-[48px]">{description}</span>
         <div className="w-full h-[1px] bg-[#C0FFD8]"></div>
       </div>
+
       <div className="min-h-[270px] flex items-center">
         <ul className="flex flex-wrap gap-10 justify-center">
           {services.map(service => (
             <li
               key={service.id}
-              className={`cursor-pointer flex justify-between border ${
+              className={`cursor-pointer flex justify-between border px-4 py-3 rounded-lg min-w-52 ${
                 active.includes(service.title)
                   ? 'border-[#38EF7D] text-white font-medium'
                   : 'border-white/60 text-white/60'
-              } px-4 py-3 rounded-lg min-w-52`}
+              }`}
               onClick={() => handleClick(service.title)}
             >
               <span>{service.id}</span>

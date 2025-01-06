@@ -14,7 +14,10 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
   const max = 15000;
   const id = useId();
 
-  const initialVal = JSON.parse(window.localStorage.getItem('budget') || `[1500, 5000]`);
+  const initialVal =
+    typeof window !== 'undefined'
+      ? JSON.parse(window.localStorage.getItem('budget'))
+      : `[1500, 5000]`;
 
   const [val, setVal] = useState<number[]>(initialVal);
   const [inputValues, setInputValues] = useState<string[]>([
@@ -26,7 +29,9 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
 
   useEffect(() => {
     setFieldValue('budget', val);
-    window.localStorage.setItem('budget', JSON.stringify(val));
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('budget', JSON.stringify(val));
+    }
   }, [val, setFieldValue]);
 
   const handleSliderChange = (_: Event, newValue: number | number[]) => {

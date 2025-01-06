@@ -65,8 +65,10 @@ function _renderStepContent(
 
 const FormSecond = () => {
   const [activeId, setActiveId] = useState<number>(1);
-
-  const savedValues = JSON.parse(window.localStorage.getItem('values') || '{}');
+  const savedValues =
+    typeof window !== 'undefined'
+      ? JSON.parse(window.localStorage.getItem('values'))
+      : {};
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [initialFormValues, setInitialFormValues] = useState({
     ...initialValues,
@@ -74,8 +76,9 @@ const FormSecond = () => {
   });
 
   const handleSubmit = (values, actions) => {
-    window.localStorage.setItem('values', JSON.stringify(values));
-
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('values', JSON.stringify(values));
+    }
     if (activeId !== steps.length) {
       setActiveId(activeId + 1);
       actions.setSubmitting(false);
