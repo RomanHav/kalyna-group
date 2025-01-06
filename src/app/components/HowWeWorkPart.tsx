@@ -29,30 +29,30 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
   return (
     <div
       className={`flex w-full relative items-center transition-all duration-200 contain-paint ${
-        expandedId === id || isLast ? 'h-[247px]' : 'h-[160px]'
+        expandedId === id || isLast ? 'lg:h-[247px]' : 'h-20 md:h-[160px]'
       } px-3 border-t-2 border-white`}
     >
       {isLast ? (
         <div>
-          <div className="relative mr-8 w-[280px] flex items-center">
+          <div className="relative md:top-[46px] mr-3 w-5 md:w-[200px] flex items-center">
             <Image src={number} alt="Number" width={274} height={182}></Image>
           </div>
         </div>
       ) : (
         <div>
-          <div className="relative mr-8 w-[280px] flex items-center">
+          <div className="relative mr-3 md:mr-8 w-5 md:w-[200px] flex items-center">
             <Image
               src={number}
               alt="Number"
               width={274}
               height={182}
-              className={`absolute delay-150 duration-500 transition-all ease-in ${
-                expandedId === id ? '' : '-top-[46px]'
+              className={`absolute md:w-auto ${
+                expandedId === id ? '' : 'md:-top-[46px]'
               } ${
                 title === 'Introductory call'
-                  ? 'max-w-[176px]'
-                  : 'max-w-[264px]'
-              } transition-all duration-500 uppercase text-[230px] font-extralight`}
+                  ? 'md:max-w-[130px] xl:max-w-[176px]'
+                  : 'md:max-w-[200px] xl:max-w-[264px]'
+              } transition-all duration-500 uppercase delay-150 ease-in`}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-custom-green to-custom-second-green opacity-60"></div>
           </div>
@@ -60,7 +60,7 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
       )}
 
       {isLast ? (
-        <span className="text-[40px] bg-gradient-to-r from-custom-green to-custom-second-green bg-clip-text text-transparent">
+        <span className="text-xl lg:text-[40px] px-3 py-2 bg-gradient-to-r from-custom-green to-custom-second-green bg-clip-text text-transparent">
           Your project is ready to generate income
         </span>
       ) : (
@@ -84,8 +84,9 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
               '& .MuiAccordionSummary-content': {
                 background: 'linear-gradient(to right, #38EF7D, #C2FAD7)',
                 WebkitBackgroundClip: 'text',
+                mt: { sm: '20px', md: 'auto' },
                 WebkitTextFillColor: 'transparent',
-                fontSize: '40px',
+                fontSize: { xs: '20px', md: '40px' },
                 fontWeight: 'regular',
               },
             }}
@@ -96,7 +97,7 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
             sx={{
               backgroundColor: 'transparent',
               color: '#ffff',
-              fontSize: '20px',
+              fontSize: { sm: '16px', md: '20px' },
               fontWeight: 'regular',
               maxWidth: '750px',
             }}

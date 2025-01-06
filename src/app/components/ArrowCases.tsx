@@ -5,7 +5,7 @@ interface ArrowCasesProps {
 const ArrowCases: React.FC<ArrowCasesProps> = () => {
   return (
     <div
-      className={`border border-white rounded-full py-2 px-[15px] rotate-90`}
+      className={`py-1 px-4 border border-white rounded-full md:py-2 md:px-[15px] rotate-90`}
     >
       <svg
         width="26"
@@ -13,6 +13,7 @@ const ArrowCases: React.FC<ArrowCasesProps> = () => {
         viewBox="0 0 26 38"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className={`w-4 md:w-auto `}
       >
         <path
           d="M1 13.1951C7.73781 13.1951 13.1951 7.73781 13.1951 1"

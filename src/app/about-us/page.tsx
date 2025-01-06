@@ -5,7 +5,7 @@ import OurStack from '@/app/components/OurStack';
 
 const AboutUs = () => {
   return (
-    <div className="pt-60 relative">
+    <div className="pt-32 lg:pt-60 relative">
       <WhoWeAre />
       <HowWeWork />
       <OurTeam />

@@ -19,16 +19,25 @@ export default function App() {
   const handleServiceModal = (id: number | undefined) => {
     setOpenModalId(openModalId === id ? null : id || null);
   };
-  useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time: number) {
-      lenis.raf(time);
+    useEffect(() => {
+        const isMobile = window.innerWidth <= 768;
 
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }, []);
-  return (
+        if (!isMobile) {
+            const lenis = new Lenis();
+
+            function raf(time: number) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            return () => {
+                lenis.destroy();
+            };
+        }
+    }, []);
+
+    return (
     <Provider store={store}>
       <HeaderVideo />
       <Services
