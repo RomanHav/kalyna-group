@@ -1,4 +1,3 @@
-'use client';
 import React, { useState, useEffect } from 'react';
 import services from '../../../../serviceInfo.json';
 import { useFormikContext } from 'formik';
@@ -6,12 +5,16 @@ import { useFormikContext } from 'formik';
 export interface StepSecondProps {
   title: string;
   description: string;
+  error?: boolean;
 }
 
-const StepSecond: React.FC<StepSecondProps> = ({ title, description }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+const StepSecond: React.FC<StepSecondProps> = ({
+  title,
+  description,
+  error,
+}) => {
+  {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
   const { values, setFieldValue } = useFormikContext<{ services: string[] }>();
-
   const [active, setActive] = useState<string[]>(() => {
     if (typeof window === 'undefined') return [];
     const storedServices = window.localStorage.getItem('services');
@@ -28,7 +31,6 @@ const StepSecond: React.FC<StepSecondProps> = ({ title, description }) => {
       : [...active, serviceTitle];
 
     setActive(updatedActive);
-
     if (typeof window !== 'undefined') {
       window.localStorage.setItem('services', JSON.stringify(updatedActive));
     }
@@ -60,6 +62,11 @@ const StepSecond: React.FC<StepSecondProps> = ({ title, description }) => {
           ))}
         </ul>
       </div>
+      {error && (
+        <div className="text-red-500 mt-2">
+          Please select at least one service before proceeding.
+        </div>
+      )}
     </div>
   );
 };

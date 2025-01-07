@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, TextField } from '@mui/material';
 import { useFormikContext } from 'formik';
 
@@ -9,7 +9,15 @@ interface StepFirstProps {
 
 const StepFirst: React.FC<StepFirstProps> = ({ title, description }) => {
   const { values, handleChange } = useFormikContext();
-
+  const [error, setError] = useState<boolean>(false);
+  const handleChangeName = evt => {
+    handleChange(evt);
+    if (evt.target.validity.valid) {
+      setError(false);
+    } else {
+      setError(true);
+    }
+  };
   return (
     <div className={`flex flex-col gap-10 text-white`}>
       <div className={`flex flex-col`}>
@@ -21,16 +29,22 @@ const StepFirst: React.FC<StepFirstProps> = ({ title, description }) => {
         <Box sx={{ width: '70%' }} className={`flex flex-col gap-5`}>
           <label htmlFor="name">Enter your name</label>
           <TextField
+            required
             id="name"
             name="name"
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error 
+            // @ts-expect-error
             value={values.name || ''}
-            onChange={handleChange}
+            onChange={handleChangeName}
             fullWidth
             variant="outlined"
             size="medium"
             label="Name"
+            error={error}
+              helperText={
+                error ? 'Please enter your full name. Example: John Snow' : ''
+              }
+            slotProps={{ htmlInput: { pattern: `[A-Za-z]+ [A-Za-z]+` } }}
             sx={{
               '& .MuiInputLabel-root': {
                 color: '#FFFFFF60',

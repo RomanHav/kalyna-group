@@ -24,6 +24,10 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
     val[0].toString(),
     val[1].toString(),
   ]);
+  const [errors, setErrors] = useState<{ min: string; max: string }>({
+    min: '',
+    max: '',
+  });
 
   const { setFieldValue } = useFormikContext();
 
@@ -38,6 +42,7 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
     const newValues = newValue as number[];
     setVal(newValues);
     setInputValues([newValues[0].toString(), newValues[1].toString()]);
+    validateInputs(newValues[0], newValues[1]);
   };
 
   const handleMinChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,12 +57,25 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
     const newMin = Math.max(min, Math.min(Number(inputValues[0]), val[1]));
     setVal([newMin, val[1]]);
     setInputValues([newMin.toString(), inputValues[1]]);
+    validateInputs(newMin, val[1]);
   };
 
   const handleMaxBlur = () => {
     const newMax = Math.min(max, Math.max(Number(inputValues[1]), val[0]));
     setVal([val[0], newMax]);
     setInputValues([inputValues[0], newMax.toString()]);
+    validateInputs(val[0], newMax);
+  };
+
+  const validateInputs = (minVal: number, maxVal: number) => {
+    const newErrors = { min: '', max: '' };
+    if (minVal < min || minVal >= maxVal) {
+      newErrors.min = `Min value should be at least ${min} and less than Max value`;
+    }
+    if (maxVal > max || maxVal <= minVal) {
+      newErrors.max = `Max value should be at most ${max} and greater than Min value`;
+    }
+    setErrors(newErrors);
   };
 
   return (
@@ -93,6 +111,7 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
           <Box sx={{ width: '20%' }} className="flex flex-col gap-5">
             <label htmlFor={`${id}-min`}>Enter your min value</label>
             <TextField
+              type={'number'}
               id={`${id}-min`}
               value={inputValues[0]}
               onChange={handleMinChange}
@@ -101,6 +120,8 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
               variant="outlined"
               size="medium"
               label="Min number"
+              error={!!errors.min}
+              helperText={errors.min}
               sx={{
                 '& .MuiInputLabel-root': { color: '#FFFFFF60' },
                 '& label.Mui-focused': { color: '#EEE' },
@@ -117,6 +138,7 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
             <label htmlFor={`${id}-max`}>Enter your max value</label>
             <TextField
               id={`${id}-max`}
+              type={'number'}
               value={inputValues[1]}
               onChange={handleMaxChange}
               onBlur={handleMaxBlur}
@@ -124,6 +146,8 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
               variant="outlined"
               size="medium"
               label="Max number"
+              error={!!errors.max}
+              helperText={errors.max}
               sx={{
                 '& .MuiInputLabel-root': { color: '#FFFFFF60' },
                 '& label.Mui-focused': { color: '#EEE' },
