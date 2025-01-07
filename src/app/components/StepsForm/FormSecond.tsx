@@ -16,9 +16,15 @@ import { submitForm } from '@/app/redux/formValues/operations';
 import { AppDispatch } from '@/app/redux/store';
 import { selectCountryName } from '@/app/redux/location/selectors';
 import { fetchLocation } from '@/app/redux/location/operations';
+import {
+  selectSubmitLoading,
+  selectSubmitSuccess,
+} from '@/app/redux/formValues/selectors';
+import Success from '@/app/components/StepsForm/Succes';
 
 function _renderStepContent(
   id: number,
+  error: boolean,
   activeStep: {
     id?: number;
     name?: string;
@@ -40,6 +46,7 @@ function _renderStepContent(
         <StepSecond
           title={activeStep.title}
           description={activeStep.description}
+          error={error}
         />
       );
     case 3:
@@ -72,6 +79,10 @@ const FormSecond = () => {
   const dispatch = useDispatch<AppDispatch>();
   const countryName = useSelector(selectCountryName);
   const [activeId, setActiveId] = useState<number>(1);
+
+  const [error, setError] = useState<boolean>(false);
+  const success = useSelector(selectSubmitSuccess);
+  const isLoading = useSelector(selectSubmitLoading);
   const savedValues =
     typeof window !== 'undefined'
       ? JSON.parse(window.localStorage.getItem('values'))
@@ -89,13 +100,24 @@ const FormSecond = () => {
     if (typeof window !== 'undefined') {
       window.localStorage.setItem('values', JSON.stringify(values));
     }
+    if (activeId === 2 && (!values.services || values.services.length === 0)) {
+      setError(true);
+      actions.setSubmitting(false);
+      return;
+    }
+
+    setError(false);
     if (activeId !== steps.length) {
       setActiveId(activeId + 1);
       actions.setSubmitting(false);
-      actions.setTouched({});
     } else {
       dispatch(submitForm(values));
-      console.log(values);
+      if (typeof window !== undefined) {
+        localStorage.removeItem('values');
+        localStorage.removeItem('budget');
+        localStorage.removeItem('services');
+      }
+      actions.resetForm();
     }
   };
 
@@ -128,58 +150,69 @@ const FormSecond = () => {
           </span>
           <div className={`w-full h-[2px] bg-[#C0FFD8]`}></div>
         </div>
-        <div className={`flex justify-between`}>
-          <div className={`flex justify-around w-1/4`}>
-            <ul className={`flex flex-col gap-8 pb-40`}>
-              {steps.map(step => {
-                return (
-                  <li key={step.id}>
-                    <Steps
-                      name={step.name}
-                      activeId={activeId}
-                      id={step.id}
-                      image={step.image}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
-            <ProgressLine activeId={activeId} />
+        {success ? (
+          <Success />
+        ) : (
+          <div className={`flex justify-between`}>
+            <div className={`flex justify-around w-1/4`}>
+              <ul className={`flex flex-col gap-8 pb-40`}>
+                {steps.map(step => {
+                  return (
+                    <li key={step.id}>
+                      <Steps
+                        name={step.name}
+                        activeId={activeId}
+                        id={step.id}
+                        image={step.image}
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+              <ProgressLine activeId={activeId} />
+            </div>
+            <div className={`w-2/3`}>
+              <span className={`opacity-70 text-base`}>
+                Step {activeId} / {steps.length}
+              </span>
+              <Formik
+                initialValues={initialFormValues}
+                onSubmit={handleSubmit}
+                validateOnMount
+              >
+                {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
+                {({ isValid, values, handleChange }) => (
+                  <Form>
+                    <div className={`mt-2 mb-16`}>
+                      {_renderStepContent(activeId, error, step)}
+                    </div>
+                    <div className={`flex w-full justify-end gap-5`}>
+                      <button
+                        type="button"
+                        disabled={activeId === 1}
+                        onClick={handleDownId}
+                        className={`disabled:border-white/50 disabled:text-white/50 px-7 py-2.5 bg-none border-2 border-white rounded-2xl text-lg`}
+                      >
+                        Back
+                      </button>
+                      <button
+                        type="submit"
+                        className={`px-7 py-2.5 bg-[#38A963] rounded-2xl text-lg`}
+                        disabled={!isValid || isLoading}
+                      >
+                        {isLoading
+                          ? 'Processing...'
+                          : activeId === steps.length
+                            ? 'Complete Submission'
+                            : 'Next Step'}
+                      </button>
+                    </div>
+                  </Form>
+                )}
+              </Formik>
+            </div>
           </div>
-          <div className={`w-2/3`}>
-            <span className={`opacity-70 text-base`}>
-              Step {activeId} / {steps.length}
-            </span>
-            <Formik initialValues={initialFormValues} onSubmit={handleSubmit}>
-              {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
-              {({ values, handleChange }) => (
-                <Form>
-                  <div className={`mt-2 mb-16`}>
-                    {_renderStepContent(activeId, step)}
-                  </div>
-                  <div className={`flex w-full justify-end gap-5`}>
-                    <button
-                      type="button"
-                      disabled={activeId === 1}
-                      onClick={handleDownId}
-                      className={`disabled:border-white/50 disabled:text-white/50 px-7 py-2.5 bg-none border-2 border-white rounded-2xl text-lg`}
-                    >
-                      Back
-                    </button>
-                    <button
-                      type="submit"
-                      className={`px-7 py-2.5 bg-[#38A963] rounded-2xl text-lg`}
-                    >
-                      {activeId === steps.length
-                        ? 'Complete Submission'
-                        : 'Next Step'}
-                    </button>
-                  </div>
-                </Form>
-              )}
-            </Formik>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

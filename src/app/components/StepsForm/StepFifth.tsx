@@ -1,4 +1,4 @@
-import React, { useId } from 'react';
+import React, { useId, useState } from 'react';
 import { Box, TextField } from '@mui/material';
 import { useFormikContext } from 'formik';
 
@@ -10,6 +10,15 @@ interface StepFifth {
 const StepFifth: React.FC<StepFifth> = ({ title, description }) => {
   const id = useId();
   const { values, handleChange } = useFormikContext();
+  const [error, setError] = useState<boolean>(false);
+  const handleChangeEmail = evt => {
+    handleChange(evt);
+    if (evt.target.validity.valid) {
+      setError(false);
+    } else {
+      setError(true);
+    }
+  };
   return (
     <div className={`flex flex-col gap-10`}>
       <div className={`flex flex-col`}>
@@ -17,19 +26,28 @@ const StepFifth: React.FC<StepFifth> = ({ title, description }) => {
         <span className={`mb-6 pr-5 min-h-[48px]`}>{description}</span>
         <div className={`w-full h-[1px] bg-[#C0FFD8]`}></div>
       </div>
-      <div className='min-h-[270px]'>
+      <div className="min-h-[270px]">
         <Box sx={{ width: '70%' }} className={`flex flex-col gap-5`}>
           <label htmlFor={id}>Enter your email:</label>
           <TextField
             id={id}
+            type={'email'}
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error 
+            // @ts-expect-error
             value={values.email || ''}
-            onChange={handleChange}
+            onChange={handleChangeEmail}
             name={'email'}
             variant={'outlined'}
             size={'medium'}
+            slotProps={{
+              htmlInput: {
+                pattern: `[-A-Za-z0-9!#$%&'*+/=?^_\`{|}~]+(?:\\.[-A-Za-z0-9!#$%&'*+/=?^_\`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?`,
+              },
+            }}
             label={'Email'}
+            error={error}
+            helperText={error ? 'Please enter a valid email' : ''}
+            required
             sx={{
               '& .MuiInputLabel-root': {
                 color: '#FFFFFF60',

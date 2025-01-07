@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, TextField } from '@mui/material';
-import { useFormikContext } from 'formik';
+import { ErrorMessage, useFormikContext } from 'formik';
 
 interface StepThird {
   title: string;
@@ -21,7 +21,7 @@ const StepThird: React.FC<StepThird> = ({ title, description }) => {
           <TextField
             name="description"
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error 
+            // @ts-expect-error
             value={values.description || ''}
             onChange={handleChange}
             multiline
@@ -52,6 +52,11 @@ const StepThird: React.FC<StepThird> = ({ title, description }) => {
                 },
               },
             }}
+          />
+          <ErrorMessage
+            name={'description'}
+            className={'text-red-700'}
+            component={'span'}
           />
         </Box>
       </div>
