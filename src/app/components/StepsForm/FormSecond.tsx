@@ -16,11 +16,13 @@ import { submitForm } from '@/app/redux/formValues/operations';
 import { AppDispatch } from '@/app/redux/store';
 import { selectCountryName } from '@/app/redux/location/selectors';
 import { fetchLocation } from '@/app/redux/location/operations';
+
 import {
   selectSubmitLoading,
   selectSubmitSuccess,
 } from '@/app/redux/formValues/selectors';
 import Success from '@/app/components/StepsForm/Succes';
+
 
 function _renderStepContent(
   id: number,
@@ -112,12 +114,14 @@ const FormSecond = () => {
       actions.setSubmitting(false);
     } else {
       dispatch(submitForm(values));
+
       if (typeof window !== undefined) {
         localStorage.removeItem('values');
         localStorage.removeItem('budget');
         localStorage.removeItem('services');
       }
       actions.resetForm();
+
     }
   };
 
