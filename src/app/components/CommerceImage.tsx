@@ -17,11 +17,11 @@ const CommerceImage = () => {
         className={
           'absolute bottom-36 flex justify-center items-center w-full h-full'
         }
-        speed={3}
+        speed={5}
       >
         <span className="uppercase text-[197px] font-semibold">E-commerce</span>
       </Parallax>
-      <Parallax className="relative z-10 flex gap-36" speed={5}>
+      <Parallax className="relative z-10 flex gap-36" speed={10}>
         <ShoesCard
           src={'/first-shoes.png'}
           container={'bg-[#7FFFA5]'}
