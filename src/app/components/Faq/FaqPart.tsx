@@ -1,8 +1,9 @@
-import { Typography } from '@mui/material';
+import { createTheme, ThemeProvider, Typography } from '@mui/material';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ArrowCases from '@/app/components/ArrowCases';
+import React from 'react';
 
 interface FaqPartProps {
   id: number;
@@ -12,13 +13,26 @@ interface FaqPartProps {
   onAccordionChange: (itemId: number) => void;
 }
 
-const FaqPart: React.FC<FaqPartProps> = ({ title, description, id, expandedId, onAccordionChange }) => {
+const theme = createTheme({
+  typography: { fontFamily: 'Poppins, Poppins Fallback' },
+});
+
+const FaqPart: React.FC<FaqPartProps> = ({
+  title,
+  description,
+  id,
+  expandedId,
+  onAccordionChange,
+}) => {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Accordion
         expanded={expandedId === id}
         onChange={() => onAccordionChange(id)}
         sx={{
+          '&.MuiTypography-root': {
+            fontFamily: "'Poppins', 'Poppins Fallback'",
+          },
           width: '100%',
           backgroundColor: 'transparent',
           boxShadow: 'none',
@@ -28,9 +42,14 @@ const FaqPart: React.FC<FaqPartProps> = ({ title, description, id, expandedId, o
         }}
       >
         <AccordionSummary
-          expandIcon={<ArrowCases />}
+          expandIcon={<ArrowCases className={'scale-75'} />}
           aria-controls="panel1-content"
           id="panel1-header"
+          sx={{
+            '&.MuiTypography-root': {
+              fontFamily: "'Poppins', 'Poppins Fallback'",
+            },
+          }}
         >
           <Typography
             component="span"
@@ -40,12 +59,12 @@ const FaqPart: React.FC<FaqPartProps> = ({ title, description, id, expandedId, o
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className="text-base text-white">
+          <Typography className="text-base text-white max-w-[85%]">
             {description}
           </Typography>
         </AccordionDetails>
       </Accordion>
-    </div>
+    </ThemeProvider>
   );
 };
 

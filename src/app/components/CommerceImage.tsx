@@ -1,9 +1,11 @@
+'use client';
 import Image from 'next/image';
 import ShoesCard from './ShoesCard';
+import { Parallax } from 'react-scroll-parallax';
 
 const CommerceImage = () => {
   return (
-    <div className="relative w-full flex flex-col justify-center items-center -top-80 text-white">
+    <div className="absolute top-[22rem] z-10 w-full flex flex-col justify-center items-center text-white">
       <Image
         className="w-[457px]"
         src={'/phone.png'}
@@ -11,10 +13,15 @@ const CommerceImage = () => {
         width={512}
         height={554}
       />
-      <span className="absolute bottom-36 flex justify-center items-center w-full h-full uppercase text-[197px] font-semibold">
-        E-commerce
-      </span>
-      <div className="relative z-10 flex gap-36">
+      <Parallax
+        className={
+          'absolute bottom-36 flex justify-center items-center w-full h-full'
+        }
+        speed={3}
+      >
+        <span className="uppercase text-[197px] font-semibold">E-commerce</span>
+      </Parallax>
+      <Parallax className="relative z-10 flex gap-36" speed={5}>
         <ShoesCard
           src={'/first-shoes.png'}
           container={'bg-[#7FFFA5]'}
@@ -33,7 +40,7 @@ const CommerceImage = () => {
         >
           <span className="text-2xl font-medium">$87</span>
         </ShoesCard>
-      </div>
+      </Parallax>
     </div>
   );
 };
