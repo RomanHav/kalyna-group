@@ -1,11 +1,12 @@
 import React from 'react';
 interface ArrowCasesProps {
   expanded?: boolean;
+  className?: string;
 }
-const ArrowCases: React.FC<ArrowCasesProps> = () => {
+const ArrowCases: React.FC<ArrowCasesProps> = ({ className }) => {
   return (
     <div
-      className={`py-1 px-4 border border-white rounded-full md:py-2 md:px-[15px] rotate-90`}
+      className={`py-1 px-4 border border-white rounded-full ${className} md:py-2 md:px-[15px] rotate-90`}
     >
       <svg
         width="26"
