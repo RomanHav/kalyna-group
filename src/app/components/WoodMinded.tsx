@@ -43,7 +43,7 @@ const WoodMinded = () => {
           </a>
         </div>
         <p className="text-lg w-11/12">
-          It's a website for purchasing wooden products, designed specifically
+          It&quot;s a website for purchasing wooden products, designed specifically
           for enthusiasts of wooden craftsmanship and art. The site features
           seamless navigation, custom product filters and an integrated secure
           payment system to enhance user experience and sales conversion.
