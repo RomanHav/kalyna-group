@@ -18,11 +18,11 @@ import { selectCountryName } from '@/app/redux/location/selectors';
 import { fetchLocation } from '@/app/redux/location/operations';
 
 import {
+  selectSubmitError,
   selectSubmitLoading,
   selectSubmitSuccess,
 } from '@/app/redux/formValues/selectors';
 import Success from '@/app/components/StepsForm/Succes';
-
 
 function _renderStepContent(
   id: number,
@@ -85,6 +85,7 @@ const FormSecond = () => {
   const [error, setError] = useState<boolean>(false);
   const success = useSelector(selectSubmitSuccess);
   const isLoading = useSelector(selectSubmitLoading);
+  const requestError = useSelector(selectSubmitError);
   const savedValues =
     typeof window !== 'undefined'
       ? JSON.parse(window.localStorage.getItem('values'))
@@ -121,7 +122,6 @@ const FormSecond = () => {
         localStorage.removeItem('services');
       }
       actions.resetForm();
-
     }
   };
 
@@ -190,6 +190,9 @@ const FormSecond = () => {
                     <div className={`mt-2 mb-16`}>
                       {_renderStepContent(activeId, error, step)}
                     </div>
+                    {!success && !isLoading && (
+                      <span className={'text-red-500'}>{requestError}</span>
+                    )}
                     <div className={`flex w-full justify-end gap-5`}>
                       <button
                         type="button"

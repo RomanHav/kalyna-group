@@ -1,4 +1,4 @@
-import React, { useId, useState } from 'react';
+import React, { useId, useRef, useState } from 'react';
 import { Box, TextField } from '@mui/material';
 import { useFormikContext } from 'formik';
 
@@ -7,19 +7,76 @@ interface StepFifth {
   description: string;
 }
 
-const StepFifth: React.FC<StepFifth> = ({ title, description }) => {
-  const id = useId();
-  const { values, handleChange } = useFormikContext();
-  const [error, setError] = useState<boolean>(false);
-  const handleChangeEmail = evt => {
-    handleChange(evt);
-    if (evt.target.validity.valid) {
-      setError(false);
-    } else {
-      setError(true);
-    }
+const ValidatedTextField = ({ values, label, validator, onChange, id }) => {
+  const [error, setError] = useState(false);
+  const handleChange = e => {
+    const newValue = e.target.value;
+    const errorMessage = validator(newValue);
+    setError(errorMessage);
+    onChange(newValue, !errorMessage);
   };
   return (
+    <TextField
+      id={id}
+      type={'email'}
+      label={label}
+      value={values}
+      onChange={handleChange}
+      error={!!error}
+      helperText={error}
+      required
+      sx={{
+        '& .MuiInputLabel-root': {
+          color: '#FFFFFF60',
+        },
+        '& label.Mui-focused': {
+          color: '#EEE',
+        },
+        '& .MuiInput-underline:after': {
+          borderBottomColor: '#B2BAC2',
+        },
+        '& .MuiOutlinedInput-root': {
+          color: '#fff',
+          '& fieldset': {
+            borderColor: '#E0E3E7',
+          },
+          '&:hover fieldset': {
+            borderColor: '#EEE',
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: '#6F7E8C',
+          },
+        },
+      }}
+      variant={'outlined'}
+      size={'medium'}
+    />
+  );
+};
+
+const StepFifth: React.FC<StepFifth> = ({ title, description }) => {
+  const formValid = useRef({ email: false });
+  const id = useId();
+  const { values, setFieldValue } = useFormikContext<{email: string}>();
+
+  const handleChangeValues = (value, isValid) => {
+    setFieldValue('email', value);
+    formValid.current.email = isValid;
+  };
+
+  const emailValidator = value => {
+    if (
+      !/[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/i.test(
+        value
+      )
+    ) {
+      return 'Invalid email address';
+    }
+    return false;
+  };
+
+
+    return (
     <div className={`flex flex-col gap-10`}>
       <div className={`flex flex-col`}>
         <h3 className={`text-3xl font-medium mb-2`}>{title}</h3>
@@ -29,48 +86,12 @@ const StepFifth: React.FC<StepFifth> = ({ title, description }) => {
       <div className="min-h-[270px]">
         <Box sx={{ width: '70%' }} className={`flex flex-col gap-5`}>
           <label htmlFor={id}>Enter your email:</label>
-          <TextField
-            id={id}
-            type={'email'}
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error
-            value={values.email || ''}
-            onChange={handleChangeEmail}
-            name={'email'}
-            variant={'outlined'}
-            size={'medium'}
-            slotProps={{
-              htmlInput: {
-                pattern: `[-A-Za-z0-9!#$%&'*+/=?^_\`{|}~]+(?:\\.[-A-Za-z0-9!#$%&'*+/=?^_\`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?`,
-              },
-            }}
+          <ValidatedTextField
+            values={values.email}
+            validator={emailValidator}
             label={'Email'}
-            error={error}
-            helperText={error ? 'Please enter a valid email' : ''}
-            required
-            sx={{
-              '& .MuiInputLabel-root': {
-                color: '#FFFFFF60',
-              },
-              '& label.Mui-focused': {
-                color: '#EEE',
-              },
-              '& .MuiInput-underline:after': {
-                borderBottomColor: '#B2BAC2',
-              },
-              '& .MuiOutlinedInput-root': {
-                color: '#fff',
-                '& fieldset': {
-                  borderColor: '#E0E3E7',
-                },
-                '&:hover fieldset': {
-                  borderColor: '#EEE',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: '#6F7E8C',
-                },
-              },
-            }}
+            id={id}
+            onChange={handleChangeValues}
           />
         </Box>
       </div>
