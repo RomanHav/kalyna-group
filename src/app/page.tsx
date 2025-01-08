@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 import HeaderVideo from './components/HeaderVideo/HeaderVideo';
 import Services from './components/Services/Services';
 import RunningLine from './components/RunningLine';
@@ -15,10 +15,6 @@ import Lenis from 'lenis';
 import FormSecond from '@/app/components/StepsForm/FormSecond';
 
 export default function App() {
-  const [openModalId, setOpenModalId] = useState<number | null>(null);
-  const handleServiceModal = (id: number | undefined) => {
-    setOpenModalId(openModalId === id ? null : id || null);
-  };
   useEffect(() => {
     const isMobile = window.innerWidth <= 768;
 
@@ -42,8 +38,6 @@ export default function App() {
       <HeaderVideo />
       <Services
         info={seviceInfo}
-        openModalId={openModalId}
-        handleServiceModal={handleServiceModal}
       />
       <RunningLine />
       <Benefits info={benefitsInfo} />

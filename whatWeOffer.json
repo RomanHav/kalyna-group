@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "What we offer",
+    "src": "/running-line-image.svg",
+    "description": ""
+  },
+  {
+    "id": 2,
+    "title": "Flexible",
+    "src": "/flexible.svg",
+    "description": "Development of online stores on platforms like Shopify, WooCommerce, Magento, and more."
+  },
+  {
+    "id": 3,
+    "title": "Unique",
+    "src": "/tag-svg.svg",
+    "description": "Custom design and functionality development tailored to your business needs."
+  },
+  {
+    "id": 4,
+    "title": "How we work?",
+    "src": "/arrow-cases.svg",
+    "description": ""
+  },
+  {
+    "id": 5,
+    "title": "Integrated",
+    "src": "/integrate.svg",
+    "description": "Seamless integration of payment gateways, logistics solutions, and CRM tools."
+  },
+  {
+    "id": 6,
+    "title": "Optimized",
+    "src": "/optimized.svg",
+    "description": "Enhanced performance with speed optimization and SEO for better search visibility."
+  },
+  {
+    "id": 7,
+    "title": "Responsive",
+    "src": "/responsive.svg",
+    "description": "Mobile-friendly and cross-browser compatible designs for an excellent user experience."
+  }
+]

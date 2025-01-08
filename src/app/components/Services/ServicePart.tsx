@@ -1,37 +1,42 @@
 'use client';
 
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import ServiceModal from '../ServiceModal';
 import Image from 'next/image';
 import css from './ServicePart.module.css';
+import Link from 'next/link';
 
 interface ServicePartProps {
-  serviceModal: number | null;
-  handleServiceModal: (id?: number) => void;
   id: number;
   title: string;
   src: string;
   price: string;
-  firstDescription: string;
-  secondDescription: string;
-  thirdDescription: string;
-  span: string;
   handleClick: () => void;
 }
 
 const ServicePart: React.FC<ServicePartProps> = ({
-  serviceModal,
-  handleServiceModal,
   id,
   title,
   src,
   price,
-  firstDescription,
-  secondDescription,
-  thirdDescription,
-  span,
   handleClick,
 }) => {
+  function _renderReadMoreButton(id: number) {
+    switch (id) {
+      case 1:
+        return '/landing-page';
+      case 2:
+        return '/ui-ux-design';
+      case 3:
+        return '/e-commerce';
+      case 4:
+        return '/business-website';
+      case 5:
+        return '/crm-system';
+      case 6:
+        return '/3d-design';
+    }
+  }
+
   return (
     <>
       <div className="flex flex-col gap-5 items-center text-white lg:flex-row lg:gap-10 xl:gap-16 min-[1440px]:gap-10">
@@ -50,29 +55,17 @@ const ServicePart: React.FC<ServicePartProps> = ({
           <button onClick={handleClick} className={css.button}>
             <span className={css.buttonText}>contact</span>
           </button>
-          <button
-            onClick={() => handleServiceModal(id)}
+          <Link
             className="flex justify-center items-center gap-2"
+            href={_renderReadMoreButton(id)}
           >
             <p>read more</p>
             <span>
               <MdKeyboardArrowRight />
             </span>
-          </button>
+          </Link>
         </div>
       </div>
-      {serviceModal === id && (
-        <ServiceModal
-          id={id}
-          isOpen={serviceModal === id}
-          title={title}
-          handleServiceModal={() => handleServiceModal(id)}
-          firstDescription={firstDescription}
-          secondDescription={secondDescription}
-          thirdDescription={thirdDescription}
-          span={span}
-        />
-      )}
     </>
   );
 };
