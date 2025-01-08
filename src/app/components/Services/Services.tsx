@@ -8,22 +8,14 @@ interface ServiceInfo {
   title: string;
   src: string;
   price: string;
-  firstDescription: string;
-  secondDescription: string;
-  thirdDescription: string;
-  span: string;
 }
 
 interface ServiceProps {
   info: ServiceInfo[];
-  openModalId: number | null;
-  handleServiceModal: (id: number | undefined) => void;
 }
 
 const Services: React.FC<ServiceProps> = ({
   info,
-  openModalId,
-  handleServiceModal,
 }) => {
   const [click, setClick] = useState(false);
   const handleClick = () => {
@@ -40,16 +32,10 @@ const Services: React.FC<ServiceProps> = ({
               className="bg-[#A3FFEB]/20 flex items-center rounded-3xl py-2 px-6 lg:w-[402px] lg:h-52 xl:w-[470px] xl:h-56 xl:px-12 min-[1440px]:px-6 min-[1440px]:w-[410px] min-[1440px]:h-56"
             >
               <ServicePart
-                serviceModal={openModalId}
-                handleServiceModal={handleServiceModal}
                 id={infopart.id}
                 title={infopart.title}
                 src={infopart.src}
                 price={infopart.price}
-                firstDescription={infopart.firstDescription}
-                secondDescription={infopart.secondDescription}
-                thirdDescription={infopart.thirdDescription}
-                span={infopart.span}
                 handleClick={handleClick}
               />
             </li>
