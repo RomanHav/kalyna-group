@@ -6,6 +6,8 @@ import commerceFaq from '../../../commerceFaq.json';
 import WoodMinded from '@/app/components/WoodMinded';
 import React from 'react';
 import HeaderService from '@/app/components/HeaderService';
+import offer from '../../../whatWeOfferCommerce.json';
+
 
 const ECommerce = () => {
   const faqCard = {
@@ -23,7 +25,7 @@ const ECommerce = () => {
       <HeaderService headerText={headerText} />
       <CommerceImage />
       <div className={'relative flex flex-col justify-center gap-20'}>
-        <WhatWeOffer />
+        <WhatWeOffer offer={offer} />
         <OurExpertise>
           <WoodMinded />
         </OurExpertise>
