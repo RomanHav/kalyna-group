@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface WhyServicePagePartProps {
   id: number;
   title: string;
@@ -18,7 +20,7 @@ function _renderWhyServiceList({
     case 4:
     case 5:
       return (
-        <div className="px-5 py-4 w-full h-full">
+        <div className="px-5 py-4 w-full h-full flex flex-col justify-end">
           <p className="font-light italic">{description}</p>
         </div>
       );
@@ -26,7 +28,7 @@ function _renderWhyServiceList({
       return (
         <div className="flex flex-col justify-between w-full h-full">
           <div className="flex justify-between items-center px-5 py-4">
-            <h4 className="text-xl font-medium">{title}</h4>
+            <h4 className="text-xl font-medium whitespace-pre">{title}</h4>
             <span className="text-4xl font-medium">{number}</span>
           </div>
           <div
@@ -38,7 +40,7 @@ function _renderWhyServiceList({
 }
 
 const WhyServicePagePart: React.FC<WhyServicePagePartProps> = props => {
-  return <div>{_renderWhyServiceList(props)}</div>;
+  return _renderWhyServiceList(props);
 };
 
 export default WhyServicePagePart;
