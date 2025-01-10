@@ -1,10 +1,20 @@
-import offer from '../../../../whatWeOffer.json';
 import WhatWeOfferPart from './WhatWeOfferPart';
 
-const WhatWeOffer = () => {
+interface OfferProps {
+  id: number;
+  title: string;
+  description: string;
+  src: string;
+}
+
+interface OfferPropsPart {
+  offer: OfferProps[];
+}
+
+const WhatWeOffer: React.FC<OfferPropsPart> = ({ offer }) => {
   return (
     <div>
-      <ul className='flex flex-wrap justify-center items-center'>
+      <ul className="flex flex-wrap justify-center items-center">
         {offer.map(item => {
           return (
             <li
