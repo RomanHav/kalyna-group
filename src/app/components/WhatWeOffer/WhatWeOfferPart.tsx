@@ -50,7 +50,7 @@ function _renderList({ id, title, description, src }: WhatWeOfferPartProps) {
           </div>
           <div className="flex flex-col gap-6 text-white w-[270px]">
             <h4 className="text-2xl font-medium">{title}</h4>
-            <p className="text-xl">{description}</p>
+            <p className={`text-xl`}>{description}</p>
           </div>
         </div>
       );
