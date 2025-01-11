@@ -6,10 +6,11 @@ const ThreeDSystemImage = () => {
   return (
     <div className="absolute top-[25rem] right-[3rem] z-10 w-full flex flex-col justify-center items-center text-white">
       <Image
-        src={'/three-d-image.svg'}
-        alt="Phone Image"
-        width={673}
-        height={673}
+        src="/3d-video.webp"
+        alt="Looping WebP Animation"
+        width={500}
+        height={500}
+        layout="intrinsic"
       />
       <Parallax
         className={
@@ -30,7 +31,7 @@ const ThreeDSystemImage = () => {
         }
         speed={5}
       >
-              <Image src={ '/3d.svg'} alt='3D title' width={239} height={197}/>
+        <Image src={'/3d.svg'} alt="3D title" width={239} height={197} />
       </Parallax>
     </div>
   );
