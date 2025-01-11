@@ -51,7 +51,7 @@ const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
           ))}
         </ul>
       </div>
-      <div className='w-1/2 flex justify-between'>
+      <div className='w-1/2 flex items-center justify-between'>
         {' '}
         <div className="w-[1px] h-[740px] bg-white"></div>
         <div className="relative w-[420px] h-[560px] bg-cardServiceBackground">

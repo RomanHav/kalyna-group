@@ -11,7 +11,7 @@ interface OfferPropsPart {
   offer: OfferProps[];
 }
 
-const WhatWeOffer: React.FC<OfferPropsPart> = ({ offer }) => {
+const WhatWeOffer: React.FC<OfferPropsPart> = ({ offer}) => {
   return (
     <div>
       <ul className="flex flex-wrap justify-center items-center">
