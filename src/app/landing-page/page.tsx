@@ -1,16 +1,16 @@
 import HeaderService from '../components/HeaderService';
 import WhatWeOffer from '../components/WhatWeOffer/WhatWeOffer';
 import LandingImage from '../LandingImage';
-import offer from '../../../whatWeOfferLanding.json';
+import offer from '../../../whatWeOffer/whatWeOfferLanding.json';
 import Faq from '../components/Faq/Faq';
-import landingFaq from '../../../landingFaq.json';
+import landingFaq from '../../../faq/landingFaq.json';
 import WhyServicePage from '../components/WhyServicePage';
-import whyLandingObject from '../../../whyLanding.json';
+import whyLandingObject from '../../../whySections/whyLanding.json';
 
 const LandingPage = () => {
   const faqCard = {
     title: 'Landing Page',
-    src: '/landing.png',
+    src: '/landing.webp',
     price: '$1000',
     terms: '1-2 weeks',
   };

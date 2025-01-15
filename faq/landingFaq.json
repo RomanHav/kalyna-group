@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "What is a Landing Page?",
+    "description": "A Landing Page is a standalone web page designed specifically for marketing or advertising campaigns. It is where visitors \"land\" after clicking on a link in an email, ad, or other digital location. Its primary goal is to convert visitors into leads or customers."
+  },
+  {
+    "id": 2,
+    "title": "Why do I need a Landing Page?",
+    "description": "A Landing Page is essential for directing traffic from a specific marketing campaign to a focused page that encourages a single call to action (CTA). It increases conversion rates by eliminating distractions and presenting a clear, concise message."
+  },
+  {
+    "id": 3,
+    "title": "How long does it take to create a Landing Page?",
+    "description": "The timeline can vary based on the complexity of the design and content requirements. On average, a basic Landing Page can take between 1 to 2 weeks to complete, while more complex pages may take longer."
+  },
+  {
+    "id": 4,
+    "title": "Can I update the content of the Landing Page later?",
+    "description": "Yes, we provide a user-friendly content management system (CMS) that allows you to make updates easily. We also offer ongoing maintenance and support if you prefer."
+  },
+  {
+    "id": 5,
+    "title": "What makes a Landing Page effective?",
+    "description": "An effective Landing Page includes a compelling headline, a clear value proposition, engaging visuals, a strong call to action, and minimal navigation to keep the visitor focused on the desired action."
+  }
+]

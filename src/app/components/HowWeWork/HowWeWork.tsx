@@ -1,5 +1,5 @@
 'use client';
-import howWeWork from '../../../../howWeWork.json';
+import howWeWork from '../../about-us/howWeWork.json';
 import HowWeWorkPart from './HowWeWorkPart';
 import React, { useState } from 'react';
 

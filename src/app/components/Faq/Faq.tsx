@@ -71,7 +71,7 @@ const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
               <Image
                 className="w-[220px] rounded-2xl"
                 src={faqCard.src}
-                alt="E-commerce Image"
+                alt={faqCard.title}
                 width={513}
                 height={515}
               />

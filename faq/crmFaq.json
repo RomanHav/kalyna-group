@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Is a CRM system suitable for small businesses?",
+    "description": "Yes, CRM systems are suitable for businesses of all sizes. They help small businesses streamline operations, improve customer relationships, and scale effectively. Many CRM solutions are flexible and can be tailored to meet the specific needs of small businesses."
+  },
+  {
+    "id": 2,
+    "title": "How long does it take to implement a CRM system?",
+    "description": "The implementation timeline depends on the complexity of your business processes and the features required. On average, it can take anywhere from a few weeks to several months. Our team will work with you to ensure a smooth and timely implementation."
+  },
+  {
+    "id": 3,
+    "title": "How secure is the data in a CRM system?",
+    "description": "Data security is a top priority. Our CRM systems are built with robust security features, including encryption, access controls, and regular backups to protect your sensitive information. We adhere to industry best practices to ensure your data is safe."
+  },
+  {
+    "id": 4,
+    "title": "Can a CRM system integrate with other tools I use?",
+    "description": "Absolutely. Modern CRM systems are designed to integrate with various tools such as email marketing software, accounting systems, e-commerce platforms, and more. This ensures seamless data flow and improved efficiency across your business."
+  },
+  {
+    "id": 5,
+    "title": "What kind of support do you offer post-implementation?",
+    "description": "We offer comprehensive post-implementation support, including training, troubleshooting, and ongoing updates. Our team is available to assist you in maximizing the benefits of your CRM system and ensuring it continues to meet your business needs."
+  }
+]

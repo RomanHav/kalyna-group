@@ -1,16 +1,16 @@
 import CrmImage from '../components/CrmImage';
 import HeaderService from '../components/HeaderService';
-import offer from '../../../whatWeOfferCrm.json';
+import offer from '../../../whatWeOffer/whatWeOfferCrm.json';
 import WhatWeOffer from '../components/WhatWeOffer/WhatWeOffer';
 import WhyServicePage from '../components/WhyServicePage';
-import whyCrmObject from '../../../whyCrm.json';
+import whyCrmObject from '../../../whySections/whyCrm.json';
 import Faq from '../components/Faq/Faq';
-import crmFaq from '../../../crmFaq.json';
+import crmFaq from '../../../faq/crmFaq.json';
 
 const CrmSystem = () => {
   const faqCard = {
     title: 'CRM System',
-    src: '/crm.png',
+    src: '/crm.webp',
     price: '$3200',
     terms: '3-4 weeks',
   };
@@ -24,7 +24,7 @@ const CrmSystem = () => {
       'A well-integrated CRM system is crucial for managing customer relationships and streamlining business processes. Here’s what you gain by working with us.',
   };
   return (
-    <div className="relative">
+    <div className="relative mb-20">
       <HeaderService headerText={headerText} />
       <CrmImage />
       <div className={'relative flex flex-col justify-center gap-20'}>

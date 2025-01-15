@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "What types of 3D design services do you offer?",
+    "description": "We offer a wide range of 3D design services, including character modeling, product visualization, architectural renderings, animations, and 3D assets for games and virtual reality applications."
+  },
+  {
+    "id": 2,
+    "title": "How long does it take to complete a 3D design project?",
+    "description": "The timeline for a 3D design project depends on the complexity and scope of the work. Simple models can take a few days, while more complex projects, such as detailed animations or environments, may take several weeks."
+  },
+  {
+    "id": 3,
+    "title": "Can you create 3D models that are compatible with AR/VR platforms?",
+    "description": "Yes, we specialize in creating 3D models optimized for augmented reality (AR) and virtual reality (VR) platforms, ensuring they meet the technical requirements for smooth performance."
+  },
+  {
+    "id": 4,
+    "title": "What is the cost of a 3D design project?",
+    "description": "The cost varies based on the complexity, detail, and type of project. We offer competitive pricing and will provide a customized quote after discussing your specific needs and requirements."
+  },
+  {
+    "id": 5,
+    "title": "Do you offer revisions on 3D design projects?",
+    "description": "Yes, we offer revisions to ensure the final design meets your expectations. The number of revisions included will be discussed during the project planning phase, and additional revisions can be accommodated as needed."
+  }
+]
