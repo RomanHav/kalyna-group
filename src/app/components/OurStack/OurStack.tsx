@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import items from '../../about-us/stack.json';
 import OurStackPart from '@/app/components/OurStack/OurStackPart';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -30,11 +30,11 @@ const OurStack: React.FC = () => {
         </h2>
         <div
           className={
-            'w-full max-[400px]:px-5 px-0 flex justify-between items-center'
+            'w-full max-[400px]:px-5 min-[1440px]:px-7 xl:px-2 px-0 flex justify-between items-center'
           }
         >
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}
             onSwiper={swiperInstance => {
               swiperRef.current = swiperInstance; // Сохраняем экземпляр Swiper
             }}
@@ -43,6 +43,7 @@ const OurStack: React.FC = () => {
             }}
             allowSlidePrev={false}
             loop
+            autoplay={{ delay: 2500 }}
             effect={'fade'}
             slidesPerView={4}
             breakpoints={{

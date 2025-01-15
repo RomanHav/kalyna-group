@@ -29,12 +29,14 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
   return (
     <div
       className={`flex w-full relative items-center transition-all duration-200 contain-paint ${
-        expandedId === id || isLast ? 'lg:h-[247px]' : 'h-20 md:h-[160px]'
+        expandedId === id || isLast
+          ? 'h-20 md:h-40 xl:h-[247px]'
+          : 'h-20 md:h-28 lg:h-32 xl:h-[170px]'
       } px-3 border-t-2 border-white`}
     >
       {isLast ? (
         <div>
-          <div className="relative md:top-[46px] mr-3 w-5 md:w-[200px] flex items-center">
+          <div className="relative md:mt-3 lg:mr-10 mr-3 w-5 md:w-[200px] xl:w-[275px] flex items-center">
             <Image src={number} alt="Number" width={274} height={182}></Image>
           </div>
         </div>
@@ -74,6 +76,10 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
             '::before': {
               display: 'none',
             },
+            pl: {
+              sm: '0.75rem',
+              lg: '50px',
+            },
           }}
         >
           <AccordionSummary
@@ -84,7 +90,7 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
               '& .MuiAccordionSummary-content': {
                 background: 'linear-gradient(to right, #38EF7D, #C2FAD7)',
                 WebkitBackgroundClip: 'text',
-                mt: { sm: '20px', md: 'auto' },
+                mt: 0,
                 WebkitTextFillColor: 'transparent',
                 fontSize: { xs: '20px', md: '40px' },
                 fontWeight: 'regular',
