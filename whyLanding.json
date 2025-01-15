@@ -11,14 +11,14 @@
     "title": "Increased Conversions",
     "description": "",
     "number": "1",
-    "src": "whyLandingImageFirst"
+    "src": "/why-land-first.jpg"
   },
   {
     "id": 3,
     "title": "Focused User\nExperience",
     "description": "",
     "number": "2",
-    "src": "whyLandingImageSecond"
+    "src": "/why-land-second.jpg"
   },
   {
     "id": 4,
@@ -39,6 +39,6 @@
     "title": "Enhanced\nSEO Performance",
     "description": "",
     "number": "3",
-    "src": "whyLandingImageThird"
+    "src": "/why-land-third.jpg"
   }
 ]

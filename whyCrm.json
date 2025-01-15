@@ -11,14 +11,14 @@
     "title": "Improved Customer\nRelationships",
     "description": "",
     "number": "1",
-    "src": "whyLandingImageFirst"
+    "src": "/why-crm-first.jpg"
   },
   {
     "id": 3,
     "title": "Enhanced\nEfficiency",
     "description": "",
     "number": "2",
-    "src": "whyLandingImageSecond"
+    "src": "/why-crm-second.jpg"
   },
   {
     "id": 4,
@@ -39,6 +39,6 @@
     "title": "Data-Driven\nInsights",
     "description": "",
     "number": "3",
-    "src": "whyLandingImageThird"
+    "src": "/why-crm-third.jpg"
   }
 ]
