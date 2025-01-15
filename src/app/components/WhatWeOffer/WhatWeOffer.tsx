@@ -1,4 +1,5 @@
 import WhatWeOfferPart from './WhatWeOfferPart';
+import React from "react";
 
 interface OfferProps {
   id: number;

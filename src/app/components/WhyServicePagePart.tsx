@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface WhyServicePagePartProps {
   id: number;
@@ -31,9 +32,13 @@ function _renderWhyServiceList({
             <h4 className="text-xl font-medium whitespace-pre">{title}</h4>
             <span className="text-4xl font-medium">{number}</span>
           </div>
-          <div
-            className={`w-full h-[179px] bg-${src} bg-cover bg-center`}
-          ></div>
+          <Image
+            className={'w-full h-[160px] object-cover'}
+            src={src}
+            alt={title}
+            width={1280}
+            height={1000}
+          />
         </div>
       );
   }
