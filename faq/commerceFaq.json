@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "How long does it take to develop an E-commerce website?",
+    "description": "The timeline depends on the complexity and functionality of the project. A basic online store typically takes 4–6 weeks, while more advanced stores with custom features may take 8–12 weeks or longer."
+  },
+  {
+    "id": 2,
+    "title": "Which E-commerce platforms do you work with?",
+    "description": "We specialize in platforms like Shopify, WooCommerce, and Magento. However, we can also create custom solutions tailored to your unique business needs.\n\n"
+  },
+  {
+    "id": 3,
+    "title": "Can you migrate my existing online store to a new platform?",
+    "description": "Yes, we can handle seamless migration of your store, including products, customer data, and orders, while minimizing downtime and ensuring no data loss."
+  },
+  {
+    "id": 4,
+    "title": "What happens if I need support after the website is launched?",
+    "description": "We offer post-launch support packages, which include bug fixes, updates, and additional features based on your requirements."
+  },
+  {
+    "id": 5,
+    "title": "Do you offer custom design or use templates?",
+    "description": "We can do both! We create unique designs tailored to your brand or work with existing templates, customizing them to align with your business vision."
+  }
+]

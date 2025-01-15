@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "What we offer",
+    "src": "/running-line-image.svg",
+    "description": ""
+  },
+  {
+    "id": 2,
+    "title": "Intuitive Interfaces",
+    "src": "/flexible.svg",
+    "description": "Designing user interfaces that are intuitive and engaging, providing a seamless experience across all devices."
+  },
+  {
+    "id": 3,
+    "title": "Tailored Experiences",
+    "src": "/tag-svg.svg",
+    "description": "Creating custom UI/UX designs that align with your brand identity and meet the unique needs of your users."
+  },
+  {
+    "id": 4,
+    "title": "How we work?",
+    "src": "/arrow-cases.svg",
+    "description": ""
+  },
+  {
+    "id": 5,
+    "title": "Integrated Solutions",
+    "src": "/integrate.svg",
+    "description": "Seamlessly integrating UI/UX design with your existing systems and platforms to enhance functionality and usability."
+  },
+  {
+    "id": 6,
+    "title": "Performance Optimized",
+    "src": "/optimized.svg",
+    "description": "Designs focused on performance, ensuring fast load times and smooth interactions to keep users engaged."
+  },
+  {
+    "id": 7,
+    "title": "Responsive Designs",
+    "src": "/responsive.svg",
+    "description": "Delivering responsive designs that adapt to different devices and screen sizes, offering a consistent user experience everywhere."
+  }
+]

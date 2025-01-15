@@ -1,5 +1,5 @@
 'use client';
-import steps from '../../../../steps.json';
+import steps from '../../../../mainPageInfo/steps.json';
 import Steps from './Steps';
 import { useEffect, useState } from 'react';
 import StepFirst from './StepFirst';

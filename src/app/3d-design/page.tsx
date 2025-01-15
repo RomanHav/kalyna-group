@@ -1,6 +1,6 @@
 const HeaderService = lazy(() => import('../components/HeaderService'));
-import offer from '../../../whatWeOfferThreeD.json';
-import threeFaq from '../../../threeFaq.json';
+import offer from '../../../whatWeOffer/whatWeOfferThreeD.json';
+import threeFaq from '../../../faq/threeFaq.json';
 const WhatWeOffer = lazy(() => import('../components/WhatWeOffer/WhatWeOffer'));
 const OurExpertise = lazy(
   () => import('../components/OurExpertise/OurExpertise')

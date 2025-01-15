@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "",
+    "description": "\"Landing pages are designed to guide visitors towards a specific action, leading to higher conversion rates.\"",
+    "number": "",
+    "src": ""
+  },
+  {
+    "id": 2,
+    "title": "Increased Conversions",
+    "description": "",
+    "number": "1",
+    "src": "/why-land-first.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Focused User\nExperience",
+    "description": "",
+    "number": "2",
+    "src": "/why-land-second.jpg"
+  },
+  {
+    "id": 4,
+    "title": "",
+    "description": "\"By eliminating distractions, landing pages keep the user focused on a single goal, making it easier to convert.\"",
+    "number": "",
+    "src": ""
+  },
+  {
+    "id": 5,
+    "title": "",
+    "description": "\"Landing pages optimized for search engines help improve your visibility and attract more qualified traffic.\"",
+    "number": "",
+    "src": ""
+  },
+  {
+    "id": 6,
+    "title": "Enhanced\nSEO Performance",
+    "description": "",
+    "number": "3",
+    "src": "/why-land-third.jpg"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  { "id": 1, "path": "/javascript.svg", "title": "JavaScript" },
+  { "id": 2, "path": "/typescript.svg", "title": "TypeScript" },
+  { "id": 3, "path": "/react.svg", "title": "React" },
+  { "id": 4, "path": "/nextjs.svg", "title": "NextJS" },
+  { "id": 5, "path": "/shopify.svg", "title": "Shopify" },
+  { "id": 6, "path": "/mongodb.svg", "title": "MongoDB" },
+  { "id": 7, "path": "/express.svg", "title": "ExpressJS" },
+  { "id": 8, "path": "/tailwind.svg", "title": "Tailwind css" },
+  { "id": 9, "path": "/blender.svg", "title": "Blender" },
+  { "id": 10, "path": "/figma.svg", "title": "Figma" },
+  { "id": 11, "path": "/adobe-illustrator.svg", "title": "Illustrator" },
+  { "id": 12, "path": "/adobe-photoshop.svg", "title": "Photoshop" }
+]

@@ -2,17 +2,16 @@ import Faq from '../components/Faq/Faq';
 import CommerceImage from '../components/CommerceImage';
 import OurExpertise from '../components/OurExpertise/OurExpertise';
 import WhatWeOffer from '../components/WhatWeOffer/WhatWeOffer';
-import commerceFaq from '../../../commerceFaq.json';
+import commerceFaq from '../../../faq/commerceFaq.json';
 import WoodMinded from '@/app/components/WoodMinded';
 import React from 'react';
 import HeaderService from '@/app/components/HeaderService';
-import offer from '../../../whatWeOfferCommerce.json';
-
+import offer from '../../../whatWeOffer/whatWeOfferCommerce.json';
 
 const ECommerce = () => {
   const faqCard = {
     title: 'E-commerce',
-    src: '/e-commerce.png',
+    src: '/e-commerce.webp',
     price: '$5000',
     terms: '4-6 weeks',
   };

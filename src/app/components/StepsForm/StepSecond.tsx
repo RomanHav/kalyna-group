@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import services from '../../../../serviceInfo.json';
+import services from '../../../../mainPageInfo/serviceInfo.json';
 import { useFormikContext } from 'formik';
 
 export interface StepSecondProps {

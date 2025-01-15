@@ -1,4 +1,4 @@
-import ourTeam from '../../../../ourTeam.json';
+import ourTeam from '../../about-us/ourTeam.json';
 import OurTeamPart from './OurTeamPart';
 
 const OurTeam = () => {

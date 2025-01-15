@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "What does your UI/UX design process involve?",
+    "description": " Our UI/UX design process includes research and discovery, wireframing, prototyping, user testing, and iterative design refinements to ensure a user-friendly and visually appealing interface."
+  },
+  {
+    "id": 2,
+    "title": "How long does it take to complete a UI/UX design project?",
+    "description": "The duration of a UI/UX design project depends on its complexity. Typically, it can take anywhere from a few weeks to a couple of months, depending on the project's scope and requirements."
+  },
+  {
+    "id": 3,
+    "title": "Can you redesign an existing website or application?",
+    "description": "Yes, we offer redesign services for existing websites and applications. We evaluate your current design, identify areas for improvement, and implement enhancements to improve user experience and engagement."
+  },
+  {
+    "id": 4,
+    "title": "What tools do you use for UI/UX design?",
+    "description": "We use industry-standard tools such as Figma, Adobe XD, Sketch, and InVision for designing and prototyping, ensuring high-quality and efficient workflows."
+  },
+  {
+    "id": 5,
+    "title": "Do you offer user testing services?",
+    "description": " Yes, we conduct user testing to gather feedback and insights. This helps us refine the design to better meet user needs and expectations, ensuring a more effective and user-friendly interface."
+  }
+]
