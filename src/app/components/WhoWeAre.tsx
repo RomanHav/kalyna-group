@@ -5,7 +5,7 @@ const WhoWeAre = () => {
     <div className="relative text-white px-4 lg:px-20 mb-14">
       <div className="flex flex-wrap gap-y-10 items-center justify-between mb-10 lg:mb-40">
         {' '}
-        <div className="lg:max-w-[400px]  xl:max-w-[600px]">
+        <div className="lg:max-w-[400px]  xl:max-w-[500px] min-[1440px]:max-w-[600p]">
           <div className="max-w-[340px] flex flex-col gap-5 mb-5">
             <h3 className="uppercase text-4xl md:text-5xl">Who are we?</h3>
             <span className="uppercase text-xl bg-gradient-to-r from-custom-green to-custom-second-green bg-clip-text text-transparent">
