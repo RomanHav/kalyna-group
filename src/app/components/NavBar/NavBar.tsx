@@ -5,34 +5,23 @@ import React, { useState, useEffect } from 'react';
 import { IoIosLink } from 'react-icons/io';
 import css from './NavBar.module.css';
 import Burger from '@/app/components/Burger';
-import {
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
-} from '@nextui-org/dropdown';
-import { Button } from '@nextui-org/button';
-import { usePathname, useRouter } from 'next/navigation';
-
+import NavServices from '@/app/components/NavServices';
+// import { usePathname, useRouter } from 'next/navigation';
 const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [click, setClick] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isOpenService, setIsOpenService] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
-  console.log(pathname);
-  const handleMouseEnter = () => {
-    setIsOpenService(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsOpenService(false);
-  };
-
+  const [openServices, setOpenServices] = useState(false);
+  // const [hidden, setHidden] = useState(false)
   const handleOpen = () => {
     setClick(!click);
+  };
+  const handleOpenService = () => {
+    setOpenServices(true);
+  };
+  const handleCloseService = () => {
+    setOpenServices(false);
   };
 
   useEffect(() => {
@@ -104,101 +93,13 @@ const NavBar: React.FC = () => {
               <div className="flex items-center">
                 <div className="flex items-center gap-8 text-white xl:mr-[90px] min-[1440px]:mr-[340px] text-xl uppercase">
                   <div className="relative">
-                    <Dropdown
-                      isOpen={isOpenService}
-                      className={'text-white uppercase'}
+                    <span
+                      onMouseEnter={handleOpenService}
+                      onMouseLeave={handleCloseService}
+                      className="cursor-pointer tracking-wide pb-10 -mt-10 after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
                     >
-                      <DropdownTrigger>
-                        <div
-                          onMouseEnter={handleMouseEnter}
-                          onMouseLeave={handleMouseLeave}
-                        >
-                          <Button
-                            className="cursor-pointer tracking-wide uppercase after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
-                            variant="faded"
-                          >
-                            Services
-                          </Button>
-                        </div>
-                      </DropdownTrigger>
-                      <DropdownMenu
-                        aria-label="Static Actions"
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                        variant={'light'}
-                        className={
-                          'bg-custom-background/50 backdrop-blur-lg *:*:*:p-5 contain-paint rounded-2xl text-xl'
-                        }
-                      >
-                        <DropdownItem
-                          key="e-commerce"
-                          className={'hover:bg-green-900'}
-                          onPress={() => router.push('/e-commerce')}
-                        >
-                          <span
-                            className={`${pathname === '/e-commerce' ? 'underline underline-offset-[10px]' : ''}`}
-                          >
-                            E-commerce
-                          </span>
-                        </DropdownItem>
-                        <DropdownItem
-                          key="landing-page"
-                          onPress={() => router.push('/landing-page')}
-                          className={'hover:bg-green-900'}
-                        >
-                          <span
-                            className={`${pathname === '/landing-page' ? 'underline underline-offset-[10px]' : ''}`}
-                          >
-                            Landing page
-                          </span>
-                        </DropdownItem>
-                        <DropdownItem
-                            key="business-website"
-                            className={'hover:bg-green-900'}
-                            onPress={() => router.push('/business-website')}
-                        >
-                          <span
-                              className={`${pathname === '/business-website' ? 'underline underline-offset-[10px]' : ''}`}
-                          >
-                            Business website
-                          </span>
-                        </DropdownItem>
-                        <DropdownItem
-                          onPress={() => router.push('/ui-ux-design')}
-                          key="ui-ux-design"
-                          className={'hover:bg-green-900'}
-                        >
-                          <span
-                            className={`${pathname === '/ui-ux-design' ? 'underline underline-offset-[10px]' : ''}`}
-                          >
-                            UI/UX design
-                          </span>
-                        </DropdownItem>
-                        <DropdownItem
-                          onPress={() => router.push('/3d-design')}
-                          key="3d-design"
-                          className={'hover:bg-green-900'}
-                        >
-                          <span
-                            className={`${pathname === '/3d-design' ? 'underline underline-offset-[10px]' : ''}`}
-                          >
-                            3d design
-                          </span>
-                        </DropdownItem>
-                        <DropdownItem
-                          onPress={() => router.push('/crm-system')}
-                          key="crm-system"
-                          className={'hover:bg-green-900'}
-                        >
-                          <span
-                            className={`${pathname === '/crm-system' ? 'underline underline-offset-[10px]' : ''}`}
-                          >
-                            CRM system
-                          </span>
-                        </DropdownItem>
-
-                      </DropdownMenu>
-                    </Dropdown>
+                      Services
+                    </span>
                   </div>
                   <span>
                     <IoIosLink size={25} />
@@ -243,7 +144,16 @@ const NavBar: React.FC = () => {
         </div>
       </nav>
       {isOpen && <Burger isOpen={isOpen} handleClick={handleClick} />}
-      {/*{click && <ContactUsModal click={click} handleOpen={handleOpen} />}*/}
+
+      <div
+        className={`w-full absolute bg-[#0D1816]/60 transition-all backdrop-blur-md px-5 py-5 duration-300 top-28 ${openServices ? ' min-h-40 opacity-100 z-40' : 'pointer-events-none cursor-not-allowed min-h-0 opacity-0 !p-0 -z-10'} `}
+        onMouseEnter={handleOpenService}
+        onMouseLeave={handleCloseService}
+      >
+        {openServices && (
+          <NavServices handleCloseService={handleCloseService} />
+        )}
+      </div>
     </div>
   );
 };
