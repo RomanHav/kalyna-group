@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Professional\nGrowth",
+    "src": "/professional-growth.svg",
+    "description": "At KALYNA Group, we prioritize your development. From hands-on mentorship to cutting-edge workshops, we ensure your skills are always evolving."
+  },
+  {
+    "id": 2,
+    "title": "Inclusive\nCulture",
+    "src": "/inclusive-culture.svg",
+    "description": "Diversity is our strength. Join a team that celebrates unique perspectives and fosters collaboration."
+  },
+  {
+    "id": 3,
+    "title": "Innovative\nProjects",
+    "src": "/innovative-projects.svg",
+    "description": "Work on impactful projects that challenge the norm and deliver meaningful results."
+  },
+  {
+    "id": 4,
+    "title": "Flexible\nEnvironment",
+    "src": "/flexible-environment.svg",
+    "description": "Enjoy hybrid work options and schedules designed to keep your life balanced."
+  }
+]
