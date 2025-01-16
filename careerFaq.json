@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "What is the application process at Kalyna Group?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elementum lorem at congue venenatis. Nullam in libero orci. Fusce eu nisl non dolor iaculis vehicula."
+  },
+  {
+    "id": 2,
+    "title": "Can I work remotely?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elementum lorem at congue venenatis. Nullam in libero orci. Fusce eu nisl non dolor iaculis vehicula."
+  },
+  {
+    "id": 3,
+    "title": "What benefits do you offer?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elementum lorem at congue venenatis. Nullam in libero orci. Fusce eu nisl non dolor iaculis vehicula."
+  },
+  {
+    "id": 4,
+    "title": "Are there opportunities for career growth?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elementum lorem at congue venenatis. Nullam in libero orci. Fusce eu nisl non dolor iaculis vehicula."
+  }
+]

@@ -1,0 +1,60 @@
+.button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  transition: background 0.3s ease-in-out;
+  color: white;
+  padding: 10px 26px;
+  border-radius: 10px;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  background: linear-gradient(to right, #348f50, #56b4d3);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button .buttonText {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  .button {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+  }
+}

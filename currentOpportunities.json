@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Front End Developer",
+    "description": [
+      "Build intuitive user interfaces using modern frameworks.",
+      "Collaborate with designers to bring visuals to life.",
+      "Optimize for performance and accessibility."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Back End Developer",
+    "description": [
+      "Design and implement scalable server-side solutions.",
+      "Work with databases and APIs.",
+      "Ensure high performance and security standards."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Designer",
+    "description": [
+      "Create user-centered designs based on research and best practices.",
+      "Collaborate with developers to ensure seamless implementation.",
+      "Optimize designs for usability and accessibility."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Sales Manager",
+    "description": [
+      "Identify and connect with potential clients.",
+      "Drive sales strategies to achieve targets.",
+      "Build long-term client relationships."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "SMM Manager",
+    "description": [
+      "Plan and execute campaigns to boost brand awareness and engagement.",
+      "Create and schedule engaging posts tailored to platform-specific audiences.",
+      "Track metrics, generate reports, and optimize campaigns based on data insights."
+    ]
+  }
+]
