@@ -37,8 +37,9 @@ const ThreeDSystem = () => {
           <div className={'absolute z-[2] left-40 -top-[60rem] flex scale-75'}>
             <Spline
               style={{ maxHeight: '1000px' }}
-              scene="https://prod.spline.design/93F01KRNQCu4r7oO/scene.splinecode"
-            />s
+              scene="https://prod.spline.design/i6Tvsie9awDdyhth/scene.splinecode"
+            />
+            s
           </div>
           <Image
             className={'absolute right-20 w-[740px] bottom-[33rem] '}
