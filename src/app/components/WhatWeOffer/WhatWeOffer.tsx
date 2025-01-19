@@ -1,5 +1,5 @@
 import WhatWeOfferPart from './WhatWeOfferPart';
-import React from "react";
+import React from 'react';
 
 interface OfferProps {
   id: number;
@@ -12,7 +12,7 @@ interface OfferPropsPart {
   offer: OfferProps[];
 }
 
-const WhatWeOffer: React.FC<OfferPropsPart> = ({ offer}) => {
+const WhatWeOffer: React.FC<OfferPropsPart> = ({ offer }) => {
   return (
     <div>
       <ul className="flex flex-wrap justify-center items-center">
@@ -20,7 +20,7 @@ const WhatWeOffer: React.FC<OfferPropsPart> = ({ offer}) => {
           return (
             <li
               key={item.id}
-              className={`${item.id == 1 ? 'w-1/2' : 'w-1/4'} ${item.id === 1 || item.id === 4 ? 'bg-none' : 'bg-gradient-to-bl from-[#28FF7E]/10 to-[#18994C]/10'}`}
+              className={`${item.id == 1 ? 'w-full lg:w-1/2' : 'w-1/2 lg:w-1/4'} ${item.id === 1 || item.id === 4 ? 'bg-none' : 'bg-gradient-to-bl from-[#28FF7E]/10 to-[#18994C]/10'}`}
             >
               <WhatWeOfferPart
                 title={item.title}

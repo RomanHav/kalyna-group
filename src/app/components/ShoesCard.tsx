@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import React from 'react';
 
 interface ShoesCardProps {
   src: string;
@@ -20,20 +21,20 @@ const ShoesCard: React.FC<ShoesCardProps> = ({
   const stars = [1, 2, 3, 4, 5];
   return (
     <div
-      className={`relative ${bottom} w-[250px] ${rotate} flex flex-col gap-4 rounded-3xl bg-white py-4 px-6`}
+      className={`relative ${bottom} w-[130px] lg:w-[250px] ${rotate} flex flex-col gap-4 rounded-xl lg:rounded-3xl bg-white py-3 px-3 lg:py-4 lg:px-6`}
     >
       <div
-        className={`${container} relative min-h-[237px] rounded-3xl flex justify-center items-center`}
+        className={`${container} relative min-h-24 lg:min-h-[237px] rounded-xl lg:rounded-3xl flex justify-center items-center`}
       >
         <Image
-          className="absolute -right-10 scale-125"
+          className="absolute -right-5 lg:-right-10 scale-125"
           src={src}
           alt="Shoes"
           width={457}
           height={481}
         />
         <div
-          className={`${button} py-2 px-4 text-black text-2xl rounded-md absolute -bottom-3 -right-3`}
+          className={`${button} py-0 px-2 lg:py-2 lg:px-4 text-black text-lg lg:text-2xl rounded-md absolute -bottom-3 -right-3`}
         >
           +
         </div>
@@ -41,15 +42,16 @@ const ShoesCard: React.FC<ShoesCardProps> = ({
       <div className="text-black flex">
         <div className="flex flex-col items-start">
           {children}
-          <span className="text-black/70 text-sm font-medium">
+          <span className="text-black/70 text-[7px] lg:text-sm font-medium">
             Your product
           </span>
         </div>
-        <ul className="flex gap-1 pt-1">
+        <ul className="flex gap-[1px] items-start justify-center lg:gap-1 pt-1">
           {stars.map((star, index) => {
             return (
               <li key={index}>
                 <svg
+                  className={'w-2.5'}
                   width="16"
                   height="16"
                   viewBox="0 0 14 14"
