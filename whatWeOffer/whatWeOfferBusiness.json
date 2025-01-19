@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "What we offer",
+    "src": "/running-line-image.svg",
+    "description": ""
+  },
+  {
+    "id": 2,
+    "title": "Brand-Centric Design",
+    "src": "/flexible.svg",
+    "description": "Websites that reflect your brand, highlighting your values and uniqueness in the market."
+  },
+  {
+    "id": 3,
+    "title": "Custom Solutions",
+    "src": "/tag-svg.svg",
+    "description": "Tailored websites that align with your business goals, bringing your vision to life."
+  },
+  {
+    "id": 4,
+    "title": "How we work?",
+    "src": "/arrow-cases.svg",
+    "description": ""
+  },
+  {
+    "id": 5,
+    "title": "Functionality",
+    "src": "/integrate.svg",
+    "description": "Integrated tools and systems for seamless website operation and user experience."
+  },
+  {
+    "id": 6,
+    "title": "Optimized for Growth",
+    "src": "/optimized.svg",
+    "description": "Websites optimized to drive conversions and attract your target audience effectively."
+  },
+  {
+    "id": 7,
+    "title": "Adaptable",
+    "src": "/responsive.svg",
+    "description": "Responsive designs that ensure excellent performance on any device and platform."
+  }
+]

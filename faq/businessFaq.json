@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": " How long does it take to develop a business website?",
+    "description": "The average development time for a business website is between 4 to 8 weeks, depending on the complexity of the project and the specific requirements of the client."
+  },
+  {
+    "id": 2,
+    "title": "What services are included in business website creation?",
+    "description": "We offer a comprehensive range of services, including website design and development, responsive layout, integration with CRM and other systems, SEO optimization, and basic training on website management."
+  },
+  {
+    "id": 3,
+    "title": "Can I order a custom design for my website?",
+    "description": "Yes, we create custom designs tailored to the specifics of your business and brand. Our designers work with you at every stage to ensure a personalized approach."
+  },
+  {
+    "id": 4,
+    "title": "Do you provide technical support after the project is completed?",
+    "description": "Yes, we offer technical support and maintenance after the website launch. This includes updates, bug fixes, and consultations on website operations."
+  },
+  {
+    "id": 5,
+    "title": "What platforms do you use for developing business websites?",
+    "description": "We work with popular platforms such as WordPress, Shopify, and others, and we can also create a custom website from scratch based on the client's unique requirements."
+  }
+]
