@@ -53,7 +53,7 @@ const FaqPart: React.FC<FaqPartProps> = ({
         >
           <Typography
             component="span"
-            className="text-xl w-[330px] text-white !font-medium"
+            className="text-xl lg:w-[330px] text-white !font-medium"
           >
             {title}
           </Typography>

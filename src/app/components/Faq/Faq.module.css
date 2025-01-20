@@ -5,7 +5,7 @@
   background: linear-gradient(to right, #11998e, #38ef7d);
   transition: background 0.3s ease-in-out;
   color: white;
-  padding: 12px 24px;
+  padding: 6px 12px;
   border-radius: 4px;
   font-size: 16px;
   letter-spacing: 0.05em;
@@ -48,4 +48,10 @@
 .button .buttonText {
   position: relative;
   z-index: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  .button {
+    padding: 12px 24px;
+  }
 }

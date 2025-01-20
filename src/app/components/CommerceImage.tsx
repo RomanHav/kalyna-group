@@ -6,7 +6,7 @@ import { Parallax } from 'react-scroll-parallax';
 const CommerceImage = () => {
   const isMobile = window.innerWidth <= 768;
   return (
-    <div className="absolute top-[24rem] lg:top-[22rem] z-10 w-full flex flex-col justify-center items-center text-white">
+    <div className="absolute top-[22rem] z-10 w-full flex flex-col justify-center items-center text-white">
       <Image
         className="w-[250px] lg:w-[457px]"
         src={'/phone.png'}
@@ -25,7 +25,7 @@ const CommerceImage = () => {
         </span>
       </Parallax>
       <Parallax
-        className="relative z-10 flex gap-14 lg:gap-36"
+        className="relative z-10 flex gap-12 lg:gap-36"
         speed={isMobile ? 0 : 10}
       >
         <ShoesCard

@@ -36,9 +36,9 @@ const HeaderService: React.FC<HeaderServiceProps> = ({ headerText }) => {
         <div className="absolute z-10 rounded-full w-[270px] h-[270px] lg:w-[1100px] bg-[#031511] lg:h-[1100px]"></div>
         <div className="absolute bg-gradient-to-tl from-[#0A8680] to-[#25982D] rounded-full w-[350px] h-[350px] lg:w-[80rem] lg:h-[80rem]"></div>
       </div>
-      <div className="absolute w-20 h-24  lg:w-[25rem] lg:h-[30rem] rounded-full flex -top-10 -left-40 blur-3xl rotate-45 bg-[#9DFFC2]/30 justify-center items-center"></div>
-      <div className="absolute w-20 h-20 lg:w-[30rem] lg:h-[30rem] rounded-full flex -bottom-10 -right-40 blur-3xl rotate-45 bg-[#6CDAFF]/30 justify-center items-center"></div>
-      <div className="absolute w-24 h-24 lg:w-[30rem] lg:h-[30rem] flex -bottom-10 left-20 blur-3xl rotate-45 bg-[#00B430]/30 justify-center items-center"></div>
+      <div className="absolute w-64 h-72  lg:w-[25rem] lg:h-[30rem] rounded-full flex -top-10 -left-20 lg:-left-40 blur-3xl rotate-45 bg-[#9DFFC2]/30 justify-center items-center"></div>
+      <div className="absolute w-60 h-60 lg:w-[30rem] lg:h-[30rem] rounded-full flex -bottom-14 lg:-bottom-10 -right-20 lg:-right-40 blur-3xl rotate-45 bg-[#6CDAFF]/30 justify-center items-center"></div>
+      <div className="absolute w-64 h-72 lg:w-[30rem] lg:h-[30rem] flex -bottom-16 lg:-bottom-10 -left-5 lg:left-20 blur-3xl rotate-45 bg-[#00B430]/30 justify-center items-center"></div>
     </div>
   );
 };
