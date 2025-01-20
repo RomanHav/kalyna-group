@@ -53,7 +53,7 @@ const CareerFaqPart: React.FC<CareerFaqPartProps> = ({
         >
           <Typography
             component="span"
-            className="text-xl text-white !font-medium"
+            className="md:text-lg lg:text-xl text-white !font-medium"
           >
             <div className="flex gap-4 uppercase items-center">
               <Image
@@ -67,7 +67,7 @@ const CareerFaqPart: React.FC<CareerFaqPartProps> = ({
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className="text-base text-white max-w-[85%]">
+          <Typography className="text-base tracking-wider uppercase text-white md:w-full lg:max-w-[85%]">
             {description}
           </Typography>
         </AccordionDetails>

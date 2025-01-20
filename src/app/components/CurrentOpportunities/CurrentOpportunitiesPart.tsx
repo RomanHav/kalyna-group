@@ -1,25 +1,34 @@
 import { nanoid } from 'nanoid';
-import css from './CurrentOpportunitiesPart.module.css'
+import css from './CurrentOpportunitiesPart.module.css';
+import Image from 'next/image';
 
 interface CurrentOpportunitiesPartProps {
   title: string;
+  src: string;
   description: string[];
 }
 
 const CurrentOpportunitiesPart: React.FC<CurrentOpportunitiesPartProps> = ({
   title,
+  src,
   description,
 }) => {
   return (
     <div className="flex flex-col items-center gap-7">
-      <div className="w-full h-[360px] bg-[#1B3431]"></div>
+      <Image
+        className="w-full"
+        src={src}
+        alt={`${title} Image`}
+        width={1080}
+        height={1080}
+      />
       <div className="w-full text-[#C2FAD7] flex gap-3 flex-col items-center">
-        <h4 className="uppercase text-center whitespace-pre text-2xl font-semibold">
+        <h4 className="uppercase text-center whitespace-pre md:text-xl lg:text-2xl font-semibold">
           {title}
         </h4>
         <div className="w-[40%] h-[1px] bg-white"></div>
       </div>
-      <ul className="flex list-disc flex-col gap-1 min-h-[160px]">
+      <ul className="flex list-disc flex-col gap-1 md:min-h-[200px] lg:min-h-[160px]">
         {description.map(part => {
           return (
             <li key={nanoid()} className="text-white">

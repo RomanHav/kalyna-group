@@ -6,7 +6,7 @@
   color: white;
   padding: 10px 26px;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 0.05em;
   font-weight: 600;
   text-transform: uppercase;
@@ -51,6 +51,7 @@
 
 @media screen and (min-width: 1024px) {
   .button {
+    font-size: 24px;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
