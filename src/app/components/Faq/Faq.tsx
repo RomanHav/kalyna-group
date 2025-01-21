@@ -29,9 +29,9 @@ const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
     setExpandedId(expandedId === itemId ? false : itemId);
   };
   return (
-    <div className="flex flex-col lg:flex-row lg:h-[780px] justify-between items-center px-10 lg:px-36">
-      <div className="w-full lg:w-1/2 lg:pr-24 pb-10">
-        <h3 className="text-6xl mb-12 font-medium uppercase text-center text-white">
+    <div className="flex flex-col lg:flex-row lg:h-[780px] justify-between items-center px-10 lg:px-16 xl:px-36">
+      <div className="w-full lg:w-1/2 lg:pr-10 xl:pr-24 pb-10">
+        <h3 className="text-3xl lg:text-6xl mb-5 xl:mb-12 font-medium uppercase text-center text-white">
           Faq
         </h3>
         <ul className="flex flex-col gap-3">
@@ -53,7 +53,7 @@ const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
       </div>
       <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-between">
         {' '}
-        <div className="hidden lg:block w-[1px] h-[740px] bg-white"></div>
+        <div className="hidden lg:block w-[1px] lg:min-h-screen xl:h-[740px] bg-white"></div>
         <div className="relative w-full md:w-[420px] h-[390px] min-[400px]:h-[450px] md:h-[550px] bg-cardServiceBackground bg-cover bg-center bg-no-repeat">
           <div className="absolute text-white flex flex-col gap-3 lg:gap-6 w-full h-full px-7 py-5 md:px-9 md:py-7 z-10">
             <div className="flex flex-col gap-2 md:gap-4">

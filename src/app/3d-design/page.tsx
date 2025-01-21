@@ -19,30 +19,35 @@ const ThreeDSystem = () => {
     terms: '1-2 weeks',
   };
   const headerText = {
-    title: 'Discover, Design, Enjoy, Deligh.',
+    title: 'Discover, Design, Enjoy, Delight.',
     description: 'Your Perfect 3D Design Awaits you',
   };
   return (
     <Suspense fallback={<div>Loading</div>}>
-      <div className="relative">
+      <div className="relative contain-paint">
         <HeaderService headerText={headerText} />
         <div className={'relative'}>
           <span
             className={
-              'absolute z-10 left-32 bottom-28 font-bold text-[220px] text-white'
+              'absolute z-10 left-12 lg:left-32 bottom-28 font-bold text-[53px] md:text-[100px] lg:text-[145px] xl:text-[170px] min-[1440px]:text-[220px] text-white'
             }
           >
             3D
           </span>
-          <div className={'absolute z-[2] left-40 -top-[60rem] flex scale-75'}>
+          <div
+            className={
+              'absolute z-[2] -left-[25rem] -top-[45rem] lg:left-40 lg:-top-[60rem] flex scale-[.25] xl:scale-75'
+            }
+          >
             <Spline
               style={{ maxHeight: '1000px' }}
               scene="https://prod.spline.design/i6Tvsie9awDdyhth/scene.splinecode"
             />
-            s
           </div>
           <Image
-            className={'absolute right-20 w-[740px] bottom-[33rem] '}
+            className={
+              'absolute right-4 bottom-[16rem] lg:right-20 w-[200px] lg:w-[740px] lg:bottom-[33rem] '
+            }
             src={'/design.svg'}
             alt={'3d'}
             width={740}
