@@ -17,7 +17,7 @@ const OurStack: React.FC = () => {
   };
   return (
     <div
-      className={`w-full relative -bottom-2 bg-stack h-screen bg-cover bg-center text-white py-10`}
+      className={`w-full relative -bottom-2 bg-stack h-[30rem] md:h-screen bg-cover bg-center text-white py-10`}
     >
       <div className={`absolute w-full h-full inset-0 bg-black/50`}></div>
       <div className={'px-4 lg:ml-6 xl:ml-20 flex relative flex-col gap-32'}>
