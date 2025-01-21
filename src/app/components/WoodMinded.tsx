@@ -30,7 +30,7 @@ const WoodMinded = () => {
           </h4>
           <a
             href={
-              'https://woodminded.shop/?srsltid=AfmBOoqQUckztejD4Z0Z83IRV5UPhcH_jtZo7m1GTub_Gb2UT1bbcWlZ'
+              'https://woodminded.shop/'
             }
             target="_blanc"
           >

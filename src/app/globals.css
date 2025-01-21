@@ -20,6 +20,7 @@ html.lenis body {
 }
 
 :root {
+  --max-height-3d: 220px;
   --background: #152220;
   --foreground: #171717;
   --swiper-navigation-size: 30px !important;
@@ -68,5 +69,11 @@ body {
 }
 
 .MuiAccordionSummary-expandIconWrapper.Mui-expanded {
-  transform: rotate(90deg)!important;
+  transform: rotate(90deg) !important;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --max-height-3d: 1000px;
+  }
 }
