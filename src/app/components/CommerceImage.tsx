@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 const CommerceImage = () => {
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 1024;
     setMobile(isMobile);
   }, []);
   return (
@@ -23,9 +23,9 @@ const CommerceImage = () => {
         className={
           'absolute bottom-24 lg:bottom-36 flex justify-center items-center w-full h-full'
         }
-        speed={mobile ? 0 : 5}
+        speed={mobile ? 0 : 2}
       >
-        <span className="uppercase text-[53px] md:text-[100px] lg:text-[197px] font-semibold">
+        <span className="uppercase text-[53px] md:text-[100px] lg:text-[145px] xl:text-[170px] min-[1440px]:text-[197px] font-semibold">
           E-commerce
         </span>
       </Parallax>

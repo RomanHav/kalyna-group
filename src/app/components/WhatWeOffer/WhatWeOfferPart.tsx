@@ -12,7 +12,7 @@ function _renderList({ id, title, description, src }: WhatWeOfferPartProps) {
   switch (id) {
     case 1:
       return (
-        <div className="flex items-center lg:items-start text-white lg:flex-col justify-between py-4 px-4 md:px-9 lg:h-[360px]">
+        <div className="flex max-lg:items-center text-white lg:flex-col justify-between py-4 px-4 md:px-9 lg:h-[360px]">
           <h3 className="uppercase text-2xl md:text-3xl lg:text-5xl font-medium">
             {title}
           </h3>
@@ -56,11 +56,11 @@ function _renderList({ id, title, description, src }: WhatWeOfferPartProps) {
           <div className="flex justify-center items-center w-12 h-12 bg-[#25982D]/50 rounded-full">
             <Image src={src} alt="What we offer Image" width={25} height={25} />
           </div>
-          <div className="flex flex-col gap-6 text-white lg:w-[270px]">
+          <div className="flex flex-col gap-6 text-white w-full xl:w-[270px]">
             <h4 className="text-lg md:text-xl lg:text-2xl font-medium">
               {title}
             </h4>
-            <p className={`text-base lg:text-xl`}>{description}</p>
+            <p className={`text-base lg:text-lg xl:text-xl`}>{description}</p>
           </div>
         </div>
       );

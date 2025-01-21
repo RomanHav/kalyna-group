@@ -21,7 +21,7 @@ const ShoesCard: React.FC<ShoesCardProps> = ({
   const stars = [1, 2, 3, 4, 5];
   return (
     <div
-      className={`relative ${bottom} w-[130px] md:w-[170px] lg:w-[250px] ${rotate} flex flex-col gap-4 rounded-xl lg:rounded-3xl bg-white py-3 px-3 lg:py-4 lg:px-6`}
+      className={`relative ${bottom} w-[130px] md:w-[170px] lg:scale-75 xl:scale-100 lg:w-[250px] ${rotate} flex flex-col gap-4 rounded-xl lg:rounded-3xl bg-white py-3 px-3 lg:py-4 lg:px-6`}
     >
       <div
         className={`${container} relative min-h-24 md:min-h-40 lg:min-h-[237px] rounded-xl lg:rounded-3xl flex justify-center items-center`}
@@ -51,7 +51,7 @@ const ShoesCard: React.FC<ShoesCardProps> = ({
             return (
               <li key={index}>
                 <svg
-                  className={'w-2.5'}
+                  className={'w-2.5 lg:w-auto'}
                   width="16"
                   height="16"
                   viewBox="0 0 14 14"
