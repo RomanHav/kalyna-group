@@ -2,9 +2,14 @@
 import Image from 'next/image';
 import ShoesCard from './ShoesCard';
 import { Parallax } from 'react-scroll-parallax';
+import { useEffect, useState } from 'react';
 
 const CommerceImage = () => {
-  const isMobile = window.innerWidth <= 768;
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    setMobile(isMobile);
+  }, []);
   return (
     <div className="absolute top-[22rem] z-10 w-full flex flex-col justify-center items-center text-white">
       <Image
@@ -18,7 +23,7 @@ const CommerceImage = () => {
         className={
           'absolute bottom-24 lg:bottom-36 flex justify-center items-center w-full h-full'
         }
-        speed={isMobile ? 0 : 5}
+        speed={mobile ? 0 : 5}
       >
         <span className="uppercase text-[53px] md:text-[100px] lg:text-[197px] font-semibold">
           E-commerce
@@ -26,7 +31,7 @@ const CommerceImage = () => {
       </Parallax>
       <Parallax
         className="relative z-10 flex gap-12 md:gap-20 lg:gap-36"
-        speed={isMobile ? 0 : 10}
+        speed={mobile ? 0 : 10}
       >
         <ShoesCard
           src={'/first-shoes.png'}
