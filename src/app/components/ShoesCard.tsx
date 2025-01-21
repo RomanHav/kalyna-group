@@ -21,10 +21,10 @@ const ShoesCard: React.FC<ShoesCardProps> = ({
   const stars = [1, 2, 3, 4, 5];
   return (
     <div
-      className={`relative ${bottom} w-[130px] lg:w-[250px] ${rotate} flex flex-col gap-4 rounded-xl lg:rounded-3xl bg-white py-3 px-3 lg:py-4 lg:px-6`}
+      className={`relative ${bottom} w-[130px] md:w-[170px] lg:w-[250px] ${rotate} flex flex-col gap-4 rounded-xl lg:rounded-3xl bg-white py-3 px-3 lg:py-4 lg:px-6`}
     >
       <div
-        className={`${container} relative min-h-24 lg:min-h-[237px] rounded-xl lg:rounded-3xl flex justify-center items-center`}
+        className={`${container} relative min-h-24 md:min-h-40 lg:min-h-[237px] rounded-xl lg:rounded-3xl flex justify-center items-center`}
       >
         <Image
           className="absolute -right-5 lg:-right-10 scale-125"
@@ -42,7 +42,7 @@ const ShoesCard: React.FC<ShoesCardProps> = ({
       <div className="text-black flex">
         <div className="flex flex-col items-start">
           {children}
-          <span className="text-black/70 text-[7px] lg:text-sm font-medium">
+          <span className="text-black/70 text-[7px] md:text-sm font-medium">
             Your product
           </span>
         </div>

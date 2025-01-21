@@ -50,7 +50,7 @@
   z-index: 1;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .button {
     padding: 12px 24px;
   }

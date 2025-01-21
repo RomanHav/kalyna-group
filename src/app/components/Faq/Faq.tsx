@@ -51,25 +51,25 @@ const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
           ))}
         </ul>
       </div>
-      <div className="w-full lg:w-1/2 flex items-center justify-between">
+      <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-between">
         {' '}
         <div className="hidden lg:block w-[1px] h-[740px] bg-white"></div>
         <div className="relative w-full md:w-[420px] h-[390px] min-[400px]:h-[450px] md:h-[550px] bg-cardServiceBackground bg-cover bg-center bg-no-repeat">
-          <div className="absolute text-white flex flex-col gap-3 lg:gap-6 w-full h-full px-7 py-5 lg:px-9 lg:py-7 z-10">
-            <div className="flex flex-col gap-2 lg:gap-4">
+          <div className="absolute text-white flex flex-col gap-3 lg:gap-6 w-full h-full px-7 py-5 md:px-9 md:py-7 z-10">
+            <div className="flex flex-col gap-2 md:gap-4">
               <Image
                 src={'/basket.svg'}
                 alt="Basket Image"
                 width={40}
                 height={40}
               />
-              <span className="text-xl lg:text-3xl font-semibold uppercase">
+              <span className="text-xl md:text-3xl font-semibold uppercase">
                 {faqCard.title}
               </span>
             </div>
             <div className="flex justify-center">
               <Image
-                className="w-[140px] lg:w-[220px] rounded-2xl"
+                className="w-[140px] md:w-[220px] rounded-2xl"
                 src={faqCard.src}
                 alt={faqCard.title}
                 width={513}
@@ -77,17 +77,17 @@ const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
               />
             </div>
             <div className="flex justify-between items-center">
-              <div className="flex flex-col lg:gap-2 gap-1">
+              <div className="flex flex-col md:gap-2 gap-1">
                 <span className="font-light text-sm lg:text-base">From:</span>
                 <span className="font-semibold text-lg lg:text-xl">
                   {faqCard.price}
                 </span>
               </div>
-              <div className="flex flex-col lg:gap-2 gap-1">
+              <div className="flex flex-col md:gap-2 gap-1">
                 <span className="font-light text-sm lg:text-base">
                   Date terms:
                 </span>
-                <span className="font-semibold text-lg lg:text-xl">
+                <span className="font-semibold text-lg md:text-xl">
                   {faqCard.terms}
                 </span>
               </div>

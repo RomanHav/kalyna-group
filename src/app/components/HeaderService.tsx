@@ -11,34 +11,34 @@ interface HeaderServiceProps {
 
 const HeaderService: React.FC<HeaderServiceProps> = ({ headerText }) => {
   return (
-    <div className="relative mb-60 lg:mb-[22rem] w-full h-[calc(100vh-150px)] lg:h-screen flex justify-center">
+    <div className="relative mb-60 md:mb-0 lg:mb-[22rem] w-full h-[calc(100vh-150px)] md:min-h-[900px] lg:h-screen lg:min-h-screen flex justify-center">
       <div
         className={
-          'relative z-20 text-balance text-center lg:text-nowrap flex flex-col justify-center items-center text-white mx-10 lg:mb-48'
+          'relative z-20 text-balance text-center lg:text-nowrap flex flex-col justify-center items-center text-white mx-10 max-h-[450px] lg:mb-48'
         }
       >
-        <h4 className="uppercase text-2xl lg:text-4xl pb-4 font-semibold ">
+        <h4 className="uppercase text-2xl md:text-3xl lg:text-4xl pb-4 font-semibold ">
           {headerText.title}
         </h4>
-        <p className={'text-lg lg:text-2xl font-extralight pb-7'}>
+        <p className={'text-lg md:text-xl lg:text-2xl font-extralight pb-7'}>
           {headerText.description} with{' '}
           <span className="uppercase">Kalyna group</span>
         </p>
         <button
           className={
-            'font-semibold text-lg lg:text-2xl hover:bg-custom-background hover:text-white transition-colors duration-300 bg-white py-2 px-6 uppercase rounded-lg text-black'
+            'font-semibold text-lg md:text-xl lg:text-2xl hover:bg-custom-background hover:text-white transition-colors duration-300 bg-white py-2 px-6 uppercase rounded-lg text-black'
           }
         >
           Write Now
         </button>
       </div>
       <div className="absolute w-full flex h-[30rem] -top-40 lg:-top-[100vh] lg:h-[75rem] blur-md lg:blur-xl justify-center items-center">
-        <div className="absolute z-10 rounded-full w-[270px] h-[270px] lg:w-[1100px] bg-[#031511] lg:h-[1100px]"></div>
-        <div className="absolute bg-gradient-to-tl from-[#0A8680] to-[#25982D] rounded-full w-[350px] h-[350px] lg:w-[80rem] lg:h-[80rem]"></div>
+        <div className="absolute z-10 rounded-full w-[270px] h-[270px] md:w-[650px] md:h-[650px] lg:w-[1100px] bg-[#031511] lg:h-[1100px]"></div>
+        <div className="absolute bg-gradient-to-tl from-[#0A8680] to-[#25982D] rounded-full w-[350px] h-[350px] md:w-[740px] md:h-[740px] lg:w-[80rem] lg:h-[80rem]"></div>
       </div>
       <div className="absolute w-64 h-72  lg:w-[25rem] lg:h-[30rem] rounded-full flex -top-10 -left-20 lg:-left-40 blur-3xl rotate-45 bg-[#9DFFC2]/30 justify-center items-center"></div>
-      <div className="absolute w-60 h-60 lg:w-[30rem] lg:h-[30rem] rounded-full flex -bottom-14 lg:-bottom-10 -right-20 lg:-right-40 blur-3xl rotate-45 bg-[#6CDAFF]/30 justify-center items-center"></div>
-      <div className="absolute w-64 h-72 lg:w-[30rem] lg:h-[30rem] flex -bottom-16 lg:-bottom-10 -left-5 lg:left-20 blur-3xl rotate-45 bg-[#00B430]/30 justify-center items-center"></div>
+      <div className="absolute w-60 h-60 md:w-[25rem] md:h-[25rem] lg:w-[30rem] lg:h-[30rem] rounded-full flex -bottom-14 md:bottom-56 lg:-bottom-10 -right-20 lg:-right-40 blur-3xl rotate-45 bg-[#6CDAFF]/30 justify-center items-center"></div>
+      <div className="absolute w-64 h-72 md:w-[25rem] md:h-[28rem] lg:w-[30rem] lg:h-[30rem] flex -bottom-16 md:bottom-56 lg:-bottom-10 -left-5 lg:left-20 blur-3xl rotate-45 bg-[#00B430]/30 justify-center items-center"></div>
     </div>
   );
 };
