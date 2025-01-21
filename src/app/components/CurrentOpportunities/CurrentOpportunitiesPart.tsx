@@ -23,12 +23,12 @@ const CurrentOpportunitiesPart: React.FC<CurrentOpportunitiesPartProps> = ({
         height={1080}
       />
       <div className="w-full text-[#C2FAD7] flex gap-3 flex-col items-center">
-        <h4 className="uppercase text-center whitespace-pre md:text-xl lg:text-2xl font-semibold">
+        <h4 className="uppercase text-center whitespace-pre text-xl lg:text-2xl font-semibold">
           {title}
         </h4>
-        <div className="w-[40%] h-[1px] bg-white"></div>
+        <div className="w-[60%] md:w-[40%] h-[1px] bg-white"></div>
       </div>
-      <ul className="flex list-disc flex-col gap-1 md:min-h-[200px] lg:min-h-[160px]">
+      <ul className="flex list-disc flex-col pl-4 gap-1 md:min-h-[200px] lg:min-h-[200px]">
         {description.map(part => {
           return (
             <li key={nanoid()} className="text-white">

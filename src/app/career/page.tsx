@@ -7,7 +7,7 @@ import CareerFaq from '../components/CareerFaq/CareerFaq';
 
 const CareerPage: React.FC = () => {
   return (
-    <div className={'relative py-32 lg:pt-44 flex flex-col gap-28'}>
+    <div className={'relative pt-32 lg:pt-44 flex flex-col gap-20 lg:gap-28'}>
       <JoinTeam />
       <CareerRunningLine />
       <CareerWhyKalyna />

@@ -1,8 +1,10 @@
+'use client';
 import { createTheme, ThemeProvider, Typography } from '@mui/material';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { IoIosArrowForward } from 'react-icons/io';
 
 interface CareerFaqPartProps {
@@ -24,6 +26,10 @@ const CareerFaqPart: React.FC<CareerFaqPartProps> = ({
   expandedId,
   onAccordionChange,
 }) => {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    setMobile(window.innerWidth <= 768);
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <Accordion
@@ -42,7 +48,9 @@ const CareerFaqPart: React.FC<CareerFaqPartProps> = ({
         }}
       >
         <AccordionSummary
-          expandIcon={<IoIosArrowForward size={32} color="#38EF7D" />}
+          expandIcon={
+            <IoIosArrowForward size={mobile ? 24 : 32} color="#38EF7D" />
+          }
           aria-controls="panel1-content"
           id="panel1-header"
           sx={{
@@ -53,10 +61,11 @@ const CareerFaqPart: React.FC<CareerFaqPartProps> = ({
         >
           <Typography
             component="span"
-            className="md:text-lg lg:text-xl text-white !font-medium"
+            className="text-sm md:text-lg xl:text-xl text-white !font-medium"
           >
             <div className="flex gap-4 uppercase items-center">
               <Image
+                className="w-8 md:w-10"
                 src={'/question.svg'}
                 alt="Person Question Image"
                 width={40}
@@ -67,7 +76,7 @@ const CareerFaqPart: React.FC<CareerFaqPartProps> = ({
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className="text-base tracking-wider uppercase text-white md:w-full lg:max-w-[85%]">
+          <Typography className="text-sm md:text-base tracking-wider uppercase text-white md:w-full xl:max-w-[85%]">
             {description}
           </Typography>
         </AccordionDetails>

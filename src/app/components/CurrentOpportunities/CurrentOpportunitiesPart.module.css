@@ -4,9 +4,9 @@
   background: linear-gradient(to right, #11998e, #38ef7d);
   transition: background 0.3s ease-in-out;
   color: white;
-  padding: 10px 26px;
+  padding: 8px 24px;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: 0.05em;
   font-weight: 600;
   text-transform: uppercase;
@@ -47,6 +47,14 @@
 .button .buttonText {
   position: relative;
   z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    padding: 10px 26px;
+    border-radius: 10px;
+    font-size: 24px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
