@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "Front End Developer",
+    "src": "/Front-end.png",
     "description": [
       "Build intuitive user interfaces using modern frameworks.",
       "Collaborate with designers to bring visuals to life.",
@@ -11,6 +12,7 @@
   {
     "id": 2,
     "title": "Back End Developer",
+    "src": "/Back-end.png",
     "description": [
       "Design and implement scalable server-side solutions.",
       "Work with databases and APIs.",
@@ -20,6 +22,7 @@
   {
     "id": 3,
     "title": "UI/UX Designer",
+    "src": "/UI-UX.png",
     "description": [
       "Create user-centered designs based on research and best practices.",
       "Collaborate with developers to ensure seamless implementation.",
@@ -29,6 +32,7 @@
   {
     "id": 4,
     "title": "Sales Manager",
+    "src": "/Data-Analytic.png",
     "description": [
       "Identify and connect with potential clients.",
       "Drive sales strategies to achieve targets.",
@@ -38,6 +42,7 @@
   {
     "id": 5,
     "title": "SMM Manager",
+    "src": "/Smm.webp",
     "description": [
       "Plan and execute campaigns to boost brand awareness and engagement.",
       "Create and schedule engaging posts tailored to platform-specific audiences.",
