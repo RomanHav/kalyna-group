@@ -28,15 +28,13 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
 }) => {
   return (
     <div
-      className={`flex w-full relative items-center transition-all duration-200 contain-paint ${
-        expandedId === id || isLast
-          ? 'h-20 md:h-40 xl:h-[247px]'
-          : 'h-20 md:h-28 lg:h-32 xl:h-[170px]'
+      className={`flex w-full relative items-center transition-all duration-200 ${!isLast ? 'contain-paint' : ''} ${
+        expandedId === id ? 'h-[320px]' : 'h-20 md:h-36 lg:h-32 xl:h-[170px]'
       } px-3 border-t-2 border-white`}
     >
       {isLast ? (
         <div>
-          <div className="relative md:mt-3 lg:mr-10 mr-3 w-5 md:w-[200px] xl:w-[275px] flex items-center">
+          <div className="relative md:mt-4 lg:mr-10 mr-3 w-5 md:w-[200px] xl:mt-9 xl:w-[275px] flex items-center">
             <Image src={number} alt="Number" width={274} height={182}></Image>
           </div>
         </div>
@@ -62,7 +60,7 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
       )}
 
       {isLast ? (
-        <span className="text-xl lg:text-[40px] px-3 py-2 bg-gradient-to-r from-custom-green to-custom-second-green bg-clip-text text-transparent">
+        <span className="text-xl lg:text-4xl xl:leading-[3rem] lg:h-12 px-3 md:px-12 lg:px-5 xl:px-0 bg-gradient-to-r from-custom-green to-custom-second-green bg-clip-text text-transparent">
           Your project is ready to generate income
         </span>
       ) : (
@@ -92,7 +90,7 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
                 WebkitBackgroundClip: 'text',
                 mt: 0,
                 WebkitTextFillColor: 'transparent',
-                fontSize: { xs: '20px', md: '40px' },
+                fontSize: { xs: '20px', md: '36px' },
                 fontWeight: 'regular',
               },
             }}
