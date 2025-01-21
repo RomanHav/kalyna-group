@@ -2,12 +2,18 @@
 import Image from 'next/image';
 import ShoesCard from './ShoesCard';
 import { Parallax } from 'react-scroll-parallax';
+import { useEffect, useState } from 'react';
 
 const CommerceImage = () => {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    setMobile(isMobile);
+  }, []);
   return (
     <div className="absolute top-[22rem] z-10 w-full flex flex-col justify-center items-center text-white">
       <Image
-        className="w-[457px]"
+        className="w-[250px] md:w-[350px] lg:w-[457px]"
         src={'/phone.png'}
         alt="Phone Image"
         width={512}
@@ -15,30 +21,39 @@ const CommerceImage = () => {
       />
       <Parallax
         className={
-          'absolute bottom-36 flex justify-center items-center w-full h-full'
+          'absolute bottom-24 lg:bottom-36 flex justify-center items-center w-full h-full'
         }
-        speed={5}
+        speed={mobile ? 0 : 5}
       >
-        <span className="uppercase text-[197px] font-semibold">E-commerce</span>
+        <span className="uppercase text-[53px] md:text-[100px] lg:text-[197px] font-semibold">
+          E-commerce
+        </span>
       </Parallax>
-      <Parallax className="relative z-10 flex gap-36" speed={10}>
+      <Parallax
+        className="relative z-10 flex gap-12 md:gap-20 lg:gap-36"
+        speed={mobile ? 0 : 10}
+      >
         <ShoesCard
           src={'/first-shoes.png'}
           container={'bg-[#7FFFA5]'}
           button={'bg-[#6FE8C7]'}
-          rotate={'-rotate-[25deg]'}
-          bottom={'bottom-[250px]'}
+          rotate={'-rotate-[15deg] lg:-rotate-[25deg]'}
+          bottom={'bottom-[120px] lg:bottom-[250px]'}
         >
-          <span className="text-2xl font-medium">$74</span>
+          <span className="text-lg md:text-xl lg:text-2xl font-medium">
+            $74
+          </span>
         </ShoesCard>
         <ShoesCard
           src="/second-shoes.png"
           container={'bg-[#6FE8C7]'}
           button={'bg-[#7FFFA5]'}
-          rotate={'rotate-[20deg]'}
-          bottom={'bottom-[190px]'}
+          rotate={'rotate-[15deg] lg:rotate-[20deg]'}
+          bottom={'bottom-[100px] lg:bottom-[190px]'}
         >
-          <span className="text-2xl font-medium">$87</span>
+          <span className="text-lg md:text-xl lg:text-2xl font-medium">
+            $87
+          </span>
         </ShoesCard>
       </Parallax>
     </div>

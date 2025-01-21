@@ -3,7 +3,7 @@ import { Poppins } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import React from 'react';
-import { ReactLenis } from '@/app/utils/lenis';
+import ReactLenisUpdated from '@/app/utils/lenis';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import NavBar from '@/app/components/NavBar/NavBar';
 import Footer from '@/app/components/Footer/Footer';
@@ -28,9 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ReactLenis root>
-        <ParallaxProvider>
-          <body className={`${poppins.className} overflow-hidden relative`}>
+      <body className={`${poppins.className} lg:overflow-hidden relative`}>
+        <ReactLenisUpdated>
+          <ParallaxProvider>
             <Script
               id="google-tag-manager"
               strategy="afterInteractive"
@@ -60,9 +60,9 @@ export default function RootLayout({
               src="https://assets.calendly.com/assets/external/widget.js"
             />
             <GoogleAnalytics gaId="G-WNLWD75BW9" />
-          </body>
-        </ParallaxProvider>
-      </ReactLenis>
+          </ParallaxProvider>
+        </ReactLenisUpdated>
+      </body>
     </html>
   );
 }

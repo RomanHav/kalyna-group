@@ -20,9 +20,10 @@ const ECommerce = () => {
     description: 'Build your desired web store',
   };
   return (
-    <div className="relative">
+    <div className="relative contain-paint">
       <HeaderService headerText={headerText} />
       <CommerceImage />
+
       <div className={'relative flex flex-col justify-center gap-20'}>
         <WhatWeOffer offer={offer} />
         <OurExpertise>
