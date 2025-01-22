@@ -29,14 +29,14 @@ const ThreeDSystem = () => {
         <div className={'absolute max-lg:top-[46rem] w-full'}>
           <span
             className={
-              'absolute z-10 left-12 lg:left-32 bottom-28 font-bold text-[53px] md:text-[100px] lg:text-[145px] xl:text-[170px] min-[1440px]:text-[220px] text-white'
+              'absolute z-10 left-12 lg:left-[8rem] bottom-28  md:-bottom-[3rem] lg:bottom-[12rem] font-bold text-[53px] md:text-[120px] xl:text-[170px] min-[1440px]:text-[220px] text-white'
             }
           >
             3D
           </span>
           <div
             className={
-              'absolute z-[2] -left-[25rem] -top-[45rem] lg:left-40 lg:-top-[60rem] flex scale-[.25] md: xl:scale-75'
+              'absolute z-[2] -left-[25rem] -top-[45rem] lg:-top-[60rem] lg:-left-[5rem] md:scale-[.6] md:-left-[12rem] xl:left-40 xl:-top-[60rem] flex scale-[.25] md: xl:scale-75'
             }
           >
             <Spline
@@ -46,7 +46,7 @@ const ThreeDSystem = () => {
           </div>
           <Image
             className={
-              'absolute right-4 bottom-[16rem] lg:right-20 w-[200px] lg:w-[740px] lg:bottom-[33rem] '
+              'absolute right-4 bottom-[16rem] md:bottom-[19rem] lg:right-20 w-[200px] md:w-[450px] xl:w-[740px] lg:bottom-[33rem] '
             }
             src={'/design.svg'}
             alt={'3d'}
