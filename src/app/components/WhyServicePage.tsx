@@ -43,7 +43,7 @@ const WhyServicePage: React.FC<WhyServicePageProps> = ({
           return (
             <li
               key={part.id}
-              className={`flex ${part.id === 1 || part.id === 4 || part.id === 5 ? 'items-end' : ''} w-1/2 lg:h-[260px]`}
+              className={`flex ${part.id === 1 || part.id === 4 || part.id === 5 ? 'items-end' : ''} w-1/2 lg:min-h-[260px]`}
             >
               <WhyServicePagePart
                 id={part.id}

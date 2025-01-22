@@ -35,10 +35,11 @@ const CrmImage = () => {
   }, [min, targetValue]);
 
   return (
-    <Parallax className="absolute top-[26rem] z-10 w-full flex flex-col justify-center items-center text-white">
+    <Parallax className="absolute top-[24rem] lg:top-[32rem] z-10 w-full flex flex-col justify-center items-center text-white">
       <div>
-        <span className="flex mb-10 w-full justify-center text-[128px] font-bold uppercase gap-12">
+        <span className="flex mb-10 w-full justify-center text-5xl md:text-[80px] lg:text-[128px] font-bold uppercase gap-3 md:gap-6 lg:gap-12">
           <Image
+            className="w-[123px] md:w-[200px] lg:w-[311px]"
             src={'/crm-title.svg'}
             alt="Crm title"
             width={311}
@@ -46,8 +47,8 @@ const CrmImage = () => {
           />
           System
         </span>
-        <div className="flex gap-10 justify-between">
-          <div className="flex items-start relative top-40 -left-5 animate-draggableLoop">
+        <div className="flex flex-col md:flex-row md:items-center gap-10 lg:gap-5 xl:gap-16 justify-between">
+          <div className="hidden lg:flex lg:items-start relative -left-5 animate-draggableLoop">
             <span className="py-1 px-3 bg-[#EEFF7E] text-xl text-black border border-white rounded-full">
               Dmytro
             </span>
@@ -82,7 +83,7 @@ const CrmImage = () => {
             `}</style>
           </div>
           <div className="flex flex-col gap-7">
-            <div className="flex flex-col px-9 py-4 bg-[#51946E]/40 rounded-3xl">
+            <div className="flex flex-col md:w-60 lg:w-64 px-9 py-4 bg-[#51946E]/40 rounded-3xl">
               <div className="flex justify-between">
                 <span>Data Storage:</span>
                 <span>{storage} gb</span>
@@ -91,7 +92,7 @@ const CrmImage = () => {
                 <Slider color={'warning'} value={storage} min={min} max={max} />
               </ThemeProvider>
             </div>
-            <div className="flex justify-center">
+            <div className="hidden md:flex md:justify-center">
               <Image
                 className="relative left-3"
                 src={'/men.svg'}
@@ -107,27 +108,30 @@ const CrmImage = () => {
                 height={70}
               />
             </div>
-            <div className="flex justify-center">
+            <div className="hidden md:flex md:justify-center">
               <div className="flex flex-col">
                 <Image
+                  className='md:w-52 lg:w-[249px]'
                   src={'/ten-mil.svg'}
                   alt="Popular"
                   width={249}
                   height={87}
                 />
-                <span className="uppercase text-4xl">customers</span>
+                <span className="uppercase md:text-3xl lg:text-4xl">customers</span>
               </div>
             </div>
           </div>
-          <Image
-            className="w-[300px] h-[300px]"
-            src={'/schedule.png'}
-            alt="Schedule"
-            width={512}
-            height={512}
-          />
+          <div className="flex justify-center">
+            <Image
+              className="w-[300px] h-[300px]"
+              src={'/schedule.png'}
+              alt="Schedule"
+              width={512}
+              height={512}
+            />
+          </div>
           <div className="flex flex-col justify-between items-center pl-9 py-10">
-            <div className="flex items-start relative animate-draggableLoop">
+            <div className="flex items-start relative md:right-9 md:top-20 lg:right-0 lg:-top-10 animate-draggableLoop">
               <span className="py-1 px-3 bg-[#7EFFE1] text-xl text-black border border-white rounded-full">
                 Mark
               </span>
@@ -161,7 +165,7 @@ const CrmImage = () => {
                 }
               `}</style>
             </div>
-            <div className="flex flex-col gap-3">
+            <div className="hidden lg:flex lg:flex-col lg:gap-3">
               <span className="text-5xl font-medium">4,5/5</span>
               <ul className="flex gap-1 pt-1">
                 {stars.map((star, index) => (

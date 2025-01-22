@@ -24,7 +24,7 @@ const CrmSystem = () => {
       'A well-integrated CRM system is crucial for managing customer relationships and streamlining business processes. Here’s what you gain by working with us.',
   };
   return (
-    <div className="relative mb-20">
+    <div className="relative mb-20 contain-paint">
       <HeaderService headerText={headerText} />
       <CrmImage />
       <div className={'relative flex flex-col justify-center gap-20'}>
