@@ -35,7 +35,9 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
     >
       {isLast ? (
         <div>
+
           <div className="relative md:mt-4 lg:mr-10 mr-3 w-5 md:w-[200px] xl:mt-12 xl:w-[275px] flex items-center">
+
             <Image src={number} alt="Number" width={274} height={182}></Image>
           </div>
         </div>
