@@ -24,7 +24,7 @@ const LandingPage = () => {
     description: 'Your Perfect Landing Page Awaits you',
   };
   return (
-    <div className="relative">
+    <div className="relative contain-paint">
       <HeaderService headerText={headerText} />
       <LandingImage />
       <div className={'relative flex flex-col justify-center gap-20'}>

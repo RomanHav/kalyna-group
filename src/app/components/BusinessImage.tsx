@@ -6,18 +6,20 @@ const BusinessImage = () => {
       <div className="flex items-center gap-20">
         <span className="uppercase text-[128px] font-bold">Business</span>
         <Image
-          src={'/business-arrow.svg'}
+          className='w-[200px]'
+          src={'/growth.webp'}
           alt="Arrow Image"
-          width={150}
-          height={150}
+          width={640}
+          height={640}
         />
       </div>
       <div className="flex items-center gap-20 pl-[10%]">
         <Image
-          src={'/people.svg'}
+          className='w-[200px]'
+          src={'/people.webp'}
           alt="People Image"
-          width={150}
-          height={150}
+          width={640}
+          height={640}
         />
         <div className="w-full flex flex-col gap-3">
           <Image
