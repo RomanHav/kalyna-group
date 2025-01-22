@@ -6,6 +6,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Image from 'next/image';
 import ArrowCases from '@/app/components/ArrowCases';
+import css from './HowWeWork.module.css';
 
 interface HowWeWorkProps {
   id: number;
@@ -34,7 +35,9 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
     >
       {isLast ? (
         <div>
-          <div className="relative md:mt-4 lg:mr-10 mr-3 w-5 md:w-[200px] xl:mt-9 xl:w-[275px] flex items-center">
+
+          <div className="relative md:mt-4 lg:mr-10 mr-3 w-5 md:w-[200px] xl:mt-12 xl:w-[275px] flex items-center">
+
             <Image src={number} alt="Number" width={274} height={182}></Image>
           </div>
         </div>
@@ -52,7 +55,7 @@ const HowWeWorkPart: React.FC<HowWeWorkProps> = ({
                 title === 'Introductory call'
                   ? 'md:max-w-[130px] xl:max-w-[176px]'
                   : 'md:max-w-[200px] xl:max-w-[264px]'
-              } transition-all duration-500 uppercase delay-150 ease-in`}
+              } transition-all duration-500 uppercase delay-150 ease-in ${expandedId !== id ? css.number : ''}`}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-custom-green to-custom-second-green opacity-60"></div>
           </div>

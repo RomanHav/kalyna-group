@@ -1,50 +1,26 @@
 'use client';
 
 import Image from 'next/image';
-import { Parallax } from 'react-scroll-parallax';
+import LandingRunningLine from './components/LandingRunningLine';
 
 const LandingImage = () => {
   return (
-    <div className="absolute top-[30rem] z-10 w-full flex flex-col justify-center items-center text-white">
-      <Image
-        className="w-[836px]"
-        src={'/macbook.png'}
-        alt="Phone Image"
-        width={1338}
-        height={806}
-      />
-      <Parallax
-        className={
-          'absolute bottom-28 right-[19rem] tracking-[0.5em] flex justify-center items-center w-full h-full'
-        }
-        speed={5}
-      >
-        <div className="text-[160px] font-bold flex items-center gap-3">
-          <span className="text-white uppercase">Lan</span>
-          <Image
-            src={'/landing.svg'}
-            alt="Landing Image"
-            width={421}
-            height={240}
-          />
+    <div className="absolute top-[24rem] md:top-[25rem] lg:top-[29rem] xl:top-[26rem] min-[1440px]:top-[25rem] z-10 w-full flex flex-col justify-center items-center text-white">
+      <div className="relative z-20 lg:left-[5%] flex justify-center">
+        <Image
+          className="w-80 md:w-[680px] lg:w-[750px] xl:w-[960px]"
+          src={'/landing-read.webp'}
+          alt="Landing Image"
+          width={4082}
+          height={3622}
+        />
+      </div>
+      <div className='relative w-[150%] bottom-[12rem] md:bottom-[25rem] lg:bottom-[27rem] xl:bottom-[34rem] z-10'>
+        <div className="absolute z-20 -rotate-[20deg] w-full">
+          <LandingRunningLine />
         </div>
-      </Parallax>
-      <Parallax
-        className={
-          'absolute -bottom-16 left-[21.5rem] tracking-[0.5em] flex justify-center items-center w-full h-full'
-        }
-        speed={5}
-      >
-        <div className="text-[160px] font-bold flex items-center gap-3">
-          <Image
-            src={'/page.svg'}
-            alt="Landing Image"
-            width={223}
-            height={240}
-          />
-          <span className="text-white uppercase">ge</span>
-        </div>
-      </Parallax>
+        <div className="absolute z-10 left-8 rotate-[20deg] w-full h-8 md:h-[52px] lg:h-[56px] xl:h-[76px] bg-gradient-to-b from-[#9CFF95] to-[#7DEBA9] opacity-30"></div>
+      </div>
     </div>
   );
 };

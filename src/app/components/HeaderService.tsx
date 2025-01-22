@@ -11,11 +11,23 @@ interface HeaderServiceProps {
   headerText: props;
 }
 
+const _renderClassname = (path: string) => {
+  switch (path) {
+    case '/3d-design':
+    case '/landing-page':
+      return 'mb-32';
+    case '/crm-system':
+      return 'mb-[520px] lg:mb-[540px] xl:mb-[400px]';
+    default:
+      return 'mb-60';
+  }
+};
+
 const HeaderService: React.FC<HeaderServiceProps> = ({ headerText }) => {
   const pathname = usePathname();
   return (
     <div
-      className={`relative ${pathname === '/3d-design' ? 'mb-32' : 'mb-60'} md:mb-0 lg:mb-[22rem] w-full h-[calc(100vh-150px)] md:min-h-[900px] lg:min-h-screen flex justify-center`}
+      className={`relative ${_renderClassname(pathname)} md:mb-0 lg:mb-[22rem] w-full h-[calc(100vh-150px)] md:min-h-[900px] lg:min-h-screen flex justify-center`}
     >
       <div
         className={

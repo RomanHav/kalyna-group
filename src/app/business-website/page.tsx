@@ -20,7 +20,7 @@ const BusinessWebsite = () => {
   };
   return (
     <div>
-      <div className="relative mb-20">
+      <div className="relative mb-20 contain-paint">
         <HeaderService headerText={headerText} />
         <BusinessImage />
         <div className={'relative flex flex-col justify-center gap-20'}>
