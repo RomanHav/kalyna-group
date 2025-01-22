@@ -52,8 +52,8 @@ function _renderList({ id, title, description, src }: WhatWeOfferPartProps) {
       );
     default:
       return (
-        <div className="flex flex-col justify-between py-4 px-4 md:py-6 md:px-8 h-[21rem] lg:h-[360px]">
-          <div className="flex justify-center items-center w-12 h-12 bg-[#25982D]/50 rounded-full">
+        <div className="flex flex-col justify-between py-4 px-4 md:py-6 md:px-8 min-h-[380px] lg:min-h-[420px]">
+          <div className="flex justify-center items-center min-h-12 w-12 h-12 bg-[#25982D]/50 rounded-full">
             <Image src={src} alt="What we offer Image" width={25} height={25} />
           </div>
           <div className="flex flex-col gap-6 text-white w-full xl:w-[270px]">

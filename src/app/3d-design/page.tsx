@@ -26,7 +26,7 @@ const ThreeDSystem = () => {
     <Suspense fallback={<div>Loading</div>}>
       <div className="relative contain-paint">
         <HeaderService headerText={headerText} />
-        <div className={'relative'}>
+        <div className={'absolute max-lg:top-[46rem] w-full'}>
           <span
             className={
               'absolute z-10 left-12 lg:left-32 bottom-28 font-bold text-[53px] md:text-[100px] lg:text-[145px] xl:text-[170px] min-[1440px]:text-[220px] text-white'
@@ -36,7 +36,7 @@ const ThreeDSystem = () => {
           </span>
           <div
             className={
-              'absolute z-[2] -left-[25rem] -top-[45rem] lg:left-40 lg:-top-[60rem] flex scale-[.25] xl:scale-75'
+              'absolute z-[2] -left-[25rem] -top-[45rem] lg:left-40 lg:-top-[60rem] flex scale-[.25] md: xl:scale-75'
             }
           >
             <Spline

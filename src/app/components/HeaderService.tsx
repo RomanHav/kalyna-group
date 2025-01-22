@@ -1,4 +1,6 @@
+'use client';
 import React from 'react';
+import { usePathname } from 'next/navigation';
 
 interface props {
   title: string;
@@ -10,8 +12,11 @@ interface HeaderServiceProps {
 }
 
 const HeaderService: React.FC<HeaderServiceProps> = ({ headerText }) => {
+  const pathname = usePathname();
   return (
-    <div className="relative mb-60 md:mb-0 lg:mb-[22rem] w-full h-[calc(100vh-150px)] md:min-h-[900px] lg:min-h-screen flex justify-center">
+    <div
+      className={`relative ${pathname === '/3d-design' ? 'mb-32' : 'mb-60'} md:mb-0 lg:mb-[22rem] w-full h-[calc(100vh-150px)] md:min-h-[900px] lg:min-h-screen flex justify-center`}
+    >
       <div
         className={
           'relative z-20 text-balance text-center lg:text-nowrap flex flex-col justify-center items-center text-white mx-10 max-h-[450px] lg:max-h-[520px] xl:mb-48'
