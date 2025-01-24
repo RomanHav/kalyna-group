@@ -5,7 +5,7 @@ import HeaderUi from '@/app/components/HeaderUi';
 import faq from '../../../faq/uiFaq.json';
 import Faq from '@/app/components/Faq/Faq';
 import OurExpertise from '@/app/components/OurExpertise/OurExpertise';
-import WoodMinded from '@/app/components/WoodMinded';
+import MilkShake from '../components/MilkShake';
 const faqCard = {
   title: 'UI/UX design',
   src: '/web-design.webp',
@@ -20,13 +20,13 @@ const headerText = {
 
 const UiUxDesign = () => {
   return (
-    <div className={'relative mb-20'}>
+    <div className={'relative mb-20 contain-paint'}>
       <HeaderService headerText={headerText} />
       <HeaderUi />
       <div className={'relative flex flex-col justify-center gap-20'}>
         <WhatWeOffer offer={offer} />
         <OurExpertise>
-          <WoodMinded />
+          <MilkShake/>
         </OurExpertise>
         <Faq faqCard={faqCard} commerceFaq={faq} />
       </div>

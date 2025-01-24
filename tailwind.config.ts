@@ -6,11 +6,20 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx,json}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx,json}',
   ],
+
   theme: {
     extend: {
+      boxShadow: {
+        custom: 'inset 0px 0px 6.7px 0px rgba(255, 255, 255, 1)',
+        customSecond: '-14px -11px 7.4px -7px rgba(52, 103, 63, 0.25)',
+        customThird: '8px 9px 8.3px 0px rgba(0, 0, 0, 0.40)',
+      },
       dropShadow: {
         '3xl': '-1px 1px 10px rgba(98, 98, 98, 0.15)',
         custom: '5px 5px 18.1px 0 rgba(167, 255, 171, 0.07)',
+      },
+      mixBlendMode: {
+        'color-dodge': 'color-dodge',
       },
       colors: {
         background: 'var(--background)',
@@ -58,12 +67,14 @@ const config: Config = {
         ecommerceExpertise: "url('/wood-expertise.jpg')",
         threeExpertise: "url('/Cossacs.jpg')",
         businessExpertise: "url('/alcotrade-expertise.jpg')",
+        uiDesignExpertise: "url('/milkshake.jpg')",
         cardServiceBackground:
           "url('data:image/svg+xml,%3Csvg width%3D%22451%22 height%3D%22578%22 viewBox%3D%220 0 451 578%22 fill%3D%22none%22 xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg filter%3D%22url(%23filter0_bd_1173_2726)%22%3E%3Cpath fill-rule%3D%22evenodd%22 clip-rule%3D%22evenodd%22 d%3D%22M34 13.5H347V53.5H387V93.5H427V534.5C427 545.546 418.046 554.5 407 554.5H34C22.9543 554.5 14 545.546 14 534.5V33.5C14 22.4543 22.9543 13.5 34 13.5Z%22 fill%3D%22url(%23paint0_linear_1173_2726)%22 fill-opacity%3D%220.27%22 shape-rendering%3D%22crispEdges%22/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id%3D%22filter0_bd_1173_2726%22 x%3D%22-6.4%22 y%3D%22-6.9%22 width%3D%22456.5%22 height%3D%22584.5%22 filterUnits%3D%22userSpaceOnUse%22 color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood flood-opacity%3D%220%22 result%3D%22BackgroundImageFix%22/%3E%3CfeGaussianBlur in%3D%22BackgroundImageFix%22 stdDeviation%3D%2210.2%22/%3E%3CfeComposite in2%3D%22SourceAlpha%22 operator%3D%22in%22 result%3D%22effect1_backgroundBlur_1173_2726%22/%3E%3CfeColorMatrix in%3D%22SourceAlpha%22 type%3D%22matrix%22 values%3D%220 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0%22 result%3D%22hardAlpha%22/%3E%3CfeOffset dx%3D%225%22 dy%3D%225%22/%3E%3CfeGaussianBlur stdDeviation%3D%229.05%22/%3E%3CfeComposite in2%3D%22hardAlpha%22 operator%3D%22out%22/%3E%3CfeColorMatrix type%3D%22matrix%22 values%3D%220 0 0 0 0.653333 0 0 0 0 1 0 0 0 0 0.670667 0 0 0 0.07 0%22/%3E%3CfeBlend mode%3D%22normal%22 in2%3D%22effect1_backgroundBlur_1173_2726%22 result%3D%22effect2_dropShadow_1173_2726%22/%3E%3CfeBlend mode%3D%22normal%22 in%3D%22SourceGraphic%22 in2%3D%22effect2_dropShadow_1173_2726%22 result%3D%22shape%22/%3E%3C/filter%3E%3ClinearGradient id%3D%22paint0_linear_1173_2726%22 x1%3D%22344%22 y1%3D%22522%22 x2%3D%2214%22 y2%3D%2213.5%22 gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop stop-color%3D%22%23285244%22/%3E%3Cstop offset%3D%221%22 stop-color%3D%22%23336B58%22/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E');\n",
         whyLandingImageFirst: "url('/why-land-first.jpg')",
         whyLandingImageSecond: "url('/why-land-second.jpg')",
         whyLandingImageThird: "url('/why-land-third.jpg')",
         businessImage: "url('/business-image.png')",
+        uiImage: "url('/ui-background.png')",
       },
     },
   },

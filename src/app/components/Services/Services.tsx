@@ -2,7 +2,7 @@
 // import ContactUsModal from '../ContactUsModal';
 import ServicePart from './ServicePart';
 import Title from '../Title';
-import React, { useState } from 'react';
+import React from 'react';
 interface ServiceInfo {
   id: number;
   title: string;
@@ -14,13 +14,7 @@ interface ServiceProps {
   info: ServiceInfo[];
 }
 
-const Services: React.FC<ServiceProps> = ({
-  info,
-}) => {
-  const [click, setClick] = useState(false);
-  const handleClick = () => {
-    setClick(!click);
-  };
+const Services: React.FC<ServiceProps> = ({ info }) => {
   return (
     <>
       <div className="relative z-10 flex flex-col my-8 md:my-10 px-[45px] md:px-16 gap-10 lg:px-24 lg:pb-16">
@@ -29,14 +23,14 @@ const Services: React.FC<ServiceProps> = ({
           {info.map(infopart => (
             <li
               key={infopart.id}
-              className="bg-[#A3FFEB]/20 flex items-center rounded-3xl py-2 px-6 lg:w-[402px] lg:h-52 xl:w-[470px] xl:h-56 xl:px-12 min-[1440px]:px-6 min-[1440px]:w-[410px] min-[1440px]:h-56"
+              className="bg-black/10 shadow-customSecond relative flex items-center rounded-3xl lg:w-[402px] lg:h-52 xl:w-[470px] xl:h-56 min-[1440px]:w-[410px] min-[1440px]:h-56"
             >
+              <div className='absolute w-full h-full rounded-3xl shadow-customThird'></div>
               <ServicePart
                 id={infopart.id}
                 title={infopart.title}
                 src={infopart.src}
                 price={infopart.price}
-                handleClick={handleClick}
               />
             </li>
           ))}
