@@ -38,7 +38,7 @@ const ThreeDSystem = () => {
           <div className={'relative z-[5] lg:max-w-[850px] xl:max-w-[950px]'}>
             <video autoPlay loop muted playsInline>
               <source src={'/3d-animation.webm'} type={'video/webm'} />
-              <source src={'/AE.mp4'} type={'video/mp4;codecs=hvc1'} />
+              <source src={'/3d-animation.mov'} type={'video/mp4;codecs=hvc1'} />
             </video>
           </div>
           <Image
