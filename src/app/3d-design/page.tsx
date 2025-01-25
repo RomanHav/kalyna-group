@@ -25,23 +25,28 @@ const ThreeDSystem = () => {
     <Suspense fallback={<div>Loading</div>}>
       <div className="relative contain-paint">
         <HeaderService headerText={headerText} />
-        <div className={'absolute top-72 w-full'}>
+        <div
+          className={'absolute top-72 w-full flex justify-center items-center'}
+        >
           <span
             className={
-              'absolute z-10 left-12 lg:left-[8rem] bottom-20  md:-bottom-[3rem] lg:bottom-[12rem] font-bold text-[53px] md:text-[120px] xl:text-[170px] min-[1440px]:text-[220px] text-white'
+              'absolute z-10 left-12 lg:left-[8rem] bottom-20  md:bottom-28 lg:bottom-[12rem] font-bold text-[53px] md:text-[120px] xl:text-[170px] text-white'
             }
           >
             3D
           </span>
-          <div className={'relative z-[5]'}>
+          <div className={'relative z-[5] lg:max-w-[850px] xl:max-w-[950px]'}>
             <video autoPlay loop muted playsInline>
               <source src={'/3d-animation.webm'} type={'video/webm'} />
-              <source src={'/3d-animation.mov'} type={'video/mp4'} />
+              <source
+                src={'/3d-animation-osx.mp4'}
+                type={'video/mp4;codecs=hvc1'}
+              />
             </video>
           </div>
           <Image
             className={
-              'absolute right-4 top-16 md:bottom-[19rem] lg:right-20 w-[200px] md:w-[450px] xl:w-[740px] lg:bottom-[33rem] '
+              'absolute right-4 top-16 lg:right-20 w-[200px] md:w-[450px] xl:w-[580px] lg:top-24'
             }
             src={'/design.svg'}
             alt={'3d'}
