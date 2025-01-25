@@ -7,7 +7,6 @@ const OurExpertise = lazy(
 );
 const MetaCossacs = lazy(() => import('../components/MetaCossacs'));
 const Faq = lazy(() => import('../components/Faq/Faq'));
-import Spline from '@splinetool/react-spline/next';
 import Image from 'next/image';
 import React, { lazy, Suspense } from 'react';
 
@@ -26,27 +25,23 @@ const ThreeDSystem = () => {
     <Suspense fallback={<div>Loading</div>}>
       <div className="relative contain-paint">
         <HeaderService headerText={headerText} />
-        <div className={'absolute max-lg:top-[46rem] w-full'}>
+        <div className={'absolute top-72 w-full'}>
           <span
             className={
-              'absolute z-10 left-12 lg:left-[8rem] bottom-28  md:-bottom-[3rem] lg:bottom-[12rem] font-bold text-[53px] md:text-[120px] xl:text-[170px] min-[1440px]:text-[220px] text-white'
+              'absolute z-10 left-12 lg:left-[8rem] bottom-20  md:-bottom-[3rem] lg:bottom-[12rem] font-bold text-[53px] md:text-[120px] xl:text-[170px] min-[1440px]:text-[220px] text-white'
             }
           >
             3D
           </span>
-          <div
-            className={
-              'absolute z-[2] -left-[25rem] -top-[45rem] lg:-top-[60rem] lg:-left-[5rem] md:scale-[.6] md:-left-[12rem] xl:left-40 xl:-top-[60rem] flex scale-[.25] md: xl:scale-75'
-            }
-          >
-            <Spline
-              style={{ maxHeight: '1000px' }}
-              scene="https://prod.spline.design/i6Tvsie9awDdyhth/scene.splinecode"
-            />
+          <div className={'relative z-[5]'}>
+            <video autoPlay loop muted playsInline>
+              <source src={'/3d-animation.webm'} type={'video/webm'} />
+              <source src={'/3d-animation.mov'} type={'video/mp4'} />
+            </video>
           </div>
           <Image
             className={
-              'absolute right-4 bottom-[16rem] md:bottom-[19rem] lg:right-20 w-[200px] md:w-[450px] xl:w-[740px] lg:bottom-[33rem] '
+              'absolute right-4 top-16 md:bottom-[19rem] lg:right-20 w-[200px] md:w-[450px] xl:w-[740px] lg:bottom-[33rem] '
             }
             src={'/design.svg'}
             alt={'3d'}

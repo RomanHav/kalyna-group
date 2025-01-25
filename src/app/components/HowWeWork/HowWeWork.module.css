@@ -1,5 +1,6 @@
 .number {
   mask-image: linear-gradient(180deg, #000, transparent 70%);
+  transition: mask-image 5s linear;
 }
 
 @media screen and (max-width: 760px) {
