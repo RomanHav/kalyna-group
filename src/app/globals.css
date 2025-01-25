@@ -21,7 +21,7 @@ html.lenis body {
 
 :root {
   --max-height-3d: 220px;
-  --background: #152220;
+  --background: #0a0e0d;
   --foreground: #171717;
   --swiper-navigation-size: 30px !important;
   --secondary-glow: conic-gradient(

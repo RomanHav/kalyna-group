@@ -29,7 +29,7 @@
     "clsx": "^2.1.1",
     "express": "^4.21.1",
     "formik": "^2.4.6",
-    "framer-motion": "^11.15.0",
+    "framer-motion": "^11.18.2",
     "gsap": "^3.12.5",
     "lenis": "^1.1.18",
     "nanoid": "^5.0.9",
@@ -45,6 +45,7 @@
     "react-scroll-parallax": "^3.4.5",
     "spline": "^0.0.0",
     "swiper": "^11.1.14",
+    "tailwindcss-animate": "^1.0.7",
     "three": "^0.171.0",
     "yup": "^1.6.1"
   },

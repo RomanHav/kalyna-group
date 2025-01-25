@@ -1,6 +1,16 @@
 [
   {
     "id": 1,
+    "title": "E-commerce",
+    "src": "/e-commerce.png",
+    "price": "5000$",
+    "firstDescription": "Creating an online store includes building a website and organizing key processes such as: analytics, SEO optimization, integrating payment systems, upsell tools, and other necessary resources for your project.",
+    "secondDescription": "We work with various niches, products, and geolocations. Whether you want to increase sales of an existing product or quickly create a store for dropshipping sales – this is your choice!",
+    "thirdDescription": "",
+    "span": "The project is developed based on Shopify platforms"
+  },
+  {
+    "id": 2,
     "title": "Landing page",
     "src": "/landing.webp",
     "price": "1000$",
@@ -10,7 +20,17 @@
     "span": "The project is developed using React/Next.js frameworks."
   },
   {
-    "id": 2,
+    "id": 3,
+    "title": "Business website",
+    "src": "/business.png",
+    "price": "4000$",
+    "firstDescription": "We provide a full range of services for creating a business website: from analyzing your business requirements and defining goals to developing a unique responsive design that reflects your brand's style. ",
+    "secondDescription": "We use modern technologies to ensure fast loading, integration with CRM systems, payment gateways, and other services, as well as setting up a content management system. ",
+    "thirdDescription": "We perform SEO optimization to enhance visibility in search engines and implement analytics tools to track performance. We provide full technical support, updates, and website security after launch.",
+    "span": "The project is developed on Shopify platforms."
+  },
+  {
+    "id": 4,
     "title": "Ui/ux design",
     "src": "/web-design.webp",
     "price": "900$",
@@ -20,37 +40,7 @@
     "span": "The tools we use: Figma, Adobe Photoshop, Adobe Illustrator."
   },
   {
-    "id": 3,
-    "title": "E-commerce",
-    "src": "/e-commerce.png",
-    "price": "3000$",
-    "firstDescription": "Creating an online store includes building a website and organizing key processes such as: analytics, SEO optimization, integrating payment systems, upsell tools, and other necessary resources for your project.",
-    "secondDescription": "We work with various niches, products, and geolocations. Whether you want to increase sales of an existing product or quickly create a store for dropshipping sales – this is your choice!",
-    "thirdDescription": "",
-    "span": "The project is developed based on Shopify platforms"
-  },
-  {
-    "id": 4,
-    "title": "Business website",
-    "src": "/business.png",
-    "price": "3500$",
-    "firstDescription": "We provide a full range of services for creating a business website: from analyzing your business requirements and defining goals to developing a unique responsive design that reflects your brand's style. ",
-    "secondDescription": "We use modern technologies to ensure fast loading, integration with CRM systems, payment gateways, and other services, as well as setting up a content management system. ",
-    "thirdDescription": "We perform SEO optimization to enhance visibility in search engines and implement analytics tools to track performance. We provide full technical support, updates, and website security after launch.",
-    "span": "The project is developed on Shopify platforms."
-  },
-  {
     "id": 5,
-    "title": "Crm system",
-    "src": "/crm.webp",
-    "price": "3200$",
-    "firstDescription": "CRM systems help manage customer interactions efficiently and optimize business processes. We create solutions that fully meet the needs of your business, taking into account the specifics of the industry and internal workflows.",
-    "secondDescription": "CRM systems simplify customer management, automate routine tasks, and provide convenient tools for analytics and forecasting.",
-    "thirdDescription": "",
-    "span": "The project is developed using the following tools: JavaScript (Node.js, React), MongoDB, AWS, Google Cloud, Postman, Notion."
-  },
-  {
-    "id": 6,
     "title": "3d design",
     "src": "/3d-design.webp",
     "price": "350$",
@@ -58,5 +48,15 @@
     "secondDescription": "",
     "thirdDescription": "",
     "span": "The tools we use: Unreal Engine, Blender, Marvelous Designer, Substance Painter."
+  },
+  {
+    "id": 6,
+    "title": "Crm system",
+    "src": "/crm.webp",
+    "price": "3200$",
+    "firstDescription": "CRM systems help manage customer interactions efficiently and optimize business processes. We create solutions that fully meet the needs of your business, taking into account the specifics of the industry and internal workflows.",
+    "secondDescription": "CRM systems simplify customer management, automate routine tasks, and provide convenient tools for analytics and forecasting.",
+    "thirdDescription": "",
+    "span": "The project is developed using the following tools: JavaScript (Node.js, React), MongoDB, AWS, Google Cloud, Postman, Notion."
   }
 ]

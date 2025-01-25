@@ -14,7 +14,7 @@ const JoinTeam = () => {
         </span>
       </div>
       <Image
-        className="absolute z-10 top-44 md:top-40 lg:top-10 xl:-top-2 left-0 w-full"
+        className="absolute z-10 top-44 md:top-40 lg:top-10 xl:-top-2 min-[1440px]:top-6 left-0 w-full"
         src={'/hands-career.webp'}
         alt="Hands Image"
         width={4000}
