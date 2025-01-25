@@ -31,6 +31,16 @@
   },
   {
     "id": 4,
+    "title": "QA Tester",
+    "src": "/tester.png",
+    "description": [
+      "Ensure the quality and performance of our applications.",
+      "Work closely with developers to identify and resolve issues.",
+      "Create and execute detailed test plans."
+    ]
+  },
+  {
+    "id": 5,
     "title": "Sales Manager",
     "src": "/Data-Analytic.png",
     "description": [
@@ -40,7 +50,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "SMM Manager",
     "src": "/Smm.webp",
     "description": [

@@ -13,6 +13,7 @@ const config: Config = {
         custom: 'inset 0px 0px 6.7px 0px rgba(255, 255, 255, 1)',
         customSecond: '-14px -11px 7.4px -7px rgba(52, 103, 63, 0.25)',
         customThird: '8px 9px 8.3px 0px rgba(0, 0, 0, 0.40)',
+        careerBkg: 'inset 0px -10px 65.5px 55px rgba(0, 0, 0, 0.25)',
       },
       dropShadow: {
         '3xl': '-1px 1px 10px rgba(98, 98, 98, 0.15)',
