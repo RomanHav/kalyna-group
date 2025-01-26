@@ -1,44 +1,50 @@
 [
-  {
-    "id": 1,
-    "title": "",
-    "description": "\"A CRM helps you track interactions, manage leads, and maintain customer satisfaction, fostering stronger, long-term relationships.\"",
-    "number": "",
-    "src": ""
-  },
-  {
-    "id": 2,
-    "title": "Improved\nCustomer\nRelationships",
-    "description": "",
-    "number": "1",
-    "src": "/why-crm-first.jpg"
-  },
-  {
-    "id": 3,
-    "title": "Enhanced\nEfficiency",
-    "description": "",
-    "number": "2",
-    "src": "/why-crm-second.jpg"
-  },
-  {
-    "id": 4,
-    "title": "",
-    "description": "\"By automating routine tasks, a CRM system frees up your team to focus on more strategic activities, increasing overall productivity.\"",
-    "number": "",
-    "src": ""
-  },
-  {
-    "id": 5,
-    "title": "",
-    "description": "\"A CRM provides valuable analytics and reporting tools, helping you make informed decisions and tailor your strategies for better outcomes.\"",
-    "number": "",
-    "src": ""
-  },
-  {
-    "id": 6,
-    "title": "Data-Driven\nInsights",
-    "description": "",
-    "number": "3",
-    "src": "/why-crm-third.jpg"
-  }
+  [
+    {
+      "id": 1,
+      "title": "",
+      "description": "\"A CRM helps you track interactions, manage leads, and maintain customer satisfaction, fostering stronger, long-term relationships.\"",
+      "number": "",
+      "src": ""
+    },
+    {
+      "id": 2,
+      "title": "Improved\nCustomer\nRelationships",
+      "description": "",
+      "number": "1",
+      "src": "/why-crm-first.jpg"
+    }
+  ],
+  [
+    {
+      "id": 3,
+      "title": "Enhanced\nEfficiency",
+      "description": "",
+      "number": "2",
+      "src": "/why-crm-second.jpg"
+    },
+    {
+      "id": 4,
+      "title": "",
+      "description": "\"By automating routine tasks, a CRM system frees up your team to focus on more strategic activities, increasing overall productivity.\"",
+      "number": "",
+      "src": ""
+    }
+  ],
+  [
+    {
+      "id": 5,
+      "title": "",
+      "description": "\"A CRM provides valuable analytics and reporting tools, helping you make informed decisions and tailor your strategies for better outcomes.\"",
+      "number": "",
+      "src": ""
+    },
+    {
+      "id": 6,
+      "title": "Data-Driven\nInsights",
+      "description": "",
+      "number": "3",
+      "src": "/why-crm-third.jpg"
+    }
+  ]
 ]
