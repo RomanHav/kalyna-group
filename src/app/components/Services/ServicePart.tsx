@@ -4,6 +4,7 @@
 import Image from 'next/image';
 import css from './ServicePart.module.css';
 import Link from 'next/link';
+import React from 'react';
 
 interface ServicePartProps {
   id: number;
@@ -44,15 +45,22 @@ const ServicePart: React.FC<ServicePartProps> = ({ id, title, src, price }) => {
           {title}
         </h3>
         <p className="text-sm xl:text-xl">from {price}</p>
-        <Link className={`relative`} href={_renderReadMoreButton(id)}>
+        <div className={'relative'}>
+          <div className={css.shadow}></div>
           <div
-            className={`${css.glassButton} flex justify-center items-center shadow-custom uppercase bg-transparent text-white text-base font-semibold py-2 px-6 rounded lg:rounded-xl`}
-          >
-            <div className="absolute w-full h-full rounded-xl bg-white/10"></div>
-            <div className="absolute top-1 rounded-full z-10 flex justify-center bg-white/10 w-[80%] h-[6px]"></div>
-            <p>read more</p>
-          </div>
-        </Link>
+            className={'absolute w-full h-full z-[4] bg-black/60 rounded-full'}
+          ></div>
+          <Link className={`relative z-[5]`} href={_renderReadMoreButton(id)}>
+            <div
+              className={`${css.glassButton} flex justify-center items-center shadow-custom uppercase bg-transparent text-white text-base font-semibold py-3 px-6 rounded lg:rounded-full`}
+            >
+              <div className="absolute w-full h-full rounded-full bg-white/10"></div>
+              <div className="absolute top-1 rounded-full z-10 flex justify-center bg-white/10 w-[80%] h-[6px]"></div>
+              <p>read more</p>
+            </div>
+          </Link>
+          <div className={css.shadowTwo}></div>
+        </div>
       </div>
     </div>
   );
