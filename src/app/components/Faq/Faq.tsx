@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import css from './Faq.module.css';
 import FaqPart from './FaqPart';
-import React, { useState } from 'react';
+import React, {useCallback, useState} from 'react';
 
 interface FaqCard {
   title: string;
@@ -25,9 +25,11 @@ interface CommerceFaqProps {
 
 const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
   const [expandedId, setExpandedId] = useState<number | false>(1);
-  const handleAccordionChange = (itemId: number) => {
+  const handleAccordionChange = useCallback((itemId: number) => {
     setExpandedId(expandedId === itemId ? false : itemId);
-  };
+  }, [expandedId]);
+
+
   return (
     <div className="flex flex-col lg:flex-row lg:h-[780px] justify-between items-center px-10 lg:px-16 xl:px-36">
       <div className="w-full lg:w-1/2 lg:pr-10 xl:pr-24 pb-10">
