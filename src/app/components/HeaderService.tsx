@@ -20,6 +20,8 @@ const _renderClassname = (path: string) => {
       return 'mb-[520px] lg:mb-[540px] xl:mb-[400px]';
     case '/ui-ux-design':
       return 'mb-20 lg:mb-[500px]';
+    case '/business-website':
+      return 'mb-20';
     default:
       return 'mb-60';
   }
