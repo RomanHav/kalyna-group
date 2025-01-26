@@ -6,6 +6,9 @@ import OurExpertise from '../components/OurExpertise/OurExpertise';
 import Alcotrade from '../components/Alcotrade';
 import Faq from '../components/Faq/Faq';
 import businessFaq from '../../../faq/businessFaq.json';
+import animationDataOne from "@/lotties/lottieflow-com.json";
+import animationDataTwo from "@/lotties/wired-flat.json";
+
 
 const BusinessWebsite = () => {
   const faqCard = {
@@ -18,11 +21,27 @@ const BusinessWebsite = () => {
     title: 'Innovate, Inspire, Impress, Succeed.',
     description: 'Your Perfect Business Website Awaits You',
   };
+  const defaultOptionsOne = {
+    loop: true,
+    autoplay: true,
+    animationData: animationDataOne,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+  const defaultOptionsTwo = {
+    loop: true,
+    autoplay: true,
+    animationData: animationDataTwo,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
   return (
     <div>
       <div className="relative mb-20 contain-paint">
         <HeaderService headerText={headerText} />
-        <BusinessImage />
+        <BusinessImage defaultOptionsOne={defaultOptionsOne} defaultOptionsTwo={defaultOptionsTwo}/>
         <div className={'relative flex flex-col justify-center gap-20'}>
           <WhatWeOffer offer={offer} />
           <OurExpertise>
