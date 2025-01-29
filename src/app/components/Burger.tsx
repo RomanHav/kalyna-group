@@ -1,5 +1,5 @@
 // import { Link as ScrollLink } from 'react-scroll';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { IoMdClose } from 'react-icons/io';
 // import { useRouter } from 'next/navigation';
 import Link from "next/link";
