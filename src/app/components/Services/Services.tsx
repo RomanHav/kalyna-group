@@ -1,8 +1,9 @@
 'use client';
 // import ContactUsModal from '../ContactUsModal';
-import ServicePart from './ServicePart';
 import Title from '../Title';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import MobileServices from "@/app/components/MobileServices";
+import DesktopServices from "@/app/components/DesktopServices";
 interface ServiceInfo {
   id: number;
   title: string;
@@ -15,26 +16,18 @@ interface ServiceProps {
 }
 
 const Services: React.FC<ServiceProps> = ({ info }) => {
+
+  const [display, setDisplay] = useState(false);
+
+  useEffect(()=>{
+    setDisplay(window.innerWidth <= 768)
+  }, []);
+
   return (
     <>
       <div className="relative z-10 flex flex-col my-8 md:my-10 px-[45px] md:px-16 gap-10 lg:px-24 lg:pb-16">
         <Title id="services" title="Services" />
-        <ul className="flex flex-col flex-wrap justify-center items-center gap-9 md:justify-between md:flex-row lg:justify-center lg:gap-6 xl:gap-12 min-[1440px]:gap-10">
-          {info.map(infopart => (
-            <li
-              key={infopart.id}
-              className="bg-black/10 shadow-customSecond relative flex items-center rounded-3xl lg:w-[402px] lg:h-52 xl:w-[470px] xl:h-56 min-[1440px]:w-[410px] min-[1440px]:h-56"
-            >
-              <div className='absolute w-full h-full rounded-3xl shadow-customThird'></div>
-              <ServicePart
-                id={infopart.id}
-                title={infopart.title}
-                src={infopart.src}
-                price={infopart.price}
-              />
-            </li>
-          ))}
-        </ul>
+        {display ? <MobileServices info={info} /> : <DesktopServices info={info} />}
       </div>
     </>
   );

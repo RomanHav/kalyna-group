@@ -21,7 +21,7 @@ interface ServiceProps {
 const MobileServices: React.FC<ServiceProps> = ({ info }) => {
   return (
     <div
-      className={`relative z-10 w-full flex justify-center text-white px-[45px] py-6`}
+        className={`px-0 md:px-36`}
     >
       <Swiper
         modules={[EffectCards, Autoplay]}
