@@ -1,12 +1,12 @@
-const HeaderService = lazy(() => import('../components/HeaderService'));
-import offer from '../../../whatWeOffer/whatWeOfferThreeD.json';
-import threeFaq from '../../../faq/threeFaq.json';
-const WhatWeOffer = lazy(() => import('../components/WhatWeOffer/WhatWeOffer'));
+const HeaderService = lazy(() => import('../../components/HeaderService'));
+import offer from '../../../../whatWeOffer/whatWeOfferThreeD.json';
+import threeFaq from '../../../../faq/threeFaq.json';
+const WhatWeOffer = lazy(() => import('../../components/WhatWeOffer/WhatWeOffer'));
 const OurExpertise = lazy(
-  () => import('../components/OurExpertise/OurExpertise')
+  () => import('../../components/OurExpertise/OurExpertise')
 );
-const MetaCossacs = lazy(() => import('../components/MetaCossacs'));
-const Faq = lazy(() => import('../components/Faq/Faq'));
+const MetaCossacs = lazy(() => import('../../components/MetaCossacs'));
+const Faq = lazy(() => import('../../components/Faq/Faq'));
 import Image from 'next/image';
 import React, { lazy, Suspense } from 'react';
 

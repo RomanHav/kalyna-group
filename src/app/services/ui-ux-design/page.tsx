@@ -1,11 +1,11 @@
 import HeaderService from '@/app/components/HeaderService';
 import WhatWeOffer from '@/app/components/WhatWeOffer/WhatWeOffer';
-import offer from '../../../whatWeOffer/whatWeOfferUi.json';
+import offer from '../../../../whatWeOffer/whatWeOfferUi.json';
 import HeaderUi from '@/app/components/HeaderUi';
-import faq from '../../../faq/uiFaq.json';
+import faq from '../../../../faq/uiFaq.json';
 import Faq from '@/app/components/Faq/Faq';
 import OurExpertise from '@/app/components/OurExpertise/OurExpertise';
-import MilkShake from '../components/MilkShake';
+import MilkShake from '../../components/MilkShake';
 const faqCard = {
   title: 'UI/UX design',
   src: '/web-design.webp',

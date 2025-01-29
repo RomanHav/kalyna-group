@@ -1,11 +1,11 @@
-import CrmImage from '../components/CrmImage';
-import HeaderService from '../components/HeaderService';
-import offer from '../../../whatWeOffer/whatWeOfferCrm.json';
-import WhatWeOffer from '../components/WhatWeOffer/WhatWeOffer';
-import WhyServicePage from '../components/WhyServicePage';
-import whyCrmObject from '../../../whySections/whyCrm.json';
-import Faq from '../components/Faq/Faq';
-import crmFaq from '../../../faq/crmFaq.json';
+import CrmImage from '../../components/CrmImage';
+import HeaderService from '../../components/HeaderService';
+import offer from '../../../../whatWeOffer/whatWeOfferCrm.json';
+import WhatWeOffer from '../../components/WhatWeOffer/WhatWeOffer';
+import WhyServicePage from '../../components/WhyServicePage';
+import whyCrmObject from '../../../../whySections/whyCrm.json';
+import Faq from '../../components/Faq/Faq';
+import crmFaq from '../../../../faq/crmFaq.json';
 
 const CrmSystem = () => {
   const faqCard = {

@@ -1,12 +1,12 @@
-import Faq from '../components/Faq/Faq';
-import CommerceImage from '../components/CommerceImage';
-import OurExpertise from '../components/OurExpertise/OurExpertise';
-import WhatWeOffer from '../components/WhatWeOffer/WhatWeOffer';
-import commerceFaq from '../../../faq/commerceFaq.json';
+import Faq from '../../components/Faq/Faq';
+import CommerceImage from '../../components/CommerceImage';
+import OurExpertise from '../../components/OurExpertise/OurExpertise';
+import WhatWeOffer from '../../components/WhatWeOffer/WhatWeOffer';
+import commerceFaq from '../../../../faq/commerceFaq.json';
 import WoodMinded from '@/app/components/WoodMinded';
 import React from 'react';
 import HeaderService from '@/app/components/HeaderService';
-import offer from '../../../whatWeOffer/whatWeOfferCommerce.json';
+import offer from '../../../../whatWeOffer/whatWeOfferCommerce.json';
 
 const ECommerce = () => {
   const faqCard = {
