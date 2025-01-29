@@ -1,7 +1,8 @@
-import { Link as ScrollLink } from 'react-scroll';
-import { useEffect } from 'react';
+// import { Link as ScrollLink } from 'react-scroll';
+import React from 'react';
 import { IoMdClose } from 'react-icons/io';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
+import Link from "next/link";
 
 interface BurgerProps {
   handleClick: () => void;
@@ -9,75 +10,28 @@ interface BurgerProps {
 }
 
 const Burger: React.FC<BurgerProps> = ({ handleClick, isOpen }) => {
-  const router = useRouter();
-
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-  }, [isOpen]);
+  // const router = useRouter();
 
   return (
     <div
-      className={`bg-black bg-cover fixed top-0 right-0 w-full h-screen bg-opacity-70 z-30 transform transition-transform duration-300 ease-out ${
+      className={`bg-black/70 backdrop-blur-lg bg-cover fixed top-0 right-0 w-full h-screen  z-[9999] transform transition-transform duration-300 ease-out ${
         isOpen ? '' : 'hidden'
       }`}
     >
       <div className="w-full h-full absolute inset-0 opacity-20"></div>
       <nav className="flex flex-col items-center justify-center h-full relative z-20 text-white uppercase text-2xl md:text-3xl md:gap-10 gap-6">
-        <ScrollLink
-          onClick={() => {
-            router.push('#services');
-            handleClick();
-          }}
-          to="services"
-          smooth={true}
-          duration={800}
-          offset={-100}
-          className="cursor-pointer"
-        >
-          Services
-        </ScrollLink>
-
-        <ScrollLink
-          onClick={() => {
-            router.push('#about-us');
-            handleClick();
-          }}
-          to="about-us"
-          smooth={true}
-          duration={800}
-          className="cursor-pointer"
-          offset={-100}
-        >
-          About us
-        </ScrollLink>
-
-        <ScrollLink
-          onClick={() => {
-            router.push('#benefits');
-            handleClick();
-          }}
-          to="benefits"
-          className="cursor-pointer"
-          smooth={true}
-          duration={800}
-          offset={-100}
-        >
-          Benefits
-        </ScrollLink>
-
-        <ScrollLink
-          onClick={() => {
-            router.push('#cases');
-            handleClick();
-          }}
-          className="cursor-pointer"
-          to="cases"
-          smooth={true}
-          duration={800}
-          offset={-100}
-        >
-          Cases
-        </ScrollLink>
+        <Link href={'/services'} onClick={handleClick}>
+            Services
+        </Link>
+          <Link href={'/about-us'} onClick={handleClick}>
+              About Us
+          </Link>
+          <Link href={'/career'} onClick={handleClick}>
+              Career
+          </Link>
+          <Link href={'/blog'} onClick={handleClick}>
+              Blog
+          </Link>
       </nav>
       <IoMdClose
         size={35}

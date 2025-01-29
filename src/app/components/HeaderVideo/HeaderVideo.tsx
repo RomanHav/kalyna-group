@@ -52,7 +52,7 @@ export default function HeaderVideo() {
   return (
     <>
       <div
-        className={`${css.headerContainer} min-h-screen flex pt-28 md:pt-36 pb-20 px-16 justify-center items-center lg:px-24 lg:pt-64 lg:pb-12 contain-paint`}
+        className={`${css.headerContainer} min-h-screen flex pt-28 md:pt-36 pb-20 px-10 justify-center items-center lg:px-24 lg:pt-64 lg:pb-12 contain-paint`}
       >
         <div
           className={'absolute w-full h-full inset-0 bg-black/50 z-[1]'}
@@ -62,11 +62,11 @@ export default function HeaderVideo() {
           <div className="relative w-full z-50">
             <p
               ref={textRef}
-              className="px-14 md:px-0 text-3xl md:text-5xl xl:text-6xl bg-gradient-to-r from-white to-custom-green bg-clip-text text-transparent text-center uppercase font-semibold leading-tight"
+              className="px-14 md:px-0 text-balance text-3xl md:text-5xl xl:text-6xl bg-gradient-to-r from-white to-custom-green bg-clip-text text-transparent text-center uppercase font-semibold leading-tight"
             ></p>
             <div
               ref={svgRef1}
-              className="absolute top-0 -left-4 lg:-top-[8rem] lg:-left-6 w-16 h-16 lg:w-28 lg:h-28"
+              className="absolute top-0 -left-4 lg:-top-[12rem] lg:-left-6 w-16 h-16 lg:w-28 lg:h-28"
               dangerouslySetInnerHTML={{ __html: svg1 }}
             ></div>
 

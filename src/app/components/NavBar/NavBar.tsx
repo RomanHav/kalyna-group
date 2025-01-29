@@ -6,14 +6,10 @@ import { IoIosLink } from 'react-icons/io';
 import css from './NavBar.module.css';
 import Burger from '@/app/components/Burger';
 import NavServices from '@/app/components/NavServices';
-// import { usePathname, useRouter } from 'next/navigation';
 const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [click, setClick] = useState(false);
-  const [isFixed, setIsFixed] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [openServices, setOpenServices] = useState(false);
-  // const [hidden, setHidden] = useState(false)
   const handleOpen = () => {
     setClick(!click);
   };
@@ -25,17 +21,6 @@ const NavBar: React.FC = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsFixed(false);
-      } else {
-        setIsFixed(true);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
 
     const handleResize = () => {
       setIsMobile(window.matchMedia('(max-width: 1024px)').matches);
@@ -43,27 +28,26 @@ const NavBar: React.FC = () => {
 
     handleResize();
     window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
+
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]);
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
+    document.body.style.overflow = isOpen ? 'auto' : 'hidden';
   };
 
   return (
     <div>
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
-          isFixed ? 'translate-y-0' : '-translate-y-full'
-        } bg-[#0D1816]/60 backdrop-blur-md`}
+        className={`absolute top-0 left-0 w-full z-50 transition-transform duration-300
+         bg-[#0D1816]/60 backdrop-blur-md`}
       >
-        <div className="flex justify-between items-center py-6 px-4 md:px-16 border-b border-white lg:px-24 lg:py-6">
+        <div className="flex justify-between items-center py-6 px-4 md:px-16 border-b border-white lg:px-24 lg:py-6 xl:justify-around">
           <Link href={'/'}>
             <Image
               className="w-16 md:scale-125 lg:w-20"

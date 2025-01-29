@@ -1,11 +1,11 @@
-import HeaderService from '../components/HeaderService';
-import WhatWeOffer from '../components/WhatWeOffer/WhatWeOffer';
-import LandingImage from '../LandingImage';
-import offer from '../../../whatWeOffer/whatWeOfferLanding.json';
-import Faq from '../components/Faq/Faq';
-import landingFaq from '../../../faq/landingFaq.json';
-import WhyServicePage from '../components/WhyServicePage';
-import whyLandingObject from '../../../whySections/whyLanding.json';
+import HeaderService from '../../components/HeaderService';
+import WhatWeOffer from '../../components/WhatWeOffer/WhatWeOffer';
+import LandingImage from '../../LandingImage';
+import offer from '../../../../whatWeOffer/whatWeOfferLanding.json';
+import Faq from '../../components/Faq/Faq';
+import landingFaq from '../../../../faq/landingFaq.json';
+import WhyServicePage from '../../components/WhyServicePage';
+import whyLandingObject from '../../../../whySections/whyLanding.json';
 
 const LandingPage = () => {
   const faqCard = {

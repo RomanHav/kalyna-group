@@ -17,22 +17,22 @@ const ServicePart: React.FC<ServicePartProps> = ({ id, title, src, price }) => {
   function _renderReadMoreButton(id: number) {
     switch (id) {
       case 1:
-        return '/e-commerce';
+        return '/services/e-commerce';
       case 2:
-        return '/landing-page';
+        return '/services/landing-page';
       case 3:
-        return '/business-website';
+        return '/services/business-website';
       case 4:
-        return '/ui-ux-design';
+        return '/services/ui-ux-design';
       case 5:
-        return '/3d-design';
+        return '/services/3d-design';
       case 6:
-        return '/crm-system';
+        return '/services/crm-system';
     }
   }
 
   return (
-    <div className="relative py-2 px-6 xl:px-12 min-[1440px]:px-6 z-10 flex flex-col gap-5 items-center text-white lg:flex-row lg:gap-10 xl:gap-16 min-[1440px]:gap-10">
+    <div className="relative py-5 px-6 xl:px-12 min-[1440px]:px-6 z-10 flex flex-col gap-5 items-center text-white lg:flex-row lg:gap-10 xl:gap-16 min-[1440px]:gap-10">
       <Image
         className="w-60 lg:w-44"
         src={src}
@@ -52,7 +52,7 @@ const ServicePart: React.FC<ServicePartProps> = ({ id, title, src, price }) => {
           ></div>
           <Link className={`relative z-[5]`} href={_renderReadMoreButton(id)}>
             <div
-              className={`${css.glassButton} flex justify-center items-center shadow-custom uppercase bg-transparent text-white text-base font-semibold py-3 px-6 rounded lg:rounded-full`}
+              className={`${css.glassButton} flex justify-center items-center shadow-custom uppercase bg-transparent text-white text-base font-semibold py-3 px-6 rounded-full`}
             >
               <div className="absolute w-full h-full rounded-full bg-white/10"></div>
               <div className="absolute top-1 rounded-full z-10 flex justify-center bg-white/10 w-[80%] h-[6px]"></div>
