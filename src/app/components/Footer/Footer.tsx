@@ -1,13 +1,11 @@
-'use client'
-import { useEffect, useState } from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { Link as ScrollLink } from 'react-scroll';
 import FooterRunningLine from '../FooterRunningLine';
 import { IoLogoInstagram } from 'react-icons/io5';
-import { FaLinkedin, FaBehance } from 'react-icons/fa';
+import { FaLinkedin, FaBehance, FaFacebookF } from 'react-icons/fa';
 import { useId } from 'react';
 import css from './Footer.module.css';
-import CalendlyEmbed from '@/app/components/CalendlyEmbed';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -32,52 +30,58 @@ const Footer = () => {
   }, []);
 
   return (
-    <div>
-      <div className="flex flex-col py-[45px] bg-white/0 backdrop-blur-lg shadow-lg ring-1 ring-black/5 gap-9 rounded-t-lg z-10 relative">
+    <div className={'rounded-t-lg'}>
+      <div className="relative z-10 flex flex-col gap-9 rounded-t-lg bg-white/5 shadow-lg ring-1 ring-black/5 backdrop-blur-lg py-[45px]">
         <FooterRunningLine />
         <div className="flex flex-col px-[45px] lg:px-24">
-          <div className="flex flex-col items-center justify-center relative">
+          <div className="relative flex flex-col items-center justify-center">
             <form
-              className="flex flex-col w-full relative bg-form bg-contain rounded-2xl text-white items-center justify-center px-7 py-8 gap-6"
+              className="relative flex w-full flex-col items-center justify-center gap-6 rounded-2xl bg-contain px-7 py-8 text-white bg-form"
               onSubmit={handleSubmit}
             >
-              <div className="bg-black/80 absolute z-0 w-full h-full rounded-2xl"></div>
-              <div className="flex flex-col justify-center items-center gap-6">
-                <div className="flex flex-col items-center gap-6 relative z-[5] justify-center">
+              <div className="absolute z-0 h-full w-full rounded-2xl bg-black/80"></div>
+              <div className="flex flex-col items-center justify-center gap-6">
+                <div className="relative flex flex-col items-center justify-center gap-6 z-[5]">
                   <label
-                    className="text-center max-w-[70%] md:max-w-fit text-xl md:text-2xl font-medium lg:text-3xl lg:mb-6"
+                    className="text-center text-xl font-medium max-w-[70%] md:max-w-fit md:text-2xl lg:mb-6 lg:text-3xl"
                     htmlFor={`${id}-email`}
                   >
                     Subscribe now for news and new services
                   </label>
-                  <input
-                    className="pl-2 py-2 max-w-[80%] md:max-w-full rounded-xl bg-inherit border border-white"
-                    id={`${id}-email`}
-                    type="email"
-                    value={email}
-                    onChange={handleEmail}
-                    placeholder="Your email"
-                    required
-                  />
-                  {isDesktop && (
-                    <button className={css.button} type="submit">
-                      <span className={css.buttonText}>Subscribe</span>
-                    </button>
-                  )}
+                  <div
+                    className={
+                      'flex flex-col lg:flex-row gap-8 items-center justify-center'
+                    }
+                  >
+                    <input
+                      className="rounded-xl border border-white bg-inherit py-2 pl-2 max-w-[80%] md:max-w-full"
+                      id={`${id}-email`}
+                      type="email"
+                      value={email}
+                      onChange={handleEmail}
+                      placeholder="Your email"
+                      required
+                    />
+                    {isDesktop && (
+                      <button className={css.button} type="submit">
+                        <span className={css.buttonText}>Subscribe</span>
+                      </button>
+                    )}
 
-                  {!isDesktop && (
-                    <button
-                      className="relative z-[5] bg-gradient-to-r from-custom-blue to-custom-green text-white py-2 px-6 md:px-8 rounded-2xl uppercase text-[18px] font-semibold flex"
-                      type="submit"
-                    >
-                      Subscribe
-                    </button>
-                  )}
+                    {!isDesktop && (
+                      <button
+                        className="relative flex rounded-2xl bg-gradient-to-r px-6 py-2 font-semibold uppercase text-white z-[5] from-custom-blue to-custom-green text-[18px] md:px-8"
+                        type="submit"
+                      >
+                        Subscribe
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             </form>
           </div>
-          <div className="flex flex-col justify-center items-center gap-14 mb-16 mt-16 lg:flex-row lg:justify-between lg:px-10">
+          <div className="mt-16 mb-16 flex flex-col items-center justify-center gap-14 lg:flex-row lg:justify-between lg:px-10">
             <Image
               className="w-[215px]"
               src={'/logo.png'}
@@ -86,73 +90,59 @@ const Footer = () => {
               height={387}
             />
             <div>
-              <nav className="flex flex-col items-center justify-center text-white uppercase text-2xl gap-6">
-                <div className="flex flex-col gap-8 text-white items-center text-2xl uppercase">
+              <nav className="flex flex-col items-center justify-center gap-6 text-2xl uppercase text-white">
+                <div className="flex flex-col items-center gap-8 text-2xl uppercase text-white">
                   <div className="relative">
-                    <ScrollLink
-                      to="services"
-                      smooth={true}
-                      duration={800}
-                      offset={-150}
-                      className="cursor-pointer after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
+                    <Link
+                      href={'/services'}
+                      className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
                       Services
-                    </ScrollLink>
+                    </Link>
                   </div>
                   <div className="relative">
-                    <ScrollLink
-                      to="about-us"
-                      smooth={true}
-                      duration={800}
-                      offset={-150}
-                      className="cursor-pointer after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
+                    <Link
+                      href="/about-us"
+                      className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
                       About us
-                    </ScrollLink>
+                    </Link>
                   </div>
                   <div className="relative">
-                    <ScrollLink
-                      to="benefits"
-                      smooth={true}
-                      duration={800}
-                      offset={-150}
-                      className="cursor-pointer after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
+                    <Link
+                      href="/career"
+                      className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
-                      Benefits
-                    </ScrollLink>
+                      Career
+                    </Link>
                   </div>
                   <div className="relative">
-                    <ScrollLink
-                      to="cases"
-                      smooth={true}
-                      duration={800}
-                      offset={-150}
-                      className="cursor-pointer after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
+                    <Link
+                      href="/blog"
+                      className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
-                      Cases
-                    </ScrollLink>
+                      Blog
+                    </Link>
                   </div>
                 </div>
               </nav>
             </div>
-            <div className="flex flex-col justify-center items-center gap-10">
-              <div className="flex flex-col justify-center items-center gap-6 text-white">
-                <span className="text-3xl uppercase font-medium">
+            <div className="flex flex-col items-center justify-center gap-10">
+              <div className="flex flex-col items-center justify-center gap-6 text-white">
+                <span className="text-3xl font-medium uppercase">
                   Get in touch
                 </span>
-                <CalendlyEmbed
-                  url={'https://calendly.com/kalynaitgroup/30min'}
-                />
+
                 <div className="relative">
                   <a
-                    className="text-xl font-light cursor-pointer after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
+                    className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white text-xl font-light after:h-[1px] hover:after:w-full hover:after:duration-200"
                     href="mailto:info@kalynagroup.com"
                   >
                     info@kalynagroup.com
                   </a>
                 </div>
               </div>
-              <div className="flex gap-11 justify-center items-center">
+              <div className="flex w-full items-center justify-between lg:justify-center lg:gap-11">
                 <a href="https://www.instagram.com/kalynaitgroup">
                   <IoLogoInstagram className="fill-white" size={42} />
                 </a>
@@ -162,15 +152,24 @@ const Footer = () => {
                 <a href="#">
                   <FaBehance className="fill-white" size={42} />
                 </a>
+                <a
+                  href={
+                    'https://www.facebook.com/people/Kalyna-Group/61572356486253/'
+                  }
+                >
+                  <FaFacebookF className="fill-white" size={35} />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <span className="absolute z-20 w-full flex justify-center text-center text-white py-3 border-t border-t-white">
-        Kalyna Group © All rights reserved |&nbsp;
-        <Link href={'/privacy-policies'} className='underline decoration-solid'>Privacy Policies</Link>
-      </span>
+      <p className="absolute z-20 mx-auto flex w-full flex-wrap justify-center border-t border-t-white py-3 text-center text-white">
+        <span>Kalyna Group © All rights reserved |&nbsp;</span>
+        <Link href={'/privacy-policies'} className="underline decoration-solid">
+          Privacy Policies
+        </Link>
+      </p>
     </div>
   );
 };

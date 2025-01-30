@@ -136,9 +136,7 @@ const FormSecond = () => {
     <div
       className={`relative text-white z-20 px-24 pt-28 bg-test bg-center bg-cover`}
     >
-      <div
-        className={`absolute top-0 left-0 w-full h-full bg-black opacity-30`}
-      ></div>
+      <div className={`absolute top-0 left-0 w-full h-full bg-black/90`}></div>
       <div className={`relative`}>
         <div className={`flex flex-col w-full mb-14`}>
           <h2 className={`uppercase text-[48px] mb-3`}>

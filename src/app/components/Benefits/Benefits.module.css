@@ -17,15 +17,10 @@
   justify-content: center;
   align-items: center;
   color: #fff;
+  background-color: #000000;
   contain: paint;
   padding: 150px 90px 0 90px;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 15%,
-    #000000 85%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to bottom, transparent 0%, #080808 15%);
 }
 
 .mainContainer::before,
@@ -39,24 +34,26 @@
 
 /* Перший елемент (зелений) */
 .mainContainer::before {
-  background: #027e6e;
+  background: #3cc685;
   border-radius: 50%;
-  filter: blur(500px);
+  filter: blur(250px);
   width: 25vw;
   height: 25vw;
+  z-index: -2;
   right: 200px;
-  top: 150px;
+  top: 250px;
   animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
 
 .mainContainer::after {
-/* Другий елемент (синій) */
-  background: #0f5b55;
+  /* Другий елемент (синій) */
+  background: #00a96b;
   width: 25vw;
   height: 25vw;
+  z-index: -2;
   border-radius: 50%;
   left: 0;
-  filter: blur(300px);
+  filter: blur(200px);
   animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
 
@@ -65,7 +62,7 @@
   position: absolute;
   z-index: -2;
   opacity: 0.8;
-  background: #1f7a58; /* Третій колір */
+  background: #5fc46c; /* Третій колір */
   border-radius: 50%;
   filter: blur(300px);
   margin-left: -200px;

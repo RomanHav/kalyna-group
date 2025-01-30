@@ -14,42 +14,42 @@ const links = [
     title: 'E-commerce',
     descr:
       'Create an engaging online store that boosts your sales and enhances customer experience.',
-    href: '/e-commerce',
+    href: '/services/e-commerce',
   },
   {
     id: 2,
     title: 'Landing Page',
     descr:
       'Craft a compelling single-page website designed to maximize conversions and capture leads.',
-    href: '/landing-page',
+    href: '/services/landing-page',
   },
   {
     id: 3,
     title: 'Business Website',
     descr:
       'Establish a strong online presence with a professional website tailored to your business needs.',
-    href: '/business-website',
+    href: '/services/business-website',
   },
   {
     id: 4,
     title: 'UI/UX Design',
     descr:
       'Enhance user satisfaction with intuitive and aesthetically pleasing interfaces that drive engagement.',
-    href: '/ui-ux-design',
+    href: '/services/ui-ux-design',
   },
   {
     id: 5,
     title: 'CRM System',
     descr:
       'Optimize your customer relationships with a tailored CRM system that streamlines your business operations.',
-    href: '/crm-system',
+    href: '/services/crm-system',
   },
   {
     id: 6,
     title: '3D design',
     descr:
       'Bring your ideas to life with stunning 3D visuals, from product models to immersive environments.',
-    href: '/3d-design',
+    href: '/services/3d-design',
   },
 ];
 

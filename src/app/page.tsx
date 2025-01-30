@@ -42,7 +42,6 @@ export default function App() {
       <RunningLine />
       <Benefits info={benefitsInfo} />
       <CasesSecond info={casesInfo} />
-      {/*<MyForm />*/}
       <FormSecond />
     </Provider>
   );

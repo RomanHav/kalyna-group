@@ -1,9 +1,14 @@
 .cases {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: calc(100vh + 300px);
-    /*background-image: linear-gradient(to bottom, transparent, #1c1c1c 10%, #0c0c0c 20%, transparent 50%, #0c0c0c 80%, #1c1c1c 90%, transparent);*/
-    z-index: 1;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #080808 35%,
+    #080808 100%
+  );
+  z-index: 1;
 }

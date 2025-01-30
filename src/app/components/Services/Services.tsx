@@ -1,5 +1,4 @@
 'use client';
-// import ContactUsModal from '../ContactUsModal';
 import Title from '../Title';
 import React, {useEffect, useState} from 'react';
 import MobileServices from "@/app/components/MobileServices";
@@ -19,13 +18,13 @@ const Services: React.FC<ServiceProps> = ({ info }) => {
 
   const [display, setDisplay] = useState(false);
 
-  useEffect(()=>{
-    setDisplay(window.innerWidth <= 768)
+  useEffect(() => {
+    setDisplay(window.innerWidth <= 768);
   }, []);
 
   return (
     <>
-      <div className="relative z-10 flex flex-col my-8 md:my-10 px-[45px] md:px-16 gap-10 lg:px-24 lg:pb-16">
+      <div className="relative z-10 my-8 flex flex-col gap-10 px-[45px] md:my-10 md:px-16 lg:px-24 lg:pb-16">
         <Title id="services" title="Services" />
         {display ? <MobileServices info={info} /> : <DesktopServices info={info} />}
       </div>

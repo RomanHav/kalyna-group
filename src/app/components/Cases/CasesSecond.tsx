@@ -67,7 +67,7 @@ const CasesSecond: React.FC<CasesProps> = ({ info }) => {
   });
 
   return (
-    <div className={`relative`}>
+    <div className={`relative z-[9]`}>
       <div className={`${css.cases}`}></div>
       <div className="relative z-10 contain-paint">
         <Title

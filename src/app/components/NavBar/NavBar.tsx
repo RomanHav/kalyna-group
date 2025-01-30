@@ -21,14 +21,12 @@ const NavBar: React.FC = () => {
   };
 
   useEffect(() => {
-
     const handleResize = () => {
       setIsMobile(window.matchMedia('(max-width: 1024px)').matches);
     };
 
     handleResize();
     window.addEventListener('resize', handleResize);
-
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -47,7 +45,7 @@ const NavBar: React.FC = () => {
         className={`absolute top-0 left-0 w-full z-50 transition-transform duration-300
          bg-[#0D1816]/60 backdrop-blur-md`}
       >
-        <div className="flex justify-between items-center py-6 px-4 md:px-16 border-b border-white lg:px-24 lg:py-6 xl:justify-around">
+        <div className="flex items-center justify-between border-b border-white px-4 py-6 md:px-16 lg:px-24 lg:py-6">
           <Link href={'/'}>
             <Image
               className="w-16 md:scale-125 lg:w-20"
@@ -75,12 +73,12 @@ const NavBar: React.FC = () => {
           ) : (
             <div className="flex items-center">
               <div className="flex items-center">
-                <div className="flex items-center gap-8 text-white xl:mr-[90px] min-[1440px]:mr-[340px] text-xl uppercase">
+                <div className="flex items-center gap-8 text-xl uppercase text-white xl:mr-[90px] min-[1440px]:mr-[280px] 2xl:mr-[390px]">
                   <div className="relative">
                     <span
                       onMouseEnter={handleOpenService}
                       onMouseLeave={handleCloseService}
-                      className="cursor-pointer tracking-wide pb-10 -mt-10 after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
+                      className="after:absolute after:-bottom-2 after:left-0 -mt-14 after:w-0 cursor-pointer after:bg-white pb-14 tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
                       Services
                     </span>
@@ -91,7 +89,7 @@ const NavBar: React.FC = () => {
                   <div className="relative">
                     <Link
                       href={'/about-us'}
-                      className="cursor-pointer tracking-wide after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
+                      className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
                       About us
                     </Link>
@@ -102,7 +100,7 @@ const NavBar: React.FC = () => {
                   <div className="relative">
                     <Link
                       href="/career"
-                      className="cursor-pointer tracking-wide after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
+                      className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
                       Career
                     </Link>
@@ -113,7 +111,7 @@ const NavBar: React.FC = () => {
                   <div className="relative">
                     <Link
                       href="/blog"
-                      className="cursor-pointer tracking-wide after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-white hover:after:w-full hover:after:duration-200"
+                      className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
                       Blog
                     </Link>

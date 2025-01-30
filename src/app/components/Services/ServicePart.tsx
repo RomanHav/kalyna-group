@@ -32,7 +32,7 @@ const ServicePart: React.FC<ServicePartProps> = ({ id, title, src, price }) => {
   }
 
   return (
-    <div className="relative py-5 px-6 xl:px-8 min-[1440px]:px-6 z-10 flex flex-col gap-5 items-center text-white lg:flex-row lg:gap-10 xl:gap-16 min-[1440px]:gap-10">
+    <div className="relative py-5 px-6 xl:px-8 min-[1440px]:px-4 z-10 flex flex-col gap-5 items-center text-white lg:flex-row lg:gap-10 xl:gap-16 min-[1440px]:gap-10">
       <Image
         className="w-60 lg:w-44"
         src={src}
@@ -55,7 +55,7 @@ const ServicePart: React.FC<ServicePartProps> = ({ id, title, src, price }) => {
               className={`${css.glassButton} flex justify-center items-center shadow-custom uppercase bg-transparent text-white text-base font-semibold py-3 px-6 lg:px-3 xl:px-5 min-[1440px]:px-6 rounded-full`}
             >
               <div className="absolute w-full h-full rounded-full bg-white/10"></div>
-              <div className="absolute top-1 rounded-full z-10 flex justify-center bg-white/10 w-[80%] h-[6px]"></div>
+              <div className="absolute top-1 rounded-full z-[9] flex justify-center bg-white/10 w-[80%] h-[6px]"></div>
               <p>read more</p>
             </div>
           </Link>
