@@ -12,7 +12,8 @@ import Title from '@/app/components/Title';
 
 interface BenefitsInfo {
   id?: number;
-  src: string;
+  srcWebp: string;
+  srcMov: string;
   numberCard: string;
   title: string;
   description: string;
@@ -30,7 +31,7 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
     <div className={``}>
       <Title
         title={'Benefits'}
-        className={'lg:px-24 px-[45px] relative inset-y-20'}
+        className={'lg:px-24 px-[45px] relative z-10 inset-y-20'}
       />
       <div className={css.mainContainer}>
         <div className={css.third}></div>
@@ -72,7 +73,8 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
             >
               <BenefitsPart
                 id={infopart.id}
-                src={infopart.src}
+                srcWebp={infopart.srcWebp}
+                srcMov={infopart.srcMov}
                 numberCard={infopart.numberCard}
                 title={infopart.title}
                 description={infopart.description}

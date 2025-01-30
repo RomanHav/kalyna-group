@@ -1,8 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCards } from 'swiper/modules';
 import 'swiper/css/effect-cards';
-
-// Import Swiper styles
 import 'swiper/css';
 import ServicePart from '@/app/components/Services/ServicePart';
 import React from 'react';

@@ -47,7 +47,7 @@ export default function RootLayout({
               ></iframe>
             </noscript>
 
-            <div className="bg-texture absolute inset-0 top-0 left-0 w-full h-full bg-repeat-y lg:bg-cover opacity-20"></div>
+            <div className="absolute inset-0 top-0 left-0 h-full w-full bg-repeat-y opacity-20 bg-texture lg:bg-cover"></div>
             <NavBar />
             {children}
             <Footer />

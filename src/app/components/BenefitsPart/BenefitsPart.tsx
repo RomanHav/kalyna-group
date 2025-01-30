@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import React from "react";
+import React from 'react';
 
 interface BenefitsPartProps {
-  src: string;
+  srcWebp: string;
+  srcMov: string;
   title: string;
   numberCard: string;
   description: string;
@@ -10,17 +10,15 @@ interface BenefitsPartProps {
 }
 
 const BenefitsPart: React.FC<BenefitsPartProps> = ({
-  src,
+  srcWebp,
+  srcMov,
   numberCard,
   title,
   description,
   id,
 }) => {
   return (
-    <div
-      data-id={id}
-      className={`flex items-center justify-around`}
-    >
+    <div data-id={id} className={`flex items-center justify-around`}>
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-2">
           <span className="font-thin text-4xl">{numberCard}</span>
@@ -28,15 +26,17 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
         </div>
         <p className="font-light text-3xl w-[582px]">{description}</p>
       </div>
-      <Image
-        src={src}
-        alt="Benefits Image"
-        width={400}
-        height={400}
-        className=""
-        priority={true}
-        unoptimized={true}
-      />
+      <video
+        className={'w-[520px]'}
+        src={srcWebp}
+        autoPlay
+        loop
+        muted
+        controls={false}
+      >
+        <source src={srcWebp} type={'video/webm'} />
+        <source src={srcMov} type='video/mp4; codecs="hvc1"' />
+      </video>
     </div>
   );
 };
