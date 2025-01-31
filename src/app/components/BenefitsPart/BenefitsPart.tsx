@@ -18,7 +18,7 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
   id,
 }) => {
   return (
-    <div data-id={id} className={`flex items-center justify-around`}>
+    <div data-id={id} className={` relative flex items-center justify-around `}>
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-2">
           <span className="font-thin text-4xl">{numberCard}</span>

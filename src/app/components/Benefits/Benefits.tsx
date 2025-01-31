@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import BenefitsPart from '../BenefitsPart/BenefitsPart';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Keyboard } from 'swiper/modules';
@@ -26,50 +26,75 @@ interface BenefitsProps {
 const Benefits: React.FC<BenefitsProps> = ({ info }) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+
+  useEffect(() => {
+    if (swiperInstance && prevRef.current && nextRef.current) {
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
 
   return (
-    <div className={``}>
+    <div className="relative z-20 mb-20">
       <Title
-        title={'Benefits'}
-        className={'lg:px-24 px-[45px] relative z-10 inset-y-20'}
+        title="Benefits"
+        className="lg:px-24 px-[45px] relative z-10 inset-y-20"
       />
+
+      {/* Move Buttons Here, Before Swiper */}
+      <div className="absolute bottom-0 text-white z-40 w-full flex justify-center">
+        <div className="swiper-navigation flex flex-col justify-center items-center px-4">
+          <button
+            ref={prevRef}
+            className={css.customPrev}
+            aria-label="Previous slide"
+          >
+            <Image
+              src="/benefits-arrow-prev.svg"
+              alt="prev"
+              width={190}
+              height={78}
+            />
+            <span className="absolute top-0 right-0 font-light uppercase tracking-wider">
+              prev
+            </span>
+          </button>
+          <button
+            ref={nextRef}
+            className={css.customNext}
+            aria-label="Next slide"
+          >
+            <Image
+              src="/benefits-arrow-next.svg"
+              alt="next"
+              width={190}
+              height={78}
+            />
+            <span className="absolute top-0 left-0 font-light uppercase tracking-wider">
+              next
+            </span>
+          </button>
+        </div>
+      </div>
+
       <div className={css.mainContainer}>
         <div className={css.third}></div>
-        {/* Навігаційні кнопки */}
-
         <Swiper
           modules={[Navigation, Keyboard]}
           slidesPerView={1}
-          keyboard={{
-            enabled: true,
-            onlyInViewport: false,
-          }}
-          onBeforeInit={swiper => {
-            if (typeof swiper.params.navigation === 'object') {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-            }
-          }}
-          onInit={swiper => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            //@ts-expect-error
-            swiper.params.navigation.prevEl = prevRef.current;
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            //@ts-expect-error
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.update();
-          }}
-          navigation={{
-            prevEl: prevRef.current ? prevRef.current : undefined,
-            nextEl: nextRef.current ? nextRef.current : undefined,
-          }}
-          speed={800}
+          keyboard={{ enabled: true, onlyInViewport: false }}
           spaceBetween={0}
+          speed={800}
+          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+          onSwiper={setSwiperInstance} // Capture the Swiper instance
         >
           {info.map(infopart => (
             <SwiperSlide
               key={infopart.id}
-              className="!h-[700px] flex items-center justify-center"
+              className="!h-[700px] flex items-center justify-center "
             >
               <BenefitsPart
                 id={infopart.id}
@@ -81,46 +106,10 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
               />
             </SwiperSlide>
           ))}
-          <div className={`relative w-full flex justify-center`}>
-            <div className="absolute bottom-40 swiper-navigation flex flex-col z-40 justify-center items-center px-4">
-              <button
-                ref={prevRef}
-                className={`${css.customPrev}`}
-                aria-label="Previous slide"
-              >
-                <Image
-                  src={'/benefits-arrow-prev.svg'}
-                  alt={'prev'}
-                  width={190}
-                  height={78}
-                />
-                <span
-                  className={`absolute top-0 right-0 font-light uppercase tracking-wider`}
-                >
-                  prev
-                </span>
-              </button>
-              <button
-                ref={nextRef}
-                className={css.customNext}
-                aria-label="Next slide"
-              >
-                <Image
-                  src={'/benefits-arrow-next.svg'}
-                  alt={'next'}
-                  width={190}
-                  height={78}
-                />
-                <span
-                  className={`absolute top-0 left-0 font-light uppercase tracking-wider`}
-                >
-                  next
-                </span>
-              </button>
-            </div>
-          </div>
         </Swiper>
       </div>
+
+      <div className={css.cases}></div>
     </div>
   );
 };

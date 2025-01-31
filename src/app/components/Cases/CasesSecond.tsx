@@ -1,10 +1,9 @@
 'use client';
 import CasesSecondPart from './CasesSecondPart';
 import Title from '../Title';
-import React, { useState } from 'react';
-import { useTransition, animated } from '@react-spring/web';
-import CasesModal from '@/app/components/Cases/CasesModal';
-import css from './Cases.module.css';
+import React, { useState, lazy, Suspense, memo } from 'react';
+
+const CasesModal = lazy(() => import('@/app/components/Cases/CasesModal'));
 
 interface CasesInfo {
   id: number;
@@ -15,7 +14,6 @@ interface CasesInfo {
   href: string;
   logo: string;
   logoDescr: string;
-
   siteImage: string;
   description: string;
 }
@@ -51,48 +49,31 @@ const CasesSecond: React.FC<CasesProps> = ({ info }) => {
     }
   };
 
-  const transitions = useTransition(items, {
-    config: { tension: 380, precision: 0, friction: 100, duration: 2000 },
-    from: { transform: 'translate3d(0,0,0)', opacity: 0 },
-    keys: item => item.id,
-    enter: (item, index) => ({
-      transform: `translate3d(${index}px, 0, 0)`,
-      opacity: 1,
-    }),
-    update: (item, index) => ({
-      transform: `translate3d(${index}px, 0, 0)`,
-      opacity: 1,
-    }),
-    leave: { transform: 'translate3d(0,0,0)', opacity: 0 },
-  });
-
   return (
-    <div className={`relative z-[9]`}>
-      <div className={`${css.cases}`}></div>
-      <div className="relative z-10 contain-paint">
+    <div className="relative z-20 bg-[#080808]">
+      <div className="relative z-20 contain-paint">
         <Title
           id="cases"
           title="Cases"
-          className={'lg:px-24 px-[45px] relative z-10 inset-y-20'}
+          className="lg:px-24 px-[45px] relative z-10"
         />
-        <div className="w-full flex mt-32 before:absolute before:w-full before:h-20 before:-top-32 before:left-0 before:drop-shadow-[25px_25px_35px_rgba(0,0,0,0.95)] before:z-90 relative">
-          {transitions((style, item) => (
-            <animated.div
+        <div className="w-full flex mt-20 relative before:absolute before:w-full before:h-20 before:-top-32 before:left-0 before:drop-shadow-[25px_25px_35px_rgba(0,0,0,0.95)] before:z-90">
+          {items.map(item => (
+            <div
               key={item.id}
-              className={`${item.background} bg-cover w-1/4`}
-              style={{ ...style }}
+              className={`${item.background} bg-cover w-1/4 transition-all duration-300`}
             >
-              <CasesSecondPart
+              <MemoizedCasesSecondPart
                 id={item.id}
                 title={item.title}
                 logo={item.logo}
                 handleCaseModal={() => handleClick(item.id)}
                 showOverlay={overlayStates[item.id]}
               />
-            </animated.div>
+            </div>
           ))}
           {items.map(item => (
-            <div key={item.id}>
+            <Suspense key={item.id} fallback={<div>Loading case...</div>}>
               <CasesModal
                 background={item.background}
                 span={item.span}
@@ -106,12 +87,14 @@ const CasesSecond: React.FC<CasesProps> = ({ info }) => {
                 handleCaseModal={() => handleClick(item.id)}
                 isOpen={openModalId === item.id}
               />
-            </div>
+            </Suspense>
           ))}
         </div>
       </div>
     </div>
   );
 };
+
+const MemoizedCasesSecondPart = memo(CasesSecondPart);
 
 export default CasesSecond;
