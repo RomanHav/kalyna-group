@@ -50,6 +50,7 @@ const config: Config = {
       },
       backgroundImage: {
         texture: "url('/background.png')",
+        noise: "url('/bg-shape-benefits.webp')",
         form: "url('/footer-form-bkg.jpg')",
         contactUsModal: "url('/doodad.jpg')",
         bkgForm: "url('/bkg-form.jpg')",

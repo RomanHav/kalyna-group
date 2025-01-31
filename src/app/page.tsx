@@ -1,5 +1,5 @@
 'use client';
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 import HeaderVideo from './components/HeaderVideo/HeaderVideo';
 import Services from './components/Services/Services';
 import RunningLine from './components/RunningLine';
@@ -11,7 +11,6 @@ import { Provider } from 'react-redux';
 import { store } from '@/app/redux/store';
 import CasesSecond from './components/Cases/CasesSecond';
 import Lenis from 'lenis';
-// import MyForm from '@/app/components/Form';
 import FormSecond from '@/app/components/StepsForm/FormSecond';
 
 export default function App() {
@@ -36,9 +35,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <HeaderVideo />
-      <Services
-        info={seviceInfo}
-      />
+      <Services info={seviceInfo} />
       <RunningLine />
       <Benefits info={benefitsInfo} />
       <CasesSecond info={casesInfo} />

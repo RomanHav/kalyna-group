@@ -18,7 +18,7 @@ const CasesSecondPart: React.FC<CasesPartProps> = ({
 }) => {
   return (
     <>
-      <div className="w-full h-screen">
+      <div className="relative w-full h-screen">
         <div className="absolute w-full h-full z-10 bg-black bg-opacity-70"></div>
         <div className="relative z-20 h-full">
           <div
