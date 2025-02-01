@@ -38,13 +38,13 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
   }, [swiperInstance]);
 
   return (
-    <div className="relative z-20 mb-20">
+    <div className="relative contain-paint z-20">
       <Title
         title="Benefits"
         className="lg:px-24 px-[45px] relative z-10 inset-y-20"
       />
 
-      <div className="absolute lg:bottom-32 xl:bottom-0 text-white z-40 w-full flex justify-center">
+      <div className="absolute bottom-0 lg:bottom-32 xl:bottom-10 text-white z-40 w-full flex justify-center">
         <div className="swiper-navigation flex flex-col justify-center items-center px-4">
           <button
             ref={prevRef}
