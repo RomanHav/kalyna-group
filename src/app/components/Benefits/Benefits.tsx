@@ -44,8 +44,7 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
         className="lg:px-24 px-[45px] relative z-10 inset-y-20"
       />
 
-      {/* Move Buttons Here, Before Swiper */}
-      <div className="absolute bottom-0 text-white z-40 w-full flex justify-center">
+      <div className="absolute lg:bottom-32 xl:bottom-0 text-white z-40 w-full flex justify-center">
         <div className="swiper-navigation flex flex-col justify-center items-center px-4">
           <button
             ref={prevRef}

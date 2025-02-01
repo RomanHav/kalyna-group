@@ -18,16 +18,25 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
   id,
 }) => {
   return (
-    <div data-id={id} className={` relative flex items-center justify-around `}>
-      <div className="flex flex-col gap-16">
+    <div
+      data-id={id}
+      className={`relative px-1 lg:px-0 flex flex-col lg:flex-row lg:gap-0 items-center gap-8 lg:justify-around`}
+    >
+      <div className="flex flex-col gap-4 lg:gap-16">
         <div className="flex flex-col gap-2">
-          <span className="font-thin text-4xl">{numberCard}</span>
-          <h3 className="font-medium text-4xl">{title}</h3>
+          <span className="text-2xl font-thin md:text-3xl lg:text-4xl">
+            {numberCard}
+          </span>
+          <h3 className="text-xl font-medium max-sm:min-h-14 md:text-2xl  text-balance lg:text-4xl">
+            {title}
+          </h3>
         </div>
-        <p className="font-light text-3xl w-[582px]">{description}</p>
+        <p className="text-lg text-balance font-light md:text-xl min-h-[112px] md:w-[400px] lg:w-[450px] xl:w-[582px] lg:text-3xl">
+          {description}
+        </p>
       </div>
       <video
-        className={'w-[520px]'}
+        className={'w-[280px] lg:w-[360px] xl:w-[520px]'}
         src={srcWebp}
         autoPlay
         loop
