@@ -50,7 +50,7 @@ const CasesSecond: React.FC<CasesProps> = ({ info }) => {
   };
 
   return (
-    <div className="relative z-20 bg-[#080808]">
+    <div className="relative z-20 pt-10 bg-[#080808]">
       <div className="relative z-20 contain-paint">
         <Title
           id="cases"
