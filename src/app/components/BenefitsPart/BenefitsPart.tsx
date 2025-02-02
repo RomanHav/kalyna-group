@@ -37,10 +37,14 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
       </div>
       <video
         className={'w-[280px] lg:w-[360px] xl:w-[520px]'}
-        autoPlay loop muted playsInline
+        src={srcMov}
+        autoPlay
+        loop
+        muted
+        playsInline
       >
-        <source src={srcWebp} type={'video/webm'} />
         <source src={srcMov} type='video/mp4; codecs="hvc1"' />
+        <source src={srcWebp} type={'video/webm'} />
       </video>
     </div>
   );
