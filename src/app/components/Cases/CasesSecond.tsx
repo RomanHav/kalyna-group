@@ -57,11 +57,11 @@ const CasesSecond: React.FC<CasesProps> = ({ info }) => {
           title="Cases"
           className="lg:px-24 px-[45px] relative z-10"
         />
-        <div className="w-full flex mt-20 relative before:absolute before:w-full before:h-20 before:-top-32 before:left-0 before:drop-shadow-[25px_25px_35px_rgba(0,0,0,0.95)] before:z-90">
+        <div className="w-full flex flex-wrap mt-20 relative before:absolute before:w-full before:h-20 before:-top-32 before:left-0 before:drop-shadow-[25px_25px_35px_rgba(0,0,0,0.95)] before:z-90">
           {items.map(item => (
             <div
               key={item.id}
-              className={`${item.background} bg-cover w-1/4 transition-all duration-300`}
+              className={`${item.background} bg-cover w-full lg:w-1/4 transition-all duration-300`}
             >
               <MemoizedCasesSecondPart
                 id={item.id}
