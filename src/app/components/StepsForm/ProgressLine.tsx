@@ -5,13 +5,13 @@ interface ProgressLineProps {
 }
 const ProgressLine: React.FC<ProgressLineProps> = ({activeId}) => {
     return(
-        <div className={`flex items-center justify-end flex-col`}>
+        <div className={`absolute left-3 md:left-5 lg:left-0 lg:relative flex items-center justify-center lg:justify-end lg:flex-col`}>
             <div
                 className={`w-4 h-4 flex items-center justify-center rounded-full border-2 border-white`}
             >
                 <div className={'w-2 h-2 rounded-full bg-white'}></div>
             </div>
-            <div className={`w-[2px] h-[81px] bg-white`}></div>
+            <div className={`w-[45px] h-[2px] md:w-[80px] lg:w-[2px] lg:h-[81px] bg-white`}></div>
             <div
                 className={`w-4 h-4 rounded-full flex items-center justify-center border-2 border-white`}
             >
@@ -21,7 +21,7 @@ const ProgressLine: React.FC<ProgressLineProps> = ({activeId}) => {
                     ''
                 )}
             </div>
-            <div className={'w-[2px] h-[81px] bg-white'}></div>
+            <div className={'w-[45px] h-[2px] md:w-[80px] lg:w-[2px] lg:h-[81px] bg-white'}></div>
             <div
                 className={`w-4 h-4 flex items-center justify-center rounded-full border-2 border-white`}
             >
@@ -31,7 +31,7 @@ const ProgressLine: React.FC<ProgressLineProps> = ({activeId}) => {
                     ''
                 )}
             </div>
-            <div className={`w-[2px] h-[81px] bg-white`}></div>
+            <div className={`w-[45px] h-[2px] md:w-[80px] lg:w-[2px] lg:h-[81px] bg-white`}></div>
             <div
                 className={`w-4 h-4 flex items-center justify-center rounded-full border-2 border-white`}
             >
@@ -41,7 +41,7 @@ const ProgressLine: React.FC<ProgressLineProps> = ({activeId}) => {
                     ''
                 )}
             </div>
-            <div className={`w-[2px] h-[81px] bg-white`}></div>
+            <div className={`w-[45px] md:w-[80px] h-[2px] lg:w-[2px] lg:h-[81px] bg-white`}></div>
             <div
                 className={`w-4 h-4 flex items-center justify-center rounded-full border-2 border-white`}
             >
@@ -51,7 +51,7 @@ const ProgressLine: React.FC<ProgressLineProps> = ({activeId}) => {
                     ''
                 )}
             </div>
-            <div className={`w-[2px] h-[174px] bg-white`}></div>
+            <div className={`w-[500px] h-[2px] lg:w-[2px] lg:h-[180px] bg-white`}></div>
         </div>
     );
 }

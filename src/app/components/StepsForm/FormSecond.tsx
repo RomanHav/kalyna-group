@@ -134,12 +134,12 @@ const FormSecond = () => {
 
   return (
     <div
-      className={`relative text-white z-20 px-24 pt-28 bg-test bg-center bg-cover`}
+      className={`relative contain-paint text-white z-20 px-[45px] lg:px-24 py-8 md:py-10 lg:pt-28 bg-test bg-center bg-cover`}
     >
       <div className={`absolute top-0 left-0 w-full h-full bg-black/90`}></div>
       <div className={`relative`}>
         <div className={`flex flex-col w-full mb-14`}>
-          <h2 className={`uppercase text-[48px] mb-3`}>
+          <h2 className={`uppercase text-[32px] lg:text-[48px] mb-3`}>
             Get in touch with us in a{' '}
             <span
               className={`bg-gradient-to-r from-custom-green to-custom-second-green bg-clip-text text-transparent`}
@@ -147,17 +147,17 @@ const FormSecond = () => {
               few easy steps
             </span>
           </h2>
-          <span className={`mb-11 text-2xl opacity-60`}>
+          <span className={`mb-3 lg:mb-11 text-lg lg:text-2xl opacity-60`}>
             Follow the simple 5 steps to complete your mapping
           </span>
-          <div className={`w-full h-[2px] bg-[#C0FFD8]`}></div>
+          <div className={`w-full h-[1px] lg:h-[2px] bg-[#C0FFD8]`}></div>
         </div>
         {success ? (
           <Success />
         ) : (
-          <div className={`flex justify-between`}>
-            <div className={`flex justify-around w-1/4`}>
-              <ul className={`flex flex-col gap-8 pb-40`}>
+          <div className={`flex flex-col lg:flex-row justify-between`}>
+            <div className={`relative flex flex-col justify-center lg:flex-row lg:gap-12 min-[1440px]:gap-0 lg:justify-end xl:justify-around w-full lg:w-1/4`}>
+              <ul className={`flex lg:flex-col justify-start items-center lg:items-end gap-[18px] md:gap-10 lg:gap-10 pb-20 lg:pb-40`}>
                 {steps.map(step => {
                   return (
                     <li key={step.id}>
@@ -173,7 +173,7 @@ const FormSecond = () => {
               </ul>
               <ProgressLine activeId={activeId} />
             </div>
-            <div className={`w-2/3`}>
+            <div className={`w-full lg:w-2/3`}>
               <span className={`opacity-70 text-base`}>
                 Step {activeId} / {steps.length}
               </span>

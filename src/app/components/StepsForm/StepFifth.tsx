@@ -83,8 +83,8 @@ const StepFifth: React.FC<StepFifth> = ({ title, description }) => {
         <span className={`mb-6 pr-5 min-h-[48px]`}>{description}</span>
         <div className={`w-full h-[1px] bg-[#C0FFD8]`}></div>
       </div>
-      <div className="min-h-[270px]">
-        <Box sx={{ width: '70%' }} className={`flex flex-col gap-5`}>
+      <div className="lg:min-h-[270px]">
+        <Box sx={{ width: {lg:'70%', xs:'100%'} }} className={`flex flex-col gap-5`}>
           <label htmlFor={id}>Enter your email:</label>
           <ValidatedTextField
             values={values.email}

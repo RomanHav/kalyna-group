@@ -21,12 +21,12 @@ const StepFirst: React.FC<StepFirstProps> = ({ title, description }) => {
   return (
     <div className={`flex flex-col gap-10 text-white`}>
       <div className={`flex flex-col`}>
-        <h3 className={`text-3xl font-medium mb-2`}>{title}</h3>
-        <span className={`mb-6 min-h-[48px]`}>{description}</span>
+        <h3 className={`text-2xl lg:text-3xl font-medium mb-5 lg:mb-2`}>{title}</h3>
+        <span className={`mb-3 lg:mb-6 min-h-[48px]`}>{description}</span>
         <div className={`w-full h-[1px] bg-[#C0FFD8]`}></div>
       </div>
-      <div className="min-h-[270px]">
-        <Box sx={{ width: '70%' }} className={`flex flex-col gap-5`}>
+      <div className="lg:min-h-[270px]">
+        <Box sx={{ width: {lg:'70%', xs:'100%'} }} className={`flex flex-col gap-5`}>
           <label htmlFor="name">Enter your name</label>
           <TextField
             required
