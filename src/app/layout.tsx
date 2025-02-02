@@ -27,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={'hydrated'}>
-      <body className={`${poppins.className} lg:overflow-hidden relative `} cz-shortcut-listen="true">
+    <html lang="en">
+      <body className={`${poppins.className} lg:overflow-hidden relative `}>
         <ReactLenisUpdated>
           <ParallaxProvider>
             <Script
