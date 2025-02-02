@@ -18,21 +18,21 @@ const CasesSecondPart: React.FC<CasesPartProps> = ({
 }) => {
   return (
     <>
-      <div className="relative w-full h-screen">
-        <div className="absolute w-full h-full z-10 bg-black bg-opacity-70"></div>
+      <div className="relative w-full h-[300px] lg:h-screen">
+        <div className="absolute z-10 h-full w-full bg-black bg-opacity-70"></div>
         <div className="relative z-20 h-full">
           <div
-            className={`py-20 ${showOverlay ? 'block' : 'flex'} flex-col w-full h-full justify-between items-center text-white`}
+            className={`py-5 lg:py-20 ${showOverlay ? 'block' : 'flex'} flex-col w-full h-full justify-between items-center text-white`}
           >
             <Image
-              className={`${showOverlay ? 'hidden' : 'block'} h-[120px] object-contain`}
+              className={`${showOverlay ? 'hidden' : 'block'} h-[60px] lg:h-[120px] object-contain`}
               src={logo}
               alt="Case Logo"
               width={512}
               height={512}
             />
             <span
-              className={`${showOverlay ? 'hidden' : 'block'} uppercase text-4xl font-medium text-center tracking-wide max-w-[280px]`}
+              className={`${showOverlay ? 'hidden' : 'block'} uppercase text-2xl lg:text-4xl font-medium text-center tracking-wide max-w-[280px]`}
             >
               {title}
             </span>
