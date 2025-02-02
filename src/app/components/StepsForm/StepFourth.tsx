@@ -86,20 +86,16 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
         <div className="w-full h-[1px] bg-[#C0FFD8]"></div>
       </div>
       <div className="min-h-[270px] flex flex-col justify-center">
-        <div className="flex justify-center pt-10">
-          <Box sx={{ width: '70%' }}>
+        <div className="flex justify-center lg:pt-10 lg:pb-5 pb-10">
+          <Box sx={{ width: '70%'}}>
             <Slider
-              marks={[
-                { value: min, label: `${min}$` },
-                { value: max, label: `${max}$` },
-              ]}
               value={val}
               valueLabelDisplay="on"
               min={min}
               max={max}
               step={50}
               onChange={handleSliderChange}
-              sx={{ color: '#19D288' }}
+              sx={{ color: '#19D288', m:'0'  }}
             />
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Typography variant="body2">{min}$</Typography>
@@ -108,7 +104,7 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
           </Box>
         </div>
         <div className="flex gap-10 justify-center">
-          <Box sx={{ width: '20%' }} className="flex flex-col gap-5">
+          <Box sx={{ width: {md:'20%', xs:'50%'}}} className="flex flex-col gap-5">
             <label htmlFor={`${id}-min`}>Enter your min value</label>
             <TextField
               type={'number'}
@@ -134,7 +130,7 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
               }}
             />
           </Box>
-          <Box sx={{ width: '20%' }} className="flex flex-col gap-5">
+          <Box sx={{ width: {md:'20%', xs:'50%'} }} className="flex flex-col gap-5">
             <label htmlFor={`${id}-max`}>Enter your max value</label>
             <TextField
               id={`${id}-max`}
