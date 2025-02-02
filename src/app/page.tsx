@@ -35,9 +35,6 @@ export default function App() {
   return (
     <Provider store={store}>
       <HeaderVideo />
-      <video autoPlay loop playsInline muted>
-        <source src={'/nut.mov'} type='video/mp4; codec="hvc1"' />
-      </video>
       <Services info={seviceInfo} />
       <RunningLine />
       <Benefits info={benefitsInfo} />
