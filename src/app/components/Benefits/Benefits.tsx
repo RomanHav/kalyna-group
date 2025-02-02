@@ -44,7 +44,7 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
         className="lg:px-24 px-[45px] relative z-10 inset-y-20"
       />
 
-      <div className="absolute bottom-0 lg:bottom-32 xl:bottom-10 text-white z-40 w-full flex justify-center">
+      <div className="absolute bottom-10 lg:bottom-32 xl:bottom-20 text-white z-40 w-full flex justify-center">
         <div className="swiper-navigation flex flex-col justify-center items-center px-4">
           <button
             ref={prevRef}
@@ -52,12 +52,13 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
             aria-label="Previous slide"
           >
             <Image
+              className={'max-lg:w-32'}
               src="/benefits-arrow-prev.svg"
               alt="prev"
               width={190}
               height={78}
             />
-            <span className="absolute top-0 right-0 font-light uppercase tracking-wider">
+            <span className="absolute -top-2 right-0 font-light uppercase tracking-wider">
               prev
             </span>
           </button>
@@ -67,12 +68,13 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
             aria-label="Next slide"
           >
             <Image
+              className={'max-lg:w-32'}
               src="/benefits-arrow-next.svg"
               alt="next"
               width={190}
               height={78}
             />
-            <span className="absolute top-0 left-0 font-light uppercase tracking-wider">
+            <span className="absolute -top-2 left-0 font-light uppercase tracking-wider">
               next
             </span>
           </button>
