@@ -37,7 +37,6 @@ const BenefitsPart: React.FC<BenefitsPartProps> = ({
       </div>
       <video
         className={'w-[280px] lg:w-[360px] xl:w-[520px]'}
-        src={srcMov}
         autoPlay
         loop
         muted
