@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import {useEffect, useState} from 'react';
 import HeaderVideo from './components/HeaderVideo/HeaderVideo';
 import Services from './components/Services/Services';
 import RunningLine from './components/RunningLine';
@@ -14,8 +14,9 @@ import Lenis from 'lenis';
 import FormSecond from '@/app/components/StepsForm/FormSecond';
 
 export default function App() {
+    const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
+    setIsMobile(window.innerWidth <= 768);
 
     if (!isMobile) {
       const lenis = new Lenis();
@@ -30,7 +31,7 @@ export default function App() {
         lenis.destroy();
       };
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <Provider store={store}>
@@ -38,7 +39,7 @@ export default function App() {
       <Services info={seviceInfo} />
       <RunningLine />
       <Benefits info={benefitsInfo} />
-      <CasesSecond info={casesInfo} />
+      <CasesSecond info={casesInfo} isMobile={isMobile} />
       <FormSecond />
     </Provider>
   );
