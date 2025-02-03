@@ -5,10 +5,10 @@ import LandingRunningLine from './components/LandingRunningLine';
 
 const LandingImage = () => {
   return (
-    <div className="absolute top-[24rem] md:top-[25rem] lg:top-[29rem] xl:top-[26rem] min-[1440px]:top-[25rem] z-10 w-full flex flex-col justify-center items-center text-white">
-      <div className="relative z-20 lg:left-[5%] flex justify-center">
+    <div className="absolute top-[24rem] lg:top-[26rem] xl:top-[26rem] min-[1440px]:top-[25rem] z-10 w-full flex flex-col justify-center items-center text-white">
+      <div className="relative z-20 left-[5%] flex justify-center">
         <Image
-          className="w-80 md:w-[680px] lg:w-[750px] xl:w-[960px]"
+          className="w-[360px] md:w-[680px] lg:w-[750px] xl:w-[960px]"
           src={'/landing-read.webp'}
           alt="Landing Image"
           width={4082}

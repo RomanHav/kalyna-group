@@ -13,15 +13,16 @@ interface HeaderServiceProps {
 
 const _renderClassname = (path: string) => {
   switch (path) {
-    case '/3d-design':
-    case '/landing-page':
-      return 'mb-32';
-    case '/crm-system':
-      return 'mb-[520px] lg:mb-[540px] xl:mb-[400px]';
-    case '/ui-ux-design':
-      return 'mb-20 lg:mb-[500px]';
-    case '/business-website':
-      return 'mb-20';
+    case '/services/3d-design':
+      return 'mb-32 md:mb-36 lg:mb-[26rem]';
+    case '/services/landing-page':
+      return 'mb-32 md:mb-8';
+    case '/services/crm-system':
+      return 'mb-[540px] lg:mb-[500px] xl:mb-[400px]';
+    case '/services/ui-ux-design':
+      return 'mb-32 lg:mb-[400px] xl:mb-[500px]';
+    case '/services/business-website':
+      return 'mb-20 lg:mb-[18rem]';
     default:
       return 'mb-60';
   }

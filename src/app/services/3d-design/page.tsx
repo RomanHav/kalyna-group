@@ -26,7 +26,7 @@ const ThreeDSystem = () => {
       <div className="relative contain-paint">
         <HeaderService headerText={headerText} />
         <div
-          className={'absolute top-72 w-full flex justify-center items-center'}
+          className={'absolute top-[22rem] md:top-[20rem] w-full flex justify-center items-center'}
         >
           <span
             className={
