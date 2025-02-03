@@ -14,6 +14,7 @@ interface CasesModalProps {
   id?: number;
   isOpen: boolean;
   handleCaseModal: (id?: number) => void;
+  isMobile?: boolean;
 }
 
 const CasesModal: React.FC<CasesModalProps> = ({
@@ -29,102 +30,102 @@ const CasesModal: React.FC<CasesModalProps> = ({
 }) => {
   return (
     <div
-      className={` max-lg:fixed max-lg:inset-0 max-lg:w-full max-lg:h-full max-lg:flex max-lg:justify-center z-[500] max-lg:items-center ${
+      className={`max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:h-full w-3/4 lg:right-0 max-lg:flex max-lg:justify-center max-lg:items-start z-[1000] lg:absolute ${
         isOpen ? 'visible opacity-100' : 'invisible opacity-0'
-      }`}
+      } transition-opacity duration-300`}
     >
-      <div
-        className={`bg-custom-case-modal text-white relative top-0 lg:absolute lg:top-0 lg:right-0 w-full lg:w-3/4 z-[100] flex transition-all duration-300 ease-out `}
-      >
-        <div className="flex flex-col justify-between w-full h-screen lg:min-h-screen">
-          <MdClose
-            onClick={() => handleCaseModal(id)}
-            className={'lg:hidden z-[80] absolute right-4 top-4'}
-            size={32}
-          />
-          <div className="py-8 lg:py-4 relative w-full h-full">
-            <div className="absolute max-lg:top-10 z-50 w-full h-full">
-              <Image
-                className="absolute z-10"
-                src={'/first-vector.svg'}
-                alt="Curved Line"
-                width={1931}
-                height={277}
-              />
-              <Image
-                className="absolute z-20"
-                src={'/second-vector.svg'}
-                alt="Curved Line"
-                width={2351}
-                height={367}
-              />
-              <Image
-                className="absolute z-30"
-                src={'/third-vector.svg'}
-                alt="Curved Line"
-                width={2360}
-                height={274}
-              />
-              <Image
-                className="absolute z-40"
-                src={'/fourth-vector.svg'}
-                alt="Curved Line"
-                width={1944}
-                height={439}
-              />
-            </div>
-            <div className="relative lg:absolute z-[60] px-4 lg:px-28 w-full flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center">
-              <Image
-                className={`h-[60px] lg:h-[120px] object-contain`}
-                src={logoDescr}
-                alt="Case Logo"
-                width={512}
-                height={512}
-              />
-              {/*Image click-here*/}
-              <div
-                className={`${siteImage} drop-shadow-3xl relative bg-cover rounded-xl w-[200px] h-[80px] lg:w-[460px] lg:h-[260px] `}
-              >
-                <div className="bg-black w-full h-full rounded-xl absolute opacity-70"></div>
-                <div className="absolute z-20 w-full h-full flex items-center justify-center">
-                  <a href={href} target="_blanc">
-                    <div className="flex gap-8 items-center">
-                      <span className="uppercase tracking-wide font-medium text-lg lg:text-2xl">
-                        {id === 40 ? 'Contact us' : 'Click here'}
-                      </span>
-                      <Image
-                        className="text-white rotate-90"
-                        src="/arrow-cases.svg"
-                        alt="Case Logo"
-                        width={25}
-                        height={36}
-                      />
-                    </div>
-                  </a>
-                </div>
+      <div className="absolute lg:overflow-hidden top-0 flex h-screen w-full flex-col justify-between overflow-y-auto text-white transition-transform duration-300 ease-out bg-custom-case-modal z-[1000]">
+        <MdClose
+          onClick={() => handleCaseModal(id)}
+          className="absolute top-4 right-4 cursor-pointer z-[150] lg:hidden"
+          size={32}
+        />
+        <div className="relative w-full py-8 lg:py-14">
+          {/* Curved lines */}
+          <div className="absolute top-20 left-0 z-50 h-full w-full">
+            <Image
+              className="absolute z-10"
+              src={'/first-vector.svg'}
+              alt="Curved Line"
+              width={1931}
+              height={277}
+            />
+            <Image
+              className="absolute z-20"
+              src={'/second-vector.svg'}
+              alt="Curved Line"
+              width={2351}
+              height={367}
+            />
+            <Image
+              className="absolute z-30"
+              src={'/third-vector.svg'}
+              alt="Curved Line"
+              width={2360}
+              height={274}
+            />
+            <Image
+              className="absolute z-40"
+              src={'/fourth-vector.svg'}
+              alt="Curved Line"
+              width={1944}
+              height={439}
+            />
+          </div>
+
+          {/* Modal Content */}
+          <div className="relative flex w-full flex-col items-center justify-between gap-5 px-4 z-[60] lg:flex-row lg:gap-0 lg:px-10 xl:px-28">
+            <Image
+              className="object-contain h-[60px] lg:h-[90px] xl:h-[120px]"
+              src={logoDescr}
+              alt="Case Logo"
+              width={512}
+              height={512}
+            />
+            <div
+              className={`${siteImage} drop-shadow-3xl relative bg-cover rounded-xl w-[240px] h-[120px] md:w-[460px] md:h-[200px] xl:h-[260px]`}
+            >
+              <div className="absolute h-full w-full rounded-xl bg-black opacity-70"></div>
+              <div className="absolute z-20 flex h-full w-full items-center justify-center">
+                <a href={href} target="_blank">
+                  <div className="flex items-center gap-8">
+                    <span className="text-lg font-medium uppercase tracking-wide lg:text-2xl">
+                      {id === 40 ? 'Contact us' : 'Click here'}
+                    </span>
+                    <Image
+                      className="rotate-90 text-white"
+                      src="/arrow-cases.svg"
+                      alt="Case Logo"
+                      width={25}
+                      height={36}
+                    />
+                  </div>
+                </a>
               </div>
             </div>
           </div>
-          <div className="bg-white z-[70] rounded-t-2xl text-black px-[45px] lg:px-28 py-10">
-            <div className="mb-7 relative">
-              <div className="flex flex-col ml-6">
-                <h3 className="text-2xl lg:text-4xl font-medium uppercase">
-                  {title}
-                </h3>
-                <span className="text-sm lg:text-base">{span}</span>
-              </div>
-              <div className="before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-2 before:bg-black before:rounded-md"></div>
+        </div>
+
+        {/* Description Section */}
+        <div className="rounded-t-2xl bg-white py-10 text-black z-[70] px-[45px] lg:px-28">
+          <div className="relative mb-7">
+            <div className="ml-6 flex flex-col">
+              <h3 className="text-2xl font-medium uppercase md:text-4xl">
+                {title}
+              </h3>
+              <span className="text-sm md:text-base">{span}</span>
             </div>
-            <div className="flex flex-col">
-              <h4 className="uppercase text-lg lg:text-xl font-medium mb-6">
-                {id !== 40
-                  ? 'Description of the project'
-                  : 'Build your website with us'}
-              </h4>
-              <p className="text-base lg:text-lg min-h-[290px] lg:min-h-40 ">
-                {description}
-              </p>
-            </div>
+            <div className="before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-2 before:bg-black before:rounded-md"></div>
+          </div>
+          <div className="flex flex-col">
+            <h4 className="mb-6 text-lg font-medium uppercase md:text-xl">
+              {id !== 40
+                ? 'Description of the project'
+                : 'Build your website with us'}
+            </h4>
+            <p className="text-base min-h-[290px] md:min-h-40 md:text-lg">
+              {description}
+            </p>
           </div>
         </div>
       </div>

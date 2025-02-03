@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCards } from 'swiper/modules';
+import { Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css/effect-cards';
 import 'swiper/css';
 import ServicePart from '@/app/components/Services/ServicePart';
@@ -14,31 +14,34 @@ interface ServiceInfo {
 
 interface ServiceProps {
   info: ServiceInfo[];
+  isMobile?: boolean;
 }
 
-const MobileServices: React.FC<ServiceProps> = ({ info }) => {
+const MobileServices: React.FC<ServiceProps> = ({ info, isMobile }) => {
   return (
-    <div
-        className={`px-0 md:px-36`}
-    >
+    <div className={`px-0 md:px-36`}>
       <Swiper
-        modules={[EffectCards, Autoplay]}
+        modules={[EffectCoverflow, Autoplay]}
         className={`w-full`}
-        effect="cards"
-        autoplay={{ delay: 2500 }}
+        effect="coverflow"
+        coverflowEffect={{ slideShadows: false, modifier: 3 }}
+        autoplay={{ delay: 1000 }}
         speed={1000}
       >
         {info.map(infopart => (
           <SwiperSlide
             key={infopart.id}
-            className="bg-black/60 backdrop-blur-3xl shadow-customSecond relative flex items-center rounded-3xl"
+            className={`bg-black/15 backdrop-blur-lg lg:shadow-customSecond relative flex items-center rounded-3xl`}
           >
-            <div className="absolute w-full h-full rounded-3xl shadow-customThird"></div>
+            <div
+              className={`absolute w-full h-full rounded-3xl lg:shadow-customThird`}
+            ></div>
             <ServicePart
               id={infopart.id}
               title={infopart.title}
               src={infopart.src}
               price={infopart.price}
+              isMobile={isMobile}
             />
           </SwiperSlide>
         ))}

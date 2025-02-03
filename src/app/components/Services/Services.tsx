@@ -1,8 +1,8 @@
 'use client';
 import Title from '../Title';
-import React, {useEffect, useState} from 'react';
-import MobileServices from "@/app/components/MobileServices";
-import DesktopServices from "@/app/components/DesktopServices";
+import React, { useEffect, useState } from 'react';
+import MobileServices from '@/app/components/MobileServices';
+import DesktopServices from '@/app/components/DesktopServices';
 interface ServiceInfo {
   id: number;
   title: string;
@@ -15,7 +15,6 @@ interface ServiceProps {
 }
 
 const Services: React.FC<ServiceProps> = ({ info }) => {
-
   const [display, setDisplay] = useState(false);
 
   useEffect(() => {
@@ -26,7 +25,11 @@ const Services: React.FC<ServiceProps> = ({ info }) => {
     <>
       <div className="relative z-10 my-8 flex flex-col gap-10 px-[45px] md:my-10 md:px-16 lg:px-24 lg:pb-16">
         <Title id="services" title="Services" />
-        {display ? <MobileServices info={info} /> : <DesktopServices info={info} />}
+        {display ? (
+          <MobileServices info={info} isMobile={display} />
+        ) : (
+          <DesktopServices info={info} />
+        )}
       </div>
     </>
   );
