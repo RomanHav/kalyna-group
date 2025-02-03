@@ -12,7 +12,7 @@ const BusinessImage = ({ defaultOptionsOne, defaultOptionsTwo }) => {
     setMobile(isMobile);
   }, []);
   return (
-    <div className="w-full h-[146px] md:h-[300px] lg:h-[400px] xl:h-[560px] bg-businessImage bg-cover absolute top-[28rem] lg:top-[32rem] xl:top-[28rem] z-10 flex flex-col justify-center gap-2 lg:gap-6 items-center text-white">
+    <div className="w-full h-[146px] md:h-[300px] lg:h-[400px] xl:h-[560px] bg-businessImage bg-cover absolute top-[26rem] lg:top-[28rem] xl:top-[28rem] z-10 flex flex-col justify-center gap-2 lg:gap-6 items-center text-white">
       <div className="flex items-center gap-1 md:gap-8 lg:gap-20">
         <span className="uppercase text-5xl md:text-[80px] lg:text-[128px] font-bold">
           Business

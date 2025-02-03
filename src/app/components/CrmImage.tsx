@@ -35,7 +35,7 @@ const CrmImage = () => {
   }, [min, targetValue]);
 
   return (
-    <Parallax className="absolute top-[24rem] lg:top-[32rem] z-10 w-full flex flex-col justify-center items-center text-white">
+    <Parallax className="absolute top-[26rem] lg:top-[32rem] z-10 w-full flex flex-col justify-center items-center text-white">
       <div>
         <span className="flex mb-10 w-full justify-center text-5xl md:text-[80px] lg:text-[128px] font-bold uppercase gap-3 md:gap-6 lg:gap-12">
           <Image
