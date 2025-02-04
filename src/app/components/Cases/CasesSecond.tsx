@@ -2,6 +2,7 @@
 import CasesSecondPart from './CasesSecondPart';
 import Title from '../Title';
 import React, { useState, lazy, Suspense, memo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const CasesModal = lazy(() => import('@/app/components/Cases/CasesModal'));
 
@@ -33,13 +34,13 @@ const CasesSecond: React.FC<CasesProps> = ({ info, isMobile }) => {
 
   const handleClick = (id: number) => {
     if (activeBlock === id) {
-      setOverlayStates(prev => ({ ...prev, [id]: false }));
-      setActiveBlock(null);
-      setItems(info);
       setOpenModalId(null);
       if (isMobile) {
         document.body.style.overflow = 'auto';
       }
+      setOverlayStates(prev => ({ ...prev, [id]: false }));
+      setActiveBlock(null);
+      setItems(info);
     } else {
       const clickedItem = items.find(item => item.id === id);
       const otherItems = items.filter(item => item.id !== id);
@@ -67,20 +68,27 @@ const CasesSecond: React.FC<CasesProps> = ({ info, isMobile }) => {
           className="lg:px-24 px-[45px] relative z-10"
         />
         <div className="w-full flex flex-wrap mt-20 relative">
-          {items.map(item => (
-            <div
-              key={item.id}
-              className={`${item.background} ${item.id === 30 ? 'max-lg:bg-[0_-190px]' : ''} bg-cover w-full lg:w-1/4 transition-all duration-300`}
-            >
-              <MemoizedCasesSecondPart
-                id={item.id}
-                title={item.title}
-                logo={item.logo}
-                handleCaseModal={() => handleClick(item.id)}
-                showOverlay={overlayStates[item.id]}
-              />
-            </div>
-          ))}
+          <AnimatePresence>
+            {items.map(item => (
+              <motion.div
+                key={item.id}
+                layout
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.1, ease: 'linear' }}
+                className={`${item.background} ${item.id === 30 ? 'max-lg:bg-[0_-190px]' : ''} bg-cover w-full lg:w-1/4 duration-300`}
+              >
+                <MemoizedCasesSecondPart
+                  id={item.id}
+                  title={item.title}
+                  logo={item.logo}
+                  handleCaseModal={() => handleClick(item.id)}
+                  showOverlay={overlayStates[item.id]}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
           {items.map(item => (
             <Suspense key={item.id} fallback={<div>Loading case...</div>}>
               <CasesModal

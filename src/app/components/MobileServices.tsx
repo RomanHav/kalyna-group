@@ -24,17 +24,29 @@ const MobileServices: React.FC<ServiceProps> = ({ info, isMobile }) => {
         modules={[EffectCoverflow, Autoplay]}
         className={`w-full`}
         effect="coverflow"
-        coverflowEffect={{ slideShadows: false, modifier: 3 }}
+        coverflowEffect={{
+          slideShadows: false,
+          modifier: 2,
+          scale: 0.6,
+        }}
         autoplay={{ delay: 1000 }}
         speed={1000}
+        breakpoints={{
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            coverflowEffect: { modifier: 1, depth: 0, scale: 0.8 },
+          },
+        }}
       >
+        <SwiperSlide></SwiperSlide>
         {info.map(infopart => (
           <SwiperSlide
             key={infopart.id}
-            className={`bg-black/15 backdrop-blur-lg lg:shadow-customSecond relative flex items-center rounded-3xl`}
+            className={`bg-black/15 backdrop-blur-lg md:shadow-customSecond relative flex items-center rounded-3xl`}
           >
             <div
-              className={`absolute w-full h-full rounded-3xl lg:shadow-customThird`}
+              className={`absolute w-full h-full rounded-3xl md:shadow-customThird`}
             ></div>
             <ServicePart
               id={infopart.id}
@@ -45,6 +57,7 @@ const MobileServices: React.FC<ServiceProps> = ({ info, isMobile }) => {
             />
           </SwiperSlide>
         ))}
+        <SwiperSlide></SwiperSlide>
       </Swiper>
     </div>
   );
