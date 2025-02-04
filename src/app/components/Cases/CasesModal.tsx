@@ -29,7 +29,7 @@ const CasesModal: React.FC<CasesModalProps> = ({
 }) => {
   return (
     <div
-      className={`max-lg:fixed  ${isOpen ? 'lg:left-1/4 h-full flex lg:block opacity-100 max-lg:top-0' : 'h-0 max-lg:-top-full lg:-left-full opacity-0'} w-full lg:w-3/4 transition-all duration-300  max-lg:justify-center max-lg:items-start z-[1000] lg:absolute`}
+      className={`max-lg:fixed  ${isOpen ? 'lg:left-1/4 h-full flex lg:block opacity-100 max-lg:top-0 z-[1000]' : '-z-40 h-0 max-lg:-top-full lg:-left-full opacity-0'} w-full lg:w-3/4 transition-all duration-300  max-lg:justify-center max-lg:items-start  lg:absolute`}
     >
       <div className="absolute lg:overflow-hidden top-0 flex h-screen w-full flex-col justify-between overflow-y-auto text-white transition-transform duration-300 ease-out bg-custom-case-modal z-[1000]">
         <MdClose
