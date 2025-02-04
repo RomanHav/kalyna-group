@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
 import { MdClose } from 'react-icons/md';
-
 interface CasesModalProps {
   src: string;
   title: string;
@@ -30,9 +29,7 @@ const CasesModal: React.FC<CasesModalProps> = ({
 }) => {
   return (
     <div
-      className={`max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:h-full w-3/4 lg:right-0 max-lg:flex max-lg:justify-center max-lg:items-start z-[1000] lg:absolute ${
-        isOpen ? 'visible opacity-100' : 'invisible opacity-0'
-      } transition-opacity duration-300`}
+      className={`max-lg:fixed  ${isOpen ? 'lg:left-1/4 h-full flex lg:block opacity-100 max-lg:top-0' : 'h-0 max-lg:-top-full lg:-left-full opacity-0'} w-full lg:w-3/4 transition-all duration-300  max-lg:justify-center max-lg:items-start z-[1000] lg:absolute`}
     >
       <div className="absolute lg:overflow-hidden top-0 flex h-screen w-full flex-col justify-between overflow-y-auto text-white transition-transform duration-300 ease-out bg-custom-case-modal z-[1000]">
         <MdClose
