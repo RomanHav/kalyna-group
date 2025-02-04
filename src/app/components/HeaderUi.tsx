@@ -116,7 +116,7 @@ const HeaderUi = () => {
           <div className="flex justify-start items-center gap-[14%] md:gap-40 xl:gap-60">
             <Image
               className="w-[160px] md:w-[270px] lg:w-[430px] xl:w-[531px]"
-              src={'uxui.svg'}
+              src={'/uxui.svg'}
               alt="UI/UX Design Image"
               width={531}
               height={240}

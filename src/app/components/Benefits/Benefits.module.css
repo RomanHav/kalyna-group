@@ -12,12 +12,19 @@
 .mainContainer {
   position: relative;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   color: #fff;
   background-color: #000000;
   padding: 120px 45px 0 45px;
+
   mask-image: linear-gradient(to bottom, transparent 0%, #080808 15%);
 }
 
@@ -34,12 +41,15 @@
 .mainContainer::before {
   background: #3cc685;
   border-radius: 50%;
+  -webkit-filter: blur(100px);
   filter: blur(100px);
   width: 250px;
   height: 250px;
   z-index: -2;
   right: 0;
   top: 250px;
+  -webkit-animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715)
+    infinite;
   animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
 
@@ -51,7 +61,10 @@
   z-index: -2;
   border-radius: 50%;
   left: 0;
+  -webkit-filter: blur(100px);
   filter: blur(100px);
+  -webkit-animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715)
+    infinite;
   animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
 
@@ -62,11 +75,13 @@
   opacity: 0.8;
   background: #5fc46c; /* Третій колір */
   border-radius: 50%;
+  -webkit-filter: blur(150px);
   filter: blur(150px);
   bottom: 0;
   margin-left: -100px;
   width: 250px;
   height: 250px;
+  -webkit-animation: animateNth 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
   animation: animateNth 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
 
@@ -85,8 +100,9 @@
   z-index: 20;
 }
 
-@media (min-height: 640px) {
+@media (min-width: 640px) {
   .mainContainer::before {
+    -webkit-filter: blur(100px);
     filter: blur(100px);
     width: 40vw;
     height: 40vw;
@@ -98,11 +114,13 @@
     width: 40vw;
     height: 40vw;
     left: 0;
+    -webkit-filter: blur(100px);
     filter: blur(100px);
   }
 
   /* Третій елемент (помаранчевий) */
   .third {
+    -webkit-filter: blur(100px);
     filter: blur(100px);
     width: 40vw;
     height: 40vw;
@@ -115,6 +133,7 @@
   }
   /* Перший елемент (зелений) */
   .mainContainer::before {
+    -webkit-filter: blur(150px);
     filter: blur(150px);
     width: 25vw;
     height: 25vw;
@@ -123,15 +142,15 @@
   }
 
   .mainContainer::after {
-    /* Другий елемент (синій) */
     width: 25vw;
     height: 25vw;
     left: 0;
+    -webkit-filter: blur(150px);
     filter: blur(150px);
   }
 
-  /* Третій елемент (помаранчевий) */
   .third {
+    -webkit-filter: blur(150px);
     filter: blur(150px);
     margin-left: -200px;
     width: 25vw;
@@ -141,6 +160,7 @@
 
 @media (min-width: 1200px) {
   .mainContainer::before {
+    -webkit-filter: blur(250px);
     filter: blur(250px);
     width: 25vw;
     height: 25vw;
@@ -149,15 +169,15 @@
   }
 
   .mainContainer::after {
-    /* Другий елемент (синій) */
     width: 25vw;
     height: 25vw;
     left: 0;
+    -webkit-filter: blur(200px);
     filter: blur(200px);
   }
 
-  /* Третій елемент (помаранчевий) */
   .third {
+    -webkit-filter: blur(300px);
     filter: blur(300px);
     margin-left: -200px;
     width: 25vw;
