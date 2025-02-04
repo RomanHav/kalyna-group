@@ -19,7 +19,7 @@ interface ServiceProps {
 
 const MobileServices: React.FC<ServiceProps> = ({ info, isMobile }) => {
   return (
-    <div className={`px-0 md:px-36`}>
+    <div className={``}>
       <Swiper
         modules={[EffectCoverflow, Autoplay]}
         className={`w-full`}
@@ -27,8 +27,8 @@ const MobileServices: React.FC<ServiceProps> = ({ info, isMobile }) => {
         coverflowEffect={{
           slideShadows: false,
           modifier: 2,
-          scale: 0.6,
         }}
+        loop
         autoplay={{ delay: 1000 }}
         speed={1000}
         breakpoints={{
@@ -39,7 +39,6 @@ const MobileServices: React.FC<ServiceProps> = ({ info, isMobile }) => {
           },
         }}
       >
-        <SwiperSlide></SwiperSlide>
         {info.map(infopart => (
           <SwiperSlide
             key={infopart.id}
@@ -57,7 +56,6 @@ const MobileServices: React.FC<ServiceProps> = ({ info, isMobile }) => {
             />
           </SwiperSlide>
         ))}
-        <SwiperSlide></SwiperSlide>
       </Swiper>
     </div>
   );
