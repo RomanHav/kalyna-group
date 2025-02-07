@@ -8,7 +8,6 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import NavBar from '@/app/components/NavBar/NavBar';
 import Footer from '@/app/components/Footer/Footer';
 import { ParallaxProvider } from './utils/parallax';
-// import SmoothScrollWrapper from '@/app/components/SmoothScrollWrapper';
 
 const poppins = Poppins({
   subsets: ['latin'],

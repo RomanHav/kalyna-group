@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import css from './Faq.module.css';
 import FaqPart from './FaqPart';
-import React, {useCallback, useState} from 'react';
+import React, { useCallback, useState } from 'react';
 
 interface FaqCard {
   title: string;
@@ -25,22 +25,24 @@ interface CommerceFaqProps {
 
 const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
   const [expandedId, setExpandedId] = useState<number | false>(1);
-  const handleAccordionChange = useCallback((itemId: number) => {
-    setExpandedId(expandedId === itemId ? false : itemId);
-  }, [expandedId]);
-
+  const handleAccordionChange = useCallback(
+    (itemId: number) => {
+      setExpandedId(expandedId === itemId ? false : itemId);
+    },
+    [expandedId]
+  );
 
   return (
-    <div className="flex flex-col lg:flex-row lg:h-[780px] justify-between items-center px-10 lg:px-16 xl:px-36">
-      <div className="w-full lg:w-1/2 lg:pr-10 xl:pr-24 pb-10">
-        <h3 className="text-3xl lg:text-6xl mb-5 xl:mb-12 font-medium uppercase text-center text-white">
+    <div className="flex flex-col items-center justify-between px-10 lg:h-[780px] lg:flex-row lg:px-16 xl:px-36">
+      <div className="w-full pb-10 lg:w-1/2 lg:pr-10 xl:pr-24">
+        <h3 className="mb-5 text-center text-3xl font-medium uppercase text-white lg:text-6xl xl:mb-12">
           Faq
         </h3>
         <ul className="flex flex-col gap-3">
           {commerceFaq.map(faq => (
             <li
               key={faq.id}
-              className="text-white border-b border-white flex justify-between py-2"
+              className="flex justify-between border-b border-white py-2 text-white"
             >
               <FaqPart
                 id={faq.id}
@@ -53,53 +55,58 @@ const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
           ))}
         </ul>
       </div>
-      <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-between">
+      <div className="flex w-full items-center justify-center text-white lg:w-1/2 lg:justify-between">
         {' '}
-        <div className="hidden lg:block w-[1px] lg:min-h-screen xl:h-[740px] bg-white"></div>
-        <div className="relative w-full md:w-[420px] h-[390px] min-[400px]:h-[450px] md:h-[550px] bg-cardServiceBackground bg-cover bg-center bg-no-repeat">
-          <div className="absolute text-white flex flex-col gap-3 lg:gap-6 w-full h-full px-7 py-5 md:px-9 md:py-7 z-10">
-            <div className="flex flex-col gap-2 md:gap-4">
-              <Image
-                src={'/basket.svg'}
-                alt="Basket Image"
-                width={40}
-                height={40}
-              />
-              <span className="text-xl md:text-3xl font-semibold uppercase">
-                {faqCard.title}
-              </span>
-            </div>
-            <div className="flex justify-center">
-              <Image
-                className="w-[140px] md:w-[220px] rounded-2xl"
-                src={faqCard.src}
-                alt={faqCard.title}
-                width={513}
-                height={515}
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="flex flex-col md:gap-2 gap-1">
-                <span className="font-light text-sm lg:text-base">From:</span>
-                <span className="font-semibold text-lg lg:text-xl">
-                  {faqCard.price}
+        <div className="hidden bg-white w-[1px] lg:block lg:min-h-screen xl:h-[740px]"></div>
+        <div className={'flex flex-col gap-20 md:w-[420px] '}>
+          <div className="relative w-full rounded-2xl bg-center bg-no-repeat shadow-sm shadow-amber-50/40 backdrop-blur-lg h-[390px] bg-emerald-900/15 md:h-[550px] min-[400px]:h-[450px]">
+            <div className="absolute z-10 flex h-full w-full flex-col gap-3 px-7 py-5 text-white md:px-9 md:py-7 lg:gap-6">
+              <div className="flex flex-col gap-2 md:gap-4">
+                <Image
+                  src={'/basket.svg'}
+                  alt="Basket Image"
+                  width={40}
+                  height={40}
+                />
+                <span className="text-xl font-semibold uppercase md:text-3xl">
+                  {faqCard.title}
                 </span>
               </div>
-              <div className="flex flex-col md:gap-2 gap-1">
-                <span className="font-light text-sm lg:text-base">
-                  Date terms:
-                </span>
-                <span className="font-semibold text-lg md:text-xl">
-                  {faqCard.terms}
-                </span>
+              <div className="flex justify-center">
+                <Image
+                  className="rounded-2xl w-[140px] md:w-[220px]"
+                  src={faqCard.src}
+                  alt={faqCard.title}
+                  width={513}
+                  height={515}
+                />
               </div>
-            </div>
-            <div className="flex justify-center">
-              <button className={css.button}>
-                <span className={css.buttonText}>Contact</span>
-              </button>
+              <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-1 md:gap-2">
+                  <span className="text-sm font-light lg:text-base">From:</span>
+                  <span className="text-lg font-semibold lg:text-xl">
+                    {faqCard.price}
+                  </span>
+                </div>
+                <div className="flex flex-col gap-1 md:gap-2">
+                  <span className="text-sm font-light lg:text-base">
+                    Date terms:
+                  </span>
+                  <span className="text-lg font-semibold md:text-xl">
+                    {faqCard.terms}
+                  </span>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <button className={css.button}>
+                  <span className={css.buttonText}>Contact</span>
+                </button>
+              </div>
             </div>
           </div>
+          <p className={'font-light italic '}>
+            * Prices and timelines are determined based on project complexity.
+          </p>
         </div>
       </div>
     </div>
