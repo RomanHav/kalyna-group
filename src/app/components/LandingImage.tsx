@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import LandingRunningLine from './components/LandingRunningLine';
+import LandingRunningLine from './LandingRunningLine';
 
 const LandingImage = () => {
   return (
