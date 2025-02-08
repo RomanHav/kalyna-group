@@ -7,9 +7,14 @@ import { useFormikContext } from 'formik';
 interface StepFourthProps {
   title: string;
   description: string;
+  isModal?: boolean;
 }
 
-const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
+const StepFourth: React.FC<StepFourthProps> = ({
+  title,
+  description,
+  isModal,
+}) => {
   const min = 300;
   const max = 15000;
   const id = useId();
@@ -85,9 +90,11 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
         <span className="mb-6 min-h-[48px]">{description}</span>
         <div className="w-full h-[1px] bg-[#C0FFD8]"></div>
       </div>
-      <div className="min-h-[270px] flex flex-col justify-center">
+      <div
+        className={`${isModal ? 'min-h-[150px]' : 'lg:min-h-[270px]'} flex flex-col justify-center`}
+      >
         <div className="flex justify-center lg:pt-10 lg:pb-5 pb-10">
-          <Box sx={{ width: '70%'}}>
+          <Box sx={{ width: '70%' }}>
             <Slider
               value={val}
               valueLabelDisplay="on"
@@ -95,7 +102,7 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
               max={max}
               step={50}
               onChange={handleSliderChange}
-              sx={{ color: '#19D288', m:'0'  }}
+              sx={{ color: '#19D288', m: '0' }}
             />
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Typography variant="body2">{min}$</Typography>
@@ -103,8 +110,11 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
             </Box>
           </Box>
         </div>
-        <div className="flex gap-10 justify-center">
-          <Box sx={{ width: {md:'20%', xs:'50%'}}} className="flex flex-col gap-5">
+        <div className={`${isModal ? 'hidden' : 'flex'} gap-10 justify-center`}>
+          <Box
+            sx={{ width: { md: '20%', xs: '50%' } }}
+            className="flex flex-col gap-5"
+          >
             <label htmlFor={`${id}-min`}>Enter your min value</label>
             <TextField
               type={'number'}
@@ -130,7 +140,10 @@ const StepFourth: React.FC<StepFourthProps> = ({ title, description }) => {
               }}
             />
           </Box>
-          <Box sx={{ width: {md:'20%', xs:'50%'} }} className="flex flex-col gap-5">
+          <Box
+            sx={{ width: { md: '20%', xs: '50%' } }}
+            className="flex flex-col gap-5"
+          >
             <label htmlFor={`${id}-max`}>Enter your max value</label>
             <TextField
               id={`${id}-max`}

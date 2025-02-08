@@ -6,14 +6,18 @@ export interface StepSecondProps {
   title: string;
   description: string;
   error?: boolean;
+  isModal?: boolean;
 }
 
 const StepSecond: React.FC<StepSecondProps> = ({
   title,
   description,
   error,
+  isModal,
 }) => {
-  {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
+  {
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+  }
   const { values, setFieldValue } = useFormikContext<{ services: string[] }>();
   const [active, setActive] = useState<string[]>(() => {
     if (typeof window === 'undefined') return [];
@@ -44,7 +48,7 @@ const StepSecond: React.FC<StepSecondProps> = ({
         <div className="w-full h-[1px] bg-[#C0FFD8]"></div>
       </div>
 
-      <div className="min-h-[270px] flex items-center">
+      <div className={`${isModal ? 'min-h-[150px]' : 'lg:min-h-[270px]'} flex items-center`}>
         <ul className="flex flex-wrap gap-10 justify-center">
           {services.map(service => (
             <li

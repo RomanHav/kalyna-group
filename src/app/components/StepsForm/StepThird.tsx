@@ -5,9 +5,10 @@ import { ErrorMessage, useFormikContext } from 'formik';
 interface StepThird {
   title: string;
   description: string;
+  isModal?: boolean;
 }
 
-const StepThird: React.FC<StepThird> = ({ title, description }) => {
+const StepThird: React.FC<StepThird> = ({ title, description, isModal }) => {
   const { values, handleChange } = useFormikContext();
   return (
     <div className={`flex flex-col gap-10`}>
@@ -16,7 +17,7 @@ const StepThird: React.FC<StepThird> = ({ title, description }) => {
         <span className={`mb-6 min-h-[48px]`}>{description}</span>
         <div className={`w-full h-[1px] bg-[#C0FFD8]`}></div>
       </div>
-      <div className="min-h-[270px] flex items-center">
+      <div className={`${isModal ? 'min-h-[150px]' : 'lg:min-h-[270px] flex items-center'}`}>
         <Box sx={{ width: '100%' }}>
           <TextField
             name="description"
@@ -27,7 +28,7 @@ const StepThird: React.FC<StepThird> = ({ title, description }) => {
             multiline
             label={'Description'}
             placeholder={'Write more details here'}
-            minRows={10}
+            minRows={isModal ? 5 : 10}
             fullWidth
             sx={{
               '& .MuiInputLabel-root': {

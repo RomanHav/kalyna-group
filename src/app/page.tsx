@@ -1,5 +1,5 @@
 'use client';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import HeaderVideo from './components/HeaderVideo/HeaderVideo';
 import Services from './components/Services/Services';
 import RunningLine from './components/RunningLine';
@@ -7,14 +7,16 @@ import Benefits from './components/Benefits/Benefits';
 import seviceInfo from '../../mainPageInfo/serviceInfo.json';
 import benefitsInfo from '../../mainPageInfo/benefitsInfo.json';
 import casesInfo from '../app/casesInfo.json';
-import { Provider } from 'react-redux';
-import { store } from '@/app/redux/store';
 import CasesSecond from './components/Cases/CasesSecond';
 import Lenis from 'lenis';
 import FormSecond from '@/app/components/StepsForm/FormSecond';
 
 export default function App() {
-    const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [click, setClick] = useState(false);
+  const handleOpen = () => {
+    setClick(!click);
+  };
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768);
 
@@ -34,13 +36,14 @@ export default function App() {
   }, [isMobile]);
 
   return (
-    <Provider store={store}>
-      <HeaderVideo />
+    <>
+      <HeaderVideo handleOpen={handleOpen} />
       <Services info={seviceInfo} />
       <RunningLine />
       <Benefits info={benefitsInfo} />
       <CasesSecond info={casesInfo} isMobile={isMobile} />
       <FormSecond />
-    </Provider>
+      {click && <FormSecond isModal={click} handleClose={handleOpen} />}
+    </>
   );
 }

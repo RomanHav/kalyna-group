@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
@@ -6,6 +7,8 @@ import { IoIosLink } from 'react-icons/io';
 import css from './NavBar.module.css';
 import Burger from '@/app/components/Burger';
 import NavServices from '@/app/components/NavServices';
+import FormSecond from '@/app/components/StepsForm/FormSecond';
+
 const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [click, setClick] = useState(false);
@@ -126,6 +129,7 @@ const NavBar: React.FC = () => {
         </div>
       </nav>
       {isOpen && <Burger isOpen={isOpen} handleClick={handleClick} />}
+      {click && <FormSecond isModal={click} handleClose={handleOpen} />}
 
       <div
         className={`w-full absolute bg-[#0D1816]/60 transition-all backdrop-blur-md px-5 py-5 duration-300 top-28 ${openServices ? ' min-h-40 opacity-100 z-40' : 'pointer-events-none cursor-not-allowed min-h-0 opacity-0 !p-0 -z-10'} `}

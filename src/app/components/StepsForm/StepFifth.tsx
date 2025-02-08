@@ -5,6 +5,7 @@ import { useFormikContext } from 'formik';
 interface StepFifth {
   title: string;
   description: string;
+  isModal?: boolean;
 }
 
 const ValidatedTextField = ({ values, label, validator, onChange, id }) => {
@@ -54,7 +55,7 @@ const ValidatedTextField = ({ values, label, validator, onChange, id }) => {
   );
 };
 
-const StepFifth: React.FC<StepFifth> = ({ title, description }) => {
+const StepFifth: React.FC<StepFifth> = ({ title, description, isModal }) => {
   const formValid = useRef({ email: false });
   const id = useId();
   const { values, setFieldValue } = useFormikContext<{email: string}>();
@@ -83,7 +84,7 @@ const StepFifth: React.FC<StepFifth> = ({ title, description }) => {
         <span className={`mb-6 pr-5 min-h-[48px]`}>{description}</span>
         <div className={`w-full h-[1px] bg-[#C0FFD8]`}></div>
       </div>
-      <div className="lg:min-h-[270px]">
+      <div className={`${isModal ? 'min-h-[150px]' : 'lg:min-h-[270px]'}`}>
         <Box sx={{ width: {lg:'70%', xs:'100%'} }} className={`flex flex-col gap-5`}>
           <label htmlFor={id}>Enter your email:</label>
           <ValidatedTextField
