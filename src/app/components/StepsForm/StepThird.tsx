@@ -1,22 +1,34 @@
-import React from 'react';
+'use client'
+
+import React, {useEffect, useState} from 'react';
 import { Box, TextField } from '@mui/material';
 import { ErrorMessage, useFormikContext } from 'formik';
 
 interface StepThird {
   title: string;
   description: string;
+  isModal?: boolean;
 }
 
-const StepThird: React.FC<StepThird> = ({ title, description }) => {
+const StepThird: React.FC<StepThird> = ({ title, description, isModal }) => {
   const { values, handleChange } = useFormikContext();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+  }, []);
   return (
     <div className={`flex flex-col gap-10`}>
       <div className={`flex flex-col`}>
-        <h3 className={`text-3xl font-medium mb-2`}>{title}</h3>
-        <span className={`mb-6 min-h-[48px]`}>{description}</span>
+        <h3 className={`text-2xl lg:text-3xl font-medium mb-5 lg:mb-2`}>
+          {title}
+        </h3>
+        <span className={`mb-3 lg:mb-6 min-h-[48px]`}>{description}</span>
         <div className={`w-full h-[1px] bg-[#C0FFD8]`}></div>
       </div>
-      <div className="min-h-[270px] flex items-center">
+      <div
+        className={`min-h-[218px] md:min-h-[220px] ${isModal ? 'lg:min-h-[150px]' : 'lg:min-h-[270px] flex items-center'}`}
+      >
         <Box sx={{ width: '100%' }}>
           <TextField
             name="description"
@@ -27,7 +39,7 @@ const StepThird: React.FC<StepThird> = ({ title, description }) => {
             multiline
             label={'Description'}
             placeholder={'Write more details here'}
-            minRows={10}
+            minRows={isModal ? 5 : isMobile ? 5 : 10}
             fullWidth
             sx={{
               '& .MuiInputLabel-root': {

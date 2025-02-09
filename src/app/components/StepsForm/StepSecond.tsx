@@ -6,14 +6,16 @@ export interface StepSecondProps {
   title: string;
   description: string;
   error?: boolean;
+  isModal?: boolean;
 }
 
 const StepSecond: React.FC<StepSecondProps> = ({
   title,
   description,
   error,
+  isModal,
 }) => {
-  {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const { values, setFieldValue } = useFormikContext<{ services: string[] }>();
   const [active, setActive] = useState<string[]>(() => {
     if (typeof window === 'undefined') return [];
@@ -39,13 +41,17 @@ const StepSecond: React.FC<StepSecondProps> = ({
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col">
-        <h3 className="text-3xl font-medium mb-2">{title}</h3>
-        <span className="mb-6 min-h-[48px]">{description}</span>
+        <h3 className="text-2xl lg:text-3xl font-medium mb-5 lg:mb-2">{title}</h3>
+        <span className="mb-3 lg:mb-6 min-h-[48px]">{description}</span>
         <div className="w-full h-[1px] bg-[#C0FFD8]"></div>
       </div>
 
-      <div className="min-h-[270px] flex items-center">
-        <ul className="flex flex-wrap gap-10 justify-center">
+      <div
+        className={`min-h-[186px] md:min-h-[220px] ${isModal ? 'lg:min-h-[150px]' : 'lg:min-h-[270px]'} flex items-center`}
+      >
+        <ul
+          className={`max-md:overflow-y-scroll max-md:h-[150px] gap-4 md:gap-6 lg:gap-10 flex flex-wrap justify-center`}
+        >
           {services.map(service => (
             <li
               key={service.id}

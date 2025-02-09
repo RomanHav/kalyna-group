@@ -5,9 +5,10 @@ import { useFormikContext } from 'formik';
 interface StepFirstProps {
   title: string;
   description: string;
+  isModal?: boolean;
 }
 
-const StepFirst: React.FC<StepFirstProps> = ({ title, description }) => {
+const StepFirst: React.FC<StepFirstProps> = ({ title, description, isModal }) => {
   const { values, handleChange } = useFormikContext();
   const [error, setError] = useState<boolean>(false);
   const handleChangeName = evt => {
@@ -25,7 +26,7 @@ const StepFirst: React.FC<StepFirstProps> = ({ title, description }) => {
         <span className={`mb-3 lg:mb-6 min-h-[48px]`}>{description}</span>
         <div className={`w-full h-[1px] bg-[#C0FFD8]`}></div>
       </div>
-      <div className="lg:min-h-[270px]">
+      <div className={`min-h-[186px] md:min-h-[220px] ${isModal ? 'lg:min-h-[150px]' : 'max-md:pt-10 lg:min-h-[270px]'}`}>
         <Box sx={{ width: {lg:'70%', xs:'100%'} }} className={`flex flex-col gap-5`}>
           <label htmlFor="name">Enter your name</label>
           <TextField

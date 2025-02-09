@@ -1,16 +1,25 @@
+'use client'
+import FormSecond from '@/app/components/StepsForm/FormSecond';
+
 const HeaderService = lazy(() => import('../../components/HeaderService'));
 import offer from '../../../../whatWeOffer/whatWeOfferThreeD.json';
 import threeFaq from '../../../../faq/threeFaq.json';
-const WhatWeOffer = lazy(() => import('../../components/WhatWeOffer/WhatWeOffer'));
+const WhatWeOffer = lazy(
+  () => import('../../components/WhatWeOffer/WhatWeOffer')
+);
 const OurExpertise = lazy(
   () => import('../../components/OurExpertise/OurExpertise')
 );
 const MetaCossacs = lazy(() => import('../../components/MetaCossacs'));
 const Faq = lazy(() => import('../../components/Faq/Faq'));
 import Image from 'next/image';
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 
 const ThreeDSystem = () => {
+  const [click, setClick] = useState(false);
+  const handleOpen = () => {
+    setClick(!click);
+  };
   const faqCard = {
     title: '3d design',
     src: '/3d-design.png',
@@ -26,7 +35,9 @@ const ThreeDSystem = () => {
       <div className="relative contain-paint">
         <HeaderService headerText={headerText} />
         <div
-          className={'absolute top-[22rem] md:top-[20rem] w-full flex justify-center items-center'}
+          className={
+            'absolute top-[22rem] md:top-[20rem] w-full flex justify-center items-center'
+          }
         >
           <span
             className={
@@ -60,9 +71,14 @@ const ThreeDSystem = () => {
           <OurExpertise>
             <MetaCossacs />
           </OurExpertise>
-          <Faq faqCard={faqCard} commerceFaq={threeFaq} />
+          <Faq
+            faqCard={faqCard}
+            commerceFaq={threeFaq}
+            handleOpen={handleOpen}
+          />
         </div>
       </div>
+      {click && <FormSecond isModal={click} handleClose={handleOpen} />}
     </Suspense>
   );
 };
