@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
 import css from './CurrentOpportunitiesPart.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface CurrentOpportunitiesPartProps {
   title: string;
@@ -28,7 +29,7 @@ const CurrentOpportunitiesPart: React.FC<CurrentOpportunitiesPartProps> = ({
         </h4>
         <div className="w-[60%] md:w-[40%] h-[1px] bg-white"></div>
       </div>
-      <ul className="flex list-disc flex-col pl-4 gap-1 md:min-h-[200px] lg:min-h-[200px]">
+      <ul className="flex list-disc flex-col pl-4 gap-1 md:min-h-[226px] lg:min-h-[200px]">
         {description.map(part => {
           return (
             <li key={nanoid()} className="text-white">
@@ -37,9 +38,13 @@ const CurrentOpportunitiesPart: React.FC<CurrentOpportunitiesPartProps> = ({
           );
         })}
       </ul>
-      <button className={css.button}>
+      <Link
+        href={'https://forms.gle/LvhmTYU4r4pZikGx8'}
+        target="_blank"
+        className={css.button}
+      >
         <span className={css.buttonText}>Apply Now</span>
-      </button>
+      </Link>
     </div>
   );
 };
