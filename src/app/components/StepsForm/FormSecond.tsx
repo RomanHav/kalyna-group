@@ -98,10 +98,11 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
   const success = useSelector(selectSubmitSuccess);
   const isLoading = useSelector(selectSubmitLoading);
   const requestError = useSelector(selectSubmitError);
-  const lenis = useLenis();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     dispatch(fetchLocation());
+    setIsMobile(window.innerWidth <= 768);
   }, [dispatch]);
 
   const savedValues =
@@ -154,7 +155,7 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
       className={`${isModal ? 'w-full h-screen top-0 fixed z-[9999] bg-[#0D1816]/60 transition-all backdrop-blur-md duration-300' : 'z-20'}`}
     >
       <div
-        className={`${isModal ? 'absolute w-[770px] h-[660px] flex justify-center rounded-2xl top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 p-8' : 'relative w-full py-8 md:py-10 lg:pt-28 px-[45px] lg:px-24'} contain-paint text-white bg-test bg-center bg-cover`}
+        className={`${isModal ? 'absolute w-[90%] lg:w-[770px] h-[660px] flex justify-center rounded-2xl top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 p-8' : 'relative w-full py-8 md:py-10 lg:pt-28 px-[45px] lg:px-24'} contain-paint text-white bg-test bg-center bg-cover`}
       >
         <div className="absolute top-0 left-0 w-full h-full bg-black/90"></div>
 
@@ -194,7 +195,7 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
               <div
                 className={`${isModal ? 'hidden' : 'flex'} relative flex-col lg:flex-row lg:gap-12 min-[1440px]:gap-0 lg:justify-end xl:justify-around w-full lg:w-1/4`}
               >
-                <ul className="flex lg:flex-col justify-start items-center lg:items-end gap-[18px] md:gap-10 lg:gap-10 pb-20 lg:pb-40">
+                <ul className="flex lg:flex-col justify-start items-center lg:items-end gap-[18px] md:gap-10 lg:gap-10 lg:pb-40">
                   {steps.map(step => (
                     <li key={step.id}>
                       <Steps
@@ -220,7 +221,9 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
                 >
                   {({ isValid }) => (
                     <Form>
-                      <div className="mt-2 mb-16">
+                      <div
+                        className={`${isModal ? 'mt-2 mb-8 lg:mb-16' : 'mt-2 mb-16'}`}
+                      >
                         {_renderStepContent(activeId, isModal, error, step)}
                       </div>
                       {!success && !isLoading && (
@@ -243,7 +246,9 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
                           {isLoading
                             ? 'Processing...'
                             : activeId === steps.length
-                              ? 'Complete Submission'
+                              ? isMobile
+                                ? 'Send'
+                                : 'Complete Submission'
                               : 'Next Step'}
                         </button>
                       </div>

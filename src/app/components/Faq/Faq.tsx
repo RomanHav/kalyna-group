@@ -4,7 +4,6 @@ import Image from 'next/image';
 import css from './Faq.module.css';
 import FaqPart from './FaqPart';
 import React, { useCallback, useState } from 'react';
-import FormSecond from '@/app/components/StepsForm/FormSecond';
 
 interface FaqCard {
   title: string;
@@ -22,9 +21,10 @@ interface FaqItem {
 interface CommerceFaqProps {
   faqCard: FaqCard;
   commerceFaq: FaqItem[];
+  handleOpen: () => void;
 }
 
-const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
+const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq, handleOpen }) => {
   const [expandedId, setExpandedId] = useState<number | false>(1);
   const handleAccordionChange = useCallback(
     (itemId: number) => {
@@ -32,10 +32,6 @@ const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
     },
     [expandedId]
   );
-  const [click, setClick] = useState(false);
-  const handleOpen = () => {
-    setClick(!click);
-  };
 
   return (
     <>
@@ -119,7 +115,6 @@ const Faq: React.FC<CommerceFaqProps> = ({ faqCard, commerceFaq }) => {
           </div>
         </div>
       </div>
-      {click && <FormSecond isModal={click} handleClose={handleOpen} />}
     </>
   );
 };

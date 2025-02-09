@@ -1,14 +1,20 @@
+'use client';
 import Faq from '../../components/Faq/Faq';
 import CommerceImage from '../../components/CommerceImage';
 import OurExpertise from '../../components/OurExpertise/OurExpertise';
 import WhatWeOffer from '../../components/WhatWeOffer/WhatWeOffer';
 import commerceFaq from '../../../../faq/commerceFaq.json';
 import WoodMinded from '@/app/components/WoodMinded';
-import React from 'react';
+import React, { useState } from 'react';
 import HeaderService from '@/app/components/HeaderService';
 import offer from '../../../../whatWeOffer/whatWeOfferCommerce.json';
+import FormSecond from '@/app/components/StepsForm/FormSecond';
 
 const ECommerce = () => {
+  const [click, setClick] = useState(false);
+  const handleOpen = () => {
+    setClick(!click);
+  };
   const faqCard = {
     title: 'E-commerce',
     src: '/e-commerce.webp',
@@ -20,18 +26,25 @@ const ECommerce = () => {
     description: 'Build your desired web store',
   };
   return (
-    <div className="relative contain-paint">
-      <HeaderService headerText={headerText} />
-      <CommerceImage />
+    <>
+      <div className="relative contain-paint">
+        <HeaderService headerText={headerText} />
+        <CommerceImage />
 
-      <div className={'relative flex flex-col justify-center gap-20'}>
-        <WhatWeOffer offer={offer} />
-        <OurExpertise>
-          <WoodMinded />
-        </OurExpertise>
-        <Faq faqCard={faqCard} commerceFaq={commerceFaq} />
+        <div className={'relative flex flex-col justify-center gap-20'}>
+          <WhatWeOffer offer={offer} />
+          <OurExpertise>
+            <WoodMinded />
+          </OurExpertise>
+          <Faq
+            faqCard={faqCard}
+            commerceFaq={commerceFaq}
+            handleOpen={handleOpen}
+          />
+        </div>
       </div>
-    </div>
+      {click && <FormSecond isModal={click} handleClose={handleOpen} />}
+    </>
   );
 };
 

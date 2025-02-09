@@ -1,3 +1,4 @@
+'use client';
 import CrmImage from '../../components/CrmImage';
 import HeaderService from '../../components/HeaderService';
 import offer from '../../../../whatWeOffer/whatWeOfferCrm.json';
@@ -6,8 +7,14 @@ import WhyServicePage from '../../components/WhyServicePage';
 import whyCrmObject from '../../../../whySections/whyCrm.json';
 import Faq from '../../components/Faq/Faq';
 import crmFaq from '../../../../faq/crmFaq.json';
+import { useState } from 'react';
+import FormSecond from '@/app/components/StepsForm/FormSecond';
 
 const CrmSystem = () => {
+  const [click, setClick] = useState(false);
+  const handleOpen = () => {
+    setClick(!click);
+  };
   const faqCard = {
     title: 'CRM System',
     src: '/crm.webp',
@@ -24,15 +31,18 @@ const CrmSystem = () => {
       'A well-integrated CRM system is crucial for managing customer relationships and streamlining business processes. Here’s what you gain by working with us.',
   };
   return (
-    <div className="relative mb-20 contain-paint">
-      <HeaderService headerText={headerText} />
-      <CrmImage />
-      <div className={'relative flex flex-col justify-center gap-20'}>
-        <WhatWeOffer offer={offer} />
-        <WhyServicePage whyService={whyCrm} whyServiceObject={whyCrmObject} />
-        <Faq faqCard={faqCard} commerceFaq={crmFaq} />
+    <>
+      <div className="relative mb-20 contain-paint">
+        <HeaderService headerText={headerText} />
+        <CrmImage />
+        <div className={'relative flex flex-col justify-center gap-20'}>
+          <WhatWeOffer offer={offer} />
+          <WhyServicePage whyService={whyCrm} whyServiceObject={whyCrmObject} />
+          <Faq faqCard={faqCard} commerceFaq={crmFaq} handleOpen={handleOpen} />
+        </div>
       </div>
-    </div>
+      {click && <FormSecond isModal={click} handleClose={handleOpen} />}
+    </>
   );
 };
 

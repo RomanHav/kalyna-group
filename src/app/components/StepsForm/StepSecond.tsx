@@ -48,8 +48,12 @@ const StepSecond: React.FC<StepSecondProps> = ({
         <div className="w-full h-[1px] bg-[#C0FFD8]"></div>
       </div>
 
-      <div className={`${isModal ? 'min-h-[150px]' : 'lg:min-h-[270px]'} flex items-center`}>
-        <ul className="flex flex-wrap gap-10 justify-center">
+      <div
+        className={`${isModal ? 'min-h-[150px]' : 'lg:min-h-[270px]'} flex items-center`}
+      >
+        <ul
+          className={`${isModal ? 'max-lg:overflow-y-scroll max-lg:h-[150px] gap-4 lg:gap-10' : 'gap-10'} flex flex-wrap justify-center`}
+        >
           {services.map(service => (
             <li
               key={service.id}

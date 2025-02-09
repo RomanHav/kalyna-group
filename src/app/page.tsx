@@ -16,11 +16,17 @@ export default function App() {
   const [click, setClick] = useState(false);
   const handleOpen = () => {
     setClick(!click);
+    if (click) {
+      const lenis = new Lenis();
+      return () => {
+        lenis.destroy();
+      };
+    }
   };
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768);
 
-    if (!isMobile) {
+    if (!isMobile || click) {
       const lenis = new Lenis();
 
       function raf(time: number) {
@@ -33,7 +39,7 @@ export default function App() {
         lenis.destroy();
       };
     }
-  }, [isMobile]);
+  }, [isMobile, click]);
 
   return (
     <>

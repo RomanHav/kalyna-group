@@ -5,7 +5,7 @@ interface ProgressLineProps {
 }
 const ProgressLine: React.FC<ProgressLineProps> = ({activeId}) => {
     return(
-        <div className={`absolute left-3 md:left-5 lg:left-0 lg:relative flex items-center justify-center lg:justify-end lg:flex-col`}>
+        <div className={`absolute max-lg:-top-6 left-3 md:left-5 lg:left-0 lg:relative flex items-center justify-center lg:justify-end lg:flex-col`}>
             <div
                 className={`w-4 h-4 flex items-center justify-center rounded-full border-2 border-white`}
             >

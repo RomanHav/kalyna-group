@@ -1,3 +1,4 @@
+'use client'
 import HeaderService from '@/app/components/HeaderService';
 import WhatWeOffer from '@/app/components/WhatWeOffer/WhatWeOffer';
 import offer from '../../../../whatWeOffer/whatWeOfferUi.json';
@@ -6,6 +7,8 @@ import faq from '../../../../faq/uiFaq.json';
 import Faq from '@/app/components/Faq/Faq';
 import OurExpertise from '@/app/components/OurExpertise/OurExpertise';
 import MilkShake from '../../components/MilkShake';
+import FormSecond from '@/app/components/StepsForm/FormSecond';
+import { useState } from 'react';
 const faqCard = {
   title: 'UI/UX design',
   src: '/web-design.webp',
@@ -19,18 +22,25 @@ const headerText = {
 };
 
 const UiUxDesign = () => {
+  const [click, setClick] = useState(false);
+  const handleOpen = () => {
+    setClick(!click);
+  };
   return (
-    <div className={'relative mb-20 contain-paint'}>
-      <HeaderService headerText={headerText} />
-      <HeaderUi />
-      <div className={'relative flex flex-col justify-center gap-20'}>
-        <WhatWeOffer offer={offer} />
-        <OurExpertise>
-          <MilkShake/>
-        </OurExpertise>
-        <Faq faqCard={faqCard} commerceFaq={faq} />
+    <>
+      <div className={'relative mb-20 contain-paint'}>
+        <HeaderService headerText={headerText} />
+        <HeaderUi />
+        <div className={'relative flex flex-col justify-center gap-20'}>
+          <WhatWeOffer offer={offer} />
+          <OurExpertise>
+            <MilkShake />
+          </OurExpertise>
+          <Faq faqCard={faqCard} commerceFaq={faq} handleOpen={handleOpen} />
+        </div>
       </div>
-    </div>
+      {click && <FormSecond isModal={click} handleClose={handleOpen} />}
+    </>
   );
 };
 
