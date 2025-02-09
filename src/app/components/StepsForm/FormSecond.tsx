@@ -24,7 +24,6 @@ import {
   selectSubmitSuccess,
 } from '@/app/redux/formValues/selectors';
 import Success from '@/app/components/StepsForm/Succes';
-import { useLenis } from 'lenis/react';
 
 interface FormProps {
   isModal?: boolean;
@@ -155,16 +154,16 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
       className={`${isModal ? 'w-full h-screen top-0 fixed z-[9999] bg-[#0D1816]/60 transition-all backdrop-blur-md duration-300' : 'z-20'}`}
     >
       <div
-        className={`${isModal ? 'absolute w-[90%] lg:w-[770px] h-[660px] flex justify-center rounded-2xl top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 p-8' : 'relative w-full py-8 md:py-10 lg:pt-28 px-[45px] lg:px-24'} contain-paint text-white bg-test bg-center bg-cover`}
+        className={`${isModal ? 'absolute w-[340px] md:w-[720px] lg:w-[770px] h-[660px] flex justify-center rounded-2xl top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 p-8' : 'relative w-full py-8 md:py-10 lg:pt-28 px-[45px] lg:px-24'} contain-paint text-white bg-test bg-center bg-cover`}
       >
         <div className="absolute top-0 left-0 w-full h-full bg-black/90"></div>
 
         {isModal && (
           <button
-            className="absolute z-10 top-4 right-4 text-white flex justify-center items-center p-2"
+            className="absolute z-10 top-2 right-2 md:top-4 md:right-4 text-white flex justify-center items-center p-2"
             onClick={handleClose}
           >
-            <IoClose size={32} />
+            <IoClose size={isMobile ? 28 : 32} />
           </button>
         )}
 
@@ -184,7 +183,7 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
               </span>
             )}
             <div
-              className={`h-[1px] lg:h-[2px] bg-[#C0FFD8] ${isModal ? 'w-[70%]' : 'w-full'}`}
+              className={`h-[1px] lg:h-[2px] bg-[#C0FFD8] ${isModal ? 'w-[70%] md:w-[40%] lg:w-[70%]' : 'w-full'}`}
             ></div>
           </div>
 
@@ -195,7 +194,7 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
               <div
                 className={`${isModal ? 'hidden' : 'flex'} relative flex-col lg:flex-row lg:gap-12 min-[1440px]:gap-0 lg:justify-end xl:justify-around w-full lg:w-1/4`}
               >
-                <ul className="flex lg:flex-col justify-start items-center lg:items-end gap-[18px] md:gap-10 lg:gap-10 lg:pb-40">
+                <ul className="flex lg:flex-col justify-start items-center lg:items-end gap-[16px] md:gap-10 pb-5 lg:gap-10 lg:pb-40">
                   {steps.map(step => (
                     <li key={step.id}>
                       <Steps

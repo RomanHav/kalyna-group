@@ -58,7 +58,7 @@ const ValidatedTextField = ({ values, label, validator, onChange, id }) => {
 const StepFifth: React.FC<StepFifth> = ({ title, description, isModal }) => {
   const formValid = useRef({ email: false });
   const id = useId();
-  const { values, setFieldValue } = useFormikContext<{email: string}>();
+  const { values, setFieldValue } = useFormikContext<{ email: string }>();
 
   const handleChangeValues = (value, isValid) => {
     setFieldValue('email', value);
@@ -76,16 +76,20 @@ const StepFifth: React.FC<StepFifth> = ({ title, description, isModal }) => {
     return false;
   };
 
-
-    return (
+  return (
     <div className={`flex flex-col gap-10`}>
       <div className={`flex flex-col`}>
-        <h3 className={`text-3xl font-medium mb-2`}>{title}</h3>
-        <span className={`mb-6 pr-5 min-h-[48px]`}>{description}</span>
+        <h3 className={`text-2xl lg:text-3xl font-medium mb-5 lg:mb-2`}>
+          {title}
+        </h3>
+        <span className={`mb-3 lg:mb-6 pr-5 min-h-[48px]`}>{description}</span>
         <div className={`w-full h-[1px] bg-[#C0FFD8]`}></div>
       </div>
-      <div className={`${isModal ? 'min-h-[150px]' : 'lg:min-h-[270px]'}`}>
-        <Box sx={{ width: {lg:'70%', xs:'100%'} }} className={`flex flex-col gap-5`}>
+      <div className={`min-h-[145px] md:min-h-[220px] ${isModal ? 'lg:min-h-[150px]' : 'lg:min-h-[270px]'}`}>
+        <Box
+          sx={{ width: { lg: '70%', xs: '100%' } }}
+          className={`flex flex-col gap-5`}
+        >
           <label htmlFor={id}>Enter your email:</label>
           <ValidatedTextField
             values={values.email}
