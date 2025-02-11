@@ -1,0 +1,61 @@
+.loaderContainer {
+    position: relative;
+    mask-image: linear-gradient(to top, transparent 0%, black 20%);
+}
+
+.loaderContainer::before,
+.loaderContainer::after {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    opacity: 0.8;
+}
+
+/* Ключевые кадры анимаций */
+@keyframes animateBefore {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(100px) scale(0.8);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes animateAfter {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-250px) scale(1.2);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Стили для псевдоэлементов */
+.loaderContainer::before {
+    background: var(--third-glow);
+    border-radius: 50%;
+    margin-left: -200px;
+    filter: blur(90px);
+    width: 60vw;
+    height: 60vw;
+    top: calc(40vh - 40vw / 2);
+    left: calc(40vw);
+    animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+.loaderContainer::after {
+    background: var(--secondary-glow);
+    width: 600px;
+    height: 700px;
+    border-radius: 50%;
+    filter: blur(90px);
+    top: calc(40vh - 40vw / 2);
+    left: calc(40vw - 40vw / 2);
+    animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
