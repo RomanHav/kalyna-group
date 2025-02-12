@@ -11,8 +11,18 @@ const StartingLoader = () => {
         <div
           className={`relative w-full h-screen flex justify-center items-center`}
         >
-          <video className={`w-[250px] h-[250px] md:w-[350px] md:h-[350px]`} autoPlay loop muted playsInline>
+          <video
+            className={`w-[250px] h-[250px] md:w-[350px] md:h-[350px]`}
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
             <source src={'/starting-loader.webm'} type={'video/webm'} />
+            <source
+              src={'/starting-loader.mov'}
+              type={'video/mp4; codecs="hvc1"'}
+            />
           </video>
         </div>
       </div>
