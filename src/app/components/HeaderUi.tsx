@@ -109,7 +109,7 @@ const HeaderUi = () => {
       {' '}
       <div
         className={
-          'absolute bg-uiImage flex items-center justify-center bg-center bg-cover mix-blend-color-dodge w-full h-[340px] md:h-[520px] -top-[22rem] md:-top-[35rem] lg:h-[690px] xl:h-[1000px] lg:-top-[48rem] xl:-top-[62rem] min-[1440px]:-top-[64rem]  text-white'
+          'absolute bg-uiImage flex items-center justify-center bg-center bg-cover mix-blend-color-dodge w-full h-[340px] md:h-[520px] -top-[22rem] md:-top-[35rem] lg:h-[690px] xl:h-[1150px] lg:-top-[48rem] xl:-top-[62rem] min-[1440px]:-top-[70rem] text-white'
         }
       >
         <div className="w-[350px] md:w-[640px] lg:w-[900px] xl:w-[1150px] flex flex-col gap-4 lg:gap-9 mt-16 lg:mt-32 xl:mt-24">

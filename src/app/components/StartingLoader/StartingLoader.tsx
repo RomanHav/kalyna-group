@@ -3,7 +3,7 @@ import css from './StartingLoader.module.css';
 const StartingLoader = () => {
   return (
     <div
-      className={`${css.loaderContainer} fixed z-[9998] top-0 left-0 w-full h-screen`}
+      className={`${css.loaderContainer} overflow-hidden fixed z-[9998] top-0 left-0 w-full h-screen`}
     >
       <div
         className={`absolute z-[9999] top-0 left-0 w-full h-screen bg-black/60 transition-all backdrop-blur-md`}

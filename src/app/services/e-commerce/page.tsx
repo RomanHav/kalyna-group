@@ -14,6 +14,7 @@ const ECommerce = () => {
   const [click, setClick] = useState(false);
   const handleOpen = () => {
     setClick(!click);
+    document.body.style.overflow = click ? 'auto' : 'hidden';
   };
   const faqCard = {
     title: 'E-commerce',
@@ -28,7 +29,7 @@ const ECommerce = () => {
   return (
     <>
       <div className="relative contain-paint">
-        <HeaderService headerText={headerText} />
+        <HeaderService headerText={headerText} handleOpen={handleOpen} />
         <CommerceImage />
 
         <div className={'relative flex flex-col justify-center gap-20'}>

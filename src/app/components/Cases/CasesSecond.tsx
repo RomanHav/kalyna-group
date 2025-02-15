@@ -22,16 +22,21 @@ interface CasesInfo {
 interface CasesProps {
   info: CasesInfo[];
   isMobile?: boolean;
+  handleContactModal?: () => void;
 }
 
-const CasesSecond: React.FC<CasesProps> = ({ info, isMobile }) => {
+const CasesSecond: React.FC<CasesProps> = ({
+  info,
+  isMobile,
+  handleContactModal,
+}) => {
   const [openModalId, setOpenModalId] = useState<number | null>(null);
   const [items, setItems] = useState<CasesInfo[]>(info);
   const [activeBlock, setActiveBlock] = useState<number | null>(null);
+
   const [overlayStates, setOverlayStates] = useState<{ [id: number]: boolean }>(
     {}
   );
-
   const handleClick = (id: number) => {
     if (activeBlock === id) {
       setOpenModalId(null);
@@ -103,6 +108,7 @@ const CasesSecond: React.FC<CasesProps> = ({ info, isMobile }) => {
                 id={item.id}
                 handleCaseModal={() => handleClick(item.id)}
                 isOpen={openModalId === item.id}
+                handleContactModal={handleContactModal}
               />
             </Suspense>
           ))}

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { HiMiniArrowLongRight } from 'react-icons/hi2';
+import { RiArrowDropRightLine } from 'react-icons/ri';
 
 interface NavServicesProps {
   isOpen?: boolean;
@@ -39,24 +39,24 @@ const links = [
   },
   {
     id: 5,
-    title: 'CRM System',
-    descr:
-      'Optimize your customer relationships with a tailored CRM system that streamlines your business operations.',
-    href: '/services/crm-system',
-  },
-  {
-    id: 6,
     title: '3D design',
     descr:
       'Bring your ideas to life with stunning 3D visuals, from product models to immersive environments.',
     href: '/services/3d-design',
+  },
+  {
+    id: 6,
+    title: 'CRM System',
+    descr:
+      'Optimize your customer relationships with a tailored CRM system that streamlines your business operations.',
+    href: '/services/crm-system',
   },
 ];
 
 const NavServices: React.FC<NavServicesProps> = ({ handleCloseService }) => {
   return (
     <div
-      className={`w-full h-full flex justify-center items-center text-white`}
+      className={`w-full h-full hidden lg:flex justify-center items-center text-white`}
     >
       <ul className={'flex *:w-[14%] justify-between'}>
         {links.map(link => (
@@ -69,7 +69,7 @@ const NavServices: React.FC<NavServicesProps> = ({ handleCloseService }) => {
               href={link.href}
             >
               {link.title}
-              <HiMiniArrowLongRight />
+              <RiArrowDropRightLine size={30} />
             </Link>
             <p className={'text-gray-400 text-sm'}>{link.descr}</p>
           </li>

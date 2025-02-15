@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import HeaderService from '../../components/HeaderService';
 import WhatWeOffer from '../../components/WhatWeOffer/WhatWeOffer';
 import LandingImage from '../../components/LandingImage';
@@ -8,13 +8,13 @@ import landingFaq from '../../../../faq/landingFaq.json';
 import WhyServicePage from '../../components/WhyServicePage';
 import whyLandingObject from '../../../../whySections/whyLanding.json';
 import { useState } from 'react';
-import FormSecond from "@/app/components/StepsForm/FormSecond";
+import FormSecond from '@/app/components/StepsForm/FormSecond';
 
 const LandingPage = () => {
-
   const [click, setClick] = useState(false);
   const handleOpen = () => {
     setClick(!click);
+    document.body.style.overflow = click ? 'auto' : 'hidden';
   };
 
   const faqCard = {
@@ -35,7 +35,7 @@ const LandingPage = () => {
   return (
     <>
       <div className="relative contain-paint">
-        <HeaderService headerText={headerText} />
+        <HeaderService headerText={headerText} handleOpen={handleOpen} />
         <LandingImage />
         <div className={'relative flex flex-col justify-center gap-20'}>
           <WhatWeOffer offer={offer} />
@@ -43,10 +43,14 @@ const LandingPage = () => {
             whyService={whyLanding}
             whyServiceObject={whyLandingObject}
           />
-          <Faq faqCard={faqCard} commerceFaq={landingFaq} handleOpen={handleOpen} />
+          <Faq
+            faqCard={faqCard}
+            commerceFaq={landingFaq}
+            handleOpen={handleOpen}
+          />
         </div>
       </div>
-      {click && <FormSecond isModal={click} handleClose={handleOpen}/>}
+      {click && <FormSecond isModal={click} handleClose={handleOpen} />}
     </>
   );
 };
