@@ -9,7 +9,7 @@ import NavBar from '@/app/components/NavBar/NavBar';
 import Footer from '@/app/components/Footer/Footer';
 import { ParallaxProvider } from './utils/parallax';
 import { Provider, store } from './utils/provider';
-import RenderLoading from '@/app/utils/RenderLoading';
+// import RenderLoading from '@/app/utils/RenderLoading';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -27,10 +27,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className} lg:overflow-hidden relative`}
-
-      >
+      <body className={`${poppins.className} lg:overflow-hidden relative`}>
         <Provider store={store}>
           <ReactLenisUpdated>
             <ParallaxProvider>
@@ -50,12 +47,12 @@ export default function RootLayout({
                 ></iframe>
               </noscript>
 
-              <RenderLoading>
-                <div className="absolute inset-0 top-0 left-0 h-full w-full bg-repeat-y opacity-20 bg-texture lg:bg-cover"></div>
-                <NavBar />
-                {children}
-                <Footer />
-              </RenderLoading>
+              {/*<RenderLoading>*/}
+              <div className="absolute inset-0 top-0 left-0 h-full w-full bg-repeat-y opacity-20 bg-texture lg:bg-cover"></div>
+              <NavBar />
+              {children}
+              <Footer />
+              {/*</RenderLoading>*/}
               <Script
                 strategy="afterInteractive"
                 src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RMPKqS"
