@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import HeaderService from '@/app/components/HeaderService';
 import WhatWeOffer from '@/app/components/WhatWeOffer/WhatWeOffer';
 import offer from '../../../../whatWeOffer/whatWeOfferUi.json';
@@ -25,11 +25,12 @@ const UiUxDesign = () => {
   const [click, setClick] = useState(false);
   const handleOpen = () => {
     setClick(!click);
+    document.body.style.overflow = click ? 'auto' : 'hidden';
   };
   return (
     <>
       <div className={'relative mb-20 contain-paint'}>
-        <HeaderService headerText={headerText} />
+        <HeaderService headerText={headerText} handleOpen={handleOpen} />
         <HeaderUi />
         <div className={'relative flex flex-col justify-center gap-20'}>
           <WhatWeOffer offer={offer} />

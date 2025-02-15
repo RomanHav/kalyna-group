@@ -14,6 +14,7 @@ const CrmSystem = () => {
   const [click, setClick] = useState(false);
   const handleOpen = () => {
     setClick(!click);
+    document.body.style.overflow = click ? 'auto' : 'hidden';
   };
   const faqCard = {
     title: 'CRM System',
@@ -33,7 +34,7 @@ const CrmSystem = () => {
   return (
     <>
       <div className="relative mb-20 contain-paint">
-        <HeaderService headerText={headerText} />
+        <HeaderService headerText={headerText} handleOpen={handleOpen} />
         <CrmImage />
         <div className={'relative flex flex-col justify-center gap-20'}>
           <WhatWeOffer offer={offer} />

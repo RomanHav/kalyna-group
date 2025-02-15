@@ -27,7 +27,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} lg:overflow-hidden relative`}>
+      <body
+        className={`${poppins.className} lg:overflow-hidden relative`}
+
+      >
         <Provider store={store}>
           <ReactLenisUpdated>
             <ParallaxProvider>

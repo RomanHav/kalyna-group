@@ -2,7 +2,7 @@
 
 import steps from '../../../../mainPageInfo/steps.json';
 import Steps from './Steps';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import StepFirst from './StepFirst';
 import StepSecond from './StepSecond';
 import StepThird from './StepThird';
@@ -95,6 +95,7 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
   const [activeId, setActiveId] = useState<number>(1);
   const [error, setError] = useState<boolean>(false);
   const success = useSelector(selectSubmitSuccess);
+  // const [success, setSuccess] = useState(true);
   const isLoading = useSelector(selectSubmitLoading);
   const requestError = useSelector(selectSubmitError);
   const [isMobile, setIsMobile] = useState(false);
@@ -152,13 +153,14 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
   return (
     <div
       className={`${isModal ? 'w-full h-screen top-0 fixed z-[9999] bg-[#0D1816]/60 transition-all backdrop-blur-md duration-300' : 'z-20'}`}
+      data-lenis-prevent={isModal}
     >
       <div
         className={`${isModal ? 'absolute w-[340px] md:w-[720px] lg:w-[770px] h-[660px] flex justify-center rounded-2xl top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 p-8' : 'relative w-full py-8 md:py-10 lg:pt-28 px-[45px] lg:px-24'} contain-paint text-white bg-test bg-center bg-cover`}
       >
         <div className="absolute top-0 left-0 w-full h-full bg-black/90"></div>
 
-        {isModal && (
+        {isModal && !success && (
           <button
             className="absolute z-10 top-2 right-2 md:top-4 md:right-4 text-white flex justify-center items-center p-2"
             onClick={handleClose}
@@ -188,7 +190,7 @@ const FormSecond: React.FC<FormProps> = ({ isModal, handleClose }) => {
           </div>
 
           {success ? (
-            <Success />
+            <Success handleClose={handleClose} isModal={isModal} />
           ) : (
             <div className="flex flex-col lg:flex-row justify-between">
               <div

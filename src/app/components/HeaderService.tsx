@@ -9,6 +9,7 @@ interface props {
 
 interface HeaderServiceProps {
   headerText: props;
+  handleOpen: () => void;
 }
 
 const _renderClassname = (path: string) => {
@@ -28,7 +29,10 @@ const _renderClassname = (path: string) => {
   }
 };
 
-const HeaderService: React.FC<HeaderServiceProps> = ({ headerText }) => {
+const HeaderService: React.FC<HeaderServiceProps> = ({
+  headerText,
+  handleOpen,
+}) => {
   const pathname = usePathname();
   return (
     <div
@@ -48,8 +52,9 @@ const HeaderService: React.FC<HeaderServiceProps> = ({ headerText }) => {
         </p>
         <button
           className={
-            'font-semibold text-lg md:text-xl lg:text-2xl hover:bg-custom-background hover:text-white transition-colors duration-300 bg-white py-2 px-6 uppercase rounded-lg text-black'
+            'font-semibold z-20 text-lg md:text-xl lg:text-2xl hover:bg-custom-background hover:text-white transition-colors duration-300 bg-white py-2 px-6 uppercase rounded-lg text-black'
           }
+          onClick={handleOpen}
         >
           Write Now
         </button>

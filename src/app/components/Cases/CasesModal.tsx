@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { MdClose } from 'react-icons/md';
+import CasesLinkImage from '@/app/components/Cases/CasesLinkImage';
 interface CasesModalProps {
   src: string;
   title: string;
@@ -14,6 +15,7 @@ interface CasesModalProps {
   isOpen: boolean;
   handleCaseModal: (id?: number) => void;
   isMobile?: boolean;
+  handleContactModal?: () => void;
 }
 
 const CasesModal: React.FC<CasesModalProps> = ({
@@ -26,6 +28,7 @@ const CasesModal: React.FC<CasesModalProps> = ({
   logoDescr,
   description,
   handleCaseModal,
+  handleContactModal,
 }) => {
   return (
     <div
@@ -83,22 +86,11 @@ const CasesModal: React.FC<CasesModalProps> = ({
               className={`${siteImage} drop-shadow-3xl relative bg-cover rounded-xl w-[240px] h-[120px] md:w-[460px] md:h-[200px] xl:h-[260px]`}
             >
               <div className="absolute h-full w-full rounded-xl bg-black opacity-70"></div>
-              <div className="absolute z-20 flex h-full w-full items-center justify-center">
-                <a href={href} target="_blank">
-                  <div className="flex items-center gap-8">
-                    <span className="text-lg font-medium uppercase tracking-wide lg:text-2xl">
-                      {id === 40 ? 'Contact us' : 'Click here'}
-                    </span>
-                    <Image
-                      className="rotate-90 text-white"
-                      src="/arrow-cases.svg"
-                      alt="Case Logo"
-                      width={25}
-                      height={36}
-                    />
-                  </div>
-                </a>
-              </div>
+              <CasesLinkImage
+                id={id}
+                handleContactModal={handleContactModal}
+                href={href}
+              />
             </div>
           </div>
         </div>

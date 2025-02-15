@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import FormSecond from '@/app/components/StepsForm/FormSecond';
 
 const HeaderService = lazy(() => import('../../components/HeaderService'));
@@ -19,6 +19,8 @@ const ThreeDSystem = () => {
   const [click, setClick] = useState(false);
   const handleOpen = () => {
     setClick(!click);
+    document.body.style.overflow = click ? 'auto' : 'hidden';
+
   };
   const faqCard = {
     title: '3d design',
@@ -33,7 +35,7 @@ const ThreeDSystem = () => {
   return (
     <Suspense fallback={<div>Loading</div>}>
       <div className="relative contain-paint">
-        <HeaderService headerText={headerText} />
+        <HeaderService headerText={headerText} handleOpen={handleOpen} />
         <div
           className={
             'absolute top-[22rem] md:top-[20rem] w-full flex justify-center items-center'

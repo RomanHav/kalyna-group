@@ -16,12 +16,7 @@ export default function App() {
   const [click, setClick] = useState(false);
   const handleOpen = () => {
     setClick(!click);
-    if (click) {
-      const lenis = new Lenis();
-      return () => {
-        lenis.destroy();
-      };
-    }
+    document.body.style.overflow = click ? 'auto' : 'hidden';
   };
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768);
@@ -47,7 +42,11 @@ export default function App() {
       <Services info={seviceInfo} />
       <RunningLine />
       <Benefits info={benefitsInfo} />
-      <CasesSecond info={casesInfo} isMobile={isMobile} />
+      <CasesSecond
+        handleContactModal={handleOpen}
+        info={casesInfo}
+        isMobile={isMobile}
+      />
       <FormSecond />
       {click && <FormSecond isModal={click} handleClose={handleOpen} />}
     </>

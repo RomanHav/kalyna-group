@@ -16,6 +16,7 @@ const BusinessWebsite = () => {
   const [click, setClick] = useState(false);
   const handleOpen = () => {
     setClick(!click);
+    document.body.style.overflow = click ? 'auto' : 'hidden';
   };
   const faqCard = {
     title: 'Business Website',
@@ -46,7 +47,7 @@ const BusinessWebsite = () => {
   return (
     <div>
       <div className="relative mb-20 contain-paint">
-        <HeaderService headerText={headerText} />
+        <HeaderService headerText={headerText} handleOpen={handleOpen} />
         <BusinessImage
           defaultOptionsOne={defaultOptionsOne}
           defaultOptionsTwo={defaultOptionsTwo}

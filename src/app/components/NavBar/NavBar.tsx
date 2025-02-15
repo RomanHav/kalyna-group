@@ -8,6 +8,7 @@ import css from './NavBar.module.css';
 import Burger from '@/app/components/Burger';
 import NavServices from '@/app/components/NavServices';
 import FormSecond from '@/app/components/StepsForm/FormSecond';
+import { RiArrowDropRightLine } from 'react-icons/ri';
 
 const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -17,10 +18,7 @@ const NavBar: React.FC = () => {
     setClick(!click);
   };
   const handleOpenService = () => {
-    setOpenServices(true);
-  };
-  const handleCloseService = () => {
-    setOpenServices(false);
+    setOpenServices(!openServices);
   };
 
   useEffect(() => {
@@ -77,14 +75,15 @@ const NavBar: React.FC = () => {
             <div className="flex items-center">
               <div className="flex items-center">
                 <div className="flex items-center gap-8 text-xl uppercase text-white xl:mr-[90px] min-[1440px]:mr-[280px] 2xl:mr-[390px]">
-                  <div className="relative">
-                    <span
-                      onMouseEnter={handleOpenService}
-                      onMouseLeave={handleCloseService}
-                      className="after:absolute after:-bottom-2 after:left-0 -mt-14 after:w-0 cursor-pointer after:bg-white pb-14 tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
-                    >
-                      Services
-                    </span>
+                  <div
+                    onClick={handleOpenService}
+                    className="relative flex gap-4 items-center justify-center after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
+                  >
+                    <span>Services</span>
+                    <RiArrowDropRightLine
+                      size={30}
+                      className={`${openServices ? 'rotate-90' : 'rotate-0'} transition-all duration-200`}
+                    />
                   </div>
                   <span>
                     <IoIosLink size={25} />
@@ -92,7 +91,7 @@ const NavBar: React.FC = () => {
                   <div className="relative">
                     <Link
                       href={'/about-us'}
-                      className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
+                      className=" after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
                       About us
                     </Link>
@@ -128,17 +127,21 @@ const NavBar: React.FC = () => {
           )}
         </div>
       </nav>
-      {isOpen && <Burger isOpen={isOpen} handleClick={handleClick} />}
+      {isOpen && (
+        <Burger
+          isOpen={isOpen}
+          handleClick={handleClick}
+          openServices={openServices}
+          handleOpenService={handleOpenService}
+        />
+      )}
       {click && <FormSecond isModal={click} handleClose={handleOpen} />}
 
       <div
-        className={`w-full absolute bg-[#0D1816]/60 transition-all backdrop-blur-md px-5 py-5 duration-300 top-28 ${openServices ? ' min-h-40 opacity-100 z-40' : 'pointer-events-none cursor-not-allowed min-h-0 opacity-0 !p-0 -z-10'} `}
-        onMouseEnter={handleOpenService}
-        onMouseLeave={handleCloseService}
+        className={`w-full hidden lg:block absolute bg-[#0D1816]/60 transition-all backdrop-blur-md px-5 py-5 duration-300 top-28 ${openServices ? ' min-h-40 opacity-100 z-40' : 'pointer-events-none cursor-not-allowed min-h-0 opacity-0 !p-0 -z-10'} `}
+        onClick={handleOpenService}
       >
-        {openServices && (
-          <NavServices handleCloseService={handleCloseService} />
-        )}
+        {openServices && <NavServices handleCloseService={handleOpenService} />}
       </div>
     </div>
   );
