@@ -90,7 +90,7 @@ const Benefits: React.FC<BenefitsProps> = ({ info }) => {
           spaceBetween={0}
           speed={800}
           navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-          onSwiper={setSwiperInstance} // Capture the Swiper instance
+          onSwiper={setSwiperInstance}
         >
           {info.map(infopart => (
             <SwiperSlide
