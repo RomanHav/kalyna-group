@@ -52,14 +52,6 @@ export default function RootLayout({
                 {children}
                 <Footer />
               </RenderLoading>
-              <Script
-                strategy="afterInteractive"
-                src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RMPKqS"
-              />
-              <Script
-                strategy="afterInteractive"
-                src="https://assets.calendly.com/assets/external/widget.js"
-              />
               <GoogleAnalytics gaId="G-WNLWD75BW9" />
             </ParallaxProvider>
           </ReactLenisUpdated>
