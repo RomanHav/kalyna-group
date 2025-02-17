@@ -39,6 +39,30 @@ export default function App() {
   return (
     <>
       <HeaderVideo handleOpen={handleOpen} />
+      <video
+        className={`w-[250px] h-[250px] md:w-[350px] md:h-[350px]`}
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source
+          src={'/starting-loader1.mov'}
+          type={'video/mp4; codecs="hvc1"'}
+        />
+      </video>
+      <video
+        className={`w-[250px] h-[250px] md:w-[350px] md:h-[350px]`}
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source
+          src={'/starting-loader2.mov'}
+          type={'video/mp4; codecs="hvc1"'}
+        />
+      </video>
       <Services info={seviceInfo} />
       <RunningLine />
       <Benefits info={benefitsInfo} />
