@@ -20,7 +20,7 @@ const StartingLoader = () => {
           >
             <source src={'/starting-loader.webm'} type={'video/webm'} />
             <source
-              src={'/starting-loader.mov'}
+              src={'/starting-loader2.mov'}
               type='video/mp4; codecs="hvc1"'
             />
           </video>
