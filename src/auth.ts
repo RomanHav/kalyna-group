@@ -1,7 +1,21 @@
-import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { JWT } from "@auth/core/jwt";
+import NextAuth, { type DefaultSession, type Session } from "next-auth";
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+declare module "next-auth" {
+    interface Session {
+        user: {
+            address?: string;
+            id: string;
+        } & DefaultSession["user"];
+    }
+
+    interface JWT {
+        id?: string;
+    }
+}
+
+export const { handlers, auth } = NextAuth({
     providers: [
         CredentialsProvider({
             name: "Credentials",
@@ -36,8 +50,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             }
             return token;
         },
-        async session({ session, token }) {
-            if (token) {
+        async session({ session, token }: { session: Session; token: JWT }) {
+            if (token.id && typeof token.id === "string") {
                 session.user.id = token.id;
             }
             return session;
