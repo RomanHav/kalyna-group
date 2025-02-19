@@ -15,7 +15,7 @@ const poppins = Poppins({
 export default function AdminDashboard() {
   return (
     <div
-      className={`${poppins.className} py-20 relative flex flex-col z-[80] items-center justify-center bg-cover bg-test`}
+      className={`${poppins.className} py-20 px-4 md:px-8 lg:px-16 relative flex flex-col flex-wrap items-center z-[80] justify-center bg-cover bg-test`}
     >
       {/*<div className="fixed w-full h-full bg-black/40"></div>*/}
       <div

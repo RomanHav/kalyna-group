@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createPost, fetchPosts } from './operations';
+import { createPost, deletePost, fetchPosts } from './operations';
 
 interface Post {
-  id: string;
+  _id: string;
   images: string[];
   description: string;
+  link: string;
 }
 
 interface PostState {
@@ -25,7 +26,7 @@ const postsSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-
+      //create
       .addCase(createPost.pending, state => {
         state.loading = true;
         state.error = null;
@@ -37,7 +38,7 @@ const postsSlice = createSlice({
         state.loading = false;
         state.error = action.payload as string;
       })
-
+      //get posts
       .addCase(fetchPosts.pending, state => {
         state.loading = true;
       })
@@ -46,6 +47,18 @@ const postsSlice = createSlice({
         state.posts = action.payload.data;
       })
       .addCase(fetchPosts.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      //delete posts
+      .addCase(deletePost.pending, state => {
+        state.loading = true;
+      })
+      .addCase(deletePost.fulfilled, (state, action) => {
+        state.loading = false;
+        state.posts = action.payload;
+      })
+      .addCase(deletePost.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });

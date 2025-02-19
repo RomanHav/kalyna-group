@@ -2,12 +2,11 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts } from '@/app/redux/posts/operations';
+import {deletePost, fetchPosts} from '@/app/redux/posts/operations';
 import { selectPosts, selectLoading } from '@/app/redux/posts/selectors';
 import { AppDispatch } from '@/app/redux/store';
 import PostCard from './PostCard';
 import { CircularProgress } from '@mui/material';
-import { nanoid } from 'nanoid';
 
 const PostList: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -17,21 +16,28 @@ const PostList: React.FC = () => {
   useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch]);
-
+  const handleDelete = () => {
+    dispatch(deletePost());
+  }
   return (
     <div className="mt-6">
-      <h2 className="text-2xl font-semibold mb-4">Published Posts</h2>
+      <h2 className="text-2xl text-white font-semibold mb-4">
+        Published Posts
+      </h2>
       {loading ? (
         <div className="flex justify-center">
           <CircularProgress />
         </div>
       ) : posts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="flex flex-wrap">
           {posts.map(post => (
             <PostCard
-              key={nanoid()}
+              key={post._id}
+              id={post._id}
               images={post.images}
               description={post.description}
+              link={post.link}
+              onDelete={handleDelete}
             />
           ))}
         </div>

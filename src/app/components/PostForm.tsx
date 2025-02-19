@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createPost, fetchPosts } from '@/app/redux/posts/operations';
 import { selectLoading, selectError } from '@/app/redux/posts/selectors';
 import { AppDispatch } from '@/app/redux/store';
-import { Box, Button, CircularProgress, TextField } from '@mui/material';
+import { Box, CircularProgress, TextField } from '@mui/material';
 import UploadPhoto from './UploadPhoto';
 import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -11,6 +11,9 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 const validationSchema = Yup.object({
   description: Yup.string().required('Description is required'),
   images: Yup.array().min(1, 'At least one image is required'),
+  link: Yup.string()
+    .required('Link is required')
+    .min(5, 'At least linkedin link is required'),
 });
 
 const PostForm: React.FC = () => {
@@ -25,28 +28,43 @@ const PostForm: React.FC = () => {
     setFileNames(files.map(file => file.name));
   };
 
+  const handleRemoveFile = (index: number) => {
+    const updatedFiles = selectedFiles.filter((_, i) => i !== index);
+    setSelectedFiles(updatedFiles);
+    setFileNames(updatedFiles.map(file => file.name));
+  };
+
   return (
     <Formik
-      initialValues={{ description: '', images: [] }}
+      initialValues={{ description: '', images: [], link: '' }}
       validationSchema={validationSchema}
       onSubmit={async (values, { resetForm }) => {
         await dispatch(
-          createPost({ images: selectedFiles, description: values.description })
+          createPost({
+            images: selectedFiles,
+            description: values.description,
+            link: values.link,
+          })
         );
         dispatch(fetchPosts());
         setSelectedFiles([]);
         setFileNames([]);
+        console.log(values);
         resetForm();
       }}
     >
       {({ setFieldValue }) => (
-        <Form className="flex flex-col gap-4 mt-6">
+        <Form
+          encType={'multipart/form-data'}
+          className="flex flex-col gap-4 mt-6"
+        >
           <UploadPhoto
             fileNames={fileNames}
             onFileChange={files => {
               handleFileChange(files);
               setFieldValue('images', files);
             }}
+            onRemoveFile={handleRemoveFile}
           />
 
           <Box>
@@ -64,18 +82,19 @@ const PostForm: React.FC = () => {
               className="text-red-500"
             />
           </Box>
-
+          <Box>
+            <Field as={TextField} name="link" label="Post Link" fullWidth />
+            <ErrorMessage name="link" component="p" className="text-red-500" />
+          </Box>
           {error && <p className="text-red-500">{error}</p>}
 
-          <Button
+          <button
             type="submit"
-            variant="contained"
-            color="primary"
             disabled={loading}
             className={`tracking-wider text-xl font-semibold border border-custom-background bg-custom-background text-white transition-colors duration-300 hover:bg-white py-2 px-6 uppercase hover:text-black hover:border-black rounded`}
           >
             {loading ? <CircularProgress size={24} /> : 'Publish Post'}
-          </Button>
+          </button>
         </Form>
       )}
     </Formik>
