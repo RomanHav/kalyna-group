@@ -1,44 +1,56 @@
+import React from 'react';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import Button from '@mui/material/Button';
-import React, { useState } from 'react';
-import { styled } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
-const VisuallyHiddenInput = styled('input')({
-  clip: 'rect(0 0 0 0)',
-  clipPath: 'inset(50%)',
-  height: 1,
-  overflow: 'hidden',
-  position: 'absolute',
-  bottom: 0,
-  left: 0,
-  whiteSpace: 'nowrap',
-  width: 1,
-});
+interface UploadPhotoProps {
+  fileNames: string[];
+  onFileChange: (files: File[]) => void;
+  onRemoveFile: (index: number) => void;
+}
 
-const UploadPhoto = () => {
-  const [name, setName] = useState<string[]>([]);
-  const handleAddImage = (e)=>{
-      setName([...name, e.target.files])
-      console.log(name)
+const UploadPhoto: React.FC<UploadPhotoProps> = ({
+  onFileChange,
+  fileNames,
+  onRemoveFile,
+}) => {
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      const filesArray = Array.from(event.target.files);
+      onFileChange(filesArray);
+    }
   };
 
   return (
-    <div className={`flex flex-col`}>
+    <div className="flex flex-col">
       <Button
         component="label"
-        role={undefined}
         variant="contained"
-        tabIndex={-1}
         startIcon={<CloudUploadIcon />}
       >
-        Upload files
-        <VisuallyHiddenInput
-          type="file"
-          onChange={handleAddImage}
-          multiple
-        />
+        Upload Images
+        <input type="file" multiple hidden onChange={handleFileChange} />
       </Button>
-      <ul>{}</ul>
+      {fileNames.length > 0 && (
+        <ul className="mt-2">
+          {fileNames.map((name, index) => (
+            <li
+              key={index}
+              className="flex items-center justify-between text-gray-700 border-b py-1"
+            >
+              {name}
+              <IconButton
+                size="small"
+                color="error"
+                onClick={() => onRemoveFile(index)}
+              >
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
