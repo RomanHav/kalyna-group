@@ -53,3 +53,31 @@ export const deletePost = createAsyncThunk(
     }
   }
 );
+
+export const updatePost = createAsyncThunk(
+    'posts/updatePost',
+    async (
+        {
+            id,
+            images,
+            description,
+            link,
+        }: {id:string; images: File[]; description: string; link: string },
+        { rejectWithValue }
+    ) => {
+        try {
+            const formData = new FormData();
+            images.forEach(image => formData.append('images', image));
+            formData.append('description', description);
+            formData.append('link', link);
+
+            const response = await axios.patch(`/posts/${id}`, formData, {
+                headers: { 'Content-Type': 'multipart/form-data' },
+            });
+
+            return response.data;
+        } catch (error) {
+            return rejectWithValue(error.response?.data || 'Failed to create post');
+        }
+    }
+);

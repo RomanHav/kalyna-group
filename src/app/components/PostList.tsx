@@ -2,7 +2,11 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deletePost, fetchPosts } from '@/app/redux/posts/operations';
+import {
+  deletePost,
+  fetchPosts,
+  updatePost,
+} from '@/app/redux/posts/operations';
 import { selectPosts, selectLoading } from '@/app/redux/posts/selectors';
 import { AppDispatch } from '@/app/redux/store';
 import PostCard from './PostCard';
@@ -16,6 +20,20 @@ const PostList: React.FC = () => {
   useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch]);
+
+  const handleUpdate = async (
+    id: string,
+    images: File[],
+    description: string,
+    link: string
+  ) => {
+    try {
+      await dispatch(updatePost({ id, images, description, link })).unwrap();
+    } catch (error) {
+      console.error('Update error', error);
+    }
+  };
+
   const handleDelete = async (id: string) => {
     try {
       await dispatch(deletePost(id)).unwrap();
@@ -43,6 +61,9 @@ const PostList: React.FC = () => {
               description={post.description}
               link={post.link}
               onDelete={() => handleDelete(post._id)}
+              onUpdate={(image:File[]) =>
+                handleUpdate(post._id, image, post.description, post.link)
+              }
             />
           ))}
         </div>
