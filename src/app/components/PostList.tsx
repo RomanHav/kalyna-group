@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {deletePost, fetchPosts} from '@/app/redux/posts/operations';
+import { deletePost, fetchPosts } from '@/app/redux/posts/operations';
 import { selectPosts, selectLoading } from '@/app/redux/posts/selectors';
 import { AppDispatch } from '@/app/redux/store';
 import PostCard from './PostCard';
@@ -16,9 +16,14 @@ const PostList: React.FC = () => {
   useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch]);
-  const handleDelete = () => {
-    dispatch(deletePost());
-  }
+  const handleDelete = async (id: string) => {
+    try {
+      await dispatch(deletePost(id)).unwrap();
+    } catch (error) {
+      console.error('Delete error:', error);
+    }
+  };
+
   return (
     <div className="mt-6">
       <h2 className="text-2xl text-white font-semibold mb-4">
@@ -37,7 +42,7 @@ const PostList: React.FC = () => {
               images={post.images}
               description={post.description}
               link={post.link}
-              onDelete={handleDelete}
+              onDelete={() => handleDelete(post._id)}
             />
           ))}
         </div>
