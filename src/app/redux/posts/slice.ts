@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createPost, deletePost, fetchPosts } from './operations';
+import { createPost, deletePost, fetchPosts, updatePost } from './operations';
 
 interface Post {
   _id: string;
@@ -26,6 +26,7 @@ const postsSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
+
       //create
       .addCase(createPost.pending, state => {
         state.loading = true;
@@ -38,6 +39,7 @@ const postsSlice = createSlice({
         state.loading = false;
         state.error = action.payload as string;
       })
+
       //get posts
       .addCase(fetchPosts.pending, state => {
         state.loading = true;
@@ -50,6 +52,7 @@ const postsSlice = createSlice({
         state.loading = false;
         state.error = action.payload as string;
       })
+
       //delete posts
       .addCase(deletePost.pending, state => {
         state.loading = true;
@@ -59,6 +62,19 @@ const postsSlice = createSlice({
         state.posts = action.payload;
       })
       .addCase(deletePost.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+
+      //update posts
+      .addCase(updatePost.pending, state => {
+        state.loading = true;
+      })
+      .addCase(updatePost.fulfilled, (state, action) => {
+        state.loading = false;
+        state.posts = action.payload;
+      })
+      .addCase(updatePost.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });
