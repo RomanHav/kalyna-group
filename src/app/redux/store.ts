@@ -3,12 +3,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import locationReducer from './location/slice';
 import submitReducer from './formValues/slice';
 import postsReducer from './posts/slice';
+import sendReducer from './subscribersForm/slice'
 
 export const store = configureStore({
   reducer: {
     location: locationReducer,
     submit: submitReducer,
     posts: postsReducer,
+    send: sendReducer,
   },
 });
 
