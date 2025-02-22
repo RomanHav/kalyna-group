@@ -5,7 +5,9 @@ interface Post {
   _id: string;
   images: string[];
   description: string;
+  removedImages: string[];
   link: string;
+  createdAt: string;
 }
 
 interface PostState {
@@ -72,8 +74,13 @@ const postsSlice = createSlice({
       })
       .addCase(updatePost.fulfilled, (state, action) => {
         state.loading = false;
-        state.posts = action.payload;
+        const updatedPost = action.payload;
+
+        state.posts = state.posts.map(post =>
+          post._id === updatedPost._id ? updatedPost : post
+        );
       })
+
       .addCase(updatePost.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;

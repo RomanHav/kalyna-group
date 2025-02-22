@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createPost, fetchPosts } from '@/app/redux/posts/operations';
 import { selectLoading, selectError } from '@/app/redux/posts/selectors';
 import { AppDispatch } from '@/app/redux/store';
-import { Box, CircularProgress, TextField } from '@mui/material';
+import { Box, TextField } from '@mui/material';
 import UploadPhoto from './UploadPhoto';
 import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { PacmanLoader } from 'react-spinners';
 
 const validationSchema = Yup.object({
   description: Yup.string().required('Description is required'),
@@ -23,9 +24,12 @@ const PostForm: React.FC = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [fileNames, setFileNames] = useState<string[]>([]);
 
-  const handleFileChange = (files: File[]) => {
-    setSelectedFiles(files);
-    setFileNames(files.map(file => file.name));
+  const handleFileChange = (newFiles: File[]) => {
+    setSelectedFiles(prevFiles => [...prevFiles, ...newFiles]);
+    setFileNames(prevNames => [
+      ...prevNames,
+      ...newFiles.map(file => file.name),
+    ]);
   };
 
   const handleRemoveFile = (index: number) => {
@@ -49,7 +53,6 @@ const PostForm: React.FC = () => {
         dispatch(fetchPosts());
         setSelectedFiles([]);
         setFileNames([]);
-        console.log(values);
         resetForm();
       }}
     >
@@ -91,9 +94,13 @@ const PostForm: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className={`tracking-wider text-xl font-semibold border border-custom-background bg-custom-background text-white transition-colors duration-300 hover:bg-white py-2 px-6 uppercase hover:text-black hover:border-black rounded`}
+            className={`tracking-wider flex items-center justify-center text-xl font-semibold border border-custom-background bg-custom-background text-white transition-colors duration-300 hover:bg-white py-2 px-6 uppercase hover:text-black hover:border-black rounded`}
           >
-            {loading ? <CircularProgress size={24} /> : 'Publish Post'}
+            {loading ? (
+              <PacmanLoader size={24} color={'#FFFFFF'} />
+            ) : (
+              'Publish Post'
+            )}
           </button>
         </Form>
       )}

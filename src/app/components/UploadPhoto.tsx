@@ -19,8 +19,10 @@ const UploadPhoto: React.FC<UploadPhotoProps> = ({
     if (event.target.files) {
       const filesArray = Array.from(event.target.files);
       onFileChange(filesArray);
+      event.target.value = ''; // Чтобы можно было выбрать тот же файл снова
     }
   };
+
 
   return (
     <div className="flex flex-col">

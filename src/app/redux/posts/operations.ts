@@ -44,7 +44,7 @@ export const fetchPosts = createAsyncThunk(
 
 export const deletePost = createAsyncThunk(
   'posts/deletePosts',
-  async (id:string, { rejectWithValue }) => {
+  async (id: string, { rejectWithValue }) => {
     try {
       const response = await axios.delete(`/posts/${id}`);
       return response.data;
@@ -55,29 +55,41 @@ export const deletePost = createAsyncThunk(
 );
 
 export const updatePost = createAsyncThunk(
-    'posts/updatePost',
-    async (
-        {
-            id,
-            images,
-            description,
-            link,
-        }: {id:string; images: File[]; description: string; link: string },
-        { rejectWithValue }
-    ) => {
-        try {
-            const formData = new FormData();
-            images.forEach(image => formData.append('images', image));
-            formData.append('description', description);
-            formData.append('link', link);
+  'posts/updatePost',
+  async (
+    {
+      id,
+      images,
+      removedImages,
+      description,
+      link,
+    }: {
+      id: string;
+      images: File[];
+      removedImages: string[];
+      description: string;
+      link: string;
+    },
+    { rejectWithValue }
+  ) => {
+    try {
+      const formData = new FormData();
+      images.forEach(image => formData.append('images', image));
+      formData.append('removedImages', JSON.stringify(removedImages));
+      formData.append('description', description);
+      formData.append('link', link);
+      console.log('FormData entries:');
+      for (const pair of formData.entries()) {
+        console.log(pair[0], pair[1]);
+      }
 
-            const response = await axios.patch(`/posts/${id}`, formData, {
-                headers: { 'Content-Type': 'multipart/form-data' },
-            });
+      const response = await axios.patch(`/posts/${id}`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
 
-            return response.data;
-        } catch (error) {
-            return rejectWithValue(error.response?.data || 'Failed to create post');
-        }
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || 'Failed to create post');
     }
+  }
 );

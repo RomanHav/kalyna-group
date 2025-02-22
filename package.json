@@ -50,6 +50,7 @@
     "react-redux": "^9.1.2",
     "react-scroll": "^1.9.0",
     "react-scroll-parallax": "^3.4.5",
+    "react-spinners": "^0.15.0",
     "spline": "^0.0.0",
     "swiper": "^11.1.14",
     "tailwindcss-animate": "^1.0.7",

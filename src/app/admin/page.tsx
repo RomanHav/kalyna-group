@@ -2,22 +2,14 @@
 
 import LogoutButton from '../components/LogoutButton';
 import React from 'react';
-import { Poppins } from 'next/font/google';
 import PostForm from '@/app/components/PostForm';
 import PostList from '@/app/components/PostList';
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-});
 
 export default function AdminDashboard() {
   return (
     <div
-      className={`${poppins.className} py-20 px-4 md:px-8 lg:px-16 relative flex flex-col flex-wrap items-center z-[80] justify-center bg-cover bg-test`}
+      className={`py-20 px-4 md:px-8 lg:px-16 relative flex flex-col flex-wrap items-center gap-10 z-[80] justify-center `}
     >
-      {/*<div className="fixed w-full h-full bg-black/40"></div>*/}
       <div
         className={`relative bg-white p-6 rounded-lg flex flex-col gap-8 shadow-lg`}
       >
