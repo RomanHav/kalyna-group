@@ -9,6 +9,17 @@ import { Autoplay } from 'swiper/modules';
 import { formatRelativeDate } from '@/app/utils/formatRelativeDate';
 import { FaLinkedin } from 'react-icons/fa';
 import { TbExternalLink } from 'react-icons/tb';
+
+const truncateDescription = (text: string, maxLength: number) => {
+  return text.length > maxLength ? (
+    <>
+      {text.slice(0, maxLength)}
+      <span className={'text-sm text-gray-400'}> ...more</span>
+    </>
+  ) : (
+    text
+  );
+};
 interface BlogPostCardProps {
   link: string;
   description: string;
@@ -35,7 +46,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
         {images.map(image => (
           <SwiperSlide key={nanoid()}>
             <Image
-              className={'h-52 rounded object-cover object-center'}
+              className={'h-80 rounded-md object-cover object-center'}
               src={image}
               alt={description}
               width={1000}
@@ -49,7 +60,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
         className={'hover:underline transition-all duration-500 ease-linear'}
         href={link}
       >
-        {description}
+        {truncateDescription(description, 100)}
       </a>
       <div className={'flex justify-between'}>
         <div className={'relative flex gap-2 justify-center items-center'}>
