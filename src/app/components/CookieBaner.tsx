@@ -1,7 +1,9 @@
 'use client';
 
+
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { useState, useEffect } from 'react';
 
 const CookieBanner = () => {
@@ -43,6 +45,7 @@ const CookieBanner = () => {
   if (!isVisible) return null;
 
   return (
+
     <div className="fixed z-[9999] bottom-4 left-4 right-4 bg-white text-black p-4 shadow-lg rounded-xl md:mx-32 xl:mx-60 flex flex-col justify-between">
       <div className="flex flex-col md:flex-row gap-5 md:justify-between items-start md:items-center">
         <div className="flex gap-8 items-center">
@@ -50,6 +53,12 @@ const CookieBanner = () => {
           <span>This website uses cookies for analytics. Do you accept?</span>
         </div>
         <div className="space-x-4 flex">
+
+    <div className="fixed z-[9999] bottom-4 left-4 right-4 bg-white text-black p-4 shadow-lg rounded-lg md:w-3/4 md:mx-auto">
+      <div className="flex gap-10 md:justify-between items-center">
+        <span>This website uses cookies for analytics. Do you accept?</span>
+        <div className="space-x-4 flex ">
+
           <button
             onClick={handleAccept}
             className="px-4 py-2 bg-green-500 text-white rounded"
