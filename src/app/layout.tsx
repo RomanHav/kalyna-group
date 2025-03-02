@@ -18,7 +18,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kalynagroup.space'),
+  metadataBase: new URL('https://www.kalynagroup.space'),
   title: 'Kalyna Group',
   description: 'Create an effective website for your Business with us',
   openGraph: {
