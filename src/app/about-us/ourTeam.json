@@ -1,50 +1,65 @@
 [
   {
     "id": 1,
-    "name": "Oleksandr Kalenichenko",
-    "position": "Full Stack developer",
-    "photo": "/alex.png",
-    "linkedin": "linkedin.com/in/sashakter",
-    "instagram": "instagram.com/sashakter"
+    "name": "Max Kalenichenko",
+    "position": "Project manager",
+    "color": "bg-[#14532D]/90",
+    "photo": "/max.png",
+    "linkedin": "https://www.linkedin.com/in/maksym-kalenichenko-487619327/",
+    "instagram": "https://www.instagram.com/luckymmax/"
   },
   {
     "id": 2,
     "name": "Roman Havrylov",
     "position": "Full Stack developer",
+    "color": "bg-[#1F0F0A]/90",
     "photo": "/roma.png",
-    "linkedin": "linkedin.com/in/sashakter",
-    "instagram": "instagram.com/sashakter"
+    "linkedin": "https://www.linkedin.com/in/romanhavrylov/",
+    "instagram": "https://www.instagram.com/roma_gvrl/"
   },
   {
     "id": 3,
-    "name": "Max Kalenichenko",
-    "position": "Project manager",
-    "photo": "/max.png",
-    "linkedin": "linkedin.com/in/maksym-kalenichenko-487619327",
-    "instagram": "instagram.com/luckymmax"
+    "name": "Anton Levkovsky",
+    "position": "3D Character Designer & Product Designer",
+    "color": "bg-[#8DAA91]/90",
+    "photo": "/anton.png",
+    "linkedin": "https://www.linkedin.com/in/anton-levkovskyi-66b754340/",
+    "instagram": "https://www.instagram.com/_antrion_"
   },
   {
     "id": 4,
-    "name": "Bogdan Remenuk",
-    "position": "UI/UX designer",
-    "photo": "/bogdan.png",
-    "linkedin": "linkedin.com/in/sashakter",
-    "instagram": "instagram.com/sashakter"
+    "name": "Oleksandr Kalenichenko",
+    "position": "Full Stack developer",
+    "color": "bg-[#231F20]/90",
+    "photo": "/alex.png",
+    "linkedin": "https://www.linkedin.com/in/sashakter/",
+    "instagram": "https://www.instagram.com/sashakter/"
   },
   {
     "id": 5,
     "name": "Ann Hubarets",
-    "position": "UI/UX designer",
+    "position": "SMM Manager",
+    "color": "bg-[#616283]/90",
     "photo": "/anyuta.png",
-    "linkedin": "linkedin.com/in/sashakter",
-    "instagram": "instagram.com/sashakter"
+    "linkedin": "https://www.linkedin.com/in/%D0%B0%D0%BD%D0%BD%D0%B0-%D0%B3%D1%83%D0%B1%D0%B0%D1%80%D0%B5%D1%86-a9702a345/",
+    "instagram": "https://www.instagram.com/anchoaa/"
   },
   {
     "id": 6,
-    "name": "Anton Levkovsky",
-    "position": "3D Character Designer & Product Designer",
-    "photo": "/anton.png",
-    "linkedin": "linkedin.com/in/sashakter",
-    "instagram": "instagram.com/sashakter"
+    "name": "Mykhailo Voloshyn",
+    "position": "COO / Operations Manager",
+    "color": "bg-[#14532D]/90",
+    "photo": "/misha.png",
+    "linkedin": "https://www.linkedin.com/in/%D0%BC%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE-%D0%B2%D0%BE%D0%BB%D0%BE%D1%88%D0%B8%D0%BD-999a2a348/",
+    "instagram": "https://www.instagram.com/kexonomist/"
+  },
+  {
+    "id": 7,
+    "name": "Maryna Shudra",
+    "position": "UI/UX & Graphic Designer",
+    "color": "bg-[#1F0F0A]/90",
+    "photo": "/maryna.png",
+    "linkedin": "https://www.linkedin.com/in/maryna-shudra-a6b577288/",
+    "instagram": "https://www.instagram.com/marynashudra/"
   }
 ]
