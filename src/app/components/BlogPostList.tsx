@@ -16,11 +16,15 @@ const BlogPostList: React.FC = () => {
 
   return (
     <div className={'relative w-full text-white'}>
-      <ul className={'flex flex-wrap justify-start gap-10'}>
+      <ul
+        className={
+          'flex px-5 max-lg:flex-col flex-wrap justify-center items-center lg:items-start lg:justify-start gap-10'
+        }
+      >
         {posts.map(post => (
           <li
             className={
-              'p-5 rounded-lg group transition-all duration-300 border-[0.5px] border-transparent hover:border-b-emerald-200 lg:w-80 bg-white/5 backdrop-blur'
+              'p-5 w-full rounded-lg max-w-80 group transition-all duration-300 border-[0.5px] border-transparent hover:border-b-emerald-200 lg:w-80 bg-white/5 backdrop-blur'
             }
             key={post._id}
           >

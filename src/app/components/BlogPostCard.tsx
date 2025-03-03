@@ -57,7 +57,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
       </Swiper>
       <p className={'text-sm text-white/50'}>{formatRelativeDate(createdAt)}</p>
       <a
-        className={'hover:underline transition-all duration-500 ease-linear'}
+        className={'transition-all duration-500 ease-linear min-h-24'}
         href={link}
       >
         {truncateDescription(description, 100)}
