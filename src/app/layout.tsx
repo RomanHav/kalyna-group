@@ -8,7 +8,9 @@ import Footer from '@/app/components/Footer/Footer';
 import { ParallaxProvider } from './utils/parallax';
 import { Provider, store } from './utils/provider';
 import RenderLoading from '@/app/utils/RenderLoading';
-import GoogleAnalitycsWrapper from './components/GoogleAnalitycsWrapper';
+
+import GoogleAnalyticsWrapper from './components/GoogleAnalitycsWrapper';
+
 import CookieBanner from './components/CookieBaner';
 
 const poppins = Poppins({
@@ -35,9 +37,11 @@ export default function RootLayout({
         <Provider store={store}>
           <ReactLenisUpdated>
             <ParallaxProvider>
+              <CookieBanner />
+              <GoogleAnalyticsWrapper />
               <RenderLoading>
                 <div className="absolute inset-0 top-0 left-0 h-full w-full bg-repeat-y opacity-20 bg-texture lg:bg-cover"></div>
-                <GoogleAnalitycsWrapper />
+                <GoogleAnalyticsWrapper />
                 <CookieBanner />
                 <NavBar />
                 {children}
