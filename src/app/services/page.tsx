@@ -31,11 +31,10 @@ const SERVICES_META: Record<string, Metadata> = {
   },
 };
 
-export async function generateMetadata({
-  params,
-}: {
+export async function generateMetadata(props: {
   params: { service: string };
 }): Promise<Metadata> {
+  const { params } = props;
   const serviceMeta = SERVICES_META[params.service];
 
   if (!serviceMeta) {
