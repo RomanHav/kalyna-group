@@ -1,5 +1,6 @@
-// /app/sitemap.xml/route.ts
 import { type MetadataRoute } from 'next';
+
+export const dynamic = 'force-static';
 
 export async function GET(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.kalynagroup.space';
