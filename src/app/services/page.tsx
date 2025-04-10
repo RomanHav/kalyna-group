@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 const SERVICES_META: Record<string, Metadata> = {
   'e-commerce': {
