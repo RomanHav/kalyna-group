@@ -1,8 +1,9 @@
+// src/app/sitemap.xml/route.ts
 import { type MetadataRoute } from 'next';
 
 export const dynamic = 'force-static';
 
-export async function GET(): Promise<MetadataRoute.Sitemap> {
+export async function GET(): Promise<Response> {
   const baseUrl = 'https://www.kalynagroup.space';
 
   const services = [
@@ -24,8 +25,10 @@ export async function GET(): Promise<MetadataRoute.Sitemap> {
     ...services.map(service => `/services/${service}`),
   ];
 
-  return routes.map(route => ({
+  const sitemap: MetadataRoute.Sitemap = routes.map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
   }));
+
+  return Response.json(sitemap);
 }
