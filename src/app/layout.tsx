@@ -11,7 +11,7 @@ import RenderLoading from '@/app/utils/RenderLoading';
 
 import GoogleAnalyticsWrapper from './components/GoogleAnalitycsWrapper';
 
-import CookieBanner from './components/CookieBaner';
+import CookieBanner from './components/CookieBanner';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -45,7 +45,6 @@ export default function RootLayout({
               <GoogleAnalyticsWrapper />
               <RenderLoading>
                 <div className="absolute inset-0 top-0 left-0 h-full w-full bg-repeat-y opacity-20 bg-texture lg:bg-cover"></div>
-                <GoogleAnalyticsWrapper />
                 <CookieBanner />
                 <NavBar />
                 {children}
