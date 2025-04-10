@@ -20,7 +20,6 @@ const ThreeDSystem = () => {
   const handleOpen = () => {
     setClick(!click);
     document.body.style.overflow = click ? 'auto' : 'hidden';
-
   };
   const faqCard = {
     title: '3d design',
@@ -32,6 +31,7 @@ const ThreeDSystem = () => {
     title: 'Discover, Design, Enjoy, Delight.',
     description: 'Your Perfect 3D Design Awaits you',
   };
+
   return (
     <Suspense fallback={<div>Loading</div>}>
       <div className="relative contain-paint">

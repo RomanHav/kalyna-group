@@ -1,5 +1,17 @@
 import React from 'react';
 import BlogPostList from '@/app/components/BlogPostList';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog | Kalyna Group',
+  metadataBase: new URL('https://www.kalynagroup.space/blog'),
+  description: 'Explore latest news from Kalyna Group',
+  openGraph: {
+    title: 'Blog | Kalyna Group',
+    description: 'Explore latest news from Kalyna Group',
+    url: 'https://www.kalynagroup.space/blog',
+  },
+};
 
 const BlogPage: React.FC = () => {
   return (

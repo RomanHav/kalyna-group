@@ -9,6 +9,7 @@ import OurExpertise from '@/app/components/OurExpertise/OurExpertise';
 import MilkShake from '../../components/MilkShake';
 import FormSecond from '@/app/components/StepsForm/FormSecond';
 import { useState } from 'react';
+
 const faqCard = {
   title: 'UI/UX design',
   src: '/web-design.webp',
