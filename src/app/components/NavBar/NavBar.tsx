@@ -90,6 +90,7 @@ const NavBar: React.FC = () => {
                   </span>
                   <div className="relative">
                     <Link
+                      onClick={() => setOpenServices(false)}
                       href={'/about-us'}
                       className=" after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
@@ -101,6 +102,7 @@ const NavBar: React.FC = () => {
                   </span>
                   <div className="relative">
                     <Link
+                      onClick={() => setOpenServices(false)}
                       href="/career"
                       className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >
@@ -112,6 +114,7 @@ const NavBar: React.FC = () => {
                   </span>
                   <div className="relative">
                     <Link
+                      onClick={() => setOpenServices(false)}
                       href="/blog"
                       className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white tracking-wide after:h-[1px] hover:after:w-full hover:after:duration-200"
                     >

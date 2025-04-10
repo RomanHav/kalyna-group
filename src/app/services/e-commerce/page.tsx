@@ -1,52 +1,19 @@
-'use client';
-import Faq from '../../components/Faq/Faq';
-import CommerceImage from '../../components/CommerceImage';
-import OurExpertise from '../../components/OurExpertise/OurExpertise';
-import WhatWeOffer from '../../components/WhatWeOffer/WhatWeOffer';
-import commerceFaq from '../../../../faq/commerceFaq.json';
-import WoodMinded from '@/app/components/WoodMinded';
-import React, { useState } from 'react';
-import HeaderService from '@/app/components/HeaderService';
-import offer from '../../../../whatWeOffer/whatWeOfferCommerce.json';
-import FormSecond from '@/app/components/StepsForm/FormSecond';
+import type { Metadata } from 'next';
+import ECommerce from './ECommerce';
 
-const ECommerce = () => {
-  const [click, setClick] = useState(false);
-  const handleOpen = () => {
-    setClick(!click);
-    document.body.style.overflow = click ? 'auto' : 'hidden';
-  };
-  const faqCard = {
-    title: 'E-commerce',
-    src: '/e-commerce.webp',
-    price: '$5000',
-    terms: '4-6 weeks',
-  };
-  const headerText = {
-    title: 'Tell, customize, sell, enjoy.',
-    description: 'Build your desired web store',
-  };
-  return (
-    <>
-      <div className="relative contain-paint">
-        <HeaderService headerText={headerText} handleOpen={handleOpen} />
-        <CommerceImage />
-
-        <div className={'relative flex flex-col justify-center gap-20'}>
-          <WhatWeOffer offer={offer} />
-          <OurExpertise>
-            <WoodMinded />
-          </OurExpertise>
-          <Faq
-            faqCard={faqCard}
-            commerceFaq={commerceFaq}
-            handleOpen={handleOpen}
-          />
-        </div>
-      </div>
-      {click && <FormSecond isModal={click} handleClose={handleOpen} />}
-    </>
-  );
+export const metadata: Metadata = {
+  title: 'Build Your Online Store with us | Kalyna Group',
+  description:
+    'Launch your e-commerce business with a cutting-edge online store.',
+  metadataBase: new URL(`https://www.kalynagroup.space/services/e-commerce`),
+  openGraph: {
+    title: 'Build Your Online Store with us | Kalyna Group',
+    description:
+      'Launch your e-commerce business with a cutting-edge online store.',
+    url: `https://www.kalynagroup.space/services/e-commerce`,
+  },
 };
 
-export default ECommerce;
+export default function EcommercePage() {
+  return <ECommerce />;
+}

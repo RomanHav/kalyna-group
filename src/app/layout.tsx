@@ -11,7 +11,7 @@ import RenderLoading from '@/app/utils/RenderLoading';
 
 import GoogleAnalyticsWrapper from './components/GoogleAnalitycsWrapper';
 
-import CookieBanner from './components/CookieBaner';
+import CookieBanner from './components/CookieBanner';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -21,8 +21,16 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.kalynagroup.space'),
-  title: 'Kalyna Group',
-  description: 'Create an effective website for your Business with us',
+  title: 'Kalyna Group | Web Application Development for Your Business',
+  description:
+    'User-friendly, fast, and functional websites designed to drive sales and automate processes.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.kalynagroup.space',
+    siteName: 'Kalyna Group',
+    title: 'Kalyna Group | Web Application Development for Your Business',
+  },
 };
 
 export default function RootLayout({
@@ -34,11 +42,9 @@ export default function RootLayout({
         <Provider store={store}>
           <ReactLenisUpdated>
             <ParallaxProvider>
-              <CookieBanner />
               <GoogleAnalyticsWrapper />
               <RenderLoading>
                 <div className="absolute inset-0 top-0 left-0 h-full w-full bg-repeat-y opacity-20 bg-texture lg:bg-cover"></div>
-                <GoogleAnalyticsWrapper />
                 <CookieBanner />
                 <NavBar />
                 {children}
