@@ -53,9 +53,13 @@ const Footer = () => {
                 <div
                   className={`absolute top-0 left-0 z-0 h-full w-full rounded-2xl bg-black/80`}
                 ></div>
-                <div className={`relative flex flex-col md:flex-row items-center gap-6 text-white`}>
+                <div
+                  className={`relative flex flex-col md:flex-row items-center gap-6 text-white`}
+                >
                   <IoCheckmarkDoneCircle size={isDesktop ? 60 : 80} />
-                  <p className={`text-lg md:text-xl w-[300px] md:w-[450px] lg:w-[600px]`}>
+                  <p
+                    className={`text-lg md:text-xl w-[300px] md:w-[450px] lg:w-[600px]`}
+                  >
                     Thank you for subscribing, all discounts and promotions of
                     our company will be available to you very soon!
                   </p>
@@ -166,9 +170,9 @@ const Footer = () => {
                 <div className="relative">
                   <a
                     className="after:absolute after:-bottom-2 after:left-0 after:w-0 cursor-pointer after:bg-white text-xl font-light after:h-[1px] hover:after:w-full hover:after:duration-200"
-                    href="mailto:info@kalynagroup.com"
+                    href="mailto:info@kalynagroup.space"
                   >
-                    info@kalynagroup.com
+                    info@kalynagroup.space
                   </a>
                 </div>
               </div>
