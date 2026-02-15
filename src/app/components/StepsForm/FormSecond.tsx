@@ -8,7 +8,6 @@ import StepSecond from './StepSecond';
 import StepThird from './StepThird';
 import StepFourth from './StepFourth';
 import StepFifth from './StepFifth';
-import NotFound from 'next/dist/client/components/not-found-error';
 import ProgressLine from '@/app/components/StepsForm/ProgressLine';
 import { Formik, Form } from 'formik';
 import InitialValues from '../Form/FormInitialValues';
@@ -85,7 +84,7 @@ const _renderStepContent = (
         />
       );
     default:
-      return <NotFound />;
+      return null;
   }
 };
 
